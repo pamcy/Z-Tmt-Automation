@@ -1,0 +1,17 @@
+.header {
+    padding: 0 $gutter-sm;
+    background-color: $color-primary;
+
+    > .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &-logo {
+        @include media-breakpoint-up(md) {
+            width: rem(246);
+            height: auto;
+        }
+    }
+}
