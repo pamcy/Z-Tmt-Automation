@@ -2,6 +2,13 @@ $primary-color: #ee7b45;
 $primary-color-light: #fbd9ca;
 $primary-color-lighter: #ffece3;
 $primary-color-lightest: #fcf9f2;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 750px,
+  lg: 990px,
+  xl: 1400px
+);
 
 $secondary-color: #c5c5c5;
 $secondary-color-light: #f0f0f0;
