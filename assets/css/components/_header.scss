@@ -14,4 +14,57 @@
             height: auto;
         }
     }
+
+    &-menu {
+        font-size: 0;
+
+        &__hamburger {
+            width: 30px;
+            height: 60px;
+            text-align: left;
+            
+            span {
+                display: inline-block;
+                margin: rem(3.5) auto;
+                background-color: white;
+                width: 100%;
+                height: rem(4);
+                border-radius: 5px;
+                transition: all .5s ease;
+
+                &:last-child {
+                    width: 50%;
+                }
+            }
+            
+            &:hover {
+                span {
+                    &:first-child {
+                        transform: translateY(-2px);
+                    }
+
+                    &:last-child {
+                        transform: translateY(2px);
+                    }
+                }
+            }
+
+            &.is-toggled {
+                span {
+                    &:first-child {
+                        transform: translateY(11px) rotate(45deg);
+                    }
+
+                    &:nth-child(2) {
+                        transform: scaleX(0);
+                    }
+
+                    &:last-child {
+                        width: 100%;
+                        transform: translateY(-11px) rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
 }
