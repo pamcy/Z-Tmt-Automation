@@ -1,7 +1,11 @@
-$primary-color: #ee7b45;
-$primary-color-light: #fbd9ca;
-$primary-color-lighter: #ffece3;
-$primary-color-lightest: #fcf9f2;
+$color-primary: #ee7b45;
+$color-primary-light: #fbd9ca;
+$color-primary-lighter: #ffece3;
+$color-primary-lightest: #fcf9f2;
+
+$color-secondary: #c5c5c5;
+$color-secondary-light: #f0f0f0;
+
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
@@ -10,5 +14,4 @@ $grid-breakpoints: (
   xl: 1400px
 );
 
-$secondary-color: #c5c5c5;
-$secondary-color-light: #f0f0f0;
+$gutter-sm: 18px;
