@@ -48,11 +48,17 @@
         }
     }
 
-    &--styless {
+    &-block {
+        width: 100%;
+    } 
+
+    &-styless {
         padding: 0;
         border: 0;
         background-color: transparent;
+        color: inherit;
         line-height: 1;
+        text-transform: none;
 
         &:hover,
         &:focus {
