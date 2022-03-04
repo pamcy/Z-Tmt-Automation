@@ -32,13 +32,13 @@
                             </ul>
                         </nav>
                         <form action="" class="d-none d-lg-flex header-menu-controls__search-desktop">
-                            <button type="button" class="btn btn-styless" :class="{ 'is-active': desktopSearchBarToggled }" @click="desktopSearchBarToggled = !desktopSearchBarToggled">
+                            <button type="button" class="btn btn-styless" :class="{ 'is-active': desktopSearchBarToggled }" @click="toggleDesktopSearchBar">
                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m22.952 21.85-5.194-5.194A5.946 5.946 0 0 0 19 13a5.964 5.964 0 0 0-1.758-4.242A5.956 5.956 0 0 0 13 7c-1.602 0-3.11.626-4.242 1.758A5.952 5.952 0 0 0 7 13c0 1.602.626 3.11 1.758 4.242A5.952 5.952 0 0 0 13 19c1.34 0 2.612-.436 3.654-1.24l5.194 5.192a.164.164 0 0 0 .232 0l.872-.87a.164.164 0 0 0 0-.232zm-6.784-5.682A4.456 4.456 0 0 1 13 17.48a4.456 4.456 0 0 1-3.168-1.312A4.456 4.456 0 0 1 8.52 13c0-1.196.466-2.322 1.312-3.168A4.456 4.456 0 0 1 13 8.52c1.196 0 2.322.464 3.168 1.312A4.456 4.456 0 0 1 17.48 13a4.452 4.452 0 0 1-1.312 3.168z" fill="#fff"/></svg>
                             </button>
                             <Transition>
                                 <div class="input-group" v-if="desktopSearchBarToggled">
-                                    <input type="search" class="input--solid" placeholder="search">
-                                    <button type="button" class="btn btn-styless">
+                                    <input type="search" class="input--solid" placeholder="search" v-model="searchValue" ref="searchInput">
+                                    <button type="button" class="btn btn-styless" @click="clearSearchValue()">
                                         <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20.809" y="17.98" width="30" height="4" rx="2" transform="rotate(45 20.809 17.98)" fill="#EE7B45"/><rect width="30" height="4" rx="2" transform="scale(-1 1) rotate(45 -41.3 -38.32)" fill="#EE7B45"/></svg>
                                     </button>
                                 </div>
@@ -130,8 +130,25 @@ const menu = ref([
     }
 ])
 const desktopSearchBarToggled = ref(false)
+const searchInput = ref(null)
+const searchValue = ref(null)
+
 function toggleMenuItem(item) {
     item.visible = !item.visible
+}
+
+function toggleDesktopSearchBar() {
+    desktopSearchBarToggled.value = !desktopSearchBarToggled.value
+
+    if (desktopSearchBarToggled.value) {
+        setTimeout(() => {
+            searchInput.value.focus()
+        }, 0);
+    }
+}
+
+function clearSearchValue() {
+    searchValue.value = ''
 }
 
 </script>
