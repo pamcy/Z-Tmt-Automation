@@ -1,0 +1,38 @@
+label {
+    font-weight: 700;
+}
+
+input {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid $color-secondary-light;
+    background-color: transparent;
+    font-size: rem(20);
+
+    &:focus,
+    &:active {
+        border-bottom: 3px solid $color-primary;
+        outline: 0;
+    }
+}
+
+.input {
+    &-group {
+        display: flex;
+    }
+
+    &--solid {
+        border-radius: rem(10);
+        background-color: #fff;
+
+        &,
+        &:hover,
+        &:focus {
+            border: 0;
+        }
+    }
+}
+
+::placeholder {
+    color: $color-secondary;
+}
