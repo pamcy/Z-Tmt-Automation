@@ -144,6 +144,40 @@
                     }
                 }
 
+                &-desktop {
+                    align-items: center;
+
+                    > .btn {
+                        border-radius: 50%;
+                        font-size: 0;
+
+                        &.is-active {
+                            background-color: $color-primary-light;
+
+                            path {
+                                fill: $color-primary;
+                            }
+                        }
+                    }
+
+                    > .input-group {
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        right: 0;
+
+                        &.v-enter-active,
+                        &.v-leave-active {
+                            transition: all .3s ease;
+                        }
+
+                        &.v-enter-from,
+                        &.v-leave-to {
+                            opacity: 0;
+                            transform: translateY(-10px);
+                        }
+                    }
+                }
             }
 
             &__list {

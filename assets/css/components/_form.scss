@@ -14,6 +14,15 @@ input {
         border-bottom: 3px solid $color-primary;
         outline: 0;
     }
+
+    &[type='search'] {
+        &::-webkit-search-decoration,
+        &::-webkit-search-cancel-button,
+        &::-webkit-search-results-button,
+        &::-webkit-search-results-decoration {
+            appearance:none;
+        }
+    }
 }
 
 .input {
