@@ -1,0 +1,55 @@
+label {
+    font-weight: 700;
+}
+
+input {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid $color-secondary-light;
+    background-color: transparent;
+    font-size: rem(20);
+
+    &:focus,
+    &:active {
+        border-bottom: 3px solid $color-primary;
+        outline: 0;
+    }
+
+    &[type='search'] {
+        &::-webkit-search-decoration,
+        &::-webkit-search-cancel-button,
+        &::-webkit-search-results-button,
+        &::-webkit-search-results-decoration {
+            appearance:none;
+        }
+    }
+}
+
+.input {
+    &-group {
+        display: flex;
+    }
+
+    &--solid {
+        padding: rem(28.5) rem(20);
+        border-radius: rem(10);
+        background-color: #fff;
+
+        &,
+        &:hover,
+        &:focus {
+            border: 0;
+        }
+
+        + .btn {
+            position: absolute;
+            top: 50%;
+            right: rem(10);
+            transform: translateY(-50%);
+        }
+    }
+}
+
+::placeholder {
+    color: $color-secondary;
+}

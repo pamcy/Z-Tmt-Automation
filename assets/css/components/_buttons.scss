@@ -1,0 +1,68 @@
+.btn {
+    padding: rem(25) rem(40);
+    border: 3px solid #fff;
+    background-color: #fff;
+    color: $color-primary;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background-color: $color-primary-light;
+        outline: 0;
+    }
+
+    &--outline {
+        background-color: transparent;
+        color: #fff;
+        border-color: #fff;
+
+        &:hover,
+        &:focus {
+            background-color: $color-primary-light;
+            color: $color-primary;
+        }
+    }
+
+    &--small {
+        padding-top: rem(20);
+        padding-bottom: rem(20);
+    }
+
+    &--icon-only {
+        width: rem(150);
+        height: rem(150);
+        border: rem(4.5) solid;
+        border-radius: 50%;
+        color: $color-primary;
+
+        &:hover,
+        &:focus {
+            background-color: $color-primary;
+        }
+
+        &.btn--small {
+            width: rem(80);
+            height: rem(80);
+            border-width: 3px;
+        }
+    }
+
+    &-block {
+        width: 100%;
+    } 
+
+    &-styless {
+        padding: 0;
+        border: 0;
+        background-color: transparent;
+        color: inherit;
+        line-height: 1;
+        text-transform: none;
+
+        &:hover,
+        &:focus {
+            background: transparent;
+        }
+    }
+}

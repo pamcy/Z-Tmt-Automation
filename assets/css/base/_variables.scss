@@ -1,7 +1,20 @@
-$primary-color: #ee7b45;
-$primary-color-light: #fbd9ca;
-$primary-color-lighter: #ffece3;
-$primary-color-lightest: #fcf9f2;
+$color-primary: #ee7b45;
+$color-primary-light: #fbd9ca;
+$color-primary-lighter: #ffece3;
+$color-primary-lightest: #fcf9f2;
 
-$secondary-color: #c5c5c5;
-$secondary-color-light: #f0f0f0;
+$color-secondary: #c5c5c5;
+$color-secondary-light: #f0f0f0;
+
+$enable-important-utilities: true !default;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 750px,
+  lg: 990px,
+  xl: 1400px
+);
+
+$gutter-sm: 18px;
+$gutter: 36px;
