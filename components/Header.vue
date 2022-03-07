@@ -25,11 +25,16 @@
                             <ul class="list--styless">
                                 <li class="dropdown" :class="{ 'is-toggled': item.visible }" v-for="item in menu" :key="item.title">
                                     <button type="button" class="dropdown-title btn btn-block btn-styless" :title="item.title" @click="toggleMenuItem(item)">{{ item.title }}</button>
-                                    <ul class="list--styless" v-if="item.visible">
-                                        <li v-for="subItem in item.subItems" :key="subItem.title">
-                                            <NuxtLink :to="subItem.url" :title="subItem.title">{{ subItem.title }}</NuxtLink>
-                                        </li>
-                                    </ul>
+                                    <Transition @before-enter="onBeforeEnter"
+                                                @enter="onEnter"
+                                                @before-leave="onBeforeLeave"
+                                                @leave="onLeave">
+                                        <ul class="list--styless" v-show="item.visible">
+                                            <li v-for="subItem in item.subItems" :key="subItem.title">
+                                                <NuxtLink :to="subItem.url" :title="subItem.title">{{ subItem.title }}</NuxtLink>
+                                            </li>
+                                        </ul>
+                                    </Transition>
                                 </li>
                             </ul>
                         </nav>
@@ -151,6 +156,22 @@ function toggleDesktopSearchBar() {
 
 function clearSearchValue() {
     searchValue.value = ''
+}
+
+function onBeforeEnter(el) {
+    el.style['max-height'] = '0';
+}
+
+function onEnter(el) {
+    el.style['max-height'] = `${el.scrollHeight}px`;
+}
+
+function onBeforeLeave(el) {
+    el.style['max-height'] = `${el.scrollHeight}px`;
+}
+
+function onLeave(el) {
+    setTimeout(() => el.style['max-height'] = '0', 0);
 }
 
 </script>

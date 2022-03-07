@@ -270,17 +270,37 @@
                     @include media-breakpoint-up(lg) {
                         position: absolute;
                         top: calc(100%);
-                        padding: rem(20) rem(24);
+                        padding-left: 0;
                         border-radius: rem(10);
                         background-color: #fff;
                         color: #000;
+                    }
+
+                    &.v-enter-active,
+                    &.v-leave-active {
+                        overflow: hidden;
+                        transition: max-height .3s;
                     }
 
                     > li {
                         @include media-breakpoint-up(lg) {
                             white-space: nowrap;
 
-                            > a {
+                            &:last-child {
+                                > a {
+                                    padding-bottom: rem(20);
+                                }
+                            }
+                        }
+
+                        > a {
+                            display: block;
+                            padding: rem(10) 0 rem(10);
+                            color: inherit;
+
+                            @include media-breakpoint-up(lg) {
+                                padding: rem(20) rem(24) 0;
+
                                 &:before {
                                     @include media-breakpoint-up(lg) {
                                         display: block;
@@ -299,14 +319,6 @@
                                     font-weight: 700;
                                 }
                             }
-                        }
-
-                        > a {
-                            color: inherit;
-                        }
-
-                        + li {
-                            margin-top: calc(1rem * 1.2);
                         }
                     }
                 }
