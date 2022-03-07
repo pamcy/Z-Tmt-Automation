@@ -24,9 +24,11 @@
                         <nav role="navigation" class="header-menu-controls__list">
                             <ul class="list--styless">
                                 <li class="dropdown" :class="{ 'is-toggled': item.visible }" v-for="item in menu" :key="item.title">
-                                    <button type="button" class="dropdown-title btn btn-block btn-styless text-left" @click="toggleMenuItem(item)">{{ item.title }}</button>
-                                    <ul class="list--styless">
-                                        <li v-for="subItem in item.subItems" :key="subItem.title">{{ subItem.title }}</li>
+                                    <button type="button" class="dropdown-title btn btn-block btn-styless" :title="item.title" @click="toggleMenuItem(item)">{{ item.title }}</button>
+                                    <ul class="list--styless" v-if="item.visible">
+                                        <li v-for="subItem in item.subItems" :key="subItem.title">
+                                            <NuxtLink :to="subItem.url" :title="subItem.title">{{ subItem.title }}</NuxtLink>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -62,7 +64,7 @@ const menu = ref([
         subItems: [
             {
                 title: 'Gate Openers',
-                url: '#'
+                url: 'gate-openers'
             }
         ]
     },
@@ -72,15 +74,15 @@ const menu = ref([
         subItems: [
             {
                 title: 'Solar',
-                url: '#'
+                url: 'solar'
             },
             {
                 title: 'App Integration',
-                url: '#'
+                url: 'app-integration'
             },
             {
                 title: 'Comparison with Other Brands',
-                url: '#'
+                url: 'comparison-with-other-brands'
             }
         ]
     },
@@ -90,27 +92,27 @@ const menu = ref([
         subItems: [
             {
                 title: 'Product Manuals',
-                url: '#'
+                url: 'product-manuals'
             },
             {
                 title: 'Installation Videos',
-                url: '#'
+                url: 'installation-videos'
             },
             {
                 title: 'Schedule a Call',
-                url: '#'
+                url: 'schedule-a-call'
             },
             {
                 title: 'Product Registration',
-                url: '#'
+                url: 'product-registration'
             },
             {
                 title: 'Warranty Info',
-                url: '#'
+                url: 'warranty-info'
             },
             {
                 title: 'FAQ',
-                url: '#'
+                url: 'faq'
             }
         ]
     },
@@ -120,11 +122,11 @@ const menu = ref([
         subItems: [
             {
                 title: 'About Us',
-                url: '#'
+                url: 'about-us'
             },
             {
                 title: 'Contact Us',
-                url: '#'
+                url: 'contact-us'
             }
         ]
     }

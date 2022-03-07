@@ -2,6 +2,11 @@
     padding: 0 $gutter-sm;
     background-color: $color-primary;
 
+    @include media-breakpoint-up(lg) {
+        padding-top: rem(13);
+        padding-bottom: rem(13);
+    }
+
     > .container {
         display: flex;
         align-items: center;
@@ -88,6 +93,7 @@
                 display: flex;
                 width: auto;
                 max-height: none;
+                overflow: visible;
                 background-color: transparent;
                 color: #fff;
             }
@@ -98,16 +104,19 @@
                 right: 0;
                 bottom: 0;
                 left: 0;
-                overflow: hidden;
+
+                @include media-breakpoint-down(md) {
+                    overflow: hidden;
+                }
+
+                @include media-breakpoint-up(lg) {
+                    position: static;
+                }
 
                 &.is-toggled {
                     .header-menu-controls {
                         max-height: 100vh;
                     }
-                }
-
-                @include media-breakpoint-up(lg) {
-                    position: static;
                 }
             }
 
@@ -162,7 +171,7 @@
 
                     > .input-group {
                         position: absolute;
-                        top: 100%;
+                        top: calc(100% + 25px);
                         left: 0;
                         right: 0;
 
@@ -201,30 +210,101 @@
             }
 
             .dropdown {
+                position: relative;
                 padding: rem(15) 0;
 
                 &-title {
                     position: relative;
                     font-size: rem(20);
 
+                    @include media-breakpoint-down(lg) {
+                        margin-bottom: rem(10);
+                        text-align: left;
+                    }
+
+                    &:before {
+                        @include media-breakpoint-up(lg) {
+                            display: block;
+                            content: attr(title);
+                            font-weight: 700;
+                            height: 1px;
+                            color: transparent;
+                            overflow: hidden;
+                            visibility: hidden;
+                        }
+                    }
+
                     &:after {
-                        @include media-breakpoint-down(md) {
-                            position: absolute;
-                            top: 50%;
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxNiAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtMiAyIDUuOTEzIDZMMTQgMiIgc3Ryb2tlPSIjRUU3QjQ1IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+');
+                        transform: translateY(-50%);
+
+                        @include media-breakpoint-up(lg) {
+                            top: auto;
+                            bottom: rem(-12);
                             right: 0;
-                            content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxNiAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtMiAyIDUuOTEzIDZMMTQgMiIgc3Ryb2tlPSIjRUU3QjQ1IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+');
-                            transform: translateY(-50%);
+                            left: 0;
+                            height: rem(3);
+                            display: none;
+                            content: '';
+                            background-color: $color-primary-light;
+                        }
+                    }
+
+                    &:hover,
+                    &:focus {
+                        &:after {
+                            @include media-breakpoint-up(lg) {
+                                display: block;
+                            }
                         }
                     }
                 }
 
                 > ul {
-                    display: none;
                     padding-left: rem(30);
-                    margin-top: rem(10);
                     overflow: hidden;
 
+                    @include media-breakpoint-up(lg) {
+                        position: absolute;
+                        top: calc(100%);
+                        padding: rem(20) rem(24);
+                        border-radius: rem(10);
+                        background-color: #fff;
+                        color: #000;
+                    }
+
                     > li {
+                        @include media-breakpoint-up(lg) {
+                            white-space: nowrap;
+
+                            > a {
+                                &:before {
+                                    @include media-breakpoint-up(lg) {
+                                        display: block;
+                                        content: attr(title);
+                                        font-weight: 700;
+                                        height: 1px;
+                                        color: transparent;
+                                        overflow: hidden;
+                                        visibility: hidden;
+                                    }
+                                }
+
+                                &:hover,
+                                &:focus {
+                                    color: $color-primary;
+                                    font-weight: 700;
+                                }
+                            }
+                        }
+
+                        > a {
+                            color: inherit;
+                        }
+
                         + li {
                             margin-top: calc(1rem * 1.2);
                         }
@@ -236,13 +316,17 @@
                         color: $color-primary;
                         font-weight: 700;
 
+                        @include media-breakpoint-up(lg) {
+                            color: #fff;
+                        }
+
                         &:after {
                             transform: translateY(-50%) rotate(180deg);
-                        }
-                    }
 
-                    > ul {
-                        display: block;
+                            @include media-breakpoint-up(lg) {
+                                display: block;
+                            }
+                        }
                     }
                 }
             }
