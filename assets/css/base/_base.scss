@@ -21,3 +21,14 @@ ol,
 ul {
     margin: 0;
 }
+
+a {
+    &:link {
+        color: $color-primary;
+        text-decoration: none;
+    }
+
+    &:visited {
+        color: $color-primary;
+    }
+}
