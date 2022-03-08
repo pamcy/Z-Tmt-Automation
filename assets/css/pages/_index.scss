@@ -1,0 +1,62 @@
+.hero {
+    height: calc(100vh - $header-height-mobile);
+    padding: var(--gutter);
+    background: $color-primary no-repeat url('/assets/images/mainpage-kv-mobile.jpg') left top;
+    background-size: cover;
+    color: #fff;
+
+    @include media-breakpoint-up(md) {
+        height: auto;
+        background-image: url('/assets/images/mainpage-kv-desktop.jpg');
+        background-position: center center;
+
+    }
+
+    @include media-breakpoint-up(lg) {
+        height: calc(100vh - $header-height-desktop);
+    }
+
+    > .container {
+        height: 100%;
+        max-width: $container-width-lg;
+    }
+
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        height: 100%;
+
+        @include media-breakpoint-up(md) {
+            justify-content: center;
+            width: 45%;
+        }
+
+        @include media-breakpoint-up(xl) {
+            width: 35%;
+        }
+
+        h1 {
+            @include media-breakpoint-between(lg, xl) {
+                font-size: rem(70 * .8);
+            }
+        }
+
+        p {
+            @include media-breakpoint-up(lg) {
+                font-size: rem(24);
+            }
+
+            @include media-breakpoint-between(lg, xl) {
+                font-size: rem(24 * .8);
+            }
+        }
+    
+        .btn {
+            @include media-breakpoint-down(md) {
+                align-self: center;
+            }
+        }
+    }
+}
