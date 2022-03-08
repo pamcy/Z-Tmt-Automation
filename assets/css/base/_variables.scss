@@ -18,3 +18,14 @@ $grid-breakpoints: (
 
 $gutter-sm: 18px;
 $gutter: 36px;
+$gutter-md: 44px;
+
+:root {
+  --gutter: #{$gutter};
+}
+
+@include media-breakpoint-up(md) {
+  :root {
+    --gutter: #{$gutter-md};
+  }
+}
