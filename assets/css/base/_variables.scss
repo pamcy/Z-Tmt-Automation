@@ -8,12 +8,15 @@ $color-secondary-light: #f0f0f0;
 
 $enable-important-utilities: true !default;
 
+$container-width: 1200px;
+$container-width-lg: 1730px;
+
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
   md: 750px,
   lg: 990px,
-  xl: 1400px
+  xl: 1450px
 );
 
 $gutter-sm: 18px;
