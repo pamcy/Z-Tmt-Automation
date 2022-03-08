@@ -7,9 +7,14 @@
 }
 
 body {
+    margin-top: $header-height-mobile;
     font-family: 'Rubik', sans-serif;
     font-size: rem(16);
     line-height: 1.5;
+
+    @include media-breakpoint-up(lg) {
+        margin-top: $header-height-desktop;
+    }
 }
 
 .container {
