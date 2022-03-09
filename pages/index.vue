@@ -20,7 +20,7 @@
         <div class="door" :class="{ 'is-opened': videoActivated }">
           <div class="door-content">
             <div class="embed-responsive door-content__video">
-              <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="embed-responsive-item" ref="video"></iframe>
+              <div id="player" class="embed-responsive-item"></div>
             </div>
             <div class="door-content__text">
               <h2 class="text-uppercase">Opening you to a world of possibility.</h2>
@@ -43,3 +43,51 @@
       </div>
   </div>
 </template>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const possibilitySection = ref(null)
+const video = ref(null)
+const videoActivated = ref(false)
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+function handleScroll(e) {
+  if (window.innerHeight - possibilitySection.value.getBoundingClientRect().top >= possibilitySection.value.offsetHeight) {
+    autoplayYoutubeVideo()
+    videoActivated.value = true
+
+    window.removeEventListener('scroll', handleScroll);
+  }
+}
+
+function autoplayYoutubeVideo() {
+  var tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      width: '100%',
+      videoId: 'E3l1TUHwmM0',
+      playerVars: { 'autoplay': 1, 'playsinline': 1, 'rel': 0, 'mute': 1, 'controls': 0 },
+      events: {
+        'onReady': onPlayerReady
+      }
+    });
+  }
+
+  function onPlayerReady(event) {
+    event.target.playVideo();
+  }
+
+  onYouTubeIframeAPIReady()
+}
+
+</script>
