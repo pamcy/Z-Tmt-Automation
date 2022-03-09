@@ -18,6 +18,16 @@ h1,
     }
 }
 
+h2,
+.h2 {
+    font-size: rem(28);
+    line-height: 1.14285714;
+
+    @include media-breakpoint-up(lg) {
+        font-size: rem(50);
+    }
+}
+
 p {
     margin: 0 0 rem(30);
 }

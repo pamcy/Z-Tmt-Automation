@@ -16,5 +16,30 @@
           </div>
         </div>
       </div>
+      <div class="possibility" ref="possibilitySection">
+        <div class="door" :class="{ 'is-opened': videoActivated }">
+          <div class="door-content">
+            <div class="embed-responsive door-content__video">
+              <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="embed-responsive-item" ref="video"></iframe>
+            </div>
+            <div class="door-content__text">
+              <h2 class="text-uppercase">Opening you to a world of possibility.</h2>
+              <p>Automate your home in ways that you never thought of before. At a touch of a button let our productsdo your work for you. Your time and effort should be spent doing things that matter to you. </p>
+            </div>
+          </div>
+          <div class="door-left">
+            <picture>
+                <source srcset="/assets/images/door-left-mobile.png" media="(max-width: 750px)" />
+                <img src="/assets/images/door-left-desktop.png" alt>
+            </picture>
+          </div>
+          <div class="door-right">
+            <picture>
+                <source srcset="/assets/images/door-right-mobile.png" media="(max-width: 750px)" />
+                <img src="/assets/images/door-right-desktop.png" alt>
+            </picture>
+          </div>
+        </div>
+      </div>
   </div>
 </template>

@@ -8,6 +8,7 @@
 
 body {
     margin-top: $header-height-mobile;
+    background-color: $color-primary;
     font-family: 'Rubik', sans-serif;
     font-size: rem(16);
     line-height: 1.5;
@@ -36,4 +37,8 @@ a {
     &:visited {
         color: $color-primary;
     }
+}
+
+img {
+    max-width: 100%;
 }
