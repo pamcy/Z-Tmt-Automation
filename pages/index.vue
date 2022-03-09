@@ -52,8 +52,15 @@ const video = ref(null)
 const videoActivated = ref(false)
 
 onMounted(() => {
+  setDocHeight()
+
+  window.addEventListener('orientationchange', setDocHeight);
   window.addEventListener('scroll', handleScroll);
 });
+
+function setDocHeight() {
+  document.documentElement.style.setProperty('--vh', `${window.innerHeight/100}px`);
+};
 
 function handleScroll(e) {
   if (window.innerHeight - possibilitySection.value.getBoundingClientRect().top >= possibilitySection.value.offsetHeight) {
