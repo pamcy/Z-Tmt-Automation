@@ -21,12 +21,15 @@
         max-width: $container-width-lg;
     }
 
-    .hero-text {
+    &-text {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         align-items: flex-start;
         height: 100%;
+        transition: all .6s ease;
+        transform: translateX(-10px);
+        opacity: 0;
 
         @include media-breakpoint-up(md) {
             justify-content: center;
@@ -57,6 +60,11 @@
             @include media-breakpoint-down(md) {
                 align-self: center;
             }
+        }
+
+        @at-root .hero.is-loaded & {
+            opacity: 1;
+            transform: translateX(0);
         }
     }
 }

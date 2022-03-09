@@ -1,7 +1,7 @@
 <template>
   <div>
       <Header />
-      <div class="hero">
+      <div class="hero" ref="heroSection">
         <div class="container">
           <div class="hero-text">
             <h1>
@@ -41,12 +41,14 @@
           </div>
         </div>
       </div>
+      <div class="scenario" style="height: 800px"></div>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
 
+const heroSection = ref(null)
 const possibilitySection = ref(null)
 const video = ref(null)
 const videoActivated = ref(false)
@@ -56,6 +58,8 @@ onMounted(() => {
 
   window.addEventListener('orientationchange', setDocHeight);
   window.addEventListener('scroll', handleScroll);
+
+  heroSection.value.classList.add('is-loaded')
 });
 
 function setDocHeight() {
