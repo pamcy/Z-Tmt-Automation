@@ -4,13 +4,9 @@
     background-color: #fff;
     color: $color-primary;
     font-weight: 700;
+    text-align: center;
     text-transform: uppercase;
     cursor: pointer;
-
-    @include media-breakpoint-up(lg) {
-        padding-top: rem(25);
-        padding-bottom: rem(25);
-    }
 
     &:hover,
     &:focus {
@@ -22,9 +18,17 @@
         }
     }
 
-    &:not(.btn-styless) > svg {
-        margin-left: rem(10);
-        transition: transform .3s ease;
+    &:not(.btn-styless) {
+        min-width: rem(300);
+
+        > svg {
+            margin-left: rem(10);
+            transition: transform .3s ease;
+        }
+    }
+
+    &--with-border {
+        border-color: $color-primary; 
     }
 
     &--outline {
@@ -55,6 +59,13 @@
             width: rem(80);
             height: rem(80);
             border-width: 3px;
+        }
+    }
+
+    &-lg {
+        @include media-breakpoint-up(lg) {
+            padding-top: rem(25);
+            padding-bottom: rem(25);
         }
     }
 
