@@ -42,6 +42,12 @@
         &:focus {
             background-color: $color-primary-light;
             color: $color-primary;
+
+            > svg {
+                path {
+                    stroke: $color-primary;
+                }
+            }
         }
 
         > svg {
