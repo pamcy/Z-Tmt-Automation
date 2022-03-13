@@ -316,6 +316,12 @@
                 flex-basis: 33.3333333%;
                 margin-bottom: rem(20);
 
+                @for $i from 1 through 3 {
+                    &:nth-child(#{$i}) {
+                        transition-delay: calc(.3s * #{$i});
+                    }
+                }
+
                 @include media-breakpoint-up(md) {
                     flex-direction: column;
                     align-items: center;
@@ -355,10 +361,23 @@
                     margin-bottom: 0;
                 }
             }
+
+
         }
 
         .btn {
             align-self: center;
+        }
+    }
+
+    .fadeIn {
+        opacity: 0;
+        transition: opacity .6s ease;
+    }
+
+    &.is-revealed {
+        .fadeIn {
+            opacity: 1;
         }
     }
 }
