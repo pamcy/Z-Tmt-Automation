@@ -29,13 +29,15 @@ ul {
 }
 
 a {
-    &:link {
-        color: $color-primary;
-        text-decoration: none;
-    }
-
-    &:visited {
-        color: $color-primary;
+    &:not(.btn) {
+        &:link {
+            color: $color-primary;
+            text-decoration: none;
+        }
+    
+        &:visited {
+            color: $color-primary;
+        }
     }
 }
 
