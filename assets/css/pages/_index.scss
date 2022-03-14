@@ -372,8 +372,12 @@
 }
 
 .friendly {
-    padding: rem(50) $gutter-sm;
+    padding: rem(50) $gutter-sm 0;
     background-color: $color-primary-lightest;
+
+    @include media-breakpoint-up(lg) {
+        padding-bottom: rem(50);
+    }
 
     &-text {
          padding: 0 $gutter-sm;
@@ -592,6 +596,37 @@
             > em {
                 font-size: rem(60);
                 font-style: normal;
+            }
+        }
+    }
+}
+
+
+.reviews {
+    padding-bottom: rem(55);
+    background-color: $color-primary-lightest;
+
+    h2 {
+        padding: 0 $gutter;
+        margin-top: 0;
+        color: $color-primary;
+    }
+
+    &-list {
+        overflow: visible !important;
+    }
+
+    .swiper-slide {
+        height: auto;
+
+        .card {
+            height: 100%;
+            transform-origin: center bottom;
+            transition: all .3s ease;
+
+            &:hover {
+                box-shadow: 0 4.6px 12.6px 0 #d9d8d9;
+                transform: scale3d(1.1, 1.1, 1.1);
             }
         }
     }
