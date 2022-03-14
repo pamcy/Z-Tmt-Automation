@@ -44,7 +44,7 @@
       <div class="showcase">
         <div class="showcase-situation d-none d-md-block"></div>
         <div class="showcase-product">
-          <swiper :modules="swiperModules" :pagination="{ clickable: true }" autoplay loop>
+          <swiper :modules="showcaseSwiperModules" :pagination="{ clickable: true }" autoplay loop>
             <swiper-slide>
               <div class="showcase-product-meta">
                 <h3 class="showcase-product-meta__title">Terrier</h3>
@@ -126,6 +126,59 @@
           </div>
         </div>
       </div>
+      <div class="friendly">
+        <div class="container">
+          <div class="friendly-text" ref="friendlyTextBlock">
+            <picture>
+                <source srcset="/assets/images/friendly-mobile.png" media="(max-width: 750px)" />
+                <source srcset="/assets/images/friendly-tablet.png" media="(max-width: 989px)" />
+                <img src="/assets/images/friendly-desktop.png" alt>
+            </picture>
+            <div>
+              <h2>TMT Products Make Earth Better</h2>
+              <p ref="friendlyTextParagraph">We seek to bring the most innovative products to the market. TMT not only endeavors to deliver outstanding quality but also strives for environmentally sustainability.</p>
+            </div>
+          </div>
+        </div>
+        <div class="friendly-list-wrapper">
+          <swiper class="friendly-list list-styless" ref="friendlyCarousel" :slides-per-view="3.5" :space-between="30" navigation @swiper="initFriendlyCarousel" @slideChange="onFriendlyCarouselChange">
+            <swiper-slide>
+              <div class="friendly-list__title">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M78.8 40c0 21.429-17.371 38.8-38.8 38.8S1.2 61.429 1.2 40 18.571 1.2 40 1.2 78.8 18.571 78.8 40z" stroke="#fff" stroke-width="2.4" stroke-miterlimit="10"/><path d="M57.12 20.907H23.147l-7.573 38.506h49.12L57.12 20.907z" stroke="#fff" stroke-width="2.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.814 24.96H57.92M16.48 54.933h47.307" stroke="#fff" stroke-width="2.4" stroke-miterlimit="10"/><path d="M19.414 40.16h41.44m-39.681-7.627H59.36M17.92 47.52h43.947M40.16 24.96v30.4m8.48-30.4 3.627 29.973M31.627 24.96 28 54.934" stroke="#fff" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>Cleaner</h3>
+              </div>
+              <p class="friendly-list__desc">Eliminate the use of Styrofoam product packaging.</p>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="friendly-list__title">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M78.8 40c0 21.429-17.371 38.8-38.8 38.8S1.2 61.429 1.2 40 18.571 1.2 40 1.2 78.8 18.571 78.8 40z" stroke="#fff" stroke-width="2.4" stroke-miterlimit="10"/><path d="M14.88 23.947c-.853 13.386 5.813 19.306 5.813 19.306S26.56 49.92 40 49.066c.853-13.44-5.813-19.306-5.813-19.306s-5.867-6.667-19.307-5.814z" stroke="#fff" stroke-width="2.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="m40 49.066-15.84-15.84" stroke="#fff" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M65.12 23.84c.853 13.44-5.814 19.306-5.814 19.306S53.44 49.813 40 48.96c-.854-13.44 5.813-19.306 5.813-19.306s5.867-6.72 19.307-5.813z" stroke="#fff" stroke-width="2.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 48.906 55.84 33.12" stroke="#fff" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M40 46.24v16.267" stroke="#fff" stroke-width="2.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>Greener</h3>
+              </div>
+              <p class="friendly-list__desc">Compatible with solar power and solar applications</p>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="friendly-list__title">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M78.8 40c0 21.429-17.371 38.8-38.8 38.8S1.2 61.429 1.2 40 18.571 1.2 40 1.2 78.8 18.571 78.8 40z" stroke="#fff" stroke-width="2.4" stroke-miterlimit="10"/><path d="M59.84 52.054c-1.12 8.8-6.187 11.786-6.187 11.786s-4.64 3.574-13.227 1.334c1.12-8.8 6.187-11.787 6.187-11.787s4.64-3.627 13.227-1.333z" stroke="#fff" stroke-width="2.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="m40.426 65.173 12.214-8.266" stroke="#fff" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M59.84 52.053c-1.12 8.8-6.187 11.787-6.187 11.787s-4.64 3.573-13.227 1.333c1.12-8.8 6.187-11.787 6.187-11.787s4.64-3.626 13.227-1.333z" stroke="#fff" stroke-width="2.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="m40.426 65.173 12.214-8.266" stroke="#fff" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.96 52.053c1.12 8.8 6.186 11.787 6.186 11.787s4.64 3.573 13.227 1.333c-1.12-8.8-6.187-11.787-6.187-11.787s-4.64-3.626-13.226-1.333z" stroke="#fff" stroke-width="2.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M40.426 65.173 28.16 56.907" stroke="#fff" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M40.053 46.347v18.186m0-18.187c-5.76 0-10.453-4.693-10.453-10.453v-10.4h20.853v10.454c.054 5.706-4.64 10.4-10.4 10.4zM51.52 25.334H28.427c-.96 0-1.76-.97-1.76-2.134 0-1.163.8-2.133 1.76-2.133h23.146c.96 0 1.76.97 1.76 2.133-.053 1.164-.8 2.134-1.813 2.134z" stroke="#fff" stroke-width="2.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M34.133 14.133c-1.177 0-2.133.739-2.133 1.647v4.656c0 .909.956.568 2.133.568s2.134.34 2.134-.568V15.78c0-.965-.957-1.647-2.134-1.647zm12.8 0c-1.177 0-2.133.739-2.133 1.647v4.656c0 .909.956.568 2.133.568s2.134.34 2.134-.568V15.78c0-.965-.957-1.647-2.134-1.647z" stroke="#fff" stroke-width="2.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>Safer</h3>
+              </div>
+              <p class="friendly-list__desc">Rejects the use of PVC (polyvinylchloride) in any of our products</p>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="friendly-list__title">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M77.933 40C77.933 19.07 60.931 2.067 40 2.067 19.07 2.067 2.067 19.069 2.067 40c0 20.93 17.002 37.933 37.933 37.933 20.93 0 37.933-17.002 37.933-37.933zm-77.6 0C.333 18.104 18.104.333 40 .333S79.667 18.104 79.667 40 61.896 79.667 40 79.667.333 61.896.333 40z" fill="#fff" stroke="#fff" stroke-width=".667"/><path d="M48.587 14.667H31.413L27.626 34.08h24.747l-3.786-19.413z" stroke="#fff" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M28.693 28.64H51.04" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M34.56 38.72H17.44L13.6 58.08h24.746L34.56 38.72z" stroke="#fff" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.667 52.693h22.346" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M45.44 38.72h17.12l3.84 19.36H41.653l3.787-19.36z" stroke="#fff" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M65.333 52.693H42.987" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3>Sustainable</h3>
+              </div>
+              <p class="friendly-list__desc">Can be fully recycled at the end of its lifecycle.</p>
+            </swiper-slide>
+            <swiper-slide></swiper-slide>
+            <swiper-slide></swiper-slide>
+            <swiper-slide></swiper-slide>
+          </swiper>
+          <div class="friendly-list-counter d-none d-lg-block">
+            <em>{{ friendlySlide.activeIndex }}</em> /4
+          </div>
+        </div>
+      </div>
   </div>
 </template>
 
@@ -142,8 +195,12 @@ const possibilitySection = ref(null)
 const videoActivated = ref(false)
 const whySection = ref(null)
 const whyRevealed = ref(false)
+const friendlyCarousel = ref(null)
+const friendlySlide = reactive({ activeIndex: 1 })
+const friendlyTextBlock = ref(null)
+const friendlyTextParagraph = ref(null)
 
-const swiperModules = [
+const showcaseSwiperModules = [
   Navigation,
   Pagination,
   Autoplay,
