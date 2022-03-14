@@ -263,4 +263,12 @@ function initFriendlyCarousel(swiper) {
     swiper.destroy()
   }
 }
+
+function onFriendlyCarouselChange() {
+  var activeIndex = friendlyCarousel.value.$el.swiper.activeIndex
+
+  if (activeIndex <= 3) {
+    friendlySlide.activeIndex = activeIndex + 1
+  }
+}
 </script>
