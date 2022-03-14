@@ -381,3 +381,228 @@
         }
     }
 }
+
+.friendly {
+    padding: rem(50) $gutter-sm;
+    background-color: $color-primary-lightest;
+
+    &-text {
+         padding: 0 $gutter-sm;
+
+         @include media-breakpoint-up(md) {
+             display: flex;
+             align-items: flex-end;
+             margin-bottom: rem(40);
+         }
+
+         @include media-breakpoint-up(lg) {
+             position: relative;
+         }
+
+         picture {
+             display: inline-block;
+             margin-right: -$gutter-sm * 2;
+
+             @include media-breakpoint-up(md) {
+                 order: 1;
+                 flex: 1 0 61.197917%;
+             }
+         }
+
+         h2 {
+             color: $color-primary;
+         }
+
+         p {
+            @include media-breakpoint-up(md) {
+                 margin-bottom: 0;
+             }
+
+            @media only screen and (min-width: $container-width) {
+                position: absolute;
+                top: calc(100% + 10px);
+                left: 7.28863vw;
+                width: 38.802083%;
+            }
+         }
+    }
+
+    &-list {
+        display: flex;
+        flex-direction: column;
+
+        @include media-breakpoint-up(md) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 0 rem(10.5);
+        }
+
+        @include media-breakpoint-up(lg) {
+            cursor: url('/assets/images/carousel-cursor.png'), auto;
+        }
+
+        @include media-breakpoint-between(lg, xl) {
+            margin-left: 7.324219vw !important;
+        }
+
+        @media only screen and (min-width: $container-width) {
+            margin-left: calc((100vw - #{$container-width}) / 2 + 6vw) !important;
+            margin-right: -$gutter-sm !important;
+        }
+
+        &-wrapper {
+            position: relative;
+
+            @include media-breakpoint-up(lg) {
+                &:before {
+                    position: absolute;
+                    top: 0;
+                    left: -$gutter-sm;
+                    width: 44.189453vw;
+                    height: 23.4vw;
+                    content: '';
+                    background: no-repeat url('/assets/images/friendly-list-bg.png');
+                    background-size: cover;
+                }
+            }
+        }
+
+        .swiper-wrapper {
+            flex-direction: column;
+
+            @include media-breakpoint-up(md) {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            @include media-breakpoint-up(lg) {
+                flex-wrap: nowrap;
+            }
+        }
+
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            margin: rem(7.5);
+            margin-bottom: rem(10);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+
+            @include media-breakpoint-up(md) {
+                max-width: calc(50% - 15px);
+            }
+
+            @include media-breakpoint-up(lg) {
+                margin: 0;
+
+                &.swiper-slide-active,
+                &:hover,
+                &:focus {
+                    .friendly-list__title {
+                        opacity: 0;
+                    }
+                }
+            }
+
+            @for $i from 1 through 4 {
+                &:nth-child(#{$i}) {
+                    background-image: url('/assets/images/friendly-list-#{$i}-mobile.jpg');
+
+                    @include media-breakpoint-up(lg) {
+                        background-image: url('/assets/images/friendly-list-#{$i}-desktop.jpg');
+                    }
+                }
+            }
+        }
+
+        &__title {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex: 1 0 rem(130);
+            max-width: rem(130);
+            padding: rem(15) rem(10) rem(14);
+            background-color: $color-primary;
+            color: #fff;
+            text-align: center;
+            transition: opacity .3s ease;
+
+            @include media-breakpoint-up(lg) {
+                position: relative;
+                z-index: 1;
+                max-width: none;
+            }
+
+            @include media-breakpoint-between(lg, xl) {
+                width: 23.4vw;
+                height: 23.4vw;
+            }
+
+            @include media-breakpoint-up(xl) {
+                width: rem(400);
+                height: rem(400);
+            }
+
+            > svg {
+                margin-bottom: rem(5);
+
+                @include media-breakpoint-between(lg, xl) {
+                    width: rem(120);
+                    height: rem(120);
+                }
+
+                @include media-breakpoint-up(xl) {
+                    width: rem(150);
+                    height: rem(150);
+                    margin-bottom: rem(36);
+                }
+            }
+
+            > h3 {
+                font-size: rem(18);
+            }
+        }
+
+        &__desc {
+            padding: rem(10);
+            margin-bottom: 0;
+            color: #fff;
+            font-weight: 700;
+            vertical-align: middle;
+
+            @include media-breakpoint-up(lg) {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                display: flex;
+                align-items: flex-end;
+                padding: 0 1.953125vw 3.662109vw;
+                font-size: rem(20);
+            }
+        }
+
+        &-counter {
+            color: transparentize($color-primary, .6);
+            font-size: rem(36);
+
+            @include media-breakpoint-between(lg, xl) {
+                margin-left: 7.324219vw;
+            }
+    
+            @media only screen and (min-width: $container-width) {
+                padding-left: 6vw !important;
+                margin-left: calc((100vw - #{$container-width}) / 2) !important;
+                margin-right: -$gutter-sm !important;
+            }
+
+            > em {
+                font-size: rem(60);
+                font-style: normal;
+            }
+        }
+    }
+}
