@@ -214,6 +214,7 @@ onMounted(() => {
   window.addEventListener('scroll', handleScroll);
 
   heroSection.value.classList.add('is-loaded')
+  initFriendlyCarousel();
 });
 
 function setDocHeight() {
@@ -257,4 +258,9 @@ function autoplayYoutubeVideo() {
   onYouTubeIframeAPIReady()
 }
 
+function initFriendlyCarousel(swiper) {
+  if (window.matchMedia('(max-width: 989px)').matches) {
+    swiper.destroy()
+  }
+}
 </script>
