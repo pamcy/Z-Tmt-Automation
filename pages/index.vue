@@ -214,7 +214,9 @@ onMounted(() => {
   window.addEventListener('scroll', handleScroll);
 
   heroSection.value.classList.add('is-loaded')
+
   initFriendlyCarousel();
+  adjustFriendlyTextLayout();
 });
 
 function setDocHeight() {
@@ -271,4 +273,14 @@ function onFriendlyCarouselChange() {
     friendlySlide.activeIndex = activeIndex + 1
   }
 }
+
+function adjustFriendlyTextLayout() {
+  const friendlyTextParagraphHeight = friendlyTextParagraph.value.offsetHeight
+  const friendlyTextBlockMarginBottom = parseInt(window.getComputedStyle(friendlyTextBlock.value).getPropertyValue('margin-bottom').replace('px', ''))
+
+  if (window.matchMedia('(min-width: 1200px)').matches) {
+    friendlyTextBlock.value.style.marginBottom = friendlyTextBlockMarginBottom + friendlyTextParagraphHeight + 'px'
+  }
+}
+
 </script>
