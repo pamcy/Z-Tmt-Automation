@@ -34,3 +34,20 @@
         border: 0;
     }
 }
+
+.fade-in {
+    opacity: 0;
+    transition: opacity .6s ease;
+}
+
+.is-revealed {
+    .fade-in {
+        opacity: 1;
+    }
+}
+
+@for $i from 1 through 6 {
+    .delay-#{$i} {
+        transition-delay: calc(.3s * #{$i});
+    }
+}

@@ -369,17 +369,6 @@
             align-self: center;
         }
     }
-
-    .fadeIn {
-        opacity: 0;
-        transition: opacity .6s ease;
-    }
-
-    &.is-revealed {
-        .fadeIn {
-            opacity: 1;
-        }
-    }
 }
 
 .friendly {
@@ -488,6 +477,7 @@
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
+            transition-property: all;
 
             @include media-breakpoint-up(md) {
                 max-width: calc(50% - 15px);
