@@ -666,9 +666,9 @@
             margin-left: 0;
         }
 
-        @include media-breakpoint-up(lg) {
+        @media only screen and (min-width: $container-width) {
             width: auto;
-            margin-left: calc((100vw - #{$container-width}) / 2 + 6vw);
+            margin-left: calc((100vw - #{$container-width}) / 2);
             width: 18.261719vw;
         }
     }
