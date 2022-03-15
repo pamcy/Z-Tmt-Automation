@@ -603,8 +603,10 @@
 
 
 .reviews {
+    width: 100%;
     padding-bottom: rem(55);
     background-color: $color-primary-lightest;
+    overflow-x: hidden;
 
     h2 {
         padding: 0 $gutter;
