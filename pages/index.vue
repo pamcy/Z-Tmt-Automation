@@ -289,7 +289,6 @@ onMounted(() => {
 
   heroSection.value.classList.add('is-loaded')
 
-  initFriendlyCarousel()
   adjustFriendlyTextLayout()
 });
 
@@ -337,7 +336,7 @@ function autoplayYoutubeVideo() {
 
 function initFriendlyCarousel(swiper) {
   if (window.matchMedia('(max-width: 989px)').matches) {
-    swiper.destroy()
+    swiper.enabled = false
   }
 }
 

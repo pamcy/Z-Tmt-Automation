@@ -483,8 +483,16 @@
             background-size: cover;
             transition-property: all;
 
+            @include media-breakpoint-down(md) {
+                width: calc(100% - 7.5px * 2) !important;
+            }
+
             @include media-breakpoint-up(md) {
-                max-width: calc(50% - 15px);
+                width: calc(50% - 15px) !important;
+            }
+
+            @include media-breakpoint-down(lg) {
+                margin-right: 0 !important;
             }
 
             @include media-breakpoint-up(lg) {
