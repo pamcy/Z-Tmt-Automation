@@ -5,5 +5,6 @@
       <NuxtPage/>
     </NuxtLayout>
     <BackToTop />
+    <Footer />
   </div>
 </template>
