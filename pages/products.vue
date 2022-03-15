@@ -35,6 +35,7 @@
                 <a href="#">Home Automation</a>
               </li>
             </ul>
+
             <ul class="panel-filter">
               <li class="is-active">
                 <a href="#">View all</a>
@@ -49,6 +50,33 @@
                 <a href="#">Garage door</a>
               </li>
             </ul>
+
+            <div class="panel-sorting">
+              <span class="panel-sorting-result">Total Results<b>6</b></span>
+              <div class="select-dropdown is-active">
+                <button class="btn-styless">
+                  <span>Newest</span>
+                  <svg width="18" height="12" viewBox="0 0 18 12" fill="none">
+                    <path
+                      d="m2 2 6.899 8L16 2"
+                      stroke="#EE7B45"
+                      stroke-width="2.7"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <ul class="select-dropdown-menu">
+                  <li>
+                    <a href="#">Most Popular</a>
+                  </li>
+                  <li>
+                    <a href="#">Newest</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
