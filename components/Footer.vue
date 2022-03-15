@@ -8,31 +8,31 @@
                         <li>
                             <span class="footer-menu__title">Legal</span>
                             <ul class="footer-menu__submenu list-styless">
-                                <li><NuxtLink to="privacy-policy">Privacy Policy</NuxtLink></li>
-                                <li><NuxtLink to="terms">Terms and Conditions</NuxtLink></li>
-                                <li><NuxtLink to="warranty">Warranty</NuxtLink></li>
+                                <li><NuxtLink to="privacy-policy" title="Privacy Policy">Privacy Policy</NuxtLink></li>
+                                <li><NuxtLink to="terms" title="Terms and Conditions">Terms and Conditions</NuxtLink></li>
+                                <li><NuxtLink to="warranty" title="Warranty">Warranty</NuxtLink></li>
                             </ul>
                         </li>
                         <li>
                             <span class="footer-menu__title">Support</span>
                             <ul class="footer-menu__submenu list-styless">
-                                <li><NuxtLink to="support">Support</NuxtLink></li>
-                                <li><NuxtLink to="product-manuals">Product Manuals</NuxtLink></li>
-                                <li><NuxtLink to="installation-videos">Installation Videos</NuxtLink></li>
-                                <li><NuxtLink to="schedule-a-call">Schedule a Call</NuxtLink></li>
+                                <li><NuxtLink to="support" title="Support">Support</NuxtLink></li>
+                                <li><NuxtLink to="product-manuals" title="Product Manuals">Product Manuals</NuxtLink></li>
+                                <li><NuxtLink to="installation-videos" title="Installation Videos">Installation Videos</NuxtLink></li>
+                                <li><NuxtLink to="schedule-a-call" title="Schedule a Call">Schedule a Call</NuxtLink></li>
                             </ul>
                         </li>
                         <li>
                             <span class="footer-menu__title">Contact</span>
                             <ul class="footer-menu__submenu list-styless">
-                                <li><NuxtLink to="contact-us">Contact Us</NuxtLink></li>
-                                <li><NuxtLink to="about-us">About Us</NuxtLink></li>
+                                <li><NuxtLink to="contact-us" title="Contact Us">Contact Us</NuxtLink></li>
+                                <li><NuxtLink to="about-us" title="About Us">About Us</NuxtLink></li>
                             </ul>
                         </li>
                         <li>
                             <span class="footer-menu__title">Sitemap</span>
                             <ul class="footer-menu__submenu list-styless">
-                                <li><NuxtLink to="sitemap">Sitemap</NuxtLink></li>
+                                <li><NuxtLink to="sitemap" title="Sitemap">Sitemap</NuxtLink></li>
                             </ul>
                         </li>
                     </ul>

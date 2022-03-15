@@ -39,11 +39,26 @@
                 }
 
                 @include media-breakpoint-up(lg) {
-                    min-width: rem(165);
+                    min-width: rem(180);
                 }
 
                 a {
                     color: inherit !important;
+
+                    &:before {
+                        display: block;
+                        content: attr(title);
+                        font-weight: 700;
+                        height: 1px;
+                        color: transparent;
+                        overflow: hidden;
+                        visibility: hidden;
+                    }
+
+                    &:hover,
+                    &:focus {
+                        font-weight: 700;
+                    }
                 }
             }
         }
