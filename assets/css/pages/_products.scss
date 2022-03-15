@@ -80,3 +80,15 @@
     }
   }
 }
+
+.products {
+  background: $color-primary-lightest;
+
+  &-panel {
+    padding: $gutter;
+
+    .container {
+      max-width: $container-width-sm;
+    }
+  }
+}

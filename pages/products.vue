@@ -11,6 +11,20 @@
         </div>
       </div>
     </div>
+
+    <div class="products">
+      <div class="products-panel">
+        <div class="container">
+          <nav class="breadcrumb">
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li class="is-active"><a href="/products">Products</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="prouducts-result"></div>
+    </div>
   </div>
 </template>
 
