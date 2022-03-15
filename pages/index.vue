@@ -193,13 +193,13 @@
           <swiper-slide>
             <div class="card">
               <h3 class="card-title">Edward</h3>
-              <p class="card-content">I’m very satisfied with TMT in its flexibility with power as it does not need batteries and can connect directly to the grid.</p>
+              <p class="card-content">I'm very satisfied with TMT in its flexibility with power as it does not need batteries and can connect directly to the grid.</p>
             </div>
           </swiper-slide>
           <swiper-slide>
             <div class="card">
               <h3 class="card-title">Nathaniel</h3>
-              <p class="card-content">Great Customer Support. They even walked me through steps of how to properly maintain the gate and gate opener. I commend them for going above and beyond. </p>
+              <p class="card-content">Great Customer Support. They even walked me through steps of how to properly maintain the gate and gate opener. I commend them for going above and beyond.</p>
             </div>
           </swiper-slide>
           <swiper-slide>
@@ -211,7 +211,7 @@
           <swiper-slide>
             <div class="card">
               <h3 class="card-title">Riley</h3>
-              <p class="card-content">The metal shell is nice compared to other gate openers I’ve seen before. Seems to be able to take quite a beating. </p>
+              <p class="card-content">The metal shell is nice compared to other gate openers I've seen before. Seems to be able to take quite a beating.</p>
             </div>
           </swiper-slide>
           <swiper-slide>
@@ -279,16 +279,16 @@ onMounted(() => {
   setDocHeight()
 
   window.addEventListener('orientationchange', setDocHeight);
-  window.addEventListener('scroll', handleScroll);
+  window.addEventListener('scroll', handleScroll)
 
   heroSection.value.classList.add('is-loaded')
 
-  initFriendlyCarousel();
-  adjustFriendlyTextLayout();
+  initFriendlyCarousel()
+  adjustFriendlyTextLayout()
 });
 
 function setDocHeight() {
-  document.documentElement.style.setProperty('--vh', `${window.innerHeight/100}px`);
+  document.documentElement.style.setProperty('--vh', `${window.innerHeight/100}px`)
 };
 
 function handleScroll(e) {
@@ -307,11 +307,11 @@ function handleScroll(e) {
 }
 
 function autoplayYoutubeVideo() {
-  var tag = document.createElement('script');
-      tag.src = 'https://www.youtube.com/iframe_api';
+  var tag = document.createElement('script')
+      tag.src = 'https://www.youtube.com/iframe_api'
 
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  var firstScriptTag = document.getElementsByTagName('script')[0]
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
 
   var player;
   function onYouTubeIframeAPIReady() {
@@ -322,11 +322,11 @@ function autoplayYoutubeVideo() {
       events: {
         'onReady': onPlayerReady
       }
-    });
+    })
   }
 
   function onPlayerReady(event) {
-    event.target.playVideo();
+    event.target.playVideo()
   }
 
   onYouTubeIframeAPIReady()

@@ -613,7 +613,9 @@
     }
 
     &-list {
-        overflow: visible !important;
+        @include media-breakpoint-up(lg) {
+            overflow: visible !important;
+        }
     }
 
     .swiper-slide {
