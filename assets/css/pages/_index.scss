@@ -196,6 +196,50 @@
     }
 }
 
+.scenario {
+    padding: $gutter 0;
+    background-color: $color-primary-lightest;
+
+    h2 {
+        padding: 0 $gutter;
+        color: $color-primary;
+    }
+
+    &-image-carousel {
+        padding: 0 $gutter !important;
+
+        .swiper-button-prev {
+            display: none;
+        }
+
+        .swiper-button-next {
+            position: absolute;
+        }
+    }
+
+    &-text-carousel {
+        margin: $gutter-sm $gutter !important;
+    }
+
+    &-item-text {
+        background-color: $color-primary-lightest;
+
+        &__title {
+            margin-top: rem(10);
+        }
+
+        &__desc {
+            margin-top: rem(10);
+        }
+    }
+
+    .slider-counter {
+        position: absolute;
+        right: 25px + 10px;
+        z-index: 2;
+    }
+}
+
 .showcase {
     display: flex;
 
@@ -586,25 +630,17 @@
                 font-size: rem(20);
             }
         }
+    }
 
-        &-counter {
-            color: transparentize($color-primary, .6);
-            font-size: rem(36);
+    .slider-counter {
+        @include media-breakpoint-between(lg, xl) {
+            margin-left: 7.324219vw;
+        }
 
-            @include media-breakpoint-between(lg, xl) {
-                margin-left: 7.324219vw;
-            }
-    
-            @media only screen and (min-width: $container-width) {
-                padding-left: 6vw !important;
-                margin-left: calc((100vw - #{$container-width}) / 2) !important;
-                margin-right: -$gutter-sm !important;
-            }
-
-            > em {
-                font-size: rem(60);
-                font-style: normal;
-            }
+        @media only screen and (min-width: $container-width) {
+            padding-left: 6vw !important;
+            margin-left: calc((100vw - #{$container-width}) / 2) !important;
+            margin-right: -$gutter-sm !important;
         }
     }
 }
@@ -694,5 +730,15 @@
         @include media-breakpoint-up(lg) {
             margin-top: rem(40);
         }
+    }
+}
+
+.slider-counter {
+    color: transparentize($color-primary, .6);
+    font-size: rem(36);
+
+    > em {
+        font-size: rem(60);
+        font-style: normal;
     }
 }
