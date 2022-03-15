@@ -44,7 +44,7 @@
       <div class="showcase">
         <div class="showcase-situation d-none d-md-block"></div>
         <div class="showcase-product">
-          <swiper :modules="showcaseSwiperModules" :pagination="{ clickable: true }" autoplay loop>
+          <swiper :modules="swiperModules" :pagination="{ clickable: true }" autoplay loop>
             <swiper-slide>
               <div class="showcase-product-meta">
                 <h3 class="showcase-product-meta__title">Terrier</h3>
@@ -183,7 +183,7 @@
         <div class="container">
           <h2>User Reviews</h2>
         </div>
-        <swiper class="reviews-list list-styless" ref="reviewsCarousel" :slidesPerView="1.39583333" :spaceBetween="20" :loop="true" autoplay="true" centeredSlides="true" :breakpoints="reviewsCarouselBreakpoints">
+        <swiper :modules="swiperModules" class="reviews-list list-styless" ref="reviewsCarousel" :slidesPerView="1.39583333" :spaceBetween="20" loop autoplay centeredSlides :breakpoints="reviewsCarouselBreakpoints">
           <swiper-slide>
             <div class="card">
               <h3 class="card-title">CJ</h3>
@@ -258,7 +258,7 @@ const friendlySlide = reactive({ activeIndex: 1 })
 const friendlyTextBlock = ref(null)
 const friendlyTextParagraph = ref(null)
 
-const showcaseSwiperModules = [
+const swiperModules = [
   Navigation,
   Pagination,
   Autoplay,
