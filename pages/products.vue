@@ -2,7 +2,7 @@
   <div>
     <Header />
 
-    <div class="page-header">
+    <div class="page-header" ref="pageHeaderSection">
       <div class="container">
         <div class="page-header-text">
           <h1>Products</h1>
@@ -15,6 +15,12 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue'
+
+const pageHeaderSection = ref(null)
+
+onMounted(() => {
+  pageHeaderSection.value.classList.add('is-loaded')
+})
 </script>
 
