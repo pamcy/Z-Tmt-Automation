@@ -222,6 +222,16 @@
           </swiper-slide>
         </swiper>
       </div>
+      <div class="get-in-touch">
+        <div class="container">
+          <div>
+            <h2>Get In Touch</h2>
+            <p>We are happy to help you make life more convenient and safer.</p>
+            <p>Contact us to get more information.</p>
+          </div>
+          <NuxtLink to="/" class="btn btn--with-border">Contact Us</NuxtLink>
+        </div>
+      </div>
   </div>
 </template>
 

@@ -631,3 +631,56 @@
         }
     }
 }
+
+.get-in-touch {
+    height: 122.666667vw;
+    padding: rem(40) $gutter;
+    background: no-repeat url('/assets/images/get-in-touch-mobile.jpg') center;
+    background-size: cover;
+
+    @include media-breakpoint-up(md) {
+        height: auto;
+        padding-top: rem(60);
+        padding-bottom: rem(60);
+        background-image: url('/assets/images/get-in-touch-tablet.jpg');
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding-top: rem(120);
+        padding-bottom: rem(120);
+        background-image: url('/assets/images/get-in-touch-desktop.jpg');
+    }
+
+    > .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+        @include media-breakpoint-up(md) {
+            width: 36%;
+            margin-left: 0;
+        }
+
+        @include media-breakpoint-up(lg) {
+            width: auto;
+            margin-left: calc((100vw - #{$container-width}) / 2 + 6vw);
+            width: 18.261719vw;
+        }
+    }
+
+    h2 {
+        margin-top: 0;
+        color: $color-primary;
+    }
+
+    .btn {
+        @include media-breakpoint-down(md) {
+            align-self: center;
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-top: rem(40);
+        }
+    }
+}
