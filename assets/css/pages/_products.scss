@@ -85,10 +85,22 @@
   background: $color-primary-lightest;
 
   &-panel {
-    padding: $gutter;
+    padding: $gutter-sm;
 
     .container {
       max-width: $container-width-sm;
+    }
+
+    .panel {
+      margin-top: rem(30);
+
+      @include media-breakpoint-up(md) {
+        margin-top: rem(52);
+      }
+
+      @include media-breakpoint-up(lg) {
+        margin-top: rem(60);
+      }
     }
   }
 }

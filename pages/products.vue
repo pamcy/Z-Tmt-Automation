@@ -17,10 +17,25 @@
         <div class="container">
           <nav class="breadcrumb">
             <ul>
-              <li><a href="/">Home</a></li>
-              <li class="is-active"><a href="/products">Products</a></li>
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li class="is-active">
+                <a href="/products">Products</a>
+              </li>
             </ul>
           </nav>
+
+          <div class="panel">
+            <ul class="tab">
+              <li class="is-active">
+                <a href="#">Gate Openers</a>
+              </li>
+              <li>
+                <a href="#">Home Automation</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="prouducts-result"></div>

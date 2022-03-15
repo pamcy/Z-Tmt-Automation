@@ -2,7 +2,7 @@
   > ul {
     display: flex;
     flex-wrap: wrap;
-    list-style: none;
+    line-height: 1;
 
     > li {
       display: flex;
@@ -36,7 +36,7 @@
       &.is-active {
         a {
           color: $color-primary !important;
-          font-weight: bold;
+          font-weight: 700;
         }
       }
     }
