@@ -15,12 +15,12 @@
         background-color: $color-primary-light;
         outline: 0;
 
-        &:not(.btn-styless) > svg {
+        &:not(.btn-styless):not(.btn--icon-only) > svg {
             transform: translateX(10px);
         }
     }
 
-    &:not(.btn-styless) {
+    &:not(.btn-styless):not(.btn--icon-only) {
         min-width: rem(300);
 
         > svg {
@@ -58,8 +58,13 @@
     }
 
     &--icon-only {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;;
         width: rem(150);
         height: rem(150);
+        padding: 0;
         border: rem(4.5) solid;
         border-radius: 50%;
         color: $color-primary;

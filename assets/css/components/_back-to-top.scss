@@ -1,0 +1,33 @@
+.btn-back-to-top {
+    position: fixed;
+    bottom: rem(20);
+    right: rem(20);
+    z-index: 99;
+    border-color: $color-primary;
+    box-shadow: 0 rem(4) rem(4) 0 rgba(0, 0, 0, .25);
+    background-color: $color-primary;
+    color: #fff;
+    transition: opacity .3s ease;
+
+    &:hover,
+    &:focus {
+        > svg {
+            transform: translateY(-10px);
+        }
+    }
+
+    &.v-enter-active,
+    &.v-leave-active {
+        transition: opacity .3s ease;
+    }
+
+    &.v-enter-from,
+    &.v-leave-to {
+        opacity: 0;
+    }
+
+    > svg {
+        margin-bottom: rem(5);
+        transition: transform .3s ease;
+    }
+}
