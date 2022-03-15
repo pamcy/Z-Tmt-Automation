@@ -35,6 +35,20 @@
                 <a href="#">Home Automation</a>
               </li>
             </ul>
+            <ul class="panel-filter">
+              <li class="is-active">
+                <a href="#">View all</a>
+              </li>
+              <li>
+                <a href="#">Swing gate</a>
+              </li>
+              <li>
+                <a href="#">Sliding gate</a>
+              </li>
+              <li>
+                <a href="#">Garage door</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

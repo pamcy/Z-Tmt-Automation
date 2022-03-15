@@ -101,6 +101,50 @@
       @include media-breakpoint-up(lg) {
         margin-top: rem(60);
       }
+
+      &-filter {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-top: rem(32);
+        margin-right: rem(-18);
+        padding-right: rem(18);
+        line-height: 1;
+        overflow-x: auto;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        > li {
+          display: flex;
+          align-items: center;
+          flex: 0 0 auto;
+
+          & + li {
+            &::before {
+              content: '\007C';
+              padding-left: rem(15);
+              padding-right: rem(15);
+
+              @include media-breakpoint-up(lg) {
+                padding-left: rem(30);
+                padding-right: rem(30);
+              }
+            }
+          }
+
+          > a {
+            color: inherit !important;
+          }
+
+          &.is-active {
+            > a {
+              font-weight: 700;
+              color: $color-primary !important;
+            }
+          }
+        }
+      }
     }
   }
 }
