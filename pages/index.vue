@@ -246,6 +246,7 @@ const heroSection = ref(null)
 
 const possibilitySection = ref(null)
 const videoActivated = ref(false)
+const videoPlayed = reactive({ count: 0 })
 
 const whySection = ref(null)
 const whyRevealed = ref(false)
@@ -291,9 +292,12 @@ function setDocHeight() {
 };
 
 function handleScroll(e) {
-  if (window.innerHeight - possibilitySection.value.getBoundingClientRect().top >= possibilitySection.value.offsetHeight) {
-    autoplayYoutubeVideo()
-    videoActivated.value = true
+  if (videoPlayed.count == 0) {
+    if (window.innerHeight - possibilitySection.value.getBoundingClientRect().top >= possibilitySection.value.offsetHeight) {
+      autoplayYoutubeVideo()
+      videoActivated.value = true
+      videoPlayed.count++
+    }
   }
 
   if (window.innerHeight - whySection.value.getBoundingClientRect().top >= whySection.value.offsetHeight / 2) {
