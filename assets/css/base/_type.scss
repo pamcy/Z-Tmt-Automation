@@ -2,6 +2,7 @@ h1,
 .h1 {
     margin: 0 0 rem(8);
     font-size: rem(36);
+    font-weight: 700;
     line-height: 1.16666667;
 
     @include media-breakpoint-up(lg) {
@@ -21,6 +22,7 @@ h1,
 h2,
 .h2 {
     font-size: rem(28);
+    font-weight: 700;
     line-height: 1.14285714;
     text-transform: uppercase;
 
