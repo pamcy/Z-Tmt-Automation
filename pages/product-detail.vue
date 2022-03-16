@@ -271,6 +271,12 @@ const productSlider = ref(null)
 const productSlide = reactive({ activeIndex: 1 })
 const productSlidesLength = ref(0)
 
+onMounted(() => {
+    prepareFadeInLists()
+
+    window.addEventListener('scroll', fadeInLists)
+})
+
 function initProductSlider(swiper) {
     productSlidesLength.value = swiper.slides.length
 }
@@ -283,4 +289,25 @@ function onProductSliderChange() {
   }
 }
 
+function prepareFadeInLists() {
+  var listItems = document.querySelectorAll('.list--dots li')
+
+  for (var i = 0; i < listItems.length; i++) {
+    const nodes = Array.prototype.slice.call( listItems[i].parentNode.childNodes )
+    const index = nodes.indexOf(listItems[i])
+
+    listItems[i].classList.add('fade-in')
+    listItems[i].style.transitionDelay = (index * 200) + 'ms'
+  }
+}
+
+function fadeInLists() {
+    var lists = document.querySelectorAll('.list--dots');
+
+    for (var i = 0; i < lists.length; i++) {
+        if (window.innerHeight - lists[i].getBoundingClientRect().top >= lists[i].offsetHeight / 2) {
+            lists[i].classList.add('is-revealed')
+        }
+    }
+}
 </script>
