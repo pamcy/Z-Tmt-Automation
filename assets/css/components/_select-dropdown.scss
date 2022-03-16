@@ -10,6 +10,7 @@
     width: 100%;
     padding-bottom: rem(10);
     border-bottom: 3px solid $color-primary;
+    cursor: pointer;
 
     span {
       @include media-breakpoint-up(lg) {
@@ -19,11 +20,15 @@
   }
 
   &-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 12px);
     width: 100%;
     padding: rem(12) 0;
     border: 2px solid $color-primary-light;
     border-radius: rem(10);
     background: #fff;
+    z-index: 2;
 
     a {
       display: block;
@@ -38,8 +43,7 @@
     }
 
     .select-dropdown.is-active & {
-      position: absolute;
-      top: calc(100% + 12px);
+      display: block;
     }
   }
 }
