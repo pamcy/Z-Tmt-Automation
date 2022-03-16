@@ -56,16 +56,7 @@
               <div class="select-dropdown is-active">
                 <button class="btn-styless">
                   <span>Newest</span>
-                  <svg width="18" height="12" viewBox="0 0 18 12" fill="none">
-                    <path
-                      d="m2 2 6.899 8L16 2"
-                      stroke="#EE7B45"
-                      stroke-width="2.7"
-                      stroke-miterlimit="10"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
+                  <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><path d="m2 2 6.899 8L16 2" stroke="#EE7B45" stroke-width="2.7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" /></svg>
                 </button>
                 <ul class="select-dropdown-menu">
                   <li>
@@ -80,7 +71,110 @@
           </div>
         </div>
       </div>
-      <div class="prouducts-result"></div>
+      <div class="products-result">
+        <div class="container">
+          <ul class="product-cards">
+            <li class="product-card">
+              <a href="#" class="product-card__link">
+                <div class="product-card__image">
+                  <figure>
+                    <img src="/assets/images/product-1-terrier.jpg" />
+                  </figure>
+                  <div class="product-card__image-title">TERRIER</div>
+                </div>
+                <div class="product-card__content">
+                  <h2>TERRIER</h2>
+                  <span>50/200</span>
+                </div>
+              </a>
+            </li>
+            <li class="product-card">
+              <a href="#" class="product-card__link">
+                <div class="product-card__image">
+                  <figure>
+                    <img src="/assets/images/product-2-mastiff.jpg" />
+                  </figure>
+                  <div class="product-card__image-title">MASTIFF</div>
+                </div>
+                <div class="product-card__content">
+                  <h2>MASTIFF</h2>
+                  <span>300/400/400L</span>
+                </div>
+              </a>
+            </li>
+            <li class="product-card">
+              <a href="#" class="product-card__link">
+                <div class="product-card__image">
+                  <figure>
+                    <img src="/assets/images/product-3-mastiff-ls.jpg" />
+                  </figure>
+                  <div class="product-card__image-title">MASTIFF LS</div>
+                </div>
+                <div class="product-card__content">
+                  <h2>MASTIFF LS</h2>
+                  <span>300LS/400LS/400LLS</span>
+                </div>
+              </a>
+            </li>
+            <li class="product-card">
+              <a href="#" class="product-card__link">
+                <div class="product-card__image">
+                  <figure>
+                    <img src="/assets/images/product-4-papillon.jpg" />
+                  </figure>
+                  <div class="product-card__image-title">PAPILLON</div>
+                </div>
+                <div class="product-card__content">
+                  <h2>PAPILLON</h2>
+                  <span>50/200</span>
+                </div>
+              </a>
+            </li>
+            <li class="product-card">
+              <a href="#" class="product-card__link">
+                <div class="product-card__image">
+                  <figure>
+                    <img src="/assets/images/product-5-boxer.jpg" />
+                  </figure>
+                  <div class="product-card__image-title">BOXER</div>
+                </div>
+                <div class="product-card__content">
+                  <h2>BOXER</h2>
+                  <span>800/500</span>
+                </div>
+              </a>
+            </li>
+            <li class="product-card">
+              <a href="#" class="product-card__link">
+                <div class="product-card__image">
+                  <figure>
+                    <img src="/assets/images/product-6-husky.jpg" />
+                  </figure>
+                  <div class="product-card__image-title">HUSKY</div>
+                </div>
+                <div class="product-card__content">
+                  <h2>HUSKY</h2>
+                  <span>700/1200/1500</span>
+                </div>
+              </a>
+            </li>
+            <li class="product-card">
+              <a href="#" class="product-card__link">
+                <div class="product-card__image">
+                  <figure>
+                    <img src="/assets/images/product-7-marble.jpg" />
+                  </figure>
+                  <div class="product-card__image-title">MARBLE</div>
+                </div>
+                <div class="product-card__content">
+                  <h2>MARBLE</h2>
+                  <span>80/100/120</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </template>
