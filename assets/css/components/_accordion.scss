@@ -1,0 +1,83 @@
+.accordion {
+    &-title {
+        padding-bottom: rem(5);
+        border-bottom: 2px solid;
+        margin-bottom: rem(20);
+        color: $color-primary;
+        font-size: rem(24);
+        transition: border .2s ease-in;
+        transition-delay: .4s;
+
+        > .btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-weight: 700;
+            text-align: left;
+
+            svg {
+                path {
+                    transition: transform .3s ease-in-out;
+                    transform-origin: center;
+                }
+
+                @include media-breakpoint-up(lg) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &-inner {
+        position: relative;
+        z-index: 1;
+        max-height: 0;
+        overflow: hidden;
+        transition-timing-function: cubic-bezier(.95, .05, .795, .035);
+        transition-duration: .5s;
+        transition-property: max-height;
+       
+    }
+
+    &-content {
+        opacity: 0;
+        transform: translateY(-1rem);
+        transition-timing-function: linear, ease;
+        transition-duration: .1s;
+        transition-property: opacity, transform;
+        transition-delay: .5s;
+    }
+
+    &.is-expanded {
+        .accordion {
+            &-title {
+                border-color: transparent;
+
+                svg {
+                    path {
+                        &:last-child {
+                            transform: rotate(90deg);
+                        }
+                    }
+                }
+            }
+
+            &-inner {
+                max-height: 100rem;
+                transition-timing-function: cubic-bezier(.895, .03, .685, .22);
+                transition-duration: .5s;
+                transition-property: max-height;
+            }
+
+            &-content {
+                opacity: 1;
+                transform: translateY(0);
+                transition-delay: .2s;
+                transition-timing-function: ease-in-out;
+                transition-duration: .2s;
+                transition-property: opacity, transform;
+            }
+        }
+    }
+}
