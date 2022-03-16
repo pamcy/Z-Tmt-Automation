@@ -29,13 +29,13 @@
         <div class="door-left">
           <picture>
               <source srcset="/assets/images/door-left-mobile.png" media="(max-width: 750px)" />
-              <img src="/assets/images/door-left-desktop.png" alt>
+              <img src="~/assets/images/door-left-desktop.png" alt>
           </picture>
         </div>
         <div class="door-right">
           <picture>
               <source srcset="/assets/images/door-right-mobile.png" media="(max-width: 750px)" />
-              <img src="/assets/images/door-right-desktop.png" alt>
+              <img src="~/assets/images/door-right-desktop.png" alt>
           </picture>
         </div>
       </div>
@@ -49,22 +49,22 @@
           <swiper class="scenario-image-carousel" ref="scenarioCarousel" :modules="swiperModules" :controller="{ control: controlledSwiper }" navigation :slides-per-view="1.008223684" :space-between="10" :breakpoints="scenarioImageSliderBreakpoints" @slideChange="onScenarioCarouselChange">
             <swiper-slide>
                 <div class="scenario-item-image">
-                  <img src="/assets/images/scenario-1.jpg" alt>
+                  <img src="~/assets/images/scenario-1.jpg" alt>
                 </div>
             </swiper-slide>
             <swiper-slide>
                 <div class="scenario-item-image">
-                  <img src="/assets/images/scenario-2.jpg" alt>
+                  <img src="~/assets/images/scenario-2.jpg" alt>
                 </div>
             </swiper-slide>
             <swiper-slide>
                 <div class="scenario-item-image">
-                  <img src="/assets/images/scenario-3.jpg" alt>
+                  <img src="~/assets/images/scenario-3.jpg" alt>
                 </div>
             </swiper-slide>
             <swiper-slide>
                 <div class="scenario-item-image">
-                  <img src="/assets/images/scenario-4.jpg" alt>
+                  <img src="~/assets/images/scenario-4.jpg" alt>
                 </div>
             </swiper-slide>
           </swiper>
@@ -117,7 +117,7 @@
             </div>
             <picture>
               <source srcset="/assets/images/product-1-mobile.jpg" media="(max-width: 1199px)" />
-              <img src="/assets/images/product-1-desktop.jpg" alt>
+              <img src="~/assets/images/product-1-desktop.jpg" alt>
             </picture>
             <NuxtLink to="/" class="btn btn--with-border">
               View Products
@@ -131,7 +131,7 @@
             </div>
             <picture>
               <source srcset="/assets/images/product-2-mobile.jpg" media="(max-width: 1199px)" />
-              <img src="/assets/images/product-2-desktop.jpg" alt>
+              <img src="~/assets/images/product-2-desktop.jpg" alt>
             </picture>
             <NuxtLink to="/" class="btn btn--with-border">
               View Products
@@ -145,7 +145,7 @@
             </div>
             <picture>
               <source srcset="/assets/images/product-3-mobile.jpg" media="(max-width: 1199px)" />
-              <img src="/assets/images/product-3-desktop.jpg" alt>
+              <img src="~/assets/images/product-3-desktop.jpg" alt>
             </picture>
             <NuxtLink to="/" class="btn btn--with-border">
               View Products
@@ -197,7 +197,7 @@
           <picture class="fade-in">
               <source srcset="/assets/images/friendly-mobile.png" media="(max-width: 750px)" />
               <source srcset="/assets/images/friendly-tablet.png" media="(max-width: 989px)" />
-              <img src="/assets/images/friendly-desktop.png" alt>
+              <img src="~/assets/images/friendly-desktop.png" alt>
           </picture>
           <div>
             <h2 class="fade-in delay-1">TMT Products Make Earth Better</h2>
