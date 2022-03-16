@@ -142,4 +142,16 @@ table {
         opacity: 1;
       }
     }
+
+    &--image-only {
+        height: rem(130);
+
+        @include media-breakpoint-up(md) {
+            height: rem(180);
+        }
+
+        @include media-breakpoint-up(lg) {
+            height: rem(180);
+        }
+    } 
   }

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="page-header page-header-product-detail"></div>
+        <div class="page-header page-header-product-detail page-header--image-only"></div>
         <main class="product-detail">
             <div class="container-sm">
                 <nav class="breadcrumb">
