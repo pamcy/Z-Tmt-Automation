@@ -1,5 +1,5 @@
 .page-header-products {
-  background: url('/images/products-kv-mobile.jpg') no-repeat center bottom;
+  background-image: url('/images/products-kv-mobile.jpg');
 
   @include media-breakpoint-up(md) {
     background-image: url('/images/products-kv-desktop.jpg');
