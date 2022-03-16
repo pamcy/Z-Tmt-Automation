@@ -39,7 +39,14 @@ h3,
 .h3 {
     margin: 0;
     font-size: rem(24);
+    font-weight: 700;
     line-height: 1.33333333;
+}
+
+h4,
+.h4 {
+    margin: 0;
+    font-size: rem(16);
 }
 
 p {

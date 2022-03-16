@@ -259,6 +259,8 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
+import Accordion from "../components/Accordion";
+
 const swiperModules = [
   Navigation,
   EffectFade,
