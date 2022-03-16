@@ -2,6 +2,21 @@
     <div>
         <div class="page-header page-header-product-detail"></div>
         <main class="product-detail">
+            <div class="container-sm">
+                <nav class="breadcrumb">
+                    <ul>
+                        <li>
+                            <NuxtLink to="/">Home</NuxtLink>
+                        </li>
+                        <li>
+                            <NuxtLink to="/products">Gate Openers</NuxtLink>
+                        </li>
+                        <li class="is-active">
+                            <span>MASTIFF</span>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
             <div class="product-meta">
                 <div class="product-meta__images">
                     <swiper class="product-slider" ref="productSlider" :modules="swiperModules" effect="fade" navigation @swiper="initProductSlider" @slideChange="onProductSliderChange">

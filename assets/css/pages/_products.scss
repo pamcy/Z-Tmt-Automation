@@ -44,16 +44,6 @@
 }
 
 .panel {
-  margin-top: rem(30);
-
-  @include media-breakpoint-up(md) {
-    margin-top: rem(52);
-  }
-
-  @include media-breakpoint-up(lg) {
-    margin-top: rem(60);
-  }
-
   &-filter {
     display: flex;
     flex-wrap: nowrap;
