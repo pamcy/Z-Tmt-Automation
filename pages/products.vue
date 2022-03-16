@@ -1,8 +1,7 @@
 <template>
   <div>
-    <Header />
 
-    <div class="page-header" ref="pageHeaderSection">
+    <div class="page-header page-header-products" ref="pageHeaderSection">
       <div class="container">
         <div class="page-header-text">
           <h1>Products</h1>

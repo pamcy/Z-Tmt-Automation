@@ -1,3 +1,11 @@
+.page-header-product-detail {
+    background-image: url('~/assets/images/product-detail-banner-mobile.png');
+
+    @include media-breakpoint-up(lg) {
+        background-image: url('~/assets/images/product-detail-banner-desktop.png');
+    }
+}
+
 .product {
     &-detail {
         padding: 0 $gutter-sm rem(100);

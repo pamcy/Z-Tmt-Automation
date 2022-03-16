@@ -1,8 +1,6 @@
 <template>
     <div>
-        <div class="banner">
-            <img src="~/assets/images/product-detail-banner.png" alt="">
-        </div>
+        <div class="page-header page-header-product-detail"></div>
         <main class="product-detail">
             <div class="product-meta">
                 <div class="product-meta__images">
