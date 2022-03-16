@@ -75,9 +75,16 @@
         }
 
         &.btn--small {
-            width: rem(80);
-            height: rem(80);
+            width: rem(60);
+            height: rem(60);
             border-width: 3px;
+            font-size: rem(12);
+
+            @include media-breakpoint-up(lg) {
+                width: rem(80);
+                height: rem(80);
+                font-size: rem(18);
+            }
         }
     }
 
@@ -106,4 +113,9 @@
             background: transparent;
         }
     }
+}
+
+button,
+[role='button'] {
+    cursor: pointer;
 }
