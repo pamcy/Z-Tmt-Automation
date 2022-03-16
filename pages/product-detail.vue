@@ -9,19 +9,19 @@
                     <swiper class="product-slider" ref="productSlider" :modules="swiperModules" effect="fade" navigation @swiper="initProductSlider" @slideChange="onProductSliderChange">
                         <swiper-slide>
                             <picture>
-                                <source srcset="/assets/images/product-detail-1-mobile.jpg" media="(max-width: 989px)" />
+                                <source srcset="~/assets/images/product-detail-1-mobile.jpg" media="(max-width: 989px)" />
                                 <img src="~/assets/images/product-detail-1-desktop.jpg" alt>
                             </picture>
                         </swiper-slide>
                         <swiper-slide>
                             <picture>
-                                <source srcset="/assets/images/product-detail-2-mobile.jpg" media="(max-width: 989px)" />
+                                <source srcset="~/assets/images/product-detail-2-mobile.jpg" media="(max-width: 989px)" />
                                 <img src="~/assets/images/product-detail-2-desktop.jpg" alt>
                             </picture>
                         </swiper-slide>
                         <swiper-slide>
                             <picture>
-                                <source srcset="/assets/images/product-detail-1-mobile.jpg" media="(max-width: 989px)" />
+                                <source srcset="~/assets/images/product-detail-1-mobile.jpg" media="(max-width: 989px)" />
                                 <img src="~/assets/images/product-detail-1-desktop.jpg" alt>
                             </picture>
                         </swiper-slide>

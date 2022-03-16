@@ -1,13 +1,13 @@
 .hero {
     height: calc(var(--vh, 1vh) * 100 - $header-height-mobile);
     padding: var(--gutter);
-    background: $color-primary no-repeat url('/assets/images/mainpage-kv-mobile.jpg') left top;
+    background: $color-primary no-repeat url('~/assets/images/mainpage-kv-mobile.jpg') left top;
     background-size: cover;
     color: #fff;
 
     @include media-breakpoint-up(md) {
         height: auto;
-        background-image: url('/assets/images/mainpage-kv-desktop.jpg');
+        background-image: url('~/assets/images/mainpage-kv-desktop.jpg');
         background-position: center center;
 
     }
@@ -74,7 +74,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: rem(26);
-    background: $color-primary url('/assets/images/wall.png') no-repeat center center;
+    background: $color-primary url('~/assets/images/wall.png') no-repeat center center;
     background-size: 2160px auto;
 
     .door {
@@ -351,7 +351,7 @@
 
     &-situation {
         flex: 1 0 40%;
-        background: url('/assets/images/situation.jpg') no-repeat right center;
+        background: url('~/assets/images/situation.jpg') no-repeat right center;
         background-size: cover;
     }
 
@@ -415,16 +415,16 @@
 
 .why {
     padding: $gutter;
-    background: url('/assets/images/why-bg-mobile.jpg') no-repeat center center;
+    background: url('~/assets/images/why-bg-mobile.jpg') no-repeat center center;
     background-size: cover;
     color: #fff;
 
     @include media-breakpoint-up(md) {
-        background-image: url('/assets/images/why-bg-tablet.jpg');
+        background-image: url('~/assets/images/why-bg-tablet.jpg');
     }
 
     @include media-breakpoint-up(lg) {
-        background-image: url('/assets/images/why-bg-desktop.jpg');
+        background-image: url('~/assets/images/why-bg-desktop.jpg');
     }
 
     &-content {
@@ -581,7 +581,7 @@
         }
 
         @include media-breakpoint-up(lg) {
-            cursor: url('/assets/images/carousel-cursor.png'), auto;
+            cursor: url('~/assets/images/carousel-cursor.png'), auto;
         }
 
         @include media-breakpoint-between(lg, xl) {
@@ -604,7 +604,7 @@
                     width: 44.189453vw;
                     height: 23.4vw;
                     content: '';
-                    background: no-repeat url('/assets/images/friendly-list-bg.png');
+                    background: no-repeat url('~/assets/images/friendly-list-bg.png');
                     background-size: cover;
                 }
             }
@@ -659,10 +659,10 @@
 
             @for $i from 1 through 4 {
                 &:nth-child(#{$i}) {
-                    background-image: url('/assets/images/friendly-list-#{$i}-mobile.jpg');
+                    background-image: url('~/assets/images/friendly-list-#{$i}-mobile.jpg');
 
                     @include media-breakpoint-up(lg) {
-                        background-image: url('/assets/images/friendly-list-#{$i}-desktop.jpg');
+                        background-image: url('~/assets/images/friendly-list-#{$i}-desktop.jpg');
                     }
                 }
             }
@@ -789,20 +789,20 @@
 .get-in-touch {
     height: 122.666667vw;
     padding: rem(40) $gutter;
-    background: no-repeat url('/assets/images/get-in-touch-mobile.jpg') center;
+    background: no-repeat url('~/assets/images/get-in-touch-mobile.jpg') center;
     background-size: cover;
 
     @include media-breakpoint-up(md) {
         height: auto;
         padding-top: rem(60);
         padding-bottom: rem(60);
-        background-image: url('/assets/images/get-in-touch-tablet.jpg');
+        background-image: url('~/assets/images/get-in-touch-tablet.jpg');
     }
 
     @include media-breakpoint-up(lg) {
         padding-top: rem(120);
         padding-bottom: rem(120);
-        background-image: url('/assets/images/get-in-touch-desktop.jpg');
+        background-image: url('~/assets/images/get-in-touch-desktop.jpg');
     }
 
     > .container {

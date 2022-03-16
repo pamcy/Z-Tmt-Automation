@@ -28,13 +28,13 @@
         </div>
         <div class="door-left">
           <picture>
-              <source srcset="/assets/images/door-left-mobile.png" media="(max-width: 750px)" />
+              <source srcset="~/assets/images/door-left-mobile.png" media="(max-width: 750px)" />
               <img src="~/assets/images/door-left-desktop.png" alt>
           </picture>
         </div>
         <div class="door-right">
           <picture>
-              <source srcset="/assets/images/door-right-mobile.png" media="(max-width: 750px)" />
+              <source srcset="~/assets/images/door-right-mobile.png" media="(max-width: 750px)" />
               <img src="~/assets/images/door-right-desktop.png" alt>
           </picture>
         </div>
@@ -116,7 +116,7 @@
               <span class="showcase-product-meta__spec">150/200</span>
             </div>
             <picture>
-              <source srcset="/assets/images/product-1-mobile.jpg" media="(max-width: 1199px)" />
+              <source srcset="~/assets/images/product-1-mobile.jpg" media="(max-width: 1199px)" />
               <img src="~/assets/images/product-1-desktop.jpg" alt>
             </picture>
             <NuxtLink to="/" class="btn btn--with-border">
@@ -130,7 +130,7 @@
               <span class="showcase-product-meta__spec">300/400/400L</span>
             </div>
             <picture>
-              <source srcset="/assets/images/product-2-mobile.jpg" media="(max-width: 1199px)" />
+              <source srcset="~/assets/images/product-2-mobile.jpg" media="(max-width: 1199px)" />
               <img src="~/assets/images/product-2-desktop.jpg" alt>
             </picture>
             <NuxtLink to="/" class="btn btn--with-border">
@@ -144,7 +144,7 @@
               <span class="showcase-product-meta__spec">300LS/400LS/400LLS</span>
             </div>
             <picture>
-              <source srcset="/assets/images/product-3-mobile.jpg" media="(max-width: 1199px)" />
+              <source srcset="~/assets/images/product-3-mobile.jpg" media="(max-width: 1199px)" />
               <img src="~/assets/images/product-3-desktop.jpg" alt>
             </picture>
             <NuxtLink to="/" class="btn btn--with-border">
@@ -195,8 +195,8 @@
       <div class="container">
         <div class="friendly-text" ref="friendlyTextBlock">
           <picture class="fade-in">
-              <source srcset="/assets/images/friendly-mobile.png" media="(max-width: 750px)" />
-              <source srcset="/assets/images/friendly-tablet.png" media="(max-width: 989px)" />
+              <source srcset="~/assets/images/friendly-mobile.png" media="(max-width: 750px)" />
+              <source srcset="~/assets/images/friendly-tablet.png" media="(max-width: 989px)" />
               <img src="~/assets/images/friendly-desktop.png" alt>
           </picture>
           <div>
