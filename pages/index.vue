@@ -43,61 +43,67 @@
     <div class="scenario">
       <div class="container">
         <h2>Automatic Gate<br>usage scenario</h2>
-        <swiper class="scenario-image-carousel" ref="scenarioCarousel" :modules="swiperModules" :controller="{ control: controlledSwiper }" navigation :slides-per-view="1.008223684" :space-between="10" @slideChange="onScenarioCarouselChange">
-          <swiper-slide>
-              <div class="scenario-item-image">
-                <img src="/assets/images/scenario-1.jpg" alt>
-              </div>
-          </swiper-slide>
-          <swiper-slide>
-              <div class="scenario-item-image">
-                <img src="/assets/images/scenario-2.jpg" alt>
-              </div>
-          </swiper-slide>
-          <swiper-slide>
-              <div class="scenario-item-image">
-                <img src="/assets/images/scenario-3.jpg" alt>
-              </div>
-          </swiper-slide>
-          <swiper-slide>
-              <div class="scenario-item-image">
-                <img src="/assets/images/scenario-4.jpg" alt>
-              </div>
-          </swiper-slide>
-        </swiper>
+      </div>
+      <div class="scenario-sliders">
+        <div class="scenario-sliders__image">
+          <swiper class="scenario-image-carousel" ref="scenarioCarousel" :modules="swiperModules" effect="coverflow" :controller="{ control: controlledSwiper }" navigation :slides-per-view="1.008223684" :space-between="10" :breakpoints="scenarioImageSliderBreakpoints" @slideChange="onScenarioCarouselChange">
+            <swiper-slide>
+                <div class="scenario-item-image">
+                  <img src="/assets/images/scenario-1.jpg" alt>
+                </div>
+            </swiper-slide>
+            <swiper-slide>
+                <div class="scenario-item-image">
+                  <img src="/assets/images/scenario-2.jpg" alt>
+                </div>
+            </swiper-slide>
+            <swiper-slide>
+                <div class="scenario-item-image">
+                  <img src="/assets/images/scenario-3.jpg" alt>
+                </div>
+            </swiper-slide>
+            <swiper-slide>
+                <div class="scenario-item-image">
+                  <img src="/assets/images/scenario-4.jpg" alt>
+                </div>
+            </swiper-slide>
+          </swiper>
+        </div>
         <div class="slider-counter">
           <em>{{ scenarioSlide.activeIndex }}</em> /4
         </div>
-        <swiper class="scenario-text-carousel" :modules="swiperModules" effect="fade" :allow-touch-move="false" :space-between="10" @swiper="setControlledSwiper">
-          <swiper-slide>
-            <div class="scenario-item-text">
-              <svg width="60" height="60" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M137.75 70c0 37.417-30.333 67.75-67.75 67.75S2.25 107.417 2.25 70 32.583 2.25 70 2.25 137.75 32.583 137.75 70z" fill="#FFECE3" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10"/><path d="M60.09 46.385c-28.28 22.26-25.48 40.88-25.48 40.88 0 14.14 11.48 25.48 25.48 25.48 14.14 0 25.48-11.48 25.48-25.48 0 0 2.94-18.62-25.48-40.88z" fill="#fff" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M61.35 60.248s10.64 9.1 11.9 15.96" stroke="#EE7B45" stroke-width="2.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M92.15 27.066c-14.14 11.2-12.74 20.44-12.74 20.44 0 7 5.74 12.74 12.74 12.74s12.74-5.74 12.74-12.74c0 0 1.4-9.24-12.74-20.44z" fill="#fff" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M92.15 35.748s5.32 4.48 5.88 7.98" stroke="#EE7B45" stroke-width="2.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <h3 class="scenario-item-text__title">A rainy day?</h3>
-              <p class="scenario-item-text__desc">An automatic gate can eliminate the need to get out of the car, allowing you to simply drive into your home.</p>
-            </div>
-          </swiper-slide>
-          <swiper-slide>
-            <div class="scenario-item-text">
-              <svg width="60" height="60" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M137.75 70c0 37.417-30.333 67.75-67.75 67.75S2.25 107.417 2.25 70 32.583 2.25 70 2.25 137.75 32.583 137.75 70z" fill="#FFECE3" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10"/><path d="M70 96.966c25.439 0 46.061-13.296 46.061-29.697 0-16.4-20.622-29.697-46.06-29.697-25.44 0-46.062 13.296-46.062 29.697S44.563 96.966 70 96.966z" fill="#fff"/><path d="M70 99.241c-20.606 0-39.546-12.121-48.03-31.06-.304-.607-.304-1.213 0-1.819C30.453 47.574 49.393 35.453 70 35.453s39.545 12.121 48.03 30.91c.303.605.303 1.211 0 1.817C109.545 87.12 90.606 99.241 70 99.241zm-43.485-31.97c8.03 16.667 25 27.424 43.484 27.424 18.485 0 35.455-10.757 43.485-27.424-8.03-16.666-25-27.424-43.484-27.424C51.514 40 34.544 50.605 26.514 67.271z" fill="#EE7B45"/><path d="M70 88.03c11.464 0 20.758-9.293 20.758-20.757 0-11.464-9.294-20.757-20.758-20.757-11.464 0-20.758 9.293-20.758 20.757 0 11.464 9.294 20.758 20.758 20.758z" fill="#FFECE3" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M82.727 67.273c0 6.97-5.606 12.576-12.576 12.576" stroke="#EE7B45" stroke-width="2.25" stroke-miterlimit="10" stroke-linecap="round"/></svg>
-              <h3 class="scenario-item-text__title">Prying eyes?</h3>
-              <p class="scenario-item-text__desc">Our gate openers are designed to with be compatible with solid paned gates - a feat that no other DIY gate opener can do.</p>
-            </div>
-          </swiper-slide>
-          <swiper-slide>
-            <div class="scenario-item-text">
-                <svg width="60" height="60" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M137.75 70c0 37.417-30.333 67.75-67.75 67.75S2.25 107.417 2.25 70 32.583 2.25 70 2.25 137.75 32.583 137.75 70z" fill="#FFECE3" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10"/><path d="M86.52 41.44v-.14c-.14-9.66-7.7-17.5-16.94-17.5-9.24 0-16.8 7.84-16.94 17.5v.28C52.78 65.1 69.58 65.1 69.58 65.1s16.8 0 16.94-23.52v-.14zM78.4 70.281s-5.88 3.36-8.26 5.18l-8.26-5.18C50.68 71.961 42 81.761 42 93.521v17.36h56.14v-17.36c.14-11.76-8.54-21.56-19.74-23.24z" fill="#fff" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M73.36 84.42H67.2c-.56.98-1.12 26.46-1.12 26.46h8.4s-.7-25.48-1.12-26.46zm-11.9-1.96-9.66-7.98c2.24-2.38 10.22-4.34 10.22-4.34l8.12 6.3-8.68 6.02zM78.82 82.46l9.66-7.98c-2.24-2.38-10.22-4.34-10.22-4.34l-8.12 6.3 8.68 6.02z" stroke="#EE7B45" stroke-width="2.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M78.4 70.14v-8.12c-4.34 3.36-8.96 3.36-8.96 3.36s-3.64 0-7.56-2.38v7.28h.14l8.12 5.32 8.12-5.32c0-.14 0-.14.14-.14z" fill="#fff" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="m73.22 78.821-2.38-1.82c-.42-.28-.84-.28-1.26 0l-2.38 1.82c-.14.14-.28.28-.42.56l-1.26 3.78c-.14.7.28 1.26.98 1.26h7.28c.7 0 1.26-.7.98-1.26l-1.26-3.78c0-.28-.14-.56-.28-.56z" stroke="#EE7B45" stroke-width="2.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M53.9 43.401s6.44-.98 10.64-4.62c0 0 15.54 6.16 21.14 2.94" stroke="#EE7B45" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="m93.1 50.54 10.22-5.04m0 26.741-10.22-5.04m.279-8.401h12.04" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <h3 class="scenario-item-text__title">Stranded guests?</h3>
-                <p class="scenario-item-text__desc">Don’t leave your guests at the gate, waiting on you to get them. Generate temporary codes that can give your guests limited access to your property.</p>
+        <div class="scenario-sliders__text">
+          <swiper class="scenario-text-carousel" :modules="swiperModules" effect="fade" :allow-touch-move="false" :space-between="10" :auto-height="true" :breakpoints="scenarioTextSliderBreakpoints" @swiper="setControlledSwiper">
+            <swiper-slide>
+              <div class="scenario-item-text">
+                <svg width="60" height="60" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M137.75 70c0 37.417-30.333 67.75-67.75 67.75S2.25 107.417 2.25 70 32.583 2.25 70 2.25 137.75 32.583 137.75 70z" fill="#FFECE3" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10"/><path d="M60.09 46.385c-28.28 22.26-25.48 40.88-25.48 40.88 0 14.14 11.48 25.48 25.48 25.48 14.14 0 25.48-11.48 25.48-25.48 0 0 2.94-18.62-25.48-40.88z" fill="#fff" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M61.35 60.248s10.64 9.1 11.9 15.96" stroke="#EE7B45" stroke-width="2.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M92.15 27.066c-14.14 11.2-12.74 20.44-12.74 20.44 0 7 5.74 12.74 12.74 12.74s12.74-5.74 12.74-12.74c0 0 1.4-9.24-12.74-20.44z" fill="#fff" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M92.15 35.748s5.32 4.48 5.88 7.98" stroke="#EE7B45" stroke-width="2.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3 class="scenario-item-text__title">A rainy day?</h3>
+                <p class="scenario-item-text__desc">An automatic gate can eliminate the need to get out of the car, allowing you to simply drive into your home.</p>
               </div>
-          </swiper-slide>
-          <swiper-slide>
-            <div class="scenario-item-text">
-              <svg width="60" height="60" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M137.75 70c0 37.417-30.333 67.75-67.75 67.75S2.25 107.417 2.25 70 32.583 2.25 70 2.25 137.75 32.583 137.75 70z" fill="#FFECE3" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10"/><path d="M70 41.213H23.03V53.03H70V41.213z" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M70 52.879H23.03V91.06H70V52.879z" fill="#fff" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M70 91.06H23.03v11.819H70V91.06zm46.971-49.847h-46.97V53.03h46.97V41.213z" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M116.971 52.879h-46.97V91.06h46.97V52.879z" fill="#fff" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M116.971 91.06h-46.97v11.819h46.97V91.06z" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M33.788 52.879v36.515m9.394-36.515v36.515m9.395-36.515v36.515m9.393-36.515v36.515m18.788-36.515v36.515m9.394-36.515v36.515m9.395-36.515v36.515m9.393-36.515v36.515" stroke="#EE7B45" stroke-width="2.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <h3 class="scenario-item-text__title">Disturbed by the unrests?</h3>
-              <p class="scenario-item-text__desc">Install gates and fences around your property to protect what you have worked hard to build. Our fast operating speed prevents unwanted intruders from gaining access and our openers can be adjusted to provide a high push.</p>
-            </div>
-          </swiper-slide>
-        </swiper>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="scenario-item-text">
+                <svg width="60" height="60" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M137.75 70c0 37.417-30.333 67.75-67.75 67.75S2.25 107.417 2.25 70 32.583 2.25 70 2.25 137.75 32.583 137.75 70z" fill="#FFECE3" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10"/><path d="M70 96.966c25.439 0 46.061-13.296 46.061-29.697 0-16.4-20.622-29.697-46.06-29.697-25.44 0-46.062 13.296-46.062 29.697S44.563 96.966 70 96.966z" fill="#fff"/><path d="M70 99.241c-20.606 0-39.546-12.121-48.03-31.06-.304-.607-.304-1.213 0-1.819C30.453 47.574 49.393 35.453 70 35.453s39.545 12.121 48.03 30.91c.303.605.303 1.211 0 1.817C109.545 87.12 90.606 99.241 70 99.241zm-43.485-31.97c8.03 16.667 25 27.424 43.484 27.424 18.485 0 35.455-10.757 43.485-27.424-8.03-16.666-25-27.424-43.484-27.424C51.514 40 34.544 50.605 26.514 67.271z" fill="#EE7B45"/><path d="M70 88.03c11.464 0 20.758-9.293 20.758-20.757 0-11.464-9.294-20.757-20.758-20.757-11.464 0-20.758 9.293-20.758 20.757 0 11.464 9.294 20.758 20.758 20.758z" fill="#FFECE3" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M82.727 67.273c0 6.97-5.606 12.576-12.576 12.576" stroke="#EE7B45" stroke-width="2.25" stroke-miterlimit="10" stroke-linecap="round"/></svg>
+                <h3 class="scenario-item-text__title">Prying eyes?</h3>
+                <p class="scenario-item-text__desc">Our gate openers are designed to with be compatible with solid paned gates - a feat that no other DIY gate opener can do.</p>
+              </div>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="scenario-item-text">
+                  <svg width="60" height="60" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M137.75 70c0 37.417-30.333 67.75-67.75 67.75S2.25 107.417 2.25 70 32.583 2.25 70 2.25 137.75 32.583 137.75 70z" fill="#FFECE3" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10"/><path d="M86.52 41.44v-.14c-.14-9.66-7.7-17.5-16.94-17.5-9.24 0-16.8 7.84-16.94 17.5v.28C52.78 65.1 69.58 65.1 69.58 65.1s16.8 0 16.94-23.52v-.14zM78.4 70.281s-5.88 3.36-8.26 5.18l-8.26-5.18C50.68 71.961 42 81.761 42 93.521v17.36h56.14v-17.36c.14-11.76-8.54-21.56-19.74-23.24z" fill="#fff" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M73.36 84.42H67.2c-.56.98-1.12 26.46-1.12 26.46h8.4s-.7-25.48-1.12-26.46zm-11.9-1.96-9.66-7.98c2.24-2.38 10.22-4.34 10.22-4.34l8.12 6.3-8.68 6.02zM78.82 82.46l9.66-7.98c-2.24-2.38-10.22-4.34-10.22-4.34l-8.12 6.3 8.68 6.02z" stroke="#EE7B45" stroke-width="2.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M78.4 70.14v-8.12c-4.34 3.36-8.96 3.36-8.96 3.36s-3.64 0-7.56-2.38v7.28h.14l8.12 5.32 8.12-5.32c0-.14 0-.14.14-.14z" fill="#fff" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="m73.22 78.821-2.38-1.82c-.42-.28-.84-.28-1.26 0l-2.38 1.82c-.14.14-.28.28-.42.56l-1.26 3.78c-.14.7.28 1.26.98 1.26h7.28c.7 0 1.26-.7.98-1.26l-1.26-3.78c0-.28-.14-.56-.28-.56z" stroke="#EE7B45" stroke-width="2.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M53.9 43.401s6.44-.98 10.64-4.62c0 0 15.54 6.16 21.14 2.94" stroke="#EE7B45" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="m93.1 50.54 10.22-5.04m0 26.741-10.22-5.04m.279-8.401h12.04" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <h3 class="scenario-item-text__title">Stranded guests?</h3>
+                  <p class="scenario-item-text__desc">Don’t leave your guests at the gate, waiting on you to get them. Generate temporary codes that can give your guests limited access to your property.</p>
+                </div>
+            </swiper-slide>
+            <swiper-slide>
+              <div class="scenario-item-text">
+                <svg width="60" height="60" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M137.75 70c0 37.417-30.333 67.75-67.75 67.75S2.25 107.417 2.25 70 32.583 2.25 70 2.25 137.75 32.583 137.75 70z" fill="#FFECE3" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10"/><path d="M70 41.213H23.03V53.03H70V41.213z" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M70 52.879H23.03V91.06H70V52.879z" fill="#fff" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M70 91.06H23.03v11.819H70V91.06zm46.971-49.847h-46.97V53.03h46.97V41.213z" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M116.971 52.879h-46.97V91.06h46.97V52.879z" fill="#fff" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M116.971 91.06h-46.97v11.819h46.97V91.06z" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M33.788 52.879v36.515m9.394-36.515v36.515m9.395-36.515v36.515m9.393-36.515v36.515m18.788-36.515v36.515m9.394-36.515v36.515m9.395-36.515v36.515m9.393-36.515v36.515" stroke="#EE7B45" stroke-width="2.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <h3 class="scenario-item-text__title">Disturbed by the unrests?</h3>
+                <p class="scenario-item-text__desc">Install gates and fences around your property to protect what you have worked hard to build. Our fast operating speed prevents unwanted intruders from gaining access and our openers can be adjusted to provide a high push.</p>
+              </div>
+            </swiper-slide>
+          </swiper>
+        </div>
       </div>
     </div>
     <div class="showcase">
@@ -200,7 +206,7 @@
         </div>
       </div>
       <div class="friendly-list-wrapper">
-        <swiper class="friendly-list list-styless" ref="friendlyCarousel" :slides-per-view="3.5" :space-between="30" navigation @swiper="initFriendlyCarousel" @slideChange="onFriendlyCarouselChange">
+        <swiper class="friendly-list list-styless" ref="friendlyCarousel" :slides-per-view="3.5" :space-between="30" @swiper="initFriendlyCarousel" @slideChange="onFriendlyCarouselChange">
           <swiper-slide class="fade-in delay-3">
             <div class="friendly-list__title">
               <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M78.8 40c0 21.429-17.371 38.8-38.8 38.8S1.2 61.429 1.2 40 18.571 1.2 40 1.2 78.8 18.571 78.8 40z" stroke="#fff" stroke-width="2.4" stroke-miterlimit="10"/><path d="M57.12 20.907H23.147l-7.573 38.506h49.12L57.12 20.907z" stroke="#fff" stroke-width="2.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.814 24.96H57.92M16.48 54.933h47.307" stroke="#fff" stroke-width="2.4" stroke-miterlimit="10"/><path d="M19.414 40.16h41.44m-39.681-7.627H59.36M17.92 47.52h43.947M40.16 24.96v30.4m8.48-30.4 3.627 29.973M31.627 24.96 28 54.934" stroke="#fff" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -242,7 +248,7 @@
       <div class="container">
         <h2>User Reviews</h2>
       </div>
-      <swiper :modules="swiperModules" class="reviews-list list-styless" ref="reviewsCarousel" :slides-per-view="1.39583333" :space-between="20" loop autoplay centered-slides :breakpoints="reviewsCarouselBreakpoints">
+      <swiper :modules="swiperModules" class="reviews-list list-styless" ref="reviewsCarousel" :slides-per-view="1.39583333" :space-between="20" loop autoplay centered-slides :breakpoints="reviewsSliderBreakpoints">
         <swiper-slide>
           <div class="card">
             <h3 class="card-title">CJ</h3>
@@ -297,11 +303,11 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
-import { Navigation, Pagination, Autoplay, A11y } from 'swiper';
-import { Controller, EffectFade } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/css';
-import 'swiper/css/pagination';
+import { Navigation, Pagination, Autoplay, A11y } from 'swiper'
+import { Controller, EffectFade } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import 'swiper/css'
+import 'swiper/css/pagination'
 
 useMeta({
   script: [
@@ -342,13 +348,29 @@ const setControlledSwiper = (swiper) => {
   controlledSwiper.value = swiper;
 };
 
-const reviewsCarouselBreakpoints = {
+const reviewsSliderBreakpoints = {
   750: {
     slidesPerView: 2.20606061,
   },
   1200: {
     slidesPerView: 4.18888889,
     spaceBetween: 30,
+  }
+}
+
+const scenarioImageSliderBreakpoints = {
+  750: {
+    slidesPerView: 1.28,
+    spaceBetween: 50
+  },
+  1200: {
+    slidesPerView: 2.39583333,
+  }
+}
+
+const scenarioTextSliderBreakpoints = {
+  1200: {
+    autoHeight: false
   }
 }
 
