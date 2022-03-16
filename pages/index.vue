@@ -46,7 +46,7 @@
       </div>
       <div class="scenario-sliders">
         <div class="scenario-sliders__image">
-          <swiper class="scenario-image-carousel" ref="scenarioCarousel" :modules="swiperModules" effect="coverflow" :controller="{ control: controlledSwiper }" navigation :slides-per-view="1.008223684" :space-between="10" :breakpoints="scenarioImageSliderBreakpoints" @slideChange="onScenarioCarouselChange">
+          <swiper class="scenario-image-carousel" ref="scenarioCarousel" :modules="swiperModules" :controller="{ control: controlledSwiper }" navigation :slides-per-view="1.008223684" :space-between="10" :breakpoints="scenarioImageSliderBreakpoints" @slideChange="onScenarioCarouselChange">
             <swiper-slide>
                 <div class="scenario-item-image">
                   <img src="/assets/images/scenario-1.jpg" alt>
