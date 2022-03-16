@@ -29,5 +29,10 @@
     > svg {
         margin-bottom: rem(5);
         transition: transform .3s ease;
+
+        @include media-breakpoint-down(lg) {
+            width: rem(14);
+            height: auto;
+        }
     }
 }

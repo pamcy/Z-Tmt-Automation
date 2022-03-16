@@ -21,6 +21,11 @@ body {
 .container {
     max-width: $container-width;
     margin: 0 auto;
+
+    &-sm {
+        max-width: $container-width-sm;
+        margin: 0 auto;
+    }
 }
 
 ol,
@@ -43,4 +48,8 @@ a {
 
 img {
     max-width: 100%;
+}
+
+table {
+    border-collapse: collapse;
 }
