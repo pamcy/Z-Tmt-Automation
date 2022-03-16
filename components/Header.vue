@@ -73,7 +73,7 @@ const menu = ref([
         subItems: [
             {
                 title: 'Gate Openers',
-                url: 'gate-openers'
+                url: 'product-detail'
             }
         ]
     },
