@@ -74,7 +74,7 @@
               <NuxtLink to="/product-detail" class="product-card__link">
                 <div class="product-card__image">
                   <figure>
-                    <img src="~/assets/images/product-1-terrier.jpg" />
+                    <img src="/images/product-1-terrier.jpg" />
                   </figure>
                   <div class="product-card__image-title">TERRIER</div>
                 </div>
@@ -88,7 +88,7 @@
               <NuxtLink to="/product-detail" class="product-card__link">
                 <div class="product-card__image">
                   <figure>
-                    <img src="~/assets/images/product-2-mastiff.jpg" />
+                    <img src="/images/product-2-mastiff.jpg" />
                   </figure>
                   <div class="product-card__image-title">MASTIFF</div>
                 </div>
@@ -102,7 +102,7 @@
               <NuxtLink to="/product-detail" class="product-card__link">
                 <div class="product-card__image">
                   <figure>
-                    <img src="~/assets/images/product-3-mastiff-ls.jpg" />
+                    <img src="/images/product-3-mastiff-ls.jpg" />
                   </figure>
                   <div class="product-card__image-title">MASTIFF LS</div>
                 </div>
@@ -116,7 +116,7 @@
               <NuxtLink to="/product-detail" class="product-card__link">
                 <div class="product-card__image">
                   <figure>
-                    <img src="~/assets/images/product-4-papillon.jpg" />
+                    <img src="/images/product-4-papillon.jpg" />
                   </figure>
                   <div class="product-card__image-title">PAPILLON</div>
                 </div>
@@ -130,7 +130,7 @@
               <NuxtLink to="/product-detail" class="product-card__link">
                 <div class="product-card__image">
                   <figure>
-                    <img src="~/assets/images/product-5-boxer.jpg" />
+                    <img src="/images/product-5-boxer.jpg" />
                   </figure>
                   <div class="product-card__image-title">BOXER</div>
                 </div>
@@ -144,7 +144,7 @@
               <NuxtLink to="/product-detail" class="product-card__link">
                 <div class="product-card__image">
                   <figure>
-                    <img src="~/assets/images/product-6-husky.jpg" />
+                    <img src="/images/product-6-husky.jpg" />
                   </figure>
                   <div class="product-card__image-title">HUSKY</div>
                 </div>
@@ -158,7 +158,7 @@
               <NuxtLink to="/product-detail" class="product-card__link">
                 <div class="product-card__image">
                   <figure>
-                    <img src="~/assets/images/product-7-marble.jpg" />
+                    <img src="/images/product-7-marble.jpg" />
                   </figure>
                   <div class="product-card__image-title">MARBLE</div>
                 </div>

@@ -22,20 +22,20 @@
                     <swiper class="product-slider" ref="productSlider" :modules="swiperModules" effect="fade" navigation @swiper="initProductSlider" @slideChange="onProductSliderChange">
                         <swiper-slide>
                             <picture>
-                                <source srcset="~/assets/images/product-detail-1-mobile.jpg" media="(max-width: 989px)" />
-                                <img src="~/assets/images/product-detail-1-desktop.jpg" alt>
+                                <source srcset="/images/product-detail-1-mobile.jpg" media="(max-width: 989px)" />
+                                <img src="/images/product-detail-1-desktop.jpg" alt>
                             </picture>
                         </swiper-slide>
                         <swiper-slide>
                             <picture>
-                                <source srcset="~/assets/images/product-detail-2-mobile.jpg" media="(max-width: 989px)" />
-                                <img src="~/assets/images/product-detail-2-desktop.jpg" alt>
+                                <source srcset="/images/product-detail-2-mobile.jpg" media="(max-width: 989px)" />
+                                <img src="/images/product-detail-2-desktop.jpg" alt>
                             </picture>
                         </swiper-slide>
                         <swiper-slide>
                             <picture>
-                                <source srcset="~/assets/images/product-detail-1-mobile.jpg" media="(max-width: 989px)" />
-                                <img src="~/assets/images/product-detail-1-desktop.jpg" alt>
+                                <source srcset="/images/product-detail-1-mobile.jpg" media="(max-width: 989px)" />
+                                <img src="/images/product-detail-1-desktop.jpg" alt>
                             </picture>
                         </swiper-slide>
                     </swiper>
@@ -172,7 +172,7 @@
                     <Accordion>
                         <template v-slot:title>Easy Installation</template>
                         <template v-slot:content>
-                        <img src="~/assets/images/product-info-easy.jpg" alt="">
+                        <img src="/images/product-info-easy.jpg" alt="">
                             <ul class="list--dots">
                                 <li>Use of wielding or high voltage electrical connection is not required.</li>
                                 <li>Installations can be completed with simple tools available at most homes.</li>
@@ -202,7 +202,7 @@
                     <Accordion>
                         <template v-slot:title>Kit content</template>
                         <template v-slot:content>
-                            <img src="~/assets/images/product-kit.jpg" alt="">
+                            <img src="/images/product-kit.jpg" alt="">
                             <p style="font-size: 20px;">One 110 V AC transformer, control box with control board, battery box with harnesses (battery not included), one PW 640 <a href>automatic gate operator</a>, two PR7 <a href>gate opener remote</a> controller, two 10W polycrystalline <a href>solar panels</a>, installation and owner’s manual and all necessary mounting hardware</p>
                         </template>
                     </Accordion>
@@ -212,28 +212,28 @@
                     <ul class="product-related__list list-styless">
                         <li>
                             <div class="product-related__list__image">
-                                <img src="~/assets/images/product-1-desktop.jpg" alt="">
+                                <img src="/images/product-1-desktop.jpg" alt="">
                             </div>
                             <h4 class="product-related__list__title">TERRIER</h4>
                             <span class="product-related__list__model">50/200</span>
                         </li>
                         <li>
                             <div class="product-related__list__image">
-                                <img src="~/assets/images/product-2-desktop.jpg" alt="">
+                                <img src="/images/product-2-desktop.jpg" alt="">
                             </div>
                             <h4 class="product-related__list__title">MASTIFF</h4>
                             <span class="product-related__list__model">300/400/400L</span>
                         </li>
                         <li>
                             <div class="product-related__list__image">
-                                <img src="~/assets/images/product-3-desktop.jpg" alt="">
+                                <img src="/images/product-3-desktop.jpg" alt="">
                             </div>
                             <h4 class="product-related__list__title">MASTIFF</h4>
                             <span class="product-related__list__model">300LS/400LS/400LLS</span>
                         </li>
                         <li>
                             <div class="product-related__list__image">
-                                <img src="~/assets/images/product-1-desktop.jpg" alt="">
+                                <img src="/images/product-1-desktop.jpg" alt="">
                             </div>
                             <h4 class="product-related__list__title">PAPILLON</h4>
                             <span class="product-related__list__model">50/200</span>
@@ -245,14 +245,14 @@
                     <ul class="product-related__list list-styless">
                         <li>
                             <div class="product-related__list__image">
-                                <img src="~/assets/images/product-1-desktop.jpg" alt="">
+                                <img src="/images/product-1-desktop.jpg" alt="">
                             </div>
                             <h4 class="product-related__list__title">TERRIER</h4>
                             <span class="product-related__list__model">50/200</span>
                         </li>
                         <li>
                             <div class="product-related__list__image">
-                                <img src="~/assets/images/product-2-desktop.jpg" alt="">
+                                <img src="/images/product-2-desktop.jpg" alt="">
                             </div>
                             <h4 class="product-related__list__title">MASTIFF</h4>
                             <span class="product-related__list__model">300/400/400L</span>

@@ -1,8 +1,8 @@
 .page-header-product-detail {
-    background-image: url('~/assets/images/product-detail-banner-mobile.png');
+    background-image: url('/images/product-detail-banner-mobile.png');
 
     @include media-breakpoint-up(lg) {
-        background-image: url('~/assets/images/product-detail-banner-desktop.png');
+        background-image: url('/images/product-detail-banner-desktop.png');
     }
 }
 

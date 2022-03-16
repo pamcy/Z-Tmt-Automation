@@ -1,8 +1,8 @@
 .page-header-products {
-  background: url('~/assets/images/products-kv-mobile.jpg') no-repeat center bottom;
+  background: url('/images/products-kv-mobile.jpg') no-repeat center bottom;
 
   @include media-breakpoint-up(md) {
-    background-image: url('~/assets/images/products-kv-desktop.jpg');
+    background-image: url('/images/products-kv-desktop.jpg');
   }
 }
 
