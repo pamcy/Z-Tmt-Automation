@@ -1,14 +1,14 @@
 .page-header {
   height: rem(300);
   padding: $gutter-sm $gutter;
-  background: url('/assets/images/products-kv-mobile.jpg') no-repeat center bottom;
+  background: url('~/assets/images/products-kv-mobile.jpg') no-repeat center bottom;
   background-size: cover;
   color: #fff;
 
   @include media-breakpoint-up(md) {
     height: rem(310);
     padding: $gutter;
-    background-image: url('/assets/images/products-kv-desktop.jpg');
+    background-image: url('~/assets/images/products-kv-desktop.jpg');
   }
 
   @include media-breakpoint-up(lg) {
