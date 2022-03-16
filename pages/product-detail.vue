@@ -37,7 +37,7 @@
                     <Accordion class="product-meta__detail__features">
                         <template v-slot:title>Features</template>
                         <template v-slot:content>
-                            <ul class="list--dots">
+                            <ul class="list--dots" ref="productMetaFeaturesList">
                                 <li>Perfect for swing gates weighing up to 1000 pounds or 20 feet long</li>
                                 <li>Multiple redundant safety measures, including limit switches, Hall sensors and optional photosensors, to prevent entrapment and other dangers</li>
                                 <li>Sleek style to blend in with residential gates</li>
@@ -271,9 +271,14 @@ const productSlider = ref(null)
 const productSlide = reactive({ activeIndex: 1 })
 const productSlidesLength = ref(0)
 
-onMounted(() => {
-    prepareFadeInLists()
+const productMetaFeaturesList = ref(null)
 
+onMounted(() => {
+    setTimeout(() => {
+        productMetaFeaturesList.value.classList.add('is-revealed')
+    }, 1000);
+
+    prepareFadeInLists()
     window.addEventListener('scroll', fadeInLists)
 })
 
