@@ -1,0 +1,43 @@
+.tab {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-right: rem(-18);
+  padding: 0 rem(18) rem(10) 0;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  > li {
+    flex: 0 0 auto;
+
+    &:not(:first-child) {
+      margin-left: rem(18);
+
+      @include media-breakpoint-up(lg) {
+        margin-left: rem(36);
+      }
+    }
+
+    > a {
+      padding-bottom: 0.325em;
+      border-bottom: 1px solid $color-secondary;
+      font-size: rem(20);
+      color: inherit !important;
+
+      @include media-breakpoint-up(lg) {
+        font-size: rem(28);
+      }
+    }
+
+    &.is-active {
+      > a {
+        padding-bottom: 0.3em;
+        border-bottom: 3px solid $color-primary;
+        font-weight: 700;
+        color: $color-primary !important;
+      }
+    }
+  }
+}

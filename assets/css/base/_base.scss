@@ -31,6 +31,8 @@ body {
 ol,
 ul {
     margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 a {
@@ -39,7 +41,7 @@ a {
             color: $color-primary;
             text-decoration: none;
         }
-    
+
         &:visited {
             color: $color-primary;
         }
@@ -50,6 +52,11 @@ img {
     max-width: 100%;
 }
 
+figure {
+  margin: 0;
+}
+
 table {
     border-collapse: collapse;
 }
+
