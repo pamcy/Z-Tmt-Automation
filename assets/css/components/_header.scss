@@ -1,4 +1,9 @@
 .header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 99;
     padding: 0 $gutter-sm;
     background-color: $color-primary;
 
@@ -76,12 +81,15 @@
         }
 
         &-controls {
-            position: relative;
+            position: fixed;
+            top: $header-height-mobile;
+            right: 0;
+            bottom: 0;
+            left: 0;
             height: 100%;
-            max-height: 0;
+            max-height: calc(100vh - $header-height-mobile);
             overflow-y: auto;
             background-color: $color-primary-lightest;
-            transition: max-height .3s ease-out;
 
             @include media-breakpoint-up(md) {
                 width: rem(360);
@@ -90,7 +98,7 @@
 
             @include media-breakpoint-up(lg) {
                 position: static;
-                display: flex;
+                display: flex !important;
                 width: auto;
                 max-height: none;
                 overflow: visible;
@@ -98,31 +106,19 @@
                 color: #fff;
             }
 
-            &-wrapper {
-                position: fixed;
-                top: rem(60);
-                right: 0;
-                bottom: 0;
-                left: 0;
+            &.v-enter-active,
+            &.v-leave-active {
+                transition: max-height .3s ease;
+            }
 
-                @include media-breakpoint-down(md) {
-                    overflow: hidden;
-                }
-
-                @include media-breakpoint-up(lg) {
-                    position: static;
-                }
-
-                &.is-toggled {
-                    .header-menu-controls {
-                        max-height: 100vh;
-                    }
-                }
+            &.v-enter-from,
+            &.v-leave-to {
+                max-height: 0;
             }
 
             &__backdrop {
-                position: absolute;
-                top: 0;
+                position: fixed;
+                top: $header-height-mobile;
                 right: 0;
                 bottom: 0;
                 left: 0;

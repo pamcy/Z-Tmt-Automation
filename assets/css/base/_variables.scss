@@ -8,13 +8,30 @@ $color-secondary-light: #f0f0f0;
 
 $enable-important-utilities: true !default;
 
+$container-width: 1200px;
+$container-width-lg: 1730px;
+
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
   md: 750px,
   lg: 990px,
-  xl: 1400px
+  xl: 1450px
 );
 
 $gutter-sm: 18px;
 $gutter: 36px;
+$gutter-md: 44px;
+
+:root {
+  --gutter: #{$gutter};
+}
+
+@include media-breakpoint-up(md) {
+  :root {
+    --gutter: #{$gutter-md};
+  }
+}
+
+$header-height-mobile: 60px;
+$header-height-desktop: 80px;

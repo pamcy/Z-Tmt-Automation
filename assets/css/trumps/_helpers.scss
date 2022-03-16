@@ -1,4 +1,4 @@
-.list--styless {
+.list-styless {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -6,4 +6,48 @@
 
 .text-left {
     text-align: left;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.embed-responsive {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+
+    &:before {
+        display: block;
+        content: '';
+    }
+
+    .embed-responsive-item {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity .6s ease;
+}
+
+.is-revealed {
+    .fade-in {
+        opacity: 1;
+    }
+}
+
+@for $i from 1 through 6 {
+    .delay-#{$i} {
+        transition-delay: calc(.3s * #{$i});
+    }
 }

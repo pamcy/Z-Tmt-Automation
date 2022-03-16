@@ -7,13 +7,19 @@
 }
 
 body {
+    margin-top: $header-height-mobile;
+    background-color: $color-primary;
     font-family: 'Rubik', sans-serif;
     font-size: rem(16);
     line-height: 1.5;
+
+    @include media-breakpoint-up(lg) {
+        margin-top: $header-height-desktop;
+    }
 }
 
 .container {
-    max-width: 1200px;
+    max-width: $container-width;
     margin: 0 auto;
 }
 
@@ -23,12 +29,18 @@ ul {
 }
 
 a {
-    &:link {
-        color: $color-primary;
-        text-decoration: none;
+    &:not(.btn) {
+        &:link {
+            color: $color-primary;
+            text-decoration: none;
+        }
+    
+        &:visited {
+            color: $color-primary;
+        }
     }
+}
 
-    &:visited {
-        color: $color-primary;
-    }
+img {
+    max-width: 100%;
 }
