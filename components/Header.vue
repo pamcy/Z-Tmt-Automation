@@ -24,7 +24,7 @@
                                     </button>
                                 </div>
                             </form>
-                            <nav role="navigation" class="header-menu-controls__list">
+                            <nav role="navigation" class="header-menu-controls__list" ref="headerMenuControlsList">
                                 <ul class="list-styless">
                                     <li class="dropdown" :class="{ 'is-toggled': item.visible }" v-for="item in menu" :key="item.title">
                                         <button type="button" class="dropdown-title btn btn-block btn-styless" :title="item.title" @click="toggleMenuItem(item)">{{ item.title }}</button>
@@ -34,7 +34,7 @@
                                                     @leave="onLeave">
                                             <ul class="list-styless" v-show="item.visible">
                                                 <li v-for="subItem in item.subItems" :key="subItem.title">
-                                                    <NuxtLink :to="subItem.url" :title="subItem.title">{{ subItem.title }}</NuxtLink>
+                                                    <NuxtLink :to="subItem.url" :title="subItem.title" @click="closeMenuItem()">{{ subItem.title }}</NuxtLink>
                                                 </li>
                                             </ul>
                                         </Transition>
@@ -42,7 +42,7 @@
                                 </ul>
                             </nav>
                             <form action="" class="d-none d-lg-flex header-menu-controls__search-desktop">
-                                <button type="button" class="btn btn-styless" :class="{ 'is-active': desktopSearchBarToggled }" @click="toggleDesktopSearchBar">
+                                <button type="button" class="btn btn-styless" :class="{ 'is-active': desktopSearchBarToggled }" @click="toggleDesktopSearchBar" ref="searchButton">
                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m22.952 21.85-5.194-5.194A5.946 5.946 0 0 0 19 13a5.964 5.964 0 0 0-1.758-4.242A5.956 5.956 0 0 0 13 7c-1.602 0-3.11.626-4.242 1.758A5.952 5.952 0 0 0 7 13c0 1.602.626 3.11 1.758 4.242A5.952 5.952 0 0 0 13 19c1.34 0 2.612-.436 3.654-1.24l5.194 5.192a.164.164 0 0 0 .232 0l.872-.87a.164.164 0 0 0 0-.232zm-6.784-5.682A4.456 4.456 0 0 1 13 17.48a4.456 4.456 0 0 1-3.168-1.312A4.456 4.456 0 0 1 8.52 13c0-1.196.466-2.322 1.312-3.168A4.456 4.456 0 0 1 13 8.52c1.196 0 2.322.464 3.168 1.312A4.456 4.456 0 0 1 17.48 13a4.452 4.452 0 0 1-1.312 3.168z" fill="#fff"/></svg>
                                 </button>
                                 <Transition>
@@ -63,7 +63,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const hamburgerToggled = ref(false)
 const menu = ref([
@@ -141,11 +141,34 @@ const menu = ref([
     }
 ])
 const desktopSearchBarToggled = ref(false)
+const headerMenuControlsList = ref(null)
+const searchButton = ref(null)
 const searchInput = ref(null)
 const searchValue = ref(null)
 
+onMounted(() => {
+    if (window.matchMedia('(min-width: 990px)').matches) {
+        window.addEventListener('click', (e) => {
+            if (!headerMenuControlsList.value.contains(e.target)){
+                closeMenuItem()
+            }
+            
+            if (!searchButton.value.contains(e.target)) {
+                desktopSearchBarToggled.value = false
+            }
+        })
+    }
+})
+
 function toggleMenuItem(item) {
+    closeMenuItem()
     item.visible = !item.visible
+}
+
+function closeMenuItem() {
+    menu.value.forEach(item => {
+        item.visible = false
+    })
 }
 
 function toggleDesktopSearchBar() {
