@@ -1,7 +1,7 @@
 <template>
     <div class="support">
         <div class="page-header page-header--sm" ref="pageHeaderSection">
-            <div class="container">
+            <div class="container-sm">
                 <div class="page-header-text">
                     <h1>Support</h1>
                     <p>Welcome to TMT Support! Custom-made services tailored for you.</p>

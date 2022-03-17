@@ -84,8 +84,6 @@ table {
     }
   
     .container {
-      max-width: $container-width-sm;
-  
       @include media-breakpoint-up(xxl) {
         height: 100%;
         max-width: none;
@@ -157,8 +155,23 @@ table {
     } 
 
     &--sm {
+      height: rem(180);
+      padding-top: rem(20);
+      padding-bottom: rem(20);
+
+      @include media-breakpoint-up(lg) {
+        padding-top: rem(32);
+        padding-bottom: rem(32);
+      }
+
       @include media-breakpoint-up(lg) {
         height: rem(240);
       }
+
+      .page-header-text h1 {
+        @include media-breakpoint-between(md, lg) {
+          font-size: rem(32);
+        }
+      }
     }
-  }
+}
