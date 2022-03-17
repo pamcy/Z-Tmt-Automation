@@ -231,7 +231,7 @@ function onSelectSorting(menu) {
 }
 
 function fadeInProductCards() {
-  if (window.innerHeight - productsSection.value.getBoundingClientRect().top >= productsSection.value.offsetHeight / 2) {
+  if (window.innerHeight - productsSection.value.getBoundingClientRect().top >= productsSection.value.offsetHeight / 3) {
     productsSection.value.classList.add('is-revealed')
   }
 }
