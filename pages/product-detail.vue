@@ -19,7 +19,7 @@
             </div>
             <div class="product-meta">
                 <div class="product-meta__images">
-                    <swiper class="product-slider" ref="productSlider" :modules="swiperModules" effect="fade" navigation @swiper="initProductSlider" @slideChange="onProductSliderChange">
+                    <swiper class="product-slider" ref="productSlider" :modules="swiperModules" rewind="true" effect="fade" navigation @slideChange="onProductSliderChange">
                         <swiper-slide>
                             <picture>
                                 <source srcset="/images/product-detail-1-mobile.jpg" media="(max-width: 989px)" />
@@ -32,16 +32,10 @@
                                 <img src="/images/product-detail-2-desktop.jpg" alt>
                             </picture>
                         </swiper-slide>
-                        <swiper-slide>
-                            <picture>
-                                <source srcset="/images/product-detail-1-mobile.jpg" media="(max-width: 989px)" />
-                                <img src="/images/product-detail-1-desktop.jpg" alt>
-                            </picture>
-                        </swiper-slide>
                     </swiper>
                     <div class="product-slider-counter">
                         <span class="product-slider-counter__current">{{ productSlide.activeIndex }}</span>
-                        <span class="product-slider-counter__total">{{ productSlidesLength }}</span>
+                        <span class="product-slider-counter__total">2</span>
                     </div>
                 </div>
                 <div class="product-meta__detail">
@@ -282,7 +276,6 @@ const swiperModules = [
 
 const productSlider = ref(null)
 const productSlide = reactive({ activeIndex: 1 })
-const productSlidesLength = ref(0)
 
 const productMetaFeaturesList = ref(null)
 
@@ -295,16 +288,9 @@ onMounted(() => {
     window.addEventListener('scroll', fadeInLists)
 })
 
-function initProductSlider(swiper) {
-    productSlidesLength.value = swiper.slides.length
-}
-
 function onProductSliderChange() {
-  var activeIndex = productSlider.value.$el.swiper.activeIndex
-
-  if (activeIndex <= productSlider.value.$el.swiper.slides.length) {
+    var activeIndex = productSlider.value.$el.swiper.activeIndex
     productSlide.activeIndex = activeIndex + 1
-  }
 }
 
 function prepareFadeInLists() {
