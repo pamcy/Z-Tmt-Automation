@@ -33,12 +33,12 @@
     a {
       display: block;
       padding: rem(5) rem(20);
-      transition: all 0.3s;
+      color: inherit !important;
 
       &:hover {
         font-weight: 700;
         background: $color-primary-lighter;
-        color: $color-primary;
+        color: $color-primary !important;
       }
     }
 
