@@ -78,6 +78,10 @@
 
       > a {
         color: inherit !important;
+
+        &:hover {
+          font-weight: bold;
+        }
       }
 
       &.is-active {

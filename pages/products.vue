@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <div class="page-header page-header-products" ref="pageHeaderSection">
       <div class="container">
         <div class="page-header-text">
@@ -27,31 +26,21 @@
 
           <div class="panel">
             <ul class="tab">
-              <li class="is-active">
-                <a href="#">Gate Openers</a>
-              </li>
-              <li>
-                <a href="#">Home Automation</a>
+              <li v-for="product in products" :key="product.title" :class="{ 'is-active': currentTab === product.title }">
+                <a href="#" @click.prevent="onSelectTab(product.title)">{{ product.title }}</a>
               </li>
             </ul>
 
             <ul class="panel-filter">
-              <li class="is-active">
-                <a href="#">View all</a>
-              </li>
-              <li>
-                <a href="#">Swing gate</a>
-              </li>
-              <li>
-                <a href="#">Sliding gate</a>
-              </li>
-              <li>
-                <a href="#">Garage door</a>
+              <li v-for="category in categories" :key="category" :class="{ 'is-active': currentCategory === category }">
+                <a href="#" @click.prevent="onGetProducts(category)">{{ category }}</a>
               </li>
             </ul>
 
             <div class="panel-sorting">
-              <span class="panel-sorting-result">Total Results<b>6</b></span>
+              <span class="panel-sorting-result"
+                >Total Results<b>{{ results.length }}</b></span
+              >
               <div :class="['select-dropdown', sortingIsOpen ? 'is-active' : '']">
                 <button class="btn-styless" @click="onToggleSorting">
                   <span>{{ currentSorting }}</span>
@@ -70,101 +59,17 @@
       <div class="products-result">
         <div class="container">
           <ul class="product-cards">
-            <li class="product-card">
-              <NuxtLink to="/product-detail" class="product-card__link">
+            <li v-for="item in results" :key="item.name" class="product-card">
+              <NuxtLink :to="item.url" class="product-card__link">
                 <div class="product-card__image">
                   <figure>
-                    <img src="/images/product-1-terrier.jpg" />
+                    <img :src="item.img" />
                   </figure>
-                  <div class="product-card__image-title">TERRIER</div>
+                  <div class="product-card__image-title">{{ item.name }}</div>
                 </div>
                 <div class="product-card__content">
-                  <h2>TERRIER</h2>
-                  <span>50/200</span>
-                </div>
-              </NuxtLink>
-            </li>
-            <li class="product-card">
-              <NuxtLink to="/product-detail" class="product-card__link">
-                <div class="product-card__image">
-                  <figure>
-                    <img src="/images/product-2-mastiff.jpg" />
-                  </figure>
-                  <div class="product-card__image-title">MASTIFF</div>
-                </div>
-                <div class="product-card__content">
-                  <h2>MASTIFF</h2>
-                  <span>300/400/400L</span>
-                </div>
-              </NuxtLink>
-            </li>
-            <li class="product-card">
-              <NuxtLink to="/product-detail" class="product-card__link">
-                <div class="product-card__image">
-                  <figure>
-                    <img src="/images/product-3-mastiff-ls.jpg" />
-                  </figure>
-                  <div class="product-card__image-title">MASTIFF LS</div>
-                </div>
-                <div class="product-card__content">
-                  <h2>MASTIFF LS</h2>
-                  <span>300LS/400LS/400LLS</span>
-                </div>
-              </NuxtLink>
-            </li>
-            <li class="product-card">
-              <NuxtLink to="/product-detail" class="product-card__link">
-                <div class="product-card__image">
-                  <figure>
-                    <img src="/images/product-4-papillon.jpg" />
-                  </figure>
-                  <div class="product-card__image-title">PAPILLON</div>
-                </div>
-                <div class="product-card__content">
-                  <h2>PAPILLON</h2>
-                  <span>50/200</span>
-                </div>
-              </NuxtLink>
-            </li>
-            <li class="product-card">
-              <NuxtLink to="/product-detail" class="product-card__link">
-                <div class="product-card__image">
-                  <figure>
-                    <img src="/images/product-5-boxer.jpg" />
-                  </figure>
-                  <div class="product-card__image-title">BOXER</div>
-                </div>
-                <div class="product-card__content">
-                  <h2>BOXER</h2>
-                  <span>800/500</span>
-                </div>
-              </NuxtLink>
-            </li>
-            <li class="product-card">
-              <NuxtLink to="/product-detail" class="product-card__link">
-                <div class="product-card__image">
-                  <figure>
-                    <img src="/images/product-6-husky.jpg" />
-                  </figure>
-                  <div class="product-card__image-title">HUSKY</div>
-                </div>
-                <div class="product-card__content">
-                  <h2>HUSKY</h2>
-                  <span>700/1200/1500</span>
-                </div>
-              </NuxtLink>
-            </li>
-            <li class="product-card">
-              <NuxtLink to="/product-detail" class="product-card__link">
-                <div class="product-card__image">
-                  <figure>
-                    <img src="/images/product-7-marble.jpg" />
-                  </figure>
-                  <div class="product-card__image-title">MARBLE</div>
-                </div>
-                <div class="product-card__content">
-                  <h2>MARBLE</h2>
-                  <span>80/100/120</span>
+                  <h2>{{ item.name }}</h2>
+                  <span>{{ item.spec }}</span>
                 </div>
               </NuxtLink>
             </li>
@@ -180,6 +85,102 @@ import { ref, onMounted } from 'vue'
 
 const pageHeaderSection = ref(null)
 
+const products = ref([
+  {
+    title: 'Gate Openers',
+    items: [
+      {
+        name: 'TERRIER',
+        spec: '50/200',
+        img: '/images/product-1-terrier.jpg',
+        url: '/product-detail',
+        category: 'Swing gate',
+      },
+      {
+        name: 'MASTIFF',
+        spec: '300/400/400L',
+        img: '/images/product-2-mastiff.jpg',
+        url: '/product-detail',
+        category: 'Swing gate',
+      },
+      {
+        name: 'MASTIFF LS',
+        spec: '300LS/400LS/400LLS',
+        img: '/images/product-3-mastiff-ls.jpg',
+        url: '/product-detail',
+        category: 'Swing gate',
+      },
+      {
+        name: 'PAPILLON',
+        spec: '50/200',
+        img: '/images/product-4-papillon.jpg',
+        url: '/product-detail',
+        category: 'Swing gate',
+      },
+      {
+        name: 'BOXER',
+        spec: '800/500',
+        img: '/images/product-5-boxer.jpg',
+        url: '/product-detail',
+        category: 'Sliding gate',
+      },
+      {
+        name: 'HUSKY',
+        spec: '700/1200/1500',
+        img: '/images/product-6-husky.jpg',
+        url: '/product-detail',
+        category: 'Sliding gate',
+      },
+      {
+        name: 'Marble',
+        spec: '80/100/120',
+        img: '/images/product-7-marble.jpg',
+        url: '/product-detail',
+        category: 'Garage door',
+      },
+    ],
+  },
+  {
+    title: 'Home Automation',
+    items: [
+      {
+        name: 'Marble',
+        spec: '80/100/120',
+        img: '/images/product-7-marble.jpg',
+        url: '/product-detail',
+        category: 'Home 1',
+      },
+      {
+        name: 'MASTIFF LS',
+        spec: '300LS/400LS/400LLS',
+        img: '/images/product-3-mastiff-ls.jpg',
+        url: '/product-detail',
+        category: 'Home',
+      },
+      {
+        name: 'HUSKY',
+        spec: '700/1200/1500',
+        img: '/images/product-6-husky.jpg',
+        url: '/product-detail',
+        category: 'Home 2',
+      },
+      {
+        name: 'MASTIFF',
+        spec: '300/400/400L',
+        img: '/images/product-2-mastiff.jpg',
+        url: '/product-detail',
+        category: 'Home 1',
+      },
+    ],
+  },
+])
+
+const currentTab = ref('Gate Openers')
+const categories = ref([])
+const currentCategory = ref('')
+const tabData = ref({})
+const results = ref([])
+
 const sortingIsOpen = ref(false)
 const sortingMenu = ref(['Most Popular', 'Newest'])
 const currentSorting = ref('')
@@ -187,8 +188,35 @@ const currentSorting = ref('')
 onMounted(() => {
   pageHeaderSection.value.classList.add('is-loaded')
 
+  onSelectTab(currentTab.value)
+  onGetProducts('View all')
+
   currentSorting.value = sortingMenu.value[1]
 })
+
+function onSelectTab(name) {
+  currentTab.value = name
+  currentCategory.value = 'View all'
+  tabData.value = products.value.find((product) => product.title === name)
+
+  getCategories()
+
+  results.value = tabData.value.items
+}
+
+function getCategories() {
+  categories.value = ['View all', ...new Set(tabData.value.items.map((item) => item.category))]
+}
+
+function onGetProducts(category) {
+  currentCategory.value = category
+
+  if (category == 'View all') {
+    results.value = tabData.value.items.filter((item) => item.category !== category)
+  } else {
+    results.value = tabData.value.items.filter((item) => item.category === category)
+  }
+}
 
 function onToggleSorting() {
   sortingIsOpen.value = !sortingIsOpen.value
