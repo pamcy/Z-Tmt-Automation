@@ -10,7 +10,7 @@
       </div>
     </div>
 
-    <div class="products">
+    <div class="products" ref="productsSection">
       <div class="products-panel">
         <div class="container">
           <nav class="breadcrumb">
@@ -59,7 +59,7 @@
       <div class="products-result">
         <div class="container">
           <ul class="product-cards">
-            <li v-for="item in results" :key="item.name" class="product-card">
+            <li v-for="(item, index) in results" :key="item.name" class="product-card fade-in" :style="{ transitionDelay: index * 200 + 'ms' }">
               <NuxtLink :to="item.url" class="product-card__link">
                 <div class="product-card__image">
                   <figure>
@@ -84,6 +84,7 @@
 import { ref, onMounted } from 'vue'
 
 const pageHeaderSection = ref(null)
+const productsSection = ref(null)
 
 const products = ref([
   {
@@ -192,6 +193,8 @@ onMounted(() => {
   onGetProducts('View all')
 
   currentSorting.value = sortingMenu.value[1]
+
+  window.addEventListener('scroll', fadeInProductCards)
 })
 
 function onSelectTab(name) {
@@ -225,6 +228,12 @@ function onToggleSorting() {
 function onSelectSorting(menu) {
   currentSorting.value = menu
   sortingIsOpen.value = false
+}
+
+function fadeInProductCards() {
+  if (window.innerHeight - productsSection.value.getBoundingClientRect().top >= productsSection.value.offsetHeight / 2) {
+    productsSection.value.classList.add('is-revealed')
+  }
 }
 </script>
 
