@@ -47,6 +47,7 @@
 import { ref, onMounted } from 'vue'
 
 const pageHeaderSection = ref(null)
+const cardsSection = ref(null)
 const items = [
     {
         title: 'Product Manuals',
@@ -87,7 +88,8 @@ const items = [
 ]
 
 onMounted(() => {
-  pageHeaderSection.value.classList.add('is-loaded')
+    pageHeaderSection.value.classList.add('is-loaded')
+    cardsSection.value.classList.add('is-revealed')
 })
 
 </script>
