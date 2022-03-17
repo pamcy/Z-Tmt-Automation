@@ -1,0 +1,89 @@
+.footer {
+    padding: $gutter;
+    color: #fff;
+
+    &-top {
+        @include media-breakpoint-up(lg) {
+            > .container {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+        }
+    }
+
+    &-menu {
+        margin: rem(30) rem(-10);
+
+        @include media-breakpoint-up(md) {
+            margin-right: rem(-20);
+            margin-left: rem(-20);
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 0;
+        }
+
+        > ul {
+            display: flex;
+            flex-wrap: wrap;
+
+            > li {
+                flex-basis: 50%;
+                padding: 0 rem(10) rem(30);
+
+                @include media-breakpoint-up(md) {
+                    flex-basis: 25%;
+                    padding-right: rem(20);
+                    padding-left: rem(20);
+                }
+
+                @include media-breakpoint-up(lg) {
+                    min-width: rem(180);
+                }
+
+                a {
+                    color: inherit !important;
+
+                    &:before {
+                        display: block;
+                        content: attr(title);
+                        font-weight: 700;
+                        height: 1px;
+                        color: transparent;
+                        overflow: hidden;
+                        visibility: hidden;
+                    }
+
+                    &:hover,
+                    &:focus {
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+
+        &__title {
+            display: block;
+            padding-bottom: rem(3);
+            border-bottom: 1px solid #fff;
+            font-weight: 700;
+            font-size: rem(18);
+        }
+
+        &__submenu {
+            > li {
+                margin-top: rem(12);
+            }
+        }
+    }
+
+    .copyright {
+        font-size: rem(14);
+
+        @include media-breakpoint-up(lg) {
+            text-align: right;
+            font-size: rem(16);
+        }
+    }
+}

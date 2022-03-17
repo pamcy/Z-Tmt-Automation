@@ -1,6 +1,6 @@
 .card {
     padding: rem(40) rem(20);
-    background: #fff url('/assets/images/card-bg.svg') no-repeat right bottom;
+    background: #fff url('/images/card-bg.svg') no-repeat right bottom;
 
     @include media-breakpoint-up(md) {
         padding: rem(50) rem(30);

@@ -1,8 +1,7 @@
 <template>
   <div>
-    <Header />
 
-    <div class="page-header" ref="pageHeaderSection">
+    <div class="page-header page-header-products" ref="pageHeaderSection">
       <div class="container">
         <div class="page-header-text">
           <h1>Products</h1>
@@ -72,10 +71,10 @@
         <div class="container">
           <ul class="product-cards">
             <li class="product-card">
-              <a href="#" class="product-card__link">
+              <NuxtLink to="/product-detail" class="product-card__link">
                 <div class="product-card__image">
                   <figure>
-                    <img src="~/assets/images/product-1-terrier.jpg" />
+                    <img src="/images/product-1-terrier.jpg" />
                   </figure>
                   <div class="product-card__image-title">TERRIER</div>
                 </div>
@@ -83,13 +82,13 @@
                   <h2>TERRIER</h2>
                   <span>50/200</span>
                 </div>
-              </a>
+              </NuxtLink>
             </li>
             <li class="product-card">
-              <a href="#" class="product-card__link">
+              <NuxtLink to="/product-detail" class="product-card__link">
                 <div class="product-card__image">
                   <figure>
-                    <img src="~/assets/images/product-2-mastiff.jpg" />
+                    <img src="/images/product-2-mastiff.jpg" />
                   </figure>
                   <div class="product-card__image-title">MASTIFF</div>
                 </div>
@@ -97,13 +96,13 @@
                   <h2>MASTIFF</h2>
                   <span>300/400/400L</span>
                 </div>
-              </a>
+              </NuxtLink>
             </li>
             <li class="product-card">
-              <a href="#" class="product-card__link">
+              <NuxtLink to="/product-detail" class="product-card__link">
                 <div class="product-card__image">
                   <figure>
-                    <img src="~/assets/images/product-3-mastiff-ls.jpg" />
+                    <img src="/images/product-3-mastiff-ls.jpg" />
                   </figure>
                   <div class="product-card__image-title">MASTIFF LS</div>
                 </div>
@@ -111,13 +110,13 @@
                   <h2>MASTIFF LS</h2>
                   <span>300LS/400LS/400LLS</span>
                 </div>
-              </a>
+              </NuxtLink>
             </li>
             <li class="product-card">
-              <a href="#" class="product-card__link">
+              <NuxtLink to="/product-detail" class="product-card__link">
                 <div class="product-card__image">
                   <figure>
-                    <img src="~/assets/images/product-4-papillon.jpg" />
+                    <img src="/images/product-4-papillon.jpg" />
                   </figure>
                   <div class="product-card__image-title">PAPILLON</div>
                 </div>
@@ -125,13 +124,13 @@
                   <h2>PAPILLON</h2>
                   <span>50/200</span>
                 </div>
-              </a>
+              </NuxtLink>
             </li>
             <li class="product-card">
-              <a href="#" class="product-card__link">
+              <NuxtLink to="/product-detail" class="product-card__link">
                 <div class="product-card__image">
                   <figure>
-                    <img src="~/assets/images/product-5-boxer.jpg" />
+                    <img src="/images/product-5-boxer.jpg" />
                   </figure>
                   <div class="product-card__image-title">BOXER</div>
                 </div>
@@ -139,13 +138,13 @@
                   <h2>BOXER</h2>
                   <span>800/500</span>
                 </div>
-              </a>
+              </NuxtLink>
             </li>
             <li class="product-card">
-              <a href="#" class="product-card__link">
+              <NuxtLink to="/product-detail" class="product-card__link">
                 <div class="product-card__image">
                   <figure>
-                    <img src="~/assets/images/product-6-husky.jpg" />
+                    <img src="/images/product-6-husky.jpg" />
                   </figure>
                   <div class="product-card__image-title">HUSKY</div>
                 </div>
@@ -153,13 +152,13 @@
                   <h2>HUSKY</h2>
                   <span>700/1200/1500</span>
                 </div>
-              </a>
+              </NuxtLink>
             </li>
             <li class="product-card">
-              <a href="#" class="product-card__link">
+              <NuxtLink to="/product-detail" class="product-card__link">
                 <div class="product-card__image">
                   <figure>
-                    <img src="~/assets/images/product-7-marble.jpg" />
+                    <img src="/images/product-7-marble.jpg" />
                   </figure>
                   <div class="product-card__image-title">MARBLE</div>
                 </div>
@@ -167,7 +166,7 @@
                   <h2>MARBLE</h2>
                   <span>80/100/120</span>
                 </div>
-              </a>
+              </NuxtLink>
             </li>
           </ul>
         </div>
