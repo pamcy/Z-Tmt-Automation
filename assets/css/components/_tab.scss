@@ -21,22 +21,56 @@
     }
 
     > a {
+      position: relative;
       padding-bottom: 0.325em;
-      border-bottom: 1px solid $color-secondary;
       font-size: rem(20);
       color: inherit !important;
 
       @include media-breakpoint-up(lg) {
         font-size: rem(28);
       }
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+
+
+      &::before {
+        height: rem(1);
+        background: $color-secondary;
+      }
+
+      &::after {
+        height: rem(3);
+        background: $color-primary;
+        visibility: hidden;
+        transform: scaleX(0);
+        transform-origin:  0% 50%;
+      }
+
+      &:hover {
+        &::after {
+          visibility: visible;
+          transform: scaleX(1);
+          transition: all 0.3s ease;
+        }
+      }
     }
 
     &.is-active {
       > a {
-        padding-bottom: 0.3em;
-        border-bottom: 3px solid $color-primary;
         font-weight: 700;
         color: $color-primary !important;
+
+        &::after {
+          visibility: visible;
+          transform: scaleX(1);
+        }
       }
     }
   }
