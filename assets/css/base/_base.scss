@@ -63,10 +63,10 @@ table {
 .page-header {
     height: rem(300);
     padding: $gutter-sm $gutter;
-    background-color: $color-primary-lightest;
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: cover;
+    background-image: url('/images/banner-mobile.png');
     color: #fff;
   
     @include media-breakpoint-up(md) {
@@ -76,6 +76,7 @@ table {
   
     @include media-breakpoint-up(lg) {
       height: rem(340);
+      background-image: url('/images/banner-desktop.png');
     }
   
     @include media-breakpoint-up(xxl) {
@@ -154,4 +155,10 @@ table {
             height: rem(300);
         }
     } 
+
+    &--sm {
+      @include media-breakpoint-up(lg) {
+        height: rem(240);
+      }
+    }
   }

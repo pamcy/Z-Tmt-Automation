@@ -11,10 +11,10 @@
   background: $color-primary-lightest;
 
   &-panel {
-    padding: rem(30) $gutter-sm rem(34);
+    padding: 0 $gutter-sm rem(34);
 
     @include media-breakpoint-up(lg) {
-      padding: rem(40) $gutter-sm rem(42);
+      padding: 0 $gutter-sm rem(42);
     }
 
     .container {

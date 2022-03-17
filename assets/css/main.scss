@@ -13,13 +13,14 @@
 @import 'components/card';
 @import 'components/back-to-top';
 @import 'components/accordion';
+@import 'components/breadcrumb';
+@import 'components/tab';
+@import 'components/select-dropdown';
 
 @import 'pages/index';
 @import 'pages/products';
 @import 'pages/product-detail';
-@import 'components/breadcrumb';
-@import 'components/tab';
-@import 'components/select-dropdown';
+@import 'pages/support';
 
 @import 'trumps/utilities';
 @import 'trumps/helpers';
