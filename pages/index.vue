@@ -382,7 +382,9 @@ onMounted(() => {
 
   heroSection.value.classList.add('is-loaded')
 
-  adjustFriendlyTextLayout()
+  setTimeout(() => {
+    adjustFriendlyTextLayout()
+  }, 100)
 });
 
 function setDocHeight() {
@@ -454,7 +456,10 @@ function adjustFriendlyTextLayout() {
   const friendlyTextBlockMarginBottom = parseInt(window.getComputedStyle(friendlyTextBlock.value).getPropertyValue('margin-bottom').replace('px', ''))
 
   if (window.matchMedia('(min-width: 1200px)').matches) {
-    friendlyTextBlock.value.style.marginBottom = friendlyTextBlockMarginBottom + friendlyTextParagraphHeight + 'px'
+    const marginBottom = (isNaN(friendlyTextBlockMarginBottom) ? 0 : friendlyTextBlockMarginBottom) + friendlyTextParagraphHeight
+    if (marginBottom > 0) {
+      friendlyTextBlock.value.style.marginBottom =  marginBottom + 'px'
+    }
   }
 }
 
