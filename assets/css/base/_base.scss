@@ -60,6 +60,14 @@ table {
     border-collapse: collapse;
 }
 
+main {
+  padding-bottom: rem(100);
+
+  @include media-breakpoint-up(lg) {
+    padding-bottom: rem(160);
+}
+}
+
 .page-header {
     height: rem(300);
     padding: $gutter-sm $gutter;
