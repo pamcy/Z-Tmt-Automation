@@ -248,17 +248,6 @@
                 max-width: 100%;
             }
 
-            // .swiper-slide-active {
-            //     .scenario-item-image {
-            //         transition: transform 1s ease;
-
-            //         @include media-breakpoint-up(md) {
-            //             transform: scale(1.26666667);
-            //         }
-
-            //     }
-            // }
-
             .swiper-slide {
                 .scenario-item-image {
                     position: relative;
@@ -397,6 +386,8 @@
 
                 &-active,
                 &-duplicate-active {
+                    position: relative;
+                    z-index: 1;
                     opacity: 1 !important;
                 }
             }
