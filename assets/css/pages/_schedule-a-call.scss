@@ -1,0 +1,15 @@
+.schedule-a-call {
+    main {
+        padding-right: $gutter-sm;
+        padding-left: $gutter-sm;
+    }
+}
+
+.page-header-schedule-a-call {
+    background-color: $color-primary-lightest;
+    background-image: url('/images/schedul-a-call-banner-mobile.png');
+
+    @include media-breakpoint-up(md) {
+        background-image: url('/images/schedul-a-call-banner-desktop.png');
+    }
+}
