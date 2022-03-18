@@ -115,10 +115,8 @@
               <h3 class="showcase-product-meta__title">Terrier</h3>
               <span class="showcase-product-meta__spec">150/200</span>
             </div>
-            <picture>
-              <source srcset="/images/product-1-mobile.jpg" media="(max-width: 1199px)" />
-              <img src="/images/product-1-desktop.jpg" alt>
-            </picture>
+            <img src="/images/product-1-mobile.jpg" alt class="d-lg-none">
+            <img src="/images/product-1-desktop.jpg" alt class="d-none d-lg-block">
             <NuxtLink to="/product-detail" class="btn btn--with-border">
               View Products
               <svg width="39" height="13" viewBox="0 0 39 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6.552h33.618M31.6 11.375l5.6-4.804-5.6-4.946" stroke="#EE7B45" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -129,10 +127,8 @@
               <h3 class="showcase-product-meta__title">Mastiff</h3>
               <span class="showcase-product-meta__spec">300/400/400L</span>
             </div>
-            <picture>
-              <source srcset="/images/product-2-mobile.jpg" media="(max-width: 1199px)" />
-              <img src="/images/product-2-desktop.jpg" alt>
-            </picture>
+            <img src="/images/product-2-mobile.jpg" alt class="d-lg-none">
+            <img src="/images/product-2-desktop.jpg" alt class="d-none d-lg-block">
             <NuxtLink to="/product-detail" class="btn btn--with-border">
               View Products
               <svg width="39" height="13" viewBox="0 0 39 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6.552h33.618M31.6 11.375l5.6-4.804-5.6-4.946" stroke="#EE7B45" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -143,10 +139,8 @@
               <h3 class="showcase-product-meta__title">Mastiffls</h3>
               <span class="showcase-product-meta__spec">300LS/400LS/400LLS</span>
             </div>
-            <picture>
-              <source srcset="/images/product-3-mobile.jpg" media="(max-width: 1199px)" />
-              <img src="/images/product-3-desktop.jpg" alt>
-            </picture>
+            <img src="/images/product-3-mobile.jpg" alt class="d-lg-none">
+            <img src="/images/product-3-desktop.jpg" alt class="d-none d-lg-block">
             <NuxtLink to="/product-detail" class="btn btn--with-border">
               View Products
               <svg width="39" height="13" viewBox="0 0 39 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6.552h33.618M31.6 11.375l5.6-4.804-5.6-4.946" stroke="#EE7B45" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -206,7 +200,7 @@
         </div>
       </div>
       <div class="friendly-list-wrapper">
-        <swiper class="friendly-list list-styless" ref="friendlyCarousel" :slides-per-view="3.5" :space-between="30" @swiper="initFriendlyCarousel" @slideChange="onFriendlyCarouselChange" loop>
+        <swiper class="friendly-list list-styless" ref="friendlyCarousel" :slides-per-view="3.5" :space-between="30" @swiper="initFriendlyCarousel" @slideChange="onFriendlyCarouselChange">
           <swiper-slide class="fade-in delay-3">
             <div class="friendly-list__title">
               <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M78.8 40c0 21.429-17.371 38.8-38.8 38.8S1.2 61.429 1.2 40 18.571 1.2 40 1.2 78.8 18.571 78.8 40z" stroke="#fff" stroke-width="2.4" stroke-miterlimit="10"/><path d="M57.12 20.907H23.147l-7.573 38.506h49.12L57.12 20.907z" stroke="#fff" stroke-width="2.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.814 24.96H57.92M16.48 54.933h47.307" stroke="#fff" stroke-width="2.4" stroke-miterlimit="10"/><path d="M19.414 40.16h41.44m-39.681-7.627H59.36M17.92 47.52h43.947M40.16 24.96v30.4m8.48-30.4 3.627 29.973M31.627 24.96 28 54.934" stroke="#fff" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -235,6 +229,9 @@
             </div>
             <p class="friendly-list__desc">Can be fully recycled at the end of its lifecycle.</p>
           </swiper-slide>
+          <swiper-slide></swiper-slide>
+          <swiper-slide></swiper-slide>
+          <swiper-slide></swiper-slide>
         </swiper>
         <div class="slider-counter d-none d-lg-block">
           <em>{{ friendlySlide.activeIndex }}</em> /4
@@ -452,10 +449,14 @@ function initFriendlyCarousel(swiper) {
 }
 
 function onFriendlyCarouselChange() {
-  var activeIndex = friendlyCarousel.value.$el.swiper.realIndex
+  var activeIndex = friendlyCarousel.value.$el.swiper.activeIndex
 
   if (activeIndex < 4) {
     friendlySlide.activeIndex = activeIndex + 1
+  }
+
+  if (activeIndex == 4) {
+    friendlyCarousel.value.$el.swiper.slideTo(0)
   }
 }
 
