@@ -34,7 +34,7 @@
                                                     @leave="onLeave">
                                             <ul class="list-styless" v-show="item.visible">
                                                 <li v-for="subItem in item.subItems" :key="subItem.title">
-                                                    <NuxtLink :to="subItem.url" :title="subItem.title" @click="closeMenuItem()">{{ subItem.title }}</NuxtLink>
+                                                    <NuxtLink :to="subItem.url" :title="subItem.title" @click="closeMenuItem(); hamburgerToggled = false">{{ subItem.title }}</NuxtLink>
                                                 </li>
                                             </ul>
                                         </Transition>
