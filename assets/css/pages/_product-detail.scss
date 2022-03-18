@@ -1,4 +1,5 @@
 .page-header-product-detail {
+    background-color: $color-primary-lightest;
     background-image: url('/images/product-detail-banner-mobile.png');
 
     @include media-breakpoint-up(lg) {
@@ -8,15 +9,13 @@
 
 .product {
     &-detail {
-        padding: 0 $gutter-sm rem(100);
+        padding-right: $gutter-sm;
+        padding-left: $gutter-sm;
         background-color: $color-primary-lightest;
 
         @include media-breakpoint-up(md) {
-            padding: 0 $gutter;
-        }
-
-        @include media-breakpoint-up(lg) {
-            padding-bottom: rem(160);
+            padding-right: $gutter;
+            padding-left: $gutter;
         }
     }
 

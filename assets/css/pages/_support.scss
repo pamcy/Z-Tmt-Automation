@@ -1,0 +1,127 @@
+.support {
+    background: no-repeat url('/images/support-bg.jpg') center;
+    background-size: cover;
+
+    main {
+        padding-right: $gutter-sm;
+        padding-left: $gutter-sm;
+
+        @include media-breakpoint-up(md) {
+            padding-right: $gutter;
+            padding-left: $gutter;
+        }
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+
+        @include media-breakpoint-up(md) {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+
+    .card {
+        display: flex;
+        padding: 0;
+        margin-top: rem(10);
+
+        @include media-breakpoint-up(md) {
+            flex-direction: column;
+            flex: 1 0 calc(33.3333333% - 10px);
+            max-width: calc(33.3333333% - 10px);
+            margin: 0 rem(5) rem(20);
+        }
+
+        &:hover,
+        &:focus {
+            > a {
+                box-shadow: inset 0 rem(-500) 0 0 $color-primary;
+                color: #fff;
+
+                .card-action {
+                    path {
+                        stroke: #fff;
+                    }
+                }
+            }
+        }
+
+        > a {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: rem(20);
+            color: inherit;
+            transition-property: all;
+            transition-duration: .3s;
+            transition-timing-function: ease;
+
+            @include media-breakpoint-between(lg, xl) {
+                padding: rem(40) rem(24) rem(20);
+            }
+    
+            @include media-breakpoint-up(xl) {
+                padding: rem(50) rem(30) rem(20);
+            }
+        }
+
+        &-icon {
+            margin-right: rem(10);
+
+            > svg {
+                @include media-breakpoint-between(lg, xl) {
+                    width: rem(96);
+                    height: rem(96);
+                }
+
+                @include media-breakpoint-up(xl) {
+                    width: rem(120);
+                    height: rem(120);
+                }
+            }
+        }
+
+        &-content {
+            display: flex;
+            flex-direction: column;
+
+            @include media-breakpoint-up(md) {
+                flex: 1 0 auto;
+            }
+
+            > .card-action {
+                align-self: flex-end;
+                margin-top: rem(10);
+
+                @include media-breakpoint-up(md) {
+                    margin-top: auto;
+                }
+
+                @include media-breakpoint-up(lg) {
+                    padding-top: rem(15);
+                }
+            }
+        }
+
+        &-title {
+            margin-bottom: rem(10);
+            font-size: rem(20);
+
+            @include media-breakpoint-up(md) {
+                margin-top: rem(10);
+            }
+
+            @include media-breakpoint-between(lg, xl) {
+                margin-top: rem(24);
+                font-size: rem(22.4);
+            }
+
+            @include media-breakpoint-up(xl) {
+                margin-top: rem(30);
+                font-size: rem(28);
+            }
+        }
+    }
+}
