@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="page-header page-header-products" ref="pageHeaderSection">
-      <div class="container">
+      <div class="container-sm">
         <div class="page-header-text">
           <h1>Products</h1>
           <p>TMT offers a wide range of products, specializing in swing gates, sliding gates and garage doors.</p>

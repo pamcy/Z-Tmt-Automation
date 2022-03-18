@@ -1,29 +1,21 @@
 .card {
-    padding: rem(40) rem(20);
-    background: #fff url('/images/card-bg.svg') no-repeat right bottom;
+    display: inline-block;
+    padding: rem(20);
+    background-color: #fff;
 
     @include media-breakpoint-up(md) {
-        padding: rem(50) rem(30);
+        padding: rem(30) rem(20);
     }
  
     &-title {
-        font-size: rem(28);
+        margin: 0;
 
         @include media-breakpoint-up(md) {
             margin-bottom: rem(5);
-        }
-
-        @include media-breakpoint-up(lg) {
-            font-size: rem(24);
         }
     }
 
     &-content {
         margin-bottom: 0;
-        font-size: rem(20);
-
-        @include media-breakpoint-up(lg) {
-            font-size: rem(16);
-        }
     }
 }

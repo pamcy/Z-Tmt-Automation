@@ -60,50 +60,58 @@ table {
     border-collapse: collapse;
 }
 
+main {
+  padding-bottom: rem(100);
+  background-color: $color-primary-lightest;
+
+  @include media-breakpoint-up(lg) {
+    padding-bottom: rem(160);
+}
+}
+
 .page-header {
     height: rem(300);
     padding: $gutter-sm $gutter;
-    background-color: $color-primary-lightest;
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: cover;
+    background-image: url('/images/banner-mobile.png');
     color: #fff;
-  
+
     @include media-breakpoint-up(md) {
       height: rem(310);
       padding: $gutter;
     }
-  
+
     @include media-breakpoint-up(lg) {
       height: rem(340);
+      background-image: url('/images/banner-desktop.png');
     }
-  
+
     @include media-breakpoint-up(xxl) {
       height: 16.60156vw;
     }
-  
+
     .container {
-      max-width: $container-width-sm;
-  
       @include media-breakpoint-up(xxl) {
         height: 100%;
         max-width: none;
       }
     }
-  
+
     &-text {
       transform: translateX(-10px);
       opacity: 0;
       transition: all 0.6s ease;
-  
+
       @include media-breakpoint-up(md) {
         max-width: 70%;
       }
-  
+
       @include media-breakpoint-up(lg) {
         max-width: 60%;
       }
-  
+
       @include media-breakpoint-up(xxl) {
         display: flex;
         flex-direction: column;
@@ -112,31 +120,31 @@ table {
         max-width: 27%;
         margin-left: calc(((100vw - 72px) / 12) * 3.3);
       }
-  
+
       h1 {
         font-size: rem(32);
-  
+
         @include media-breakpoint-up(md) {
           font-size: rem(40);
         }
-  
+
         @include media-breakpoint-up(xxl) {
           font-size: 1.95312vw;
         }
       }
-  
+
       p {
         margin-bottom: rem(16);
-  
+
         @include media-breakpoint-up(xxl) {
           font-size: 0.78125vw;
         }
-  
+
         &:last-of-type {
           margin-bottom: 0;
         }
       }
-  
+
       @at-root .page-header.is-loaded & {
         transform: translateX(0);
         opacity: 1;
@@ -153,5 +161,28 @@ table {
         @include media-breakpoint-up(lg) {
             height: rem(300);
         }
-    } 
-  }
+    }
+
+    &--sm {
+      height: rem(180);
+      padding-top: rem(20);
+      padding-bottom: rem(20);
+
+      @include media-breakpoint-up(lg) {
+        padding-top: rem(32);
+        padding-bottom: rem(32);
+      }
+
+      @include media-breakpoint-up(lg) {
+        height: rem(240);
+      }
+
+      .page-header-text h1 {
+        @include media-breakpoint-between(md, lg) {
+          font-size: rem(32);
+        }
+      }
+    }
+}
+
+

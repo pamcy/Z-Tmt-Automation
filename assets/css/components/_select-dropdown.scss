@@ -19,6 +19,15 @@
     }
   }
 
+  &-placeholder {
+    font-size: rem(16);
+    color: $color-secondary;
+
+    @include media-breakpoint-up(lg) {
+      font-size: rem(20);
+    }
+  }
+
   &-menu {
     display: none;
     position: absolute;
