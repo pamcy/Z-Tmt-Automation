@@ -62,6 +62,7 @@ table {
 
 main {
   padding-bottom: rem(100);
+  background-color: $color-primary-lightest;
 
   @include media-breakpoint-up(lg) {
     padding-bottom: rem(160);

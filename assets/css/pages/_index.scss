@@ -1,4 +1,6 @@
 .index {
+    padding-bottom: 0;
+
     h1 {
         font-size: rem(36);
 
@@ -219,7 +221,6 @@
     max-width: 100%;
     overflow-x: hidden;
     padding: $gutter 0;
-    background-color: $color-primary-lightest;
 
     @include media-breakpoint-up(md) {
         padding-bottom: rem(60);
@@ -651,7 +652,6 @@
 
 .friendly {
     padding: rem(50) $gutter-sm 0;
-    background-color: $color-primary-lightest;
 
     @include media-breakpoint-up(lg) {
         padding-bottom: rem(50);
@@ -883,7 +883,6 @@
 .reviews {
     width: 100%;
     padding-bottom: rem(55);
-    background-color: $color-primary-lightest;
     overflow-x: hidden;
 
     h2 {
