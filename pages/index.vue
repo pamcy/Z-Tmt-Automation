@@ -295,7 +295,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 import { Navigation, Pagination, Autoplay, A11y } from 'swiper'
 import { Controller, EffectFade } from 'swiper'
@@ -382,6 +382,11 @@ onMounted(() => {
   setTimeout(() => {
     adjustFriendlyTextLayout()
   }, 100)
+});
+
+onUnmounted(() => {
+  window.removeEventListener('orientationchange', setDocHeight);
+  window.removeEventListener('scroll', handleScroll)
 });
 
 function setDocHeight() {

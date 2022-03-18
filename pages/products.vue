@@ -81,7 +81,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const pageHeaderSection = ref(null)
 const productsSection = ref(null)
@@ -195,6 +195,10 @@ onMounted(() => {
   currentSorting.value = sortingMenu.value[1]
 
   window.addEventListener('scroll', fadeInProductCards)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', fadeInProductCards)
 })
 
 function onSelectTab(name) {
