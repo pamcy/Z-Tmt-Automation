@@ -284,7 +284,10 @@ onMounted(() => {
         productMetaFeaturesList.value.classList.add('is-revealed')
     }, 1000);
 
-    prepareFadeInLists()
+    setTimeout(() => {
+        prepareFadeInLists()
+    }, 100);
+
     window.addEventListener('scroll', fadeInLists)
 })
 
