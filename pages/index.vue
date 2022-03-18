@@ -206,7 +206,7 @@
         </div>
       </div>
       <div class="friendly-list-wrapper">
-        <swiper class="friendly-list list-styless" ref="friendlyCarousel" :slides-per-view="3.5" :space-between="30" @swiper="initFriendlyCarousel" @slideChange="onFriendlyCarouselChange">
+        <swiper class="friendly-list list-styless" ref="friendlyCarousel" :slides-per-view="3.5" :space-between="30" @swiper="initFriendlyCarousel" @slideChange="onFriendlyCarouselChange" loop>
           <swiper-slide class="fade-in delay-3">
             <div class="friendly-list__title">
               <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M78.8 40c0 21.429-17.371 38.8-38.8 38.8S1.2 61.429 1.2 40 18.571 1.2 40 1.2 78.8 18.571 78.8 40z" stroke="#fff" stroke-width="2.4" stroke-miterlimit="10"/><path d="M57.12 20.907H23.147l-7.573 38.506h49.12L57.12 20.907z" stroke="#fff" stroke-width="2.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.814 24.96H57.92M16.48 54.933h47.307" stroke="#fff" stroke-width="2.4" stroke-miterlimit="10"/><path d="M19.414 40.16h41.44m-39.681-7.627H59.36M17.92 47.52h43.947M40.16 24.96v30.4m8.48-30.4 3.627 29.973M31.627 24.96 28 54.934" stroke="#fff" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -235,9 +235,6 @@
             </div>
             <p class="friendly-list__desc">Can be fully recycled at the end of its lifecycle.</p>
           </swiper-slide>
-          <swiper-slide></swiper-slide>
-          <swiper-slide></swiper-slide>
-          <swiper-slide></swiper-slide>
         </swiper>
         <div class="slider-counter d-none d-lg-block">
           <em>{{ friendlySlide.activeIndex }}</em> /4
@@ -455,9 +452,13 @@ function initFriendlyCarousel(swiper) {
 }
 
 function onFriendlyCarouselChange() {
-  var activeIndex = friendlyCarousel.value.$el.swiper.activeIndex
+  var activeIndex = friendlyCarousel.value.$el.swiper.realIndex
 
-  friendlySlide.activeIndex = activeIndex + 1
+  if (activeIndex < 4) {
+    friendlySlide.activeIndex = activeIndex + 1
+  }
+
+  console.log(friendlyCarousel.value.$el.swiper.realIndex)
 }
 
 function adjustFriendlyTextLayout() {

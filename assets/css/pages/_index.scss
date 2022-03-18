@@ -759,7 +759,7 @@
             }
 
             @for $i from 1 through 4 {
-                &:nth-child(#{$i}) {
+                &[data-swiper-slide-index="#{$i - 1}"] {
                     background-image: url('/images/friendly-list-#{$i}-mobile.jpg');
 
                     @include media-breakpoint-up(lg) {
