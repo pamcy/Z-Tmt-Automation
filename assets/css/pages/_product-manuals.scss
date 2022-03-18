@@ -1,5 +1,4 @@
 .page-header-product-manuals {
-  background-color: $color-primary-lightest;
   background-image: url('/images/product-manuals-banner-mobile.png');
 
   @include media-breakpoint-down(lg) {
@@ -7,6 +6,24 @@
   }
 
   @include media-breakpoint-up(lg) {
-      background-image: url('/images/product-manuals-banner-desktop.png');
+    background-image: url('/images/product-manuals-banner-desktop.png');
+  }
+}
+
+.product-manuals {
+  background: $color-primary-lightest;
+
+  main {
+    padding-right: $gutter-sm;
+    padding-left: $gutter-sm;
+
+    @include media-breakpoint-up(md) {
+      padding-right: $gutter;
+      padding-left: $gutter;
+    }
+  }
+
+  .select-dropdown {
+    max-width: rem(180);
   }
 }
