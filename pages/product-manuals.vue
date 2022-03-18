@@ -16,7 +16,7 @@
             </li>
           </ul>
         </nav>
-        <h2 class="page-title">Product Manuals</h2>
+        <h2>Product Manuals</h2>
         <div :class="['select-dropdown', sortingIsOpen ? 'is-active' : '']">
           <button class="btn-styless" @click="onToggleSorting">
             <span v-if="currentSorting">{{ currentSorting }}</span>

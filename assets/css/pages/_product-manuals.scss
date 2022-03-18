@@ -1,4 +1,5 @@
 .page-header-product-manuals {
+  background-color: $color-primary-lightest;
   background-image: url('/images/product-manuals-banner-mobile.png');
 
   @include media-breakpoint-down(lg) {
@@ -11,8 +12,6 @@
 }
 
 .product-manuals {
-  background: $color-primary-lightest;
-
   main {
     padding-right: $gutter-sm;
     padding-left: $gutter-sm;
@@ -20,6 +19,12 @@
     @include media-breakpoint-up(md) {
       padding-right: $gutter;
       padding-left: $gutter;
+    }
+  }
+
+  .breadcrumb {
+    & + h2 {
+      margin-top: 0;
     }
   }
 

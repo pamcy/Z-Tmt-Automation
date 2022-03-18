@@ -185,12 +185,4 @@ main {
     }
 }
 
-.page-title {
-  margin: 0 0 rem(20);
-  font-size: rem(28);
-  font-weight: 700;
 
-  @include media-breakpoint-up(md) {
-    font-size: rem(32);
-  }
-}
