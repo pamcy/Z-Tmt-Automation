@@ -1,0 +1,31 @@
+.product-card {
+  &__content {
+    margin-top: rem(10);
+
+    @include media-breakpoint-up(lg) {
+      margin-top: rem(20);
+    }
+
+    > * {
+      word-break: break-all;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: rem(16);
+      font-weight: 700;
+
+      @include media-breakpoint-up(lg) {
+        font-size: rem(20);
+      }
+    }
+
+    span {
+      font-size: rem(14);
+
+      @include media-breakpoint-up(lg) {
+        font-size: rem(16);
+      }
+    }
+  }
+}
