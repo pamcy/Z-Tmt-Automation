@@ -902,9 +902,10 @@
         height: auto;
 
         .card {
+            width: 100%;
             height: 100%;
             padding: rem(40) rem(20);
-            background: url('/images/card-bg.svg') no-repeat right bottom;
+            background: #fff url('/images/card-bg.svg') no-repeat right bottom;
             transform-origin: center bottom;
             transition: all .3s ease;
 
