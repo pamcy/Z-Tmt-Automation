@@ -47,6 +47,24 @@
   .product-card {
     &__image {
       position: relative;
+      padding-top: 128.888%;
+      overflow: hidden;
+
+      > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform .3s ease;
+      }
+
+      &:hover {
+        > img {
+          transform: scale(1.1);
+        }
+      }
     }
 
     &__tag {
@@ -60,7 +78,7 @@
     }
 
     &__content {
-      margin-bottom: rem(10);
+      margin-top: rem(10);
 
       > ul {
         display: flex;

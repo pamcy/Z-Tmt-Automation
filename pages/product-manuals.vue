@@ -43,11 +43,11 @@
       </div>
 
       <div class="container">
-        <ul class="product-cards">
+        <ul class="product-cards" ref="cardsSection">
           <li
             v-for="(item, index) in items"
             :key="item.title"
-            class="product-card"
+            class="product-card fade-in"
             :style="{ transitionDelay: index * 200 + 'ms' }"
           >
             <div class="product-card__image">
@@ -72,6 +72,8 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
+
+const cardsSection = ref(null)
 
 const items = ref([
   {
@@ -135,6 +137,10 @@ const items = ref([
 const sortingIsOpen = ref(false)
 const sortingMenu = ref(['Type 1', 'Type 2'])
 const currentSorting = ref('')
+
+onMounted(() => {
+  cardsSection.value.classList.add('is-revealed')
+})
 
 function onToggleSorting() {
   sortingIsOpen.value = !sortingIsOpen.value
