@@ -1,3 +1,17 @@
+fieldset {
+    padding: 0;
+    border: 0;
+    margin-bottom: rem(60);
+}
+
+legend {
+    @extend .h3;
+
+    padding-left: rem(10);
+    border-left: rem(7) solid $color-primary;
+    margin-bottom: $gutter;
+}
+
 label {
     font-weight: 700;
 }

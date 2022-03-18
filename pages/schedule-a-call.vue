@@ -18,7 +18,13 @@
                 </nav>
                  <h1 class="h2">Schedule a Call</h1>
                 <p>You can schedule a technical support call below. This will allow us to help you troubleshoot any problems that you may have. You will be contacted through your selected means at the allotted time. Please allow up to 10 minutes for the previous call to wrap up.</p>
-                
+                <form action="">
+                    <fieldset>
+                        <legend>Confirm date & time</legend>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Enter Details</legend>
+                    </fieldset>
             </div>
         </main>
     </div>
