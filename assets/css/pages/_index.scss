@@ -1,6 +1,18 @@
 .index {
+    h1 {
+        font-size: rem(36);
+
+        @include media-breakpoint-up(lg) {
+            font-size: rem(70);
+        }
+    }
+
     h2 {
         text-transform: uppercase;
+
+        @include media-breakpoint-up(lg) {
+            font-size: rem(50);
+        }
     }
 }
 
