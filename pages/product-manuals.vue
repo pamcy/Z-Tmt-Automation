@@ -16,7 +16,9 @@
             </li>
           </ul>
         </nav>
+
         <h2>Product Manuals</h2>
+
         <div :class="['select-dropdown', sortingIsOpen ? 'is-active' : '']">
           <button class="btn-styless" @click="onToggleSorting">
             <span v-if="currentSorting">{{ currentSorting }}</span>
@@ -39,6 +41,7 @@
           </ul>
         </div>
       </div>
+
       <div class="container">
         <ul class="product-cards">
           <li
@@ -58,8 +61,8 @@
                   {{ language }} {{ index !== item.languages.length - 1 ? '&#124;' : '' }}
                 </li>
               </ul>
+              <NuxtLink :to="item.url" class="btn btn--fill">Download</NuxtLink>
             </div>
-            <NuxtLink :to="item.url" class="btn">Download</NuxtLink>
           </li>
         </ul>
       </div>
@@ -117,7 +120,7 @@ const items = ref([
     title: 'ChowBELL-PRO',
     type: 'pdf',
     languages: ['en', 'cn'],
-    img: '/images/manual-7-chowbell-pro.jpg',
+    img: '/images/manual-8-chowbell.jpg',
     url: '#',
   },
   {

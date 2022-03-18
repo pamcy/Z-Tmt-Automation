@@ -57,6 +57,7 @@
     }
 
     &--fill {
+      border: 0;
       background-color: $color-primary;
       color: #fff;
       transition: transform 0.25s ease;

@@ -1,11 +1,5 @@
 .product-card {
   &__content {
-    margin-top: rem(10);
-
-    @include media-breakpoint-up(lg) {
-      margin-top: rem(20);
-    }
-
     > * {
       word-break: break-all;
     }
@@ -20,7 +14,8 @@
       }
     }
 
-    span {
+    span,
+    li {
       font-size: rem(14);
 
       @include media-breakpoint-up(lg) {
