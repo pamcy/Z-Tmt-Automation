@@ -1,5 +1,21 @@
-h2 {
-    text-transform: uppercase;
+.index {
+    padding-bottom: 0;
+
+    h1 {
+        font-size: rem(36);
+
+        @include media-breakpoint-up(lg) {
+            font-size: rem(70);
+        }
+    }
+
+    h2 {
+        text-transform: uppercase;
+
+        @include media-breakpoint-up(lg) {
+            font-size: rem(50);
+        }
+    }
 }
 
 .hero {
@@ -205,7 +221,6 @@ h2 {
     max-width: 100%;
     overflow-x: hidden;
     padding: $gutter 0;
-    background-color: $color-primary-lightest;
 
     @include media-breakpoint-up(md) {
         padding-bottom: rem(60);
@@ -637,7 +652,6 @@ h2 {
 
 .friendly {
     padding: rem(50) $gutter-sm 0;
-    background-color: $color-primary-lightest;
 
     @include media-breakpoint-up(lg) {
         padding-bottom: rem(50);
@@ -869,7 +883,6 @@ h2 {
 .reviews {
     width: 100%;
     padding-bottom: rem(55);
-    background-color: $color-primary-lightest;
     overflow-x: hidden;
 
     h2 {
@@ -888,9 +901,10 @@ h2 {
         height: auto;
 
         .card {
+            width: 100%;
             height: 100%;
             padding: rem(40) rem(20);
-            background: url('/images/card-bg.svg') no-repeat right bottom;
+            background: #fff url('/images/card-bg.svg') no-repeat right bottom;
             transform-origin: center bottom;
             transition: all .3s ease;
 

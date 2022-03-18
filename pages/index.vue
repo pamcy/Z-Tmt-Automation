@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main class="index">
     <div class="hero" ref="heroSection">
       <div class="container">
         <div class="hero-text">
@@ -297,7 +297,7 @@
         <NuxtLink to="/" class="btn btn--with-border">Contact Us</NuxtLink>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script setup>
