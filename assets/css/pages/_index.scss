@@ -714,6 +714,10 @@
         .swiper-wrapper {
             flex-direction: column;
 
+            @include media-breakpoint-down(lg) {
+                transform: translateZ(0) !important;
+            }
+
             @include media-breakpoint-up(md) {
                 flex-direction: row;
                 flex-wrap: wrap;

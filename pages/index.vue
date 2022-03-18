@@ -457,8 +457,6 @@ function onFriendlyCarouselChange() {
   if (activeIndex < 4) {
     friendlySlide.activeIndex = activeIndex + 1
   }
-
-  console.log(friendlyCarousel.value.$el.swiper.realIndex)
 }
 
 function adjustFriendlyTextLayout() {
