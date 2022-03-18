@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="index">
     <div class="hero" ref="heroSection">
       <div class="container">
         <div class="hero-text">
