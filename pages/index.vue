@@ -242,44 +242,32 @@
       <div class="container">
         <h2>User Reviews</h2>
       </div>
-      <swiper :modules="swiperModules" class="reviews-list list-styless" ref="reviewsCarousel" :slides-per-view="1.39583333" :space-between="20" loop autoplay centered-slides :breakpoints="reviewsSliderBreakpoints">
-        <swiper-slide>
+      <Vue3Marquee :pauseOnHover="true">
           <div class="card">
             <h3 class="card-title">CJ</h3>
             <p class="card-content">My dad helped me install one onto my new house. He ended up loving it so much that he bought one for himself lol.</p>
           </div>
-        </swiper-slide>
-        <swiper-slide>
           <div class="card">
             <h3 class="card-title">Edward</h3>
             <p class="card-content">I'm very satisfied with TMT in its flexibility with power as it does not need batteries and can connect directly to the grid.</p>
           </div>
-        </swiper-slide>
-        <swiper-slide>
           <div class="card">
             <h3 class="card-title">Nathaniel</h3>
             <p class="card-content">Great Customer Support. They even walked me through steps of how to properly maintain the gate and gate opener. I commend them for going above and beyond.</p>
           </div>
-        </swiper-slide>
-        <swiper-slide>
           <div class="card">
             <h3 class="card-title">Ramesh</h3>
             <p class="card-content">good quality, good price</p>
           </div>
-        </swiper-slide>
-        <swiper-slide>
           <div class="card">
             <h3 class="card-title">Riley</h3>
             <p class="card-content">The metal shell is nice compared to other gate openers I've seen before. Seems to be able to take quite a beating.</p>
           </div>
-        </swiper-slide>
-        <swiper-slide>
           <div class="card">
             <h3 class="card-title">Avery</h3>
             <p class="card-content">The instructions were clear and detailed, and they were thoughtful to included most things that you will need in their kits, which saves you time and money of buying additional add-ons. Recommend them 10/10.</p>
           </div>
-        </swiper-slide>
-      </swiper>
+      </Vue3Marquee>
     </div>
     <div class="get-in-touch">
       <div class="container">
@@ -302,6 +290,8 @@ import { Controller, EffectFade } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 import 'swiper/css/pagination'
+import { Vue3Marquee } from 'vue3-marquee'
+import 'vue3-marquee/dist/style.css'
 
 useMeta({
   script: [
