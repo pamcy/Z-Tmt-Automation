@@ -458,7 +458,6 @@
 
         @media only screen and (min-width: $container-width) {
             top: calc(-50px * .83 - 50px * 1.14285714 * 1.65 - 3%);
-            right: calc((100vw - #{$container-width}) / 2);
             transform: none;
         }
     }

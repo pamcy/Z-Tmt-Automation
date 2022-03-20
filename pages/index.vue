@@ -69,7 +69,7 @@
             </swiper-slide>
           </swiper>
         </div>
-        <div class="slider-counter">
+        <div class="slider-counter" ref="scenarioCarouselCounter">
           <em>{{ scenarioSlide.activeIndex }}</em> /4
         </div>
         <div class="scenario-sliders__text">
@@ -318,6 +318,7 @@ const videoPlayed = reactive({ count: 0 })
 const scenarioCarousel = ref(null)
 const scenarioSlide = reactive({ activeIndex: 1 })
 const scenarioCarouselSlideWidth = ref(0)
+const scenarioCarouselCounter = ref(null)
 
 const whySection = ref(null)
 const whyRevealed = ref(false)
@@ -437,6 +438,8 @@ function onAfterScenarioCarouselInit() {
       scenarioCarouselSlideWidth.value = scenarioCarousel.value.$el.swiper.slides[0].swiperSlideSize
 
       document.querySelector('.scenario-image-carousel .swiper-button-next').style.transform = 'translate(-' + (scenarioCarouselSlideWidth.value * 1.3333333 / 2) + 'px, -50%)'
+
+      scenarioCarouselCounter.value.style.right = 'calc(50vw - ' + (scenarioCarouselSlideWidth.value * 1.3333333) + 'px)'
     }, 0) 
   }
 }
