@@ -413,6 +413,14 @@
                 background-color: $color-primary-lightest;
             }
         }
+
+        @include media-breakpoint-up(xl) {
+            &,
+            .swiper-wrapper,
+            .swiper-slide {
+                height: 100% !important;
+            }
+        }
     }
 
     &-item-text {
@@ -425,11 +433,13 @@
         }
 
         svg {
-            flex: 1 0 auto;
-
             @include media-breakpoint-up(lg) {
                 width: rem(140);
                 height: rem(140);
+            }
+
+            @include media-breakpoint-down(xl) {
+                flex: 1 0 auto;
             }
         }
 
