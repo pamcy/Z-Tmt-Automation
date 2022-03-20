@@ -109,7 +109,7 @@
     <div class="showcase">
       <div class="showcase-situation d-none d-md-block"></div>
       <div class="showcase-product">
-        <swiper :modules="swiperModules" :pagination="{ clickable: true }" autoplay loop>
+        <swiper :modules="swiperModules" :pagination="{ clickable: true }" effect="fade" :speed="1000" autoplay loop >
           <swiper-slide>
             <div class="showcase-product-meta">
               <h3 class="showcase-product-meta__title">Terrier</h3>
