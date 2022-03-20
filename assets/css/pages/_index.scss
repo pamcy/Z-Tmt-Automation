@@ -407,13 +407,6 @@
 
             .swiper-slide {
                 background-color: $color-primary-lightest;
-
-                &-active,
-                &-duplicate-active {
-                    position: relative;
-                    z-index: 1;
-                    opacity: 1 !important;
-                }
             }
         }
     }

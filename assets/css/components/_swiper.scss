@@ -13,3 +13,9 @@
         bottom: 2.929688vw !important;
     }
 }
+
+.swiper-fade {
+    .swiper-slide {
+        transition-property: opacity;
+    }
+}
