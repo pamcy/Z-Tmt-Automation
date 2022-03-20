@@ -234,7 +234,7 @@
         padding: 0 $gutter;
         color: $color-primary;
 
-        @include media-breakpoint-up(lg) {
+        @media only screen and (min-width: $container-width) {
             padding: 0 !important;
         }
     }
@@ -252,7 +252,7 @@
             justify-content: flex-start;
         }
 
-        @media only screen and (min-width: $container-width)  {
+        @media only screen and (min-width: $container-width) {
             margin-top: 3%;
         }
 
@@ -310,7 +310,7 @@
                 position: absolute;
                 top: -0.16666665%;
                 left: calc((100vw - #{$container-width}) / 2) !important;
-                width: 21vw;
+                width: 35vw;
                 height: 100%;
 
                 &:before {
@@ -327,6 +327,10 @@
                     top: -10%;
                     left: -10%;
                 }
+            }
+
+            @include media-breakpoint-up(xl) {
+                width: 21vw;
             }
         }
     }
@@ -402,7 +406,7 @@
             &,
             .swiper-wrapper,
             .swiper-slide {
-                height: 100% !important;
+                min-height: 100% !important;
             }
 
             .swiper-slide {
@@ -417,10 +421,12 @@
         @include media-breakpoint-up(lg) {
             display: flex;
             flex-direction: column;
-            height: 100%;
+            min-height: 100%;
         }
 
         svg {
+            flex: 1 0 auto;
+
             @include media-breakpoint-up(lg) {
                 width: rem(140);
                 height: rem(140);
@@ -454,6 +460,10 @@
             line-height: 1;
             top: -32px * 1.14285714 - 32px * .831;
             transform: translateY(-50%);
+        }
+
+        @include media-breakpoint-up(lg) {
+            top: -3.125rem * 1.14285714 - 3.125rem * .831;
         }
 
         @media only screen and (min-width: $container-width) {
