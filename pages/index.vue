@@ -436,7 +436,7 @@ function onAfterScenarioCarouselInit() {
     setTimeout(() => {
       scenarioCarouselSlideWidth.value = scenarioCarousel.value.$el.swiper.slides[0].swiperSlideSize
 
-      document.querySelector('.scenario-image-carousel .swiper-button-next').style.transform = 'translateX(-' + (scenarioCarouselSlideWidth.value * 1.3333333 / 2) + 'px)'
+      document.querySelector('.scenario-image-carousel .swiper-button-next').style.transform = 'translate(-' + (scenarioCarouselSlideWidth.value * 1.3333333 / 2) + 'px, -50%)'
     }, 0) 
   }
 }
