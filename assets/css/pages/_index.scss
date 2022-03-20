@@ -707,7 +707,7 @@
         }
 
         @include media-breakpoint-up(lg) {
-            cursor: url('/images/carousel-cursor.png'), auto;
+            cursor: url('/images/carousel-cursor.svg'), url('/images/carousel-cursor.png') auto;
         }
 
         @include media-breakpoint-between(lg, xl) {
