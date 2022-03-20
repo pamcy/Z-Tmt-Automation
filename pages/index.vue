@@ -46,7 +46,7 @@
       </div>
       <div class="scenario-sliders">
         <div class="scenario-sliders__image" :style="{ 'transform': 'translateX(' + (scenarioCarouselSlideWidth * 1.3333333 / 2) + 'px)' }">
-          <swiper class="scenario-image-carousel" ref="scenarioCarousel" :modules="swiperModules" :controller="{ control: controlledSwiper }" navigation :slides-per-view="1.008223684" :space-between="10" :breakpoints="scenarioImageSliderBreakpoints" @slideChange="onScenarioCarouselChange" @afterInit="onAfterScenarioCarouselInit" @resize="onAfterScenarioCarouselInit" :rewind="true">
+          <swiper class="scenario-image-carousel" ref="scenarioCarousel" :modules="swiperModules" :controller="{ control: controlledSwiper }" navigation :slides-per-view="1.008223684" :space-between="10" :breakpoints="scenarioImageSliderBreakpoints" @slideChange="onScenarioCarouselChange" @afterInit="onAfterScenarioCarouselInit" @resize="onAfterScenarioCarouselInit" :rewind="true" :speed="1000">
             <swiper-slide>
                 <div class="scenario-item-image">
                   <img src="/images/scenario-1.jpg" alt>
