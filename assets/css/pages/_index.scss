@@ -359,6 +359,7 @@
             border-radius: 50%;
             background: #fff no-repeat url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDI0IDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgNC4wMzJoMjEuMDExTTE5LjUgNyAyMyA0LjA0MyAxOS41IDEiIHN0cm9rZT0iI0VFN0I0NSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+) center;
             transform: translateY(-50%);
+            transition: background .5s;
 
             @include media-breakpoint-up(md) {
                 right: rem(60);
