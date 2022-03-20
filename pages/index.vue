@@ -269,14 +269,14 @@
           </div>
       </Vue3Marquee>
     </div>
-    <div class="get-in-touch">
+    <div class="get-in-touch" ref="getInTouchSection" :class="{ 'is-revealed': getInTouchRevealed}">
       <div class="container">
         <div>
-          <h2>Get In Touch</h2>
-          <p>We are happy to help you make life more convenient and safer.</p>
-          <p>Contact us to get more information.</p>
+          <h2 class="fade-in">Get In Touch</h2>
+          <p class="fade-in delay-1">We are happy to help you make life more convenient and safer.</p>
+          <p class="fade-in delay-2">Contact us to get more information.</p>
         </div>
-        <NuxtLink to="/" class="btn btn--with-border">Contact Us</NuxtLink>
+        <NuxtLink to="/" class="btn btn--with-border fade-in delay-3">Contact Us</NuxtLink>
       </div>
     </div>
   </main>
@@ -319,6 +319,9 @@ const friendlyCarousel = ref(null)
 const friendlySlide = reactive({ activeIndex: 1 })
 const friendlyTextBlock = ref(null)
 const friendlyTextParagraph = ref(null)
+
+const getInTouchSection = ref(null)
+const getInTouchRevealed = ref(false)
 
 const swiperModules = [
   Navigation,
@@ -399,6 +402,10 @@ function handleScroll(e) {
 
   if (window.innerHeight - friendlySection.value.getBoundingClientRect().top >= friendlySection.value.offsetHeight / 3) {
     friendlyRevealed.value = true
+  }
+
+  if (window.innerHeight - getInTouchSection.value.getBoundingClientRect().top >= getInTouchSection.value.offsetHeight / 2) {
+    getInTouchRevealed.value = true
   }
 }
 
