@@ -60,6 +60,58 @@
                         <li>
                             <h2 class="section-title">How Long Does the Warranty Last</h2>
                             <p>The warranty for the different parts is as defined below:</p>
+                            <table class="d-lg-none">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Product</th>
+                                        <th scope="col">Defined Warranty Term</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Motor</th>
+                                        <td>Lifetime</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Gear Box</th>
+                                        <td>5 years</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Other Components</th>
+                                        <td>2 years</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Accessories<span>Remotes and other sensors</span></th>
+                                        <td>2 years</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Replacement Parts</th>
+                                        <td>2 years</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="d-none d-lg-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Product</th>
+                                        <th scope="col">Motor</th>
+                                        <th scope="col" style="white-space: nowrap">Gear Box</th>
+                                        <th scope="col">Other Components</th>
+                                        <th scope="col">Accessories<span>Remotes and other sensors</span></th>
+                                        <th scope="col">Replacement Parts</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Defined<br />Warranty<br />Term</th>
+                                        <td>Lifetime</td>
+                                        <td>5 years</td>
+                                        <td>2 years</td>
+                                        <td>2 years</td>
+                                        <td>2 years</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </li>
                         <li>
                             <h2 class="section-title">Ways to Extend Warranty</h2>

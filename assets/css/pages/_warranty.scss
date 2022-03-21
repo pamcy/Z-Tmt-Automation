@@ -137,4 +137,90 @@
             }
         }
     }
+
+    table {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+
+        @include media-breakpoint-down(lg) {
+            max-width: rem(520);
+        }
+
+        th,
+        td {
+            border: 2px solid #fff;
+            font-size: rem(20);
+            line-height: 1.2;
+        }
+
+        @include media-breakpoint-down(lg) {
+            thead {
+                background-color: $color-primary-light;
+
+                th {
+                  padding: rem(14) rem(16);
+                }
+            }
+
+            tbody {
+                background-color: $color-primary-lighter;
+
+                th,
+                td {
+                    padding: rem(14) rem(16);
+                }
+
+                th {
+                    color: $color-primary;
+
+                    > span {
+                        display: block;
+                        color: #000;
+                        font-size: rem(14);
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            th,
+            td {
+                padding: rem(16) rem(14);
+                background-color: $color-primary-lighter;
+            }
+
+            thead {
+                th {
+                    &:first-of-type {
+                        text-align: left;
+                        font-size: rem(16);
+                        background-color: $color-primary-light;
+                    }
+
+                    &:not(:first-of-type) {
+                        color: $color-primary;
+                    }
+
+                    > span {
+                        display: block;
+                        color: #000;
+                        font-size: rem(14);
+                        font-weight: 400;
+                    }
+                }
+            }
+
+            tbody {
+                th {
+                    &:first-of-type {
+                        text-align: left;
+                        font-size: rem(16);
+                        background-color: $color-primary-light;
+                    }
+                }
+            }
+        }
+    }
 }
