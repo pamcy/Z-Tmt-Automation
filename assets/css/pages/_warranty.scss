@@ -23,8 +23,8 @@
     }
 
     .breadcrumb {
-        & + h2 {
-            margin-top: 0;
+        & + h1 {
+            margin: 0 0 rem(20);
         }
     }
 
