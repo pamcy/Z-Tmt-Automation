@@ -588,6 +588,7 @@
     }
 
     @include media-breakpoint-up(lg) {
+        padding-bottom: rem(80);
         background-image: url('/images/why-bg-desktop.jpg');
     }
 
@@ -689,6 +690,7 @@
     padding: rem(50) $gutter-sm 0;
 
     @include media-breakpoint-up(lg) {
+        padding-top: rem(100);
         padding-bottom: rem(50);
     }
 
