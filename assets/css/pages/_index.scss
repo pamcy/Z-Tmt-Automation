@@ -133,6 +133,8 @@
             height: 100%;
 
             .embed-responsive {
+                transform: translateZ(-600px);
+
                 &:before {
                     padding-top: 77.125604%;
             
@@ -210,7 +212,7 @@
             transform: perspective(600px) rotateY(0);
         }
         100% {
-            transform: perspective(600px) rotateY(70deg);
+            transform: perspective(600px) rotateY(75deg);
         }
     }
     
@@ -219,7 +221,7 @@
             transform: perspective(600px) rotateY(0);
         }
         100% {
-            transform: perspective(600px) rotateY(-70deg);
+            transform: perspective(600px) rotateY(-75deg);
         }
     }
     
