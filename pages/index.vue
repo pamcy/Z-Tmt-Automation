@@ -46,7 +46,7 @@
       </div>
       <div class="scenario-sliders">
         <div class="scenario-sliders__image" :style="{ 'transform': 'translateX(' + (scenarioCarouselSlideWidth * 1.3333333 / 2) + 'px)' }">
-          <swiper class="scenario-image-carousel" ref="scenarioCarousel" :modules="swiperModules" :controller="{ control: controlledSwiper }" navigation :slides-per-view="1.008223684" :space-between="10" :breakpoints="scenarioImageSliderBreakpoints" @slideChange="onScenarioCarouselChange" @afterInit="onAfterScenarioCarouselInit" @resize="onAfterScenarioCarouselInit" :rewind="true" :speed="1000">
+          <swiper class="scenario-image-carousel" ref="scenarioCarousel" :modules="swiperModules" :controller="{ control: controlledSwiper }" navigation :slides-per-view="1.008223684" :space-between="10" :breakpoints="scenarioImageSliderBreakpoints" @slideChange="onScenarioCarouselChange" @afterInit="onAfterScenarioCarouselInit" @resize="onAfterScenarioCarouselInit" @reachBeginning="onReachBeginning()" :rewind="true" :speed="1000">
             <swiper-slide>
                 <div class="scenario-item-image">
                   <img src="/images/scenario-1.jpg" alt>
@@ -73,7 +73,7 @@
           <em>{{ scenarioSlide.activeIndex }}</em> /4
         </div>
         <div class="scenario-sliders__text">
-          <swiper class="scenario-text-carousel" :modules="swiperModules" effect="fade" :allow-touch-move="false" :space-between="10" :auto-height="true" :breakpoints="scenarioTextSliderBreakpoints" @swiper="setControlledSwiper">
+          <swiper class="scenario-text-carousel" :modules="swiperModules" effect="fade" :allow-touch-move="false" :space-between="10" @swiper="setControlledSwiper">
             <swiper-slide>
               <div class="scenario-item-text">
                 <svg width="60" height="60" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M137.75 70c0 37.417-30.333 67.75-67.75 67.75S2.25 107.417 2.25 70 32.583 2.25 70 2.25 137.75 32.583 137.75 70z" fill="#FFECE3" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10"/><path d="M60.09 46.385c-28.28 22.26-25.48 40.88-25.48 40.88 0 14.14 11.48 25.48 25.48 25.48 14.14 0 25.48-11.48 25.48-25.48 0 0 2.94-18.62-25.48-40.88z" fill="#fff" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M61.35 60.248s10.64 9.1 11.9 15.96" stroke="#EE7B45" stroke-width="2.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M92.15 27.066c-14.14 11.2-12.74 20.44-12.74 20.44 0 7 5.74 12.74 12.74 12.74s12.74-5.74 12.74-12.74c0 0 1.4-9.24-12.74-20.44z" fill="#fff" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M92.15 35.748s5.32 4.48 5.88 7.98" stroke="#EE7B45" stroke-width="2.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -269,14 +269,14 @@
           </div>
       </Vue3Marquee>
     </div>
-    <div class="get-in-touch">
+    <div class="get-in-touch" ref="getInTouchSection" :class="{ 'is-revealed': getInTouchRevealed}">
       <div class="container">
         <div>
-          <h2>Get In Touch</h2>
-          <p>We are happy to help you make life more convenient and safer.</p>
-          <p>Contact us to get more information.</p>
+          <h2 class="fade-in">Get In Touch</h2>
+          <p class="fade-in delay-1">We are happy to help you make life more convenient and safer.</p>
+          <p class="fade-in delay-2">Contact us to get more information.</p>
         </div>
-        <NuxtLink to="/" class="btn btn--with-border">Contact Us</NuxtLink>
+        <NuxtLink to="/" class="btn btn--with-border fade-in delay-3">Contact Us</NuxtLink>
       </div>
     </div>
   </main>
@@ -308,6 +308,7 @@ const videoPlayed = reactive({ count: 0 })
 const scenarioCarousel = ref(null)
 const scenarioSlide = reactive({ activeIndex: 1 })
 const scenarioCarouselSlideWidth = ref(0)
+const scenarioCarouselTransition = ref(0)
 const scenarioCarouselCounter = ref(null)
 
 const whySection = ref(null)
@@ -319,6 +320,9 @@ const friendlyCarousel = ref(null)
 const friendlySlide = reactive({ activeIndex: 1 })
 const friendlyTextBlock = ref(null)
 const friendlyTextParagraph = ref(null)
+
+const getInTouchSection = ref(null)
+const getInTouchRevealed = ref(false)
 
 const swiperModules = [
   Navigation,
@@ -356,23 +360,19 @@ const scenarioImageSliderBreakpoints = {
   }
 }
 
-const scenarioTextSliderBreakpoints = {
-  1200: {
-    autoHeight: false
-  }
-}
-
 onMounted(() => {
   setDocHeight()
 
   window.addEventListener('orientationchange', setDocHeight);
   window.addEventListener('scroll', handleScroll)
 
-  heroSection.value.classList.add('is-loaded')
-
   setTimeout(() => {
     adjustFriendlyTextLayout()
   }, 100)
+
+  setTimeout(() => {
+    heroSection.value.classList.add('is-loaded')
+  }, 400);
 });
 
 onUnmounted(() => {
@@ -399,6 +399,10 @@ function handleScroll(e) {
 
   if (window.innerHeight - friendlySection.value.getBoundingClientRect().top >= friendlySection.value.offsetHeight / 3) {
     friendlyRevealed.value = true
+  }
+
+  if (window.innerHeight - getInTouchSection.value.getBoundingClientRect().top >= getInTouchSection.value.offsetHeight / 2) {
+    getInTouchRevealed.value = true
   }
 }
 
@@ -428,9 +432,21 @@ function onAfterScenarioCarouselInit() {
       scenarioCarouselSlideWidth.value = scenarioCarousel.value.$el.swiper.slides[0].swiperSlideSize
 
       document.querySelector('.scenario-image-carousel .swiper-button-next').style.transform = 'translate(-' + (scenarioCarouselSlideWidth.value * 1.3333333 / 2) + 'px, -50%)'
-
       scenarioCarouselCounter.value.style.right = 'calc(50vw - ' + (scenarioCarouselSlideWidth.value * 1.3333333) + 'px)'
-    }, 0) 
+
+      scenarioCarouselTransition.value = scenarioCarousel.value.$el.swiper.translate
+    }, 0)
+  }
+}
+
+function onReachBeginning() {
+  var allSlides = document.querySelectorAll('.scenario-image-carousel .swiper-slide')
+
+  if (window.matchMedia('(min-width: 1200px)').matches) {
+    allSlides.forEach(slide => {
+      slide.style.transform = 'translateX(0)'
+      slide.style.transitionDuration = '0'
+    })
   }
 }
 
@@ -438,6 +454,20 @@ function onScenarioCarouselChange() {
   var activeIndex = scenarioCarousel.value.$el.swiper.activeIndex
 
   scenarioSlide.activeIndex = activeIndex + 1
+
+  setTimeout(() => {
+    var previousSlide = document.querySelector('.scenario-image-carousel .swiper-slide-prev')
+    var otherSlides = document.querySelectorAll('.scenario-image-carousel .swiper-slide:not(.swiper-slide-prev)')
+
+    if (window.matchMedia('(min-width: 1200px)').matches && previousSlide) {
+      otherSlides.forEach(slide => {
+        slide.style.transitionDuration = '0'
+        slide.style.transform = 'none'
+      })
+      previousSlide.style.transitionDuration = '600ms'
+      previousSlide.style.transform = 'translateX(-' + scenarioCarouselTransition.value + 'px)'
+    }
+  }, 300);
 }
 
 function initFriendlyCarousel(swiper) {

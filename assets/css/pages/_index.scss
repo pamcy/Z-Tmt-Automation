@@ -47,9 +47,6 @@
         justify-content: flex-end;
         align-items: flex-start;
         height: 100%;
-        transition: all .6s ease;
-        transform: translateX(-10px);
-        opacity: 0;
 
         @include media-breakpoint-up(md) {
             justify-content: center;
@@ -60,13 +57,32 @@
             width: 35%;
         }
 
+        h1,
+        p,
+        .btn {
+            transition-property: all;
+            transition-duration: 1s;
+            transition-timing-function: ease;
+            transform: translateY(-10px);
+            opacity: 0;
+
+            @at-root .hero.is-loaded & {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
         h1 {
+            transition-delay: .3s;
+
             @include media-breakpoint-between(lg, xl) {
                 font-size: rem(70 * .8);
             }
         }
 
         p {
+            transition-delay: .6s;
+
             @include media-breakpoint-up(lg) {
                 font-size: rem(24);
             }
@@ -77,14 +93,11 @@
         }
     
         .btn {
+            transition: opacity 1s ease .9s, transform 1s ease .9s, background-color .5s;
+
             @include media-breakpoint-down(md) {
                 align-self: center;
             }
-        }
-
-        @at-root .hero.is-loaded & {
-            opacity: 1;
-            transform: translateX(0);
         }
     }
 }
@@ -102,12 +115,26 @@
         display: flex;
         width: rem(1200);
 
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            background: rgba(0, 0, 0, .1);
+            pointer-events: none;
+        }
+
         &-content {
             position: absolute;
             width: 100%;
             height: 100%;
 
             .embed-responsive {
+                transform: translateZ(-600px);
+
                 &:before {
                     padding-top: 77.125604%;
             
@@ -137,6 +164,13 @@
                     max-width: 55%;
                 }
 
+                h2 {
+                    @include media-breakpoint-down(md) {
+                        margin-bottom: rem(15);
+                        font-size: rem(24);
+                    }
+                }
+
                 p {
                     @include media-breakpoint-up(lg) {
                         font-size: rem(20);
@@ -148,6 +182,7 @@
         &-left,
         &-right {
             position: relative;
+            z-index: 1;
             max-width: 50%;
             pointer-events: none;
         }
@@ -184,7 +219,7 @@
             transform: perspective(600px) rotateY(0);
         }
         100% {
-            transform: perspective(600px) rotateY(70deg);
+            transform: perspective(600px) rotateY(75deg);
         }
     }
     
@@ -193,7 +228,7 @@
             transform: perspective(600px) rotateY(0);
         }
         100% {
-            transform: perspective(600px) rotateY(-70deg);
+            transform: perspective(600px) rotateY(-75deg);
         }
     }
     
@@ -359,6 +394,7 @@
             border-radius: 50%;
             background: #fff no-repeat url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDI0IDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgNC4wMzJoMjEuMDExTTE5LjUgNyAyMyA0LjA0MyAxOS41IDEiIHN0cm9rZT0iI0VFN0I0NSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+) center;
             transform: translateY(-50%);
+            transition: background .5s;
 
             @include media-breakpoint-up(md) {
                 right: rem(60);
@@ -561,6 +597,7 @@
     }
 
     @include media-breakpoint-up(lg) {
+        padding-bottom: rem(80);
         background-image: url('/images/why-bg-desktop.jpg');
     }
 
@@ -662,6 +699,7 @@
     padding: rem(50) $gutter-sm 0;
 
     @include media-breakpoint-up(lg) {
+        padding-top: rem(100);
         padding-bottom: rem(50);
     }
 
@@ -717,7 +755,7 @@
         }
 
         @include media-breakpoint-up(lg) {
-            cursor: url('/images/carousel-cursor.svg'), url('/images/carousel-cursor.png') auto;
+            cursor: url('/images/carousel-cursor.svg'), url('/images/carousel-cursor.png'), auto;
         }
 
         @include media-breakpoint-between(lg, xl) {
@@ -911,25 +949,32 @@
 
     .vue3-marquee {
         overflow: visible !important;
+
+        .marquee {
+            align-items: stretch;
+        }
     }
 
     .card {
-        width: rem(240);
-        height: 100%;
+        width: 70vw;
         padding: rem(40) rem(20);
         margin: rem(10);
         background: #fff url('/images/card-bg.svg') no-repeat right bottom;
         transform-origin: center bottom;
         transition: all .3s ease;
 
-        @include media-breakpoint-up(md)  {
+        @include media-breakpoint-down(lg) {
+            background-size: rem(114.8) auto;
+        }
+
+        @include media-breakpoint-up(md) {
             width: rem(330);
         }
 
         @include media-breakpoint-up(lg) {
             width: rem(360);
             padding: rem(50) rem(30);
-            margin: rem(7.5);
+            margin: rem(12.5);
         }
 
         &:hover {
@@ -938,7 +983,7 @@
         }
 
         &-title {
-            font-size: rem(28);
+            font-size: rem(20);
 
             @include media-breakpoint-up(lg) {
                 font-size: rem(24);

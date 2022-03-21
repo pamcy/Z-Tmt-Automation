@@ -8,6 +8,8 @@
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
+    transition-property: all;
+    transition-duration: .5s;
 
     &:hover,
     &:focus {
