@@ -1,0 +1,104 @@
+.page-header-product-manuals {
+  background-color: $color-primary-lightest;
+  background-image: url('/images/product-manuals-banner-mobile.png');
+
+  @include media-breakpoint-down(lg) {
+    background-position: 75% 100%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    background-image: url('/images/product-manuals-banner-desktop.png');
+  }
+}
+
+.product-manuals {
+  main {
+    padding-right: $gutter-sm;
+    padding-left: $gutter-sm;
+
+    @include media-breakpoint-up(md) {
+      padding-right: $gutter;
+      padding-left: $gutter;
+    }
+  }
+
+  .breadcrumb {
+    & + h2 {
+      margin-top: 0;
+    }
+  }
+
+  .select-dropdown {
+    max-width: rem(180);
+  }
+
+  .product-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(40) rem(20);
+    margin-top: rem(40);
+
+    @include media-breakpoint-up(lg) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: rem(60) rem(40);
+    }
+  }
+
+  .product-card {
+    &__image {
+      position: relative;
+      padding-top: 128.888%;
+      overflow: hidden;
+
+      > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform .3s ease;
+      }
+
+      &:hover {
+        > img {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    &__tag {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: rem(1) rem(16);
+      background: $color-primary-light;
+      font-size: rem(16);
+      text-transform: uppercase;
+    }
+
+    &__content {
+      margin-top: rem(10);
+
+      > ul {
+        display: flex;
+        margin: rem(3) 0 rem(10);
+
+        > li {
+          text-transform: uppercase;
+
+          &:not(:last-of-type) {
+            padding-right: rem(5);
+          }
+        }
+      }
+
+      .btn {
+        width: 100%;
+        min-width: auto;
+        padding-left: rem(10);
+        padding-right: rem(10);
+      }
+    }
+  }
+}
