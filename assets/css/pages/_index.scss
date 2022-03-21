@@ -60,7 +60,7 @@
         h1,
         p,
         .btn {
-            transition-property: opacity transform;
+            transition-property: all;
             transition-duration: 1s;
             transition-timing-function: ease;
             transform: translateX(-10px);
@@ -93,7 +93,7 @@
         }
     
         .btn {
-            transition-delay: .9s !important;
+            transition: opacity 1s ease .9s, transform 1s ease .9s, background-color .5s;
 
             @include media-breakpoint-down(md) {
                 align-self: center;
