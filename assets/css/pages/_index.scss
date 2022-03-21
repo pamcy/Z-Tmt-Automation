@@ -949,11 +949,14 @@
 
     .vue3-marquee {
         overflow: visible !important;
+
+        .marquee {
+            align-items: stretch;
+        }
     }
 
     .card {
-        width: rem(240);
-        height: 100%;
+        width: 70vw;
         padding: rem(40) rem(20);
         margin: rem(10);
         background: #fff url('/images/card-bg.svg') no-repeat right bottom;
