@@ -25,11 +25,11 @@
                         <p>TMT Automations wicll cover charges resulting from defects in workmanship and material. TMT will, at its discretion, provide repairs and direct replacement for all needed parts.</p>
                     </div>
                     <ul class="warranty-list">
-                        <li>
+                        <li class="fade-in delay-1">
                             <h2 class="section-title">Product Registration</h2>
                             <p>We strong urge that the products be registered through the TMT Chow! App or through our website. New products or replacement parts should be registered within 90 days of purchase. If the product is not registered, then the warranty will be in effect starting from the date of purchase.</p>
                         </li>
-                        <li>
+                        <li class="fade-in delay-2">
                             <h2 class="section-title">How to File for a Claim</h2>
                             <p>In order to file for a claim under the warranty, you must:</p>
                             <div class="callout">
@@ -50,14 +50,14 @@
                             <p>We reserve the right to oblige by the warranty if you cannot provide the proof of purchase as specified above. To file a for a claim, you can contact our customer fill out our form online at <a href="https://www.tmtautomation.com">www.tmtautomation.com</a>, email customer support at <a href="mailto:support@tmtautomation.com">support@tmtautomation.com</a> or call our support line at a 000-000-0000. Provide your product serial number and a copy of the receipt as well as the problem that you are facing. We will investigate the problem and promptly send you replacement parts if necessary.</p>
                             <p>Before attempting to mailing in any defective parts, make sure that you have contacted customer support and filed for a claim. You will be given a Return Merchandise Authorization (RMA) number, as well as further instructions on the next steps. After receiving a RMA number, it should be clearly labelled on the outside of the return packaging.</p>
                         </li>
-                        <li>
+                        <li class="fade-in delay-3">
                             <h2 class="section-title">What this Warranty Covers</h2>
                             <p>To qualify for this warranty, your TMT product must be purchased from an authorized dealer or channel.</p>
                             <p>TMT Automation will cover any defects in material or workmanship of our products within the defined warranty term, provided proper installation and use have been followed. The manufacturer will, at its discretion, provide repair and replacements at no cost to the customer within the warranty term. TMT Automations will pay for shipping fees, equaling to United Parcel Service ground fees.</p>
                             <p>This limited warranty will NOT cover any damages or malfunctions from alterations, modifications, improper or unreasonable use or maintenance of our products and lightning, fire, power surges and other acts of nature.</p>
                             <p>To avoid voiding the warranty, do not make any unauthorized modifications and repairs..</p>
                         </li>
-                        <li>
+                        <li class="fade-in delay-4">
                             <h2 class="section-title">How Long Does the Warranty Last</h2>
                             <p>The warranty for the different parts is as defined below:</p>
                             <table class="d-lg-none">
@@ -113,11 +113,11 @@
                                 </tbody>
                             </table>
                         </li>
-                        <li>
+                        <li class="fade-in delay-5">
                             <h2 class="section-title">Ways to Extend Warranty</h2>
                             <p>You can extend your warranty through purchasing the extension options available on our website. To extend your warranty, you must purchase the extension before your original warranty expires.</p>
                         </li>
-                        <li>
+                        <li class="fade-in delay-6">
                             <h2 class="section-title">Limitations on Liability</h2>
                             <p>The maximum liability for any TMT Automations product under this limited liability will not exceed the actual purchase price of the product.</p>
                         </li>
@@ -129,7 +129,23 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { onMounted } from 'vue'
 
-onMounted(() => {})
+onMounted(() => {
+    window.addEventListener('scroll', fadeInWarrantyList)
+})
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', fadeInWarrantyList)
+})
+
+function fadeInWarrantyList() {
+    var items = document.querySelectorAll('.warranty-list li')
+
+    for (var i = 0; i < items.length; i++) {
+        if (window.innerHeight - items[i].getBoundingClientRect().top >= items[i].offsetHeight / 3) {
+            items[i].classList.add('is-revealed')
+        }
+    }
+}
 </script>
