@@ -28,7 +28,7 @@
         }
     }
 
-    form {
+    .faq-form {
         .input-group {
             height: rem(60);
             padding: rem(16) rem(20);
@@ -45,6 +45,32 @@
 
         button[type='submit'] {
             padding-left: rem(10);
+        }
+    }
+
+    &-content {
+        margin-top: rem(35);
+
+        @include media-breakpoint-up(md) {
+            margin-top: rem(42);
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-top: rem(68);
+        }
+
+        .tab {
+            > li {
+                > a {
+                    display: inline-block;
+                    min-width: rem(60);
+                    text-align: center;
+
+                    @include media-breakpoint-up(lg) {
+                        min-width: rem(180);
+                    }
+                }
+            }
         }
     }
 }

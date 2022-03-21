@@ -19,7 +19,7 @@
 
                 <h1 class="h2">Frequently Asked Question</h1>
 
-                <form action="" class="">
+                <form action="" class="faq-form">
                     <div class="input-group">
                         <input type="search" v-model="searchValue" placeholder="Type keyword" />
                         <button type="submit" class="btn btn-styless">
@@ -27,6 +27,14 @@
                         </button>
                     </div>
                 </form>
+
+                <div class="faq-content">
+                    <ul class="tab">
+                        <li v-for="menu in tabMenu" :key="menu" :class="{ 'is-active': currentTab === menu }">
+                            <a href="#" @click.prevent="onSelectTab(menu)">{{ menu }}</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </main>
     </div>
@@ -37,7 +45,12 @@ import { ref, onMounted } from 'vue'
 
 const searchValue = ref('')
 
+const tabMenu = ref(['All', 'Gate Opener'])
+const currentTab = ref('All')
+
 onMounted(() => {})
 
-onUnmounted(() => {})
+function onSelectTab(name) {
+    currentTab.value = name
+}
 </script>
