@@ -1,0 +1,30 @@
+.page-header-warranty {
+  background-color: $color-primary-lightest;
+  background-image: url('/images/warranty-banner-mobile.png');
+
+  @include media-breakpoint-down(lg) {
+    background-position: 75% 100%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    background-image: url('/images/warranty-banner-desktop.png');
+  }
+}
+
+.warranty {
+  main {
+    padding-right: $gutter-sm;
+    padding-left: $gutter-sm;
+
+    @include media-breakpoint-up(md) {
+      padding-right: $gutter;
+      padding-left: $gutter;
+    }
+  }
+
+  .breadcrumb {
+    & + h2 {
+      margin-top: 0;
+    }
+  }
+}
