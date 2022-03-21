@@ -47,9 +47,6 @@
         justify-content: flex-end;
         align-items: flex-start;
         height: 100%;
-        transition: all 1s ease;
-        transform: translateX(-10px);
-        opacity: 0;
 
         @include media-breakpoint-up(md) {
             justify-content: center;
@@ -60,13 +57,32 @@
             width: 35%;
         }
 
+        h1,
+        p,
+        .btn {
+            transition-property: opacity transform;
+            transition-duration: 1s;
+            transition-timing-function: ease;
+            transform: translateX(-10px);
+            opacity: 0;
+
+            @at-root .hero.is-loaded & {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
         h1 {
+            transition-delay: .3s;
+
             @include media-breakpoint-between(lg, xl) {
                 font-size: rem(70 * .8);
             }
         }
 
         p {
+            transition-delay: .6s;
+
             @include media-breakpoint-up(lg) {
                 font-size: rem(24);
             }
@@ -77,14 +93,11 @@
         }
     
         .btn {
+            transition-delay: .9s !important;
+
             @include media-breakpoint-down(md) {
                 align-self: center;
             }
-        }
-
-        @at-root .hero.is-loaded & {
-            opacity: 1;
-            transform: translateX(0);
         }
     }
 }
