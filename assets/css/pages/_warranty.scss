@@ -61,4 +61,80 @@
             }
         }
     }
+
+    .callout {
+        margin-bottom: rem(20);
+        padding: rem(22) rem(16);
+        background-color: $color-primary-light;
+
+        @include media-breakpoint-up(md) {
+            padding: rem(28) rem(25);
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding-left: rem(100);
+            padding-right: rem(100);
+        }
+
+        &__list {
+            @include media-breakpoint-up(md) {
+                display: grid;
+                grid-template-columns: 35% auto 55%;
+                grid-column-gap: rem(18);
+                align-items: center;
+            }
+        }
+
+        &__item {
+            display: grid;
+
+            &:not(.callout__item-plus) {
+                grid-template-columns: 35px 1fr;
+                grid-column-gap: rem(5);
+
+                @include media-breakpoint-up(md) {
+                    grid-template-columns: 44px 1fr;
+                    grid-column-gap: rem(10);
+                    align-items: center;
+                }
+            }
+
+            &-plus {
+                text-align: center;
+            }
+
+            > b {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: rem(35);
+                height: rem(35);
+                border-radius: 50%;
+                background-color: $color-primary;
+                color: #fff;
+                font-size: rem(20);
+                font-weight: 700;
+
+                @include media-breakpoint-up(md) {
+                    width: rem(44);
+                    height: rem(44);
+                    font-size: rem(24);
+                }
+            }
+
+            > h3 {
+                font-size: rem(18);
+
+                @include media-breakpoint-up(md) {
+                    font-size: rem(20);
+                }
+            }
+
+            > .plus {
+                font-size: rem(28);
+                font-weight: 700;
+                color: $color-primary;
+            }
+        }
+    }
 }
