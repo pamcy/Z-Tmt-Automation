@@ -46,7 +46,7 @@
       </div>
       <div class="scenario-sliders">
         <div class="scenario-sliders__image" :style="{ 'transform': 'translateX(' + (scenarioCarouselSlideWidth * 1.3333333 / 2) + 'px)' }">
-          <swiper class="scenario-image-carousel" ref="scenarioCarousel" :modules="swiperModules" :controller="{ control: controlledSwiper }" navigation :slides-per-view="1.008223684" :space-between="10" :breakpoints="scenarioImageSliderBreakpoints" @slideChange="onScenarioCarouselChange" @afterInit="onAfterScenarioCarouselInit" @resize="onAfterScenarioCarouselInit" loop>
+          <swiper class="scenario-image-carousel" ref="scenarioCarousel" :modules="swiperModules" :controller="{ control: controlledSwiper }" navigation :slides-per-view="1.008223684" :space-between="10" :breakpoints="scenarioImageSliderBreakpoints" @slideChange="onScenarioCarouselChange" @afterInit="onAfterScenarioCarouselInit" @resize="onAfterScenarioCarouselInit" @reachBeginning="onReachBeginning()" :rewind="true" :speed="1000">
             <swiper-slide>
                 <div class="scenario-item-image">
                   <img src="/images/scenario-1.jpg" alt>
@@ -69,11 +69,11 @@
             </swiper-slide>
           </swiper>
         </div>
-        <div class="slider-counter">
+        <div class="slider-counter" ref="scenarioCarouselCounter">
           <em>{{ scenarioSlide.activeIndex }}</em> /4
         </div>
         <div class="scenario-sliders__text">
-          <swiper class="scenario-text-carousel" :modules="swiperModules" effect="fade" :allow-touch-move="false" :space-between="10" :auto-height="true" :breakpoints="scenarioTextSliderBreakpoints" @swiper="setControlledSwiper" loop>
+          <swiper class="scenario-text-carousel" :modules="swiperModules" effect="fade" :allow-touch-move="false" :space-between="10" @swiper="setControlledSwiper">
             <swiper-slide>
               <div class="scenario-item-text">
                 <svg width="60" height="60" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M137.75 70c0 37.417-30.333 67.75-67.75 67.75S2.25 107.417 2.25 70 32.583 2.25 70 2.25 137.75 32.583 137.75 70z" fill="#FFECE3" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10"/><path d="M60.09 46.385c-28.28 22.26-25.48 40.88-25.48 40.88 0 14.14 11.48 25.48 25.48 25.48 14.14 0 25.48-11.48 25.48-25.48 0 0 2.94-18.62-25.48-40.88z" fill="#fff" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M61.35 60.248s10.64 9.1 11.9 15.96" stroke="#EE7B45" stroke-width="2.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M92.15 27.066c-14.14 11.2-12.74 20.44-12.74 20.44 0 7 5.74 12.74 12.74 12.74s12.74-5.74 12.74-12.74c0 0 1.4-9.24-12.74-20.44z" fill="#fff" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M92.15 35.748s5.32 4.48 5.88 7.98" stroke="#EE7B45" stroke-width="2.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -109,16 +109,14 @@
     <div class="showcase">
       <div class="showcase-situation d-none d-md-block"></div>
       <div class="showcase-product">
-        <swiper :modules="swiperModules" :pagination="{ clickable: true }" autoplay loop>
+        <swiper :modules="swiperModules" :pagination="{ clickable: true }" effect="fade" :speed="1000" autoplay loop >
           <swiper-slide>
             <div class="showcase-product-meta">
               <h3 class="showcase-product-meta__title">Terrier</h3>
               <span class="showcase-product-meta__spec">150/200</span>
             </div>
-            <picture>
-              <source srcset="/images/product-1-mobile.jpg" media="(max-width: 1199px)" />
-              <img src="/images/product-1-desktop.jpg" alt>
-            </picture>
+            <img src="/images/product-1-mobile.jpg" alt class="d-lg-none">
+            <img src="/images/product-1-desktop.jpg" alt class="d-none d-lg-block">
             <NuxtLink to="/product-detail" class="btn btn--with-border">
               View Products
               <svg width="39" height="13" viewBox="0 0 39 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6.552h33.618M31.6 11.375l5.6-4.804-5.6-4.946" stroke="#EE7B45" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -129,10 +127,8 @@
               <h3 class="showcase-product-meta__title">Mastiff</h3>
               <span class="showcase-product-meta__spec">300/400/400L</span>
             </div>
-            <picture>
-              <source srcset="/images/product-2-mobile.jpg" media="(max-width: 1199px)" />
-              <img src="/images/product-2-desktop.jpg" alt>
-            </picture>
+            <img src="/images/product-2-mobile.jpg" alt class="d-lg-none">
+            <img src="/images/product-2-desktop.jpg" alt class="d-none d-lg-block">
             <NuxtLink to="/product-detail" class="btn btn--with-border">
               View Products
               <svg width="39" height="13" viewBox="0 0 39 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6.552h33.618M31.6 11.375l5.6-4.804-5.6-4.946" stroke="#EE7B45" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -143,10 +139,8 @@
               <h3 class="showcase-product-meta__title">Mastiffls</h3>
               <span class="showcase-product-meta__spec">300LS/400LS/400LLS</span>
             </div>
-            <picture>
-              <source srcset="/images/product-3-mobile.jpg" media="(max-width: 1199px)" />
-              <img src="/images/product-3-desktop.jpg" alt>
-            </picture>
+            <img src="/images/product-3-mobile.jpg" alt class="d-lg-none">
+            <img src="/images/product-3-desktop.jpg" alt class="d-none d-lg-block">
             <NuxtLink to="/product-detail" class="btn btn--with-border">
               View Products
               <svg width="39" height="13" viewBox="0 0 39 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6.552h33.618M31.6 11.375l5.6-4.804-5.6-4.946" stroke="#EE7B45" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -248,66 +242,56 @@
       <div class="container">
         <h2>User Reviews</h2>
       </div>
-      <swiper :modules="swiperModules" class="reviews-list list-styless" ref="reviewsCarousel" :slides-per-view="1.39583333" :space-between="20" loop autoplay centered-slides :breakpoints="reviewsSliderBreakpoints">
-        <swiper-slide>
+      <Vue3Marquee :pauseOnHover="true">
           <div class="card">
             <h3 class="card-title">CJ</h3>
             <p class="card-content">My dad helped me install one onto my new house. He ended up loving it so much that he bought one for himself lol.</p>
           </div>
-        </swiper-slide>
-        <swiper-slide>
           <div class="card">
             <h3 class="card-title">Edward</h3>
             <p class="card-content">I'm very satisfied with TMT in its flexibility with power as it does not need batteries and can connect directly to the grid.</p>
           </div>
-        </swiper-slide>
-        <swiper-slide>
           <div class="card">
             <h3 class="card-title">Nathaniel</h3>
             <p class="card-content">Great Customer Support. They even walked me through steps of how to properly maintain the gate and gate opener. I commend them for going above and beyond.</p>
           </div>
-        </swiper-slide>
-        <swiper-slide>
           <div class="card">
             <h3 class="card-title">Ramesh</h3>
             <p class="card-content">good quality, good price</p>
           </div>
-        </swiper-slide>
-        <swiper-slide>
           <div class="card">
             <h3 class="card-title">Riley</h3>
             <p class="card-content">The metal shell is nice compared to other gate openers I've seen before. Seems to be able to take quite a beating.</p>
           </div>
-        </swiper-slide>
-        <swiper-slide>
           <div class="card">
             <h3 class="card-title">Avery</h3>
             <p class="card-content">The instructions were clear and detailed, and they were thoughtful to included most things that you will need in their kits, which saves you time and money of buying additional add-ons. Recommend them 10/10.</p>
           </div>
-        </swiper-slide>
-      </swiper>
+      </Vue3Marquee>
     </div>
-    <div class="get-in-touch">
+    <div class="get-in-touch" ref="getInTouchSection" :class="{ 'is-revealed': getInTouchRevealed}">
       <div class="container">
         <div>
-          <h2>Get In Touch</h2>
-          <p>We are happy to help you make life more convenient and safer.</p>
-          <p>Contact us to get more information.</p>
+          <h2 class="fade-in">Get In Touch</h2>
+          <p class="fade-in delay-1">We are happy to help you make life more convenient and safer.</p>
+          <p class="fade-in delay-2">Contact us to get more information.</p>
         </div>
-        <NuxtLink to="/" class="btn btn--with-border">Contact Us</NuxtLink>
+        <NuxtLink to="/" class="btn btn--with-border fade-in delay-3">Contact Us</NuxtLink>
       </div>
     </div>
   </main>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 import { Navigation, Pagination, Autoplay, A11y } from 'swiper'
 import { Controller, EffectFade } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 import 'swiper/css/pagination'
+import { Vue3Marquee } from 'vue3-marquee'
+import 'vue3-marquee/dist/style.css'
 
 useMeta({
   script: [
@@ -324,6 +308,8 @@ const videoPlayed = reactive({ count: 0 })
 const scenarioCarousel = ref(null)
 const scenarioSlide = reactive({ activeIndex: 1 })
 const scenarioCarouselSlideWidth = ref(0)
+const scenarioCarouselTransition = ref(0)
+const scenarioCarouselCounter = ref(null)
 
 const whySection = ref(null)
 const whyRevealed = ref(false)
@@ -334,6 +320,9 @@ const friendlyCarousel = ref(null)
 const friendlySlide = reactive({ activeIndex: 1 })
 const friendlyTextBlock = ref(null)
 const friendlyTextParagraph = ref(null)
+
+const getInTouchSection = ref(null)
+const getInTouchRevealed = ref(false)
 
 const swiperModules = [
   Navigation,
@@ -371,23 +360,24 @@ const scenarioImageSliderBreakpoints = {
   }
 }
 
-const scenarioTextSliderBreakpoints = {
-  1200: {
-    autoHeight: false
-  }
-}
-
 onMounted(() => {
   setDocHeight()
 
   window.addEventListener('orientationchange', setDocHeight);
   window.addEventListener('scroll', handleScroll)
 
-  heroSection.value.classList.add('is-loaded')
-
   setTimeout(() => {
     adjustFriendlyTextLayout()
   }, 100)
+
+  setTimeout(() => {
+    heroSection.value.classList.add('is-loaded')
+  }, 400);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('orientationchange', setDocHeight);
+  window.removeEventListener('scroll', handleScroll)
 });
 
 function setDocHeight() {
@@ -409,6 +399,10 @@ function handleScroll(e) {
 
   if (window.innerHeight - friendlySection.value.getBoundingClientRect().top >= friendlySection.value.offsetHeight / 3) {
     friendlyRevealed.value = true
+  }
+
+  if (window.innerHeight - getInTouchSection.value.getBoundingClientRect().top >= getInTouchSection.value.offsetHeight / 2) {
+    getInTouchRevealed.value = true
   }
 }
 
@@ -437,8 +431,22 @@ function onAfterScenarioCarouselInit() {
     setTimeout(() => {
       scenarioCarouselSlideWidth.value = scenarioCarousel.value.$el.swiper.slides[0].swiperSlideSize
 
-      document.querySelector('.scenario-image-carousel .swiper-button-next').style.transform = 'translateX(-' + (scenarioCarouselSlideWidth.value * 1.3333333 / 2) + 'px)'
-    }, 0) 
+      document.querySelector('.scenario-image-carousel .swiper-button-next').style.transform = 'translate(-' + (scenarioCarouselSlideWidth.value * 1.3333333 / 2) + 'px, -50%)'
+      scenarioCarouselCounter.value.style.right = 'calc(50vw - ' + (scenarioCarouselSlideWidth.value * 1.3333333) + 'px)'
+
+      scenarioCarouselTransition.value = scenarioCarousel.value.$el.swiper.translate
+    }, 0)
+  }
+}
+
+function onReachBeginning() {
+  var allSlides = document.querySelectorAll('.scenario-image-carousel .swiper-slide')
+
+  if (window.matchMedia('(min-width: 1200px)').matches) {
+    allSlides.forEach(slide => {
+      slide.style.transform = 'translateX(0)'
+      slide.style.transitionDuration = '0'
+    })
   }
 }
 
@@ -446,6 +454,20 @@ function onScenarioCarouselChange() {
   var activeIndex = scenarioCarousel.value.$el.swiper.activeIndex
 
   scenarioSlide.activeIndex = activeIndex + 1
+
+  setTimeout(() => {
+    var previousSlide = document.querySelector('.scenario-image-carousel .swiper-slide-prev')
+    var otherSlides = document.querySelectorAll('.scenario-image-carousel .swiper-slide:not(.swiper-slide-prev)')
+
+    if (window.matchMedia('(min-width: 1200px)').matches && previousSlide) {
+      otherSlides.forEach(slide => {
+        slide.style.transitionDuration = '0'
+        slide.style.transform = 'none'
+      })
+      previousSlide.style.transitionDuration = '600ms'
+      previousSlide.style.transform = 'translateX(-' + scenarioCarouselTransition.value + 'px)'
+    }
+  }, 300);
 }
 
 function initFriendlyCarousel(swiper) {
@@ -457,7 +479,13 @@ function initFriendlyCarousel(swiper) {
 function onFriendlyCarouselChange() {
   var activeIndex = friendlyCarousel.value.$el.swiper.activeIndex
 
-  friendlySlide.activeIndex = activeIndex + 1
+  if (activeIndex < 4) {
+    friendlySlide.activeIndex = activeIndex + 1
+  }
+
+  if (activeIndex == 4) {
+    friendlyCarousel.value.$el.swiper.slideTo(0)
+  }
 }
 
 function adjustFriendlyTextLayout() {

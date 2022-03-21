@@ -72,8 +72,9 @@
 }
 
 .is-revealed {
-    .fade-in {
-        opacity: 1;
+    .fade-in,
+    &.fade-in {
+        opacity: 1 !important;
     }
 }
 

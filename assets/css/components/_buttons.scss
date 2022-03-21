@@ -8,6 +8,8 @@
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
+    transition-property: all;
+    transition-duration: .5s;
 
     &:hover,
     &:focus {
@@ -29,7 +31,7 @@
     }
 
     &--with-border {
-        border-color: $color-primary; 
+        border-color: $color-primary;
     }
 
     &--outline {
@@ -54,6 +56,19 @@
                 stroke: #fff;
             }
         }
+    }
+
+    &--fill {
+      border: 0;
+      background-color: $color-primary;
+      color: #fff;
+      transition: transform 0.25s ease;
+
+      &:hover,
+      &:focus {
+        background-color: $color-primary;
+        transform: scale(0.9);
+      }
     }
 
     &--icon-only {
@@ -96,7 +111,7 @@
 
     &-block {
         width: 100%;
-    } 
+    }
 
     &-styless {
         padding: 0;

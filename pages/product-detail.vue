@@ -281,11 +281,14 @@ const productMetaFeaturesList = ref(null)
 
 onMounted(() => {
     setTimeout(() => {
-        productMetaFeaturesList.value.classList.add('is-revealed')
-    }, 1000);
+        prepareFadeInLists()
+    }, 100);
 
-    prepareFadeInLists()
     window.addEventListener('scroll', fadeInLists)
+
+    setTimeout(() => {
+        productMetaFeaturesList.value.classList.add('is-revealed')
+    }, 400);
 })
 
 function onProductSliderChange() {
