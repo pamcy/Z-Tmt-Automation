@@ -63,7 +63,7 @@
             transition-property: all;
             transition-duration: 1s;
             transition-timing-function: ease;
-            transform: translateX(-10px);
+            transform: translateY(-10px);
             opacity: 0;
 
             @at-root .hero.is-loaded & {
