@@ -13,3 +13,9 @@
         background-image: url('/images/schedul-a-call-banner-desktop.png');
     }
 }
+
+.timezone-control {
+    display: flex;
+    justify-content: space-between;
+    margin-top: rem(16);
+}
