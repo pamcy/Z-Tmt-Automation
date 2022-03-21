@@ -242,10 +242,11 @@
                             bottom: rem(-12);
                             right: 0;
                             left: 0;
+                            width: 0%;
                             height: rem(3);
-                            display: none;
                             content: '';
                             background-color: $color-primary-light;
+                            transition: width 1s ease;
                         }
                     }
 
@@ -253,7 +254,7 @@
                     &:focus {
                         &:after {
                             @include media-breakpoint-up(lg) {
-                                display: block;
+                                width: 100%;
                             }
                         }
                     }
