@@ -371,11 +371,13 @@ onMounted(() => {
   window.addEventListener('orientationchange', setDocHeight);
   window.addEventListener('scroll', handleScroll)
 
-  heroSection.value.classList.add('is-loaded')
-
   setTimeout(() => {
     adjustFriendlyTextLayout()
   }, 100)
+
+  setTimeout(() => {
+    heroSection.value.classList.add('is-loaded')
+  }, 400);
 });
 
 onUnmounted(() => {
