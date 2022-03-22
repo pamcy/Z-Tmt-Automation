@@ -38,20 +38,17 @@
             </ul>
 
             <div class="panel-sorting">
-              <span class="panel-sorting-result"
-                >Total Results<b>{{ results.length }}</b></span
-              >
-              <div :class="['select-dropdown', sortingIsOpen ? 'is-active' : '']">
-                <button class="btn-styless" @click="onToggleSorting">
-                  <span>{{ currentSorting }}</span>
-                  <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><path d="m2 2 6.899 8L16 2" stroke="#EE7B45" stroke-width="2.7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                </button>
-                <ul class="select-dropdown-menu">
-                  <li v-for="menu in sortingMenu" :key="menu">
-                    <a href="#" @click.prevent="onSelectSorting(menu)">{{ menu }}</a>
-                  </li>
-                </ul>
-              </div>
+              <span class="panel-sorting-result">Total Results<b>6</b></span>
+              <SelectDropdown ref="timeZoneSelectDropdown">
+                <template v-slot:title>{{ currentSorting }}</template>
+                <template v-slot:content>
+                   <ul>
+                      <li v-for="menu in sortingMenu" :key="menu">
+                        <a href="#" @click.prevent="onSelectSorting(menu)">{{ menu }}</a>
+                      </li>
+                    </ul>
+                </template>
+            </SelectDropdown>
             </div>
           </div>
         </div>
@@ -82,6 +79,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import SelectDropdown from "../components/SelectDropdown";
 
 const pageHeaderSection = ref(null)
 const productsSection = ref(null)
