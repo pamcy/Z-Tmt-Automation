@@ -23,7 +23,7 @@
           </div>
           <div class="door-content__text">
             <h2 class="text-uppercase">Opening you to a world of possibility.</h2>
-            <p>Automate your home in ways that you never thought of before. At a touch of a button let our productsdo your work for you. Your time and effort should be spent doing things that matter to you. </p>
+            <p>Automate your home in ways that you never thought of before.</p>
           </div>
         </div>
         <div class="door-left">
