@@ -109,7 +109,7 @@
     <div class="showcase">
       <div class="showcase-situation d-none d-md-block"></div>
       <div class="showcase-product">
-        <swiper :modules="swiperModules" :pagination="{ clickable: true }" effect="fade" :speed="1000" autoplay loop >
+        <swiper :modules="swiperModules" :pagination="{ clickable: true }" effect="fade" :autoplay="{ delay: 2000 }" loop >
           <swiper-slide>
             <div class="showcase-product-meta">
               <h3 class="showcase-product-meta__title">Terrier</h3>
@@ -242,7 +242,7 @@
       <div class="container">
         <h2>User Reviews</h2>
       </div>
-      <Vue3Marquee :pauseOnHover="true">
+      <Vue3Marquee :pauseOnHover="true" :duration="40">
           <div class="card">
             <h3 class="card-title">CJ</h3>
             <p class="card-content">My dad helped me install one onto my new house. He ended up loving it so much that he bought one for himself lol.</p>
