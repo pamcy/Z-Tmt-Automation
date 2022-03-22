@@ -1,5 +1,5 @@
 <template>
-    <div class="faq">
+    <div class="faq faq-result">
         <div class="page-header page-header-faq page-header--image-only"></div>
         <main>
             <div class="container-sm">
@@ -34,6 +34,10 @@
                             <template v-slot:content>{{ question.answer }}</template>
                         </OneOpenAccordion>
                     </div>
+                </div>
+
+                <div class="faq-cta-btn">
+                    <NuxtLink to="/support" class="btn btn--fill">Back</NuxtLink>
                 </div>
 
                 <NeedHelp />
