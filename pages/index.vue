@@ -23,7 +23,7 @@
           </div>
           <div class="door-content__text">
             <h2 class="text-uppercase">Opening you to a world of possibility.</h2>
-            <p>Automate your home in ways that you never thought of before. At a touch of a button let our productsdo your work for you. Your time and effort should be spent doing things that matter to you. </p>
+            <p>Automate your home in ways that you never thought of before.</p>
           </div>
         </div>
         <div class="door-left">
@@ -411,8 +411,8 @@ function autoplayYoutubeVideo() {
   function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
       width: '100%',
-      videoId: 'E3l1TUHwmM0',
-      playerVars: { 'autoplay': 1, 'playsinline': 1, 'rel': 0, 'mute': 1, 'controls': 0 },
+      videoId: 'JPO80pp7wfI',
+      playerVars: { 'autoplay': 1, 'playsinline': 1, 'rel': 0, 'mute': 1, 'controls': 0, 'loop': 1, 'playlist': 'JPO80pp7wfI' },
       events: {
         'onReady': onPlayerReady
       }
