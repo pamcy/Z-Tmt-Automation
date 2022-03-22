@@ -38,7 +38,7 @@
                     </ul>
                     <h2 class="h3 faq-content-heading">Gate Openers</h2>
                     <div class="faq-list">
-                        <OneOpenAccordion v-for="(question, index) in questions" :key="index" :index="index" :isExpanded="currentExpandedQuestion === index" @click="currentExpandedQuestion = index">
+                        <OneOpenAccordion v-for="(question, index) in filteredQuestions" :key="index" :index="index" :isExpanded="currentExpandedQuestion === index" @click="currentExpandedQuestion = index">
                             <template v-slot:title>{{ question.title }}</template>
                             <template v-slot:content>{{ question.answer }}</template>
                         </OneOpenAccordion>
@@ -50,7 +50,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import OneOpenAccordion from '../components/OneOpenAccordion.vue'
 
 const searchValue = ref('')
@@ -62,34 +62,47 @@ const questions = ref([
     {
         title: 'What kind of battery is recommended?',
         answer: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, debitis corrupti?',
-        category: 'Gate Opener',
+        category: 'Gate Openers',
     },
     {
         title: 'Are batteries required?',
         answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, quidem?',
-        category: 'Gate Opener',
+        category: 'Gate Openers',
     },
     {
         title: 'Can I add more than one solar panel?',
         answer: 'Lorem ipsum dolor sit amet.',
-        category: 'Gate Opener',
+        category: 'Gate Openers',
     },
     {
         title: 'What kinds of gates are suitable for using our operators?',
         answer: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia doloremque voluptas, sit laborum unde cumque!',
-        category: 'Gate Opener',
+        category: 'Gate Openers',
     },
     {
         title: 'Can the operators be used on solid pane/ privacy gates?',
         answer: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, quo eligendi et in cum reiciendis maiores deleniti minima, ratione porro illo dignissimos quidem itaque, reprehenderit vitae dolorum nesciunt. Perferendis reiciendis magnam quam deserunt perspiciatis soluta. Nihil itaque labore eligendi optio ipsa asperiores adipisci illo omnis iure.',
-        category: 'Gate Opener',
+        category: 'Gate Openers',
+    },
+    {
+        title: 'How to connect number pad??',
+        answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quis velit molestiae id commodi cum modi atque rem vitae. Veritatis non sint placeat! Quis, vero!',
+        category: 'Home Automation',
     },
 ])
+const filteredQuestions = computed(() => {
+    if (currentTab.value === 'All') {
+        return questions.value
+    } else {
+        return questions.value.filter((question) => question.category === currentTab.value)
+    }
+})
 const currentExpandedQuestion = ref(null)
 
 onMounted(() => {})
 
 function onSelectTab(name) {
     currentTab.value = name
+    currentExpandedQuestion.value = null
 }
 </script>
