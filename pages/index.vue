@@ -411,8 +411,8 @@ function autoplayYoutubeVideo() {
   function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
       width: '100%',
-      videoId: 'E3l1TUHwmM0',
-      playerVars: { 'autoplay': 1, 'playsinline': 1, 'rel': 0, 'mute': 1, 'controls': 0 },
+      videoId: 'JPO80pp7wfI',
+      playerVars: { 'autoplay': 1, 'playsinline': 1, 'rel': 0, 'mute': 1, 'controls': 0, 'loop': 1, 'playlist': 'JPO80pp7wfI' },
       events: {
         'onReady': onPlayerReady
       }
