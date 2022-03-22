@@ -3,6 +3,29 @@
         padding-right: $gutter-sm;
         padding-left: $gutter-sm;
     }
+
+    form {
+        padding: $gutter var(--gutter);
+        margin: 0 calc(var(--gutter) * -1);
+        background-color: #fff;
+
+        @include media-breakpoint-up(lg) {
+            padding: rem(80) rem(100);
+        }
+
+        .select-dropdown {
+            a {
+                display: flex;
+                justify-content: space-between;
+                color: inherit;
+
+                &:hover,
+                &:focus {
+                    font-weight: normal;
+                }
+            }
+        }
+    }
 }
 
 .page-header-schedule-a-call {
@@ -18,4 +41,8 @@
     display: flex;
     justify-content: space-between;
     margin-top: rem(16);
+}
+
+.datetime-picker {
+    margin-top: rem(30);
 }

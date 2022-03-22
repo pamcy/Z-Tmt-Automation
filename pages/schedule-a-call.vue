@@ -52,11 +52,14 @@
                                 </ul>
                             </template>
                         </SelectDropdown>
+                        <div class="datetime-picker">
+                            <DatePicker v-model="date" :locale="{ id: 'en', firstDayOfWeek: 2, masks: { weekdays: 'WWW' } }" :min-date="now" :timezone="timezone" color="orange" />
                         </div>
                     </fieldset>
                     <fieldset>
                         <legend>Enter Details</legend>
                     </fieldset>
+                </form>
             </div>
         </main>
     </div>
