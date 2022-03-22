@@ -1058,9 +1058,12 @@
     h2 {
         margin-top: 0;
         color: $color-primary;
+        white-space: nowrap;
     }
 
     .btn {
+        transition: opacity 1s ease .6s, transform 1s ease .6s, background-color .5s;
+
         @include media-breakpoint-down(md) {
             align-self: center;
         }
