@@ -1,0 +1,41 @@
+.faq-result {
+    .faq {
+        &-content {
+            &-result {
+                display: block;
+                margin-bottom: rem(20);
+                font-size: rem(20);
+                font-weight: 700;
+
+                @include media-breakpoint-up(lg) {
+                    margin-bottom: rem(28);
+                }
+
+                b {
+                    color: $color-primary;
+                }
+            }
+        }
+
+        &-cta-btn {
+            margin-top: rem(8);
+            text-align: center;
+
+            @include media-breakpoint-up(md) {
+                margin-top: rem(20);
+            }
+
+            .btn {
+                min-width: rem(200) !important;
+            }
+        }
+    }
+
+    .need-help {
+        margin-top: rem(80);
+
+        @include media-breakpoint-up(lg) {
+            margin-top: rem(100);
+        }
+    }
+}
