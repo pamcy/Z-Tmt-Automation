@@ -25,9 +25,11 @@
                 <SearchBox :searchValue="searchValue" />
 
                 <div class="faq-content" ref="faqContentSection">
-                    <h2 class="h3 faq-content-heading">Gate Openers</h2>
+                    <span class="faq-content-result">
+                        <b>{{ questions.length }}</b> results for "{{ searchValue }}”
+                    </span>
                     <div class="faq-list">
-                        <OneOpenAccordion v-for="(question, index) in filteredQuestions" :key="index" :index="index" :isExpanded="currentExpandedQuestion === index" @click="currentExpandedQuestion = index" :fadeInEnabled="fadeInEnabled">
+                        <OneOpenAccordion v-for="(question, index) in questions" :key="index" :index="index" :isExpanded="currentExpandedQuestion === index" @click="currentExpandedQuestion = index" :fadeInEnabled="fadeInEnabled">
                             <template v-slot:title>{{ question.title }}</template>
                             <template v-slot:content>{{ question.answer }}</template>
                         </OneOpenAccordion>
@@ -41,7 +43,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import SearchBox from '../components/SearchBox.vue'
 import OneOpenAccordion from '../components/OneOpenAccordion.vue'
 import needHelp from '../components/NeedHelp.vue'

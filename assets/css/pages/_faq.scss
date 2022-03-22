@@ -47,6 +47,21 @@
             }
         }
 
+        &-result {
+            display: block;
+            margin-bottom: rem(20);
+            font-size: rem(20);
+            font-weight: 700;
+
+            @include media-breakpoint-up(lg) {
+                margin-bottom: rem(28);
+            }
+
+            b {
+                color: $color-primary;
+            }
+        }
+
         .tab {
             margin-bottom: rem(30);
 
