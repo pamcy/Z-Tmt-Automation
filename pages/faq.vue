@@ -34,6 +34,14 @@
                             <a href="#" @click.prevent="onSelectTab(menu)">{{ menu }}</a>
                         </li>
                     </ul>
+                    <h2 class="faq-content-heading">Gate Opener</h2>
+                    <div class="faq-list">
+                        <OneOpenAccordion v-for="(question, index) in questions" :key="index + 1">
+                            <template v-slot:index>{{ index < 10 ? `0${index}` : index }}</template>
+                            <template v-slot:title>{{ question.title }}</template>
+                            <template v-slot:content>{{ question.answer }}</template>
+                        </OneOpenAccordion>
+                    </div>
                 </div>
             </div>
         </main>
@@ -42,11 +50,40 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import OneOpenAccordion from '../components/OneOpenAccordion.vue'
 
 const searchValue = ref('')
 
 const tabMenu = ref(['All', 'Gate Opener'])
 const currentTab = ref('All')
+
+const questions = ref([
+    {
+        title: 'What kind of battery is recommended?',
+        answer: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, debitis corrupti?',
+        category: 'Gate Opener',
+    },
+    {
+        title: 'Are batteries required?',
+        answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, quidem?',
+        category: 'Gate Opener',
+    },
+    {
+        title: 'Can I add more than one solar panel?',
+        answer: 'Lorem ipsum dolor sit amet.',
+        category: 'Gate Opener',
+    },
+    {
+        title: 'What kinds of gates are suitable for using our operators?',
+        answer: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia doloremque voluptas, sit laborum unde cumque!',
+        category: 'Gate Opener',
+    },
+    {
+        title: 'Can the operators be used on solid pane/ privacy gates?',
+        answer: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo assumenda reprehenderit sapiente totam temporibus odit repellat non quas obcaecati fugiat quisquam, blanditiis suscipit! Rem, consequuntur.',
+        category: 'Gate Opener',
+    },
+])
 
 onMounted(() => {})
 
