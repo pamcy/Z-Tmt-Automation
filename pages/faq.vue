@@ -34,7 +34,7 @@
                             <a href="#" @click.prevent="onSelectTab(menu)">{{ menu }}</a>
                         </li>
                     </ul>
-                    <h2 class="faq-content-heading">Gate Opener</h2>
+                    <h2 class="h3 faq-content-heading">Gate Openers</h2>
                     <div class="faq-list">
                         <OneOpenAccordion v-for="(question, index) in questions" :key="index + 1">
                             <template v-slot:index>{{ index < 10 ? `0${index}` : index }}</template>
@@ -54,7 +54,7 @@ import OneOpenAccordion from '../components/OneOpenAccordion.vue'
 
 const searchValue = ref('')
 
-const tabMenu = ref(['All', 'Gate Opener'])
+const tabMenu = ref(['All', 'Gate Openers'])
 const currentTab = ref('All')
 
 const questions = ref([

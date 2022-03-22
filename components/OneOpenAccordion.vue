@@ -22,7 +22,7 @@
 <script setup>
 import { ref } from 'vue'
 
-const isExpanded = ref(true)
+const isExpanded = ref(false)
 const accordionToggle = ref(null)
 
 onMounted(() => {})
