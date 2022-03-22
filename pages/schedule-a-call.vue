@@ -64,6 +64,8 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import { SetupCalendar, Calendar, DatePicker } from 'v-calendar'
+import 'v-calendar/dist/style.css'
 
 import SelectDropdown from "../components/SelectDropdown";
 
