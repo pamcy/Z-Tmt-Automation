@@ -44,6 +44,8 @@
                         </OneOpenAccordion>
                     </div>
                 </div>
+
+                <NeedHelp />
             </div>
         </main>
     </div>
@@ -52,6 +54,7 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import OneOpenAccordion from '../components/OneOpenAccordion.vue'
+import needHelp from '../components/NeedHelp.vue'
 
 const searchValue = ref('')
 
