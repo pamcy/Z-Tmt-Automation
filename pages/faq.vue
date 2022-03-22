@@ -30,7 +30,7 @@
                     </div>
                 </form>
 
-                <div class="faq-content">
+                <div class="faq-content" ref="faqContentSection">
                     <ul class="tab">
                         <li v-for="menu in tabMenu" :key="menu" :class="{ 'is-active': currentTab === menu }">
                             <a href="#" @click.prevent="onSelectTab(menu)">{{ menu }}</a>
@@ -38,7 +38,7 @@
                     </ul>
                     <h2 class="h3 faq-content-heading">Gate Openers</h2>
                     <div class="faq-list">
-                        <OneOpenAccordion v-for="(question, index) in filteredQuestions" :key="index" :index="index" :isExpanded="currentExpandedQuestion === index" @click="currentExpandedQuestion = index">
+                        <OneOpenAccordion v-for="(question, index) in filteredQuestions" :key="index" :index="index" :isExpanded="currentExpandedQuestion === index" @click="currentExpandedQuestion = index" :fadeInEnabled="fadeInEnabled">
                             <template v-slot:title>{{ question.title }}</template>
                             <template v-slot:content>{{ question.answer }}</template>
                         </OneOpenAccordion>
@@ -54,6 +54,9 @@ import { ref, computed, onMounted } from 'vue'
 import OneOpenAccordion from '../components/OneOpenAccordion.vue'
 
 const searchValue = ref('')
+
+const faqContentSection = ref(null)
+const fadeInEnabled = ref(true)
 
 const tabMenu = ref(['All', 'Gate Openers'])
 const currentTab = ref('All')
@@ -99,10 +102,26 @@ const filteredQuestions = computed(() => {
 })
 const currentExpandedQuestion = ref(null)
 
-onMounted(() => {})
+onMounted(() => {
+    window.addEventListener('scroll', fadeInQuestions)
+})
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', fadeInQuestions)
+})
 
 function onSelectTab(name) {
     currentTab.value = name
     currentExpandedQuestion.value = null
+}
+
+function fadeInQuestions() {
+    const rect = faqContentSection.value.getBoundingClientRect()
+    const elTop = rect.top + rect.top * 0.7
+    const elBottom = rect.bottom
+
+    if (window.innerHeight > elTop && elBottom > 0) {
+        faqContentSection.value.classList.add('is-revealed')
+    }
 }
 </script>

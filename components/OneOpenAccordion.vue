@@ -1,5 +1,5 @@
 <template>
-    <div class="one-open-accordion" :class="{ 'is-expanded': isExpanded }">
+    <div class="one-open-accordion" :class="{ 'is-expanded': isExpanded, 'fade-in': fadeInEnabled }" :style="fadeInEnabled ? { transitionDelay: index * 200 + 'ms' } : { transitionDelay: 0 }">
         <h3 class="accordion-title">
             <button class="btn btn-styless" :aria-expanded="isExpanded">
                 <span>{{ index + 1 }}</span>
@@ -20,5 +20,5 @@
 </template>
 
 <script setup>
-const { index, isExpanded } = defineProps(['index', 'isExpanded'])
+const { index, isExpanded, fadeInEnabled } = defineProps(['index', 'isExpanded', 'fadeInEnabled'])
 </script>
