@@ -24,6 +24,10 @@
 
     h1 {
         margin-bottom: rem(20);
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: rem(40);
+        }
     }
 
     &-hero {
@@ -35,7 +39,7 @@
         .section-title {
             margin-top: 0;
 
-            @include media-breakpoint-down(md) {
+            @include media-breakpoint-down(lg) {
                 margin-left: $gutter;
             }
         }
@@ -44,7 +48,7 @@
             .video-more-btn {
                 text-align: right;
 
-                @include media-breakpoint-down(md) {
+                @include media-breakpoint-down(lg) {
                     margin-right: $gutter;
                 }
             }
@@ -83,10 +87,15 @@
     }
 
     &-content {
+        margin-top: rem(40);
+
         @include media-breakpoint-down(md) {
-            margin-top: rem(40);
             padding-right: $gutter-sm;
             padding-left: $gutter-sm;
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-top: rem(80);
         }
 
         section {
