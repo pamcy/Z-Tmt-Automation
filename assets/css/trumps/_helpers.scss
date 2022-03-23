@@ -78,7 +78,7 @@
     }
 }
 
-@for $i from 1 through 6 {
+@for $i from 1 through 20 {
     .delay-#{$i} {
         transition-delay: calc(.3s * #{$i});
     }
