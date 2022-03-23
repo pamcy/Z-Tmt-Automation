@@ -23,17 +23,24 @@
                         </li>
                     </ul>
                 </nav>
-            </div>
-            <div class="container">
+                <div ref="intro">
+                    <h1 class="h2 fade-in delay-1">Register your product</h1>
+                    <p class="fade-in delay-2">When you register your product, you will be given a free six-month extension on your warranty. You can register your product here on this form or through the TMT Chow! App.</p>
+                </div>
             </div>
         </main>
     </div>
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
+
+const intro = ref(null)
 
 onMounted(() => {
+    setTimeout(() => {
+        intro.value.classList.add('is-revealed')
+    }, 400);
 })
 
 </script>
