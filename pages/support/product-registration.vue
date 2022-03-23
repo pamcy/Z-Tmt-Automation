@@ -103,7 +103,7 @@
                                 </SelectDropdown>
                             </div>
                             <div class="form-group form-group-half fade-in delay-13">
-                                <SelectDropdown ref="productSelectDropdown">
+                                <SelectDropdown ref="productSelectDropdown" :noData="!currentCategory">
                                     <template v-slot:title>
                                         {{ currentProduct ? currentProduct : 'Select Your Product' }}
                                     </template>

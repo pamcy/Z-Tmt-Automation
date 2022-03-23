@@ -1,6 +1,6 @@
 <template>
   <div :class="['select-dropdown', isExpanded ? 'is-active' : '']" ref="selectDropdown">
-    <button type="button" class="btn-styless" @click="toggleSelectDropdown">
+    <button type="button" class="btn btn-styless" @click="toggleSelectDropdown" :disabled="noData">
         <slot name="icon" />
         <slot name="title" />
         <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><path d="m2 2 6.899 8L16 2" stroke="#EE7B45" stroke-width="2.7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" /></svg>
@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, useSlots } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const selectDropdown = ref(null)
 const isExpanded = ref(false)
@@ -47,4 +47,6 @@ function clickAway(e) {
 defineExpose({
     closeSelectDropdown
 })
+
+defineProps(['noData'])
 </script>
