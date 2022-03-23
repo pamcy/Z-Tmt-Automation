@@ -12,11 +12,64 @@ legend {
     margin-bottom: $gutter;
 }
 
+.form {
+    &-row {
+        display: flex;
+        flex-direction: column;
+
+        @include media-breakpoint-up(md) {
+            flex-direction: row;
+            flex-wrap: nowrap;
+            margin: 0 (-$gutter-sm);
+        }
+
+        &:last-child {
+            > .form-group {
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+.form-group {
+    flex: 1 0 100%;
+    margin-bottom: rem(30);
+
+    @include media-breakpoint-up(md) {
+        padding: 0 $gutter-sm;
+    }
+
+    &-half {
+        @include media-breakpoint-up(md) {
+            flex: 1 0 50%;
+            padding: 0 $gutter-sm;
+        }
+    }
+
+    > label {
+        margin-bottom: rem(20);
+    }
+
+    input,
+    textarea {
+        padding-bottom: rem(8);
+        border-color: $color-secondary;
+    }
+}
+
 label {
+    display: block;
     font-weight: 700;
 }
 
-input {
+.required {
+    color: $color-primary;
+}
+
+input,
+textarea {
     width: 100%;
     border: 0;
     border-bottom: 1px solid $color-secondary-light;
@@ -37,6 +90,10 @@ input {
             appearance:none;
         }
     }
+}
+
+textarea {
+    resize: vertical;
 }
 
 .input {

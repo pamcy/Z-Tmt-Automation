@@ -58,7 +58,37 @@
                     </fieldset>
                     <fieldset>
                         <legend>Enter Details</legend>
+                        <div class="form-row">
+                            <div class="form-group form-group-half">
+                                <label for="full-name">Full Name<span class="required">*</span></label>
+                                <input type="text" id="full-name" placeholder="Raymond" required>
+                            </div>
+                            <div class="form-group form-group-half">
+                                <label for="phone">Full Name<span class="required">*</span></label>
+                                <input type="tel" id="phone" placeholder="(750)555-5555" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group form-group-half">
+                                <label for="email">Email Address<span class="required">*</span></label>
+                                <input type="tel" id="email" placeholder="mail@example.com" required>
+                            </div>
+                            <div class="form-group form-group-half">
+                                <label for="product-name">Product Name<span class="required">*</span></label>
+                                <input type="tel" id="product-name" placeholder="product name" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="share">Please share anything that will help prepare for our meeting.</label>
+                                <textarea id="share" placeholder="Write something here!"></textarea>
+                            </div>
+                        </div>
                     </fieldset>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn--fill">Schedule Event</button>
+                    </div>
+                    <svg width="116" height="120" viewBox="0 0 116 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="form-deco"><path d="M113.999 2H19.063v108.381h94.936V2z" fill="#FBD9CA" stroke="#EE7B45" stroke-width="2.8" stroke-miterlimit="10"/><path d="M113.999 2H19.063v10.43h94.936V2z" fill="#EE7B45" stroke="#EE7B45" stroke-width="2.8" stroke-miterlimit="10"/><path d="M43.297 118H7.264A5.266 5.266 0 012 112.74V51.43a5.266 5.266 0 015.264-5.261h36.033a5.266 5.266 0 015.264 5.26v61.311c0 2.902-2.36 5.26-5.264 5.26z" fill="#fff" stroke="#EE7B45" stroke-width="2.8" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M43.206 53.152H6.992v53.874h36.214V53.152zm-18.063 61.491a2.177 2.177 0 100-4.353 2.177 2.177 0 100 4.353zM14.617 78.547l12.798 9.886M12.617 68.299l25.232 19.5" stroke="#EE7B45" stroke-width="1.6" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M31.227 26.488h70.521M31.227 39.82h70.521M60.453 53.152h41.297M60.453 66.575h41.297M60.453 79.907h41.297M60.453 93.24h41.297" stroke="#EE7B45" stroke-width="2.8" stroke-miterlimit="10"/><path d="M31.409 9.709a2.54 2.54 0 10-2.542-2.54 2.54 2.54 0 002.541 2.54zm72.968 0a2.54 2.54 0 10.003-5.082 2.54 2.54 0 00-.003 5.082z" fill="#fff"/></svg>
                 </form>
             </div>
         </main>
