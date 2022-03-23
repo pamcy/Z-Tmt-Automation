@@ -1,5 +1,5 @@
 <template>
-    <div class="support">
+    <div class="support" v-if="$route.name === 'support'">
         <div class="page-header page-header--sm" ref="pageHeaderSection">
             <div class="container-sm">
                 <div class="page-header-text">
@@ -41,11 +41,13 @@
             </div>
         </main>
     </div>
+    <NuxtPage v-else />
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { nextTick, onMounted, ref, watch } from 'vue'
 
+const route = useRoute()
 const pageHeaderSection = ref(null)
 const cardsSection = ref(null)
 const items = [
@@ -87,9 +89,24 @@ const items = [
     }
 ]
 
+async function toggleIsLoadedClass(on) {
+    await nextTick();
+
+    if (pageHeaderSection.value) {
+        pageHeaderSection.value.classList[on ? 'add' : 'remove']('is-loaded')
+    }
+
+    if (cardsSection.value) {
+        cardsSection.value.classList[on ? 'add' : 'remove']('is-revealed')
+    }
+}
+
 onMounted(() => {
-    pageHeaderSection.value.classList.add('is-loaded')
-    cardsSection.value.classList.add('is-revealed')
+    toggleIsLoadedClass(true)
+})
+
+watch(route, (to) => {
+    toggleIsLoadedClass(to.name === 'support')
 })
 
 </script>
