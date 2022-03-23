@@ -62,7 +62,7 @@
                         <div class="video-list-block">
                             <h3>Gate Automation</h3>
                             <ul class="video-list">
-                                <li v-for="video in gateVideos" :key="video.youtubeId">
+                                <li v-for="(video, index) in gateVideos" :key="video.youtubeId" class="fade-in" :style="{ transitionDelay: index * 200 + 'ms' }">
                                     <div class="embed-responsive">
                                         <iframe class="embed-responsive-item" :src="`https://www.youtube.com/embed/${video.youtubeId}?rel=0`" allowfullscreen></iframe>
                                     </div>
@@ -79,7 +79,7 @@
                         <div class="video-list-block">
                             <h3>Smart Solutions</h3>
                             <ul class="video-list">
-                                <li v-for="video in smartVideos" :key="video.youtubeId">
+                                <li v-for="(video, index) in smartVideos" :key="video.youtubeId" class="fade-in" :style="{ transitionDelay: index * 200 + 'ms' }">
                                     <div class="embed-responsive">
                                         <iframe class="embed-responsive-item" :src="`https://www.youtube.com/embed/${video.youtubeId}?rel=0`" allowfullscreen></iframe>
                                     </div>
@@ -97,7 +97,7 @@
                     <section>
                         <h2 class="section-title">TMT Around the World</h2>
                         <ul class="video-list">
-                            <li v-for="video in tmtWorldVideos" :key="video.youtubeId">
+                            <li v-for="(video, index) in tmtWorldVideos" :key="video.youtubeId" class="fade-in" :style="{ transitionDelay: index * 200 + 'ms' }">
                                 <div class="embed-responsive">
                                     <iframe class="embed-responsive-item" :src="`https://www.youtube.com/embed/${video.youtubeId}?rel=0`" allowfullscreen></iframe>
                                 </div>
@@ -181,7 +181,21 @@ const tmtWorldVideos = ref([
     },
 ])
 
-onMounted(() => {})
+onMounted(() => {
+    window.addEventListener('scroll', fadeInVideoLists)
+})
 
-onUnmounted(() => {})
+onUnmounted(() => {
+    window.removeEventListener('scroll', fadeInVideoLists)
+})
+
+function fadeInVideoLists() {
+    var lists = document.querySelectorAll('.video-list')
+
+    for (var i = 0; i < lists.length; i++) {
+        if (window.innerHeight - lists[i].getBoundingClientRect().top >= lists[i].offsetHeight / 2) {
+            lists[i].classList.add('is-revealed')
+        }
+    }
+}
 </script>
