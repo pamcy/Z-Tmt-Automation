@@ -24,7 +24,7 @@
                     <h2 class="section-title">Can’t miss it</h2>
                 </div>
                 <div class="container">
-                    <div class="intallation-hero-videos">
+                    <div class="installation-hero-videos">
                         <swiper class="installation-slider" :modules="swiperModules" :pagination="{ clickable: true }" :centered-slides="true" loop :breakpoints="swiperOptions.breakpoints">
                             <swiper-slide>
                                 <div class="embed-responsive">
@@ -45,6 +45,12 @@
                                 <span class="installation-slider-title">How to connect Chow! x IFTTT (demo video)</span>
                             </swiper-slide>
                         </swiper>
+                        <div class="video-more-btn">
+                            <NuxtLink :to="youtubeChannel" class="btn btn--no-background" target="_blank">
+                                More
+                                <svg width="39" height="13" viewBox="0 0 39 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6.552h33.618M31.6 11.375l5.6-4.804-5.6-4.946" stroke="#EE7B45" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                            </NuxtLink>
+                        </div>
                     </div>
                 </div>
             </div>
