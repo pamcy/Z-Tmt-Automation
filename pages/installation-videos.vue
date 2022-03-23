@@ -25,7 +25,7 @@
                 </div>
                 <div class="container">
                     <div class="installation-hero-videos">
-                        <swiper class="installation-slider" :modules="swiperModules" :pagination="{ clickable: true }" :centered-slides="true" loop :breakpoints="swiperOptions.breakpoints">
+                        <swiper class="installation-slider" :modules="swiperModules" :pagination="{ clickable: true }" :centered-slides="true" loop :autoplay="{ delay: 3000 }" :speed="600" :breakpoints="swiperOptions.breakpoints">
                             <swiper-slide>
                                 <div class="embed-responsive">
                                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/DnKHRezTpwE?rel=0" allowfullscreen></iframe>
@@ -120,20 +120,23 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
-import { Pagination, A11y } from 'swiper'
+import { Pagination, Autoplay, A11y } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-const swiperModules = [Pagination, A11y]
+const swiperModules = [Pagination, Autoplay, A11y]
 const swiperOptions = ref({
     breakpoints: {
         320: {
             slidesPerView: 1,
         },
         750: {
-            slidesPerView: 3,
+            slidesPerView: 1.6,
         },
+        992: {
+            slidesPerView: 2.4,
+        }
     },
 })
 
