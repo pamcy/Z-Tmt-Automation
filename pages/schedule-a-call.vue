@@ -16,8 +16,10 @@
                         </li>
                     </ul>
                 </nav>
-                 <h1 class="h2">Schedule a Call</h1>
-                <p>You can schedule a technical support call below. This will allow us to help you troubleshoot any problems that you may have. You will be contacted through your selected means at the allotted time. Please allow up to 10 minutes for the previous call to wrap up.</p>
+                <div ref="intro">
+                    <h1 class="h2 fade-in delay-1">Schedule a Call</h1>
+                    <p class="fade-in delay-2">You can schedule a technical support call below. This will allow us to help you troubleshoot any problems that you may have. You will be contacted through your selected means at the allotted time. Please allow up to 10 minutes for the previous call to wrap up.</p>
+                </div>
                 <form action="">
                     <fieldset>
                         <legend>Confirm date & time</legend>
@@ -87,30 +89,30 @@
                             </div>
                         </div>
                     </fieldset>
-                    <fieldset>
+                    <fieldset ref="formDetails" :class="{ 'is-revealed': formDetailsRevealed }">
                         <legend>Enter Details</legend>
                         <div class="form-row">
-                            <div class="form-group form-group-half">
+                            <div class="form-group form-group-half fade-in delay-1">
                                 <label for="full-name">Full Name<span class="required">*</span></label>
                                 <input type="text" id="full-name" placeholder="Raymond" required>
                             </div>
-                            <div class="form-group form-group-half">
+                            <div class="form-group form-group-half fade-in delay-2">
                                 <label for="phone">Full Name<span class="required">*</span></label>
                                 <input type="tel" id="phone" placeholder="(750)555-5555" required>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group form-group-half">
+                            <div class="form-group form-group-half fade-in delay-3">
                                 <label for="email">Email Address<span class="required">*</span></label>
                                 <input type="tel" id="email" placeholder="mail@example.com" required>
                             </div>
-                            <div class="form-group form-group-half">
+                            <div class="form-group form-group-half fade-in delay-4">
                                 <label for="product-name">Product Name<span class="required">*</span></label>
                                 <input type="tel" id="product-name" placeholder="product name" required>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group">
+                            <div class="form-group fade-in delay-5">
                                 <label for="share">Please share anything that will help prepare for our meeting.</label>
                                 <textarea id="share" placeholder="Write something here!"></textarea>
                             </div>
@@ -132,6 +134,8 @@ import { SetupCalendar, Calendar, DatePicker } from 'v-calendar'
 import 'v-calendar/dist/style.css'
 
 import SelectDropdown from "../components/SelectDropdown"
+
+const intro = ref(null)
 
 const amPm = ref('AM')
 const AMs = [
@@ -866,8 +870,28 @@ const timezones = [
 ]
 const currentTimezone = reactive({ is: Intl.DateTimeFormat().resolvedOptions().timeZone });
 const timeZoneSelectDropdown = ref()
-
 const timeSelected = ref(null)
+
+const formDetails = ref(null)
+const formDetailsRevealed = ref(false)
+
+onMounted(() => {
+    setTimeout(() => {
+        intro.value.classList.add('is-revealed')
+    }, 400);
+
+    window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll)
+});
+
+function handleScroll(e) {
+    if (window.innerHeight - formDetails.value.getBoundingClientRect().top >= formDetails.value.offsetHeight / 2) {
+        formDetailsRevealed.value = true
+    }
+}
 
 function onSelectTimezone(menu) {
     currentTimezone.is = menu
