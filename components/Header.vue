@@ -73,7 +73,7 @@ const menu = ref([
         subItems: [
             {
                 title: 'Gate Openers',
-                url: 'product-detail'
+                url: '/product-detail'
             }
         ]
     },
@@ -83,15 +83,15 @@ const menu = ref([
         subItems: [
             {
                 title: 'Solar',
-                url: 'solar'
+                url: '/solar'
             },
             {
                 title: 'App Integration',
-                url: 'app-integration'
+                url: '/app-integration'
             },
             {
                 title: 'Comparison with Other Brands',
-                url: 'comparison-with-other-brands'
+                url: '/comparison-with-other-brands'
             }
         ]
     },
@@ -101,27 +101,27 @@ const menu = ref([
         subItems: [
             {
                 title: 'Product Manuals',
-                url: 'product-manuals'
+                url: '/support/product-manuals'
             },
             {
                 title: 'Installation Videos',
-                url: 'installation-videos'
+                url: '/support/installation-videos'
             },
             {
                 title: 'Schedule a Call',
-                url: 'schedule-a-call'
+                url: '/support/schedule-a-call'
             },
             {
                 title: 'Product Registration',
-                url: 'product-registration'
+                url: '/support/product-registration'
             },
             {
                 title: 'Warranty Info',
-                url: 'warranty-info'
+                url: '/support/warranty-info'
             },
             {
                 title: 'FAQ',
-                url: 'faq'
+                url: '/support/faq'
             }
         ]
     },
@@ -131,11 +131,11 @@ const menu = ref([
         subItems: [
             {
                 title: 'About Us',
-                url: 'about-us'
+                url: '/about-us'
             },
             {
                 title: 'Contact Us',
-                url: 'contact-us'
+                url: '/contact-us'
             }
         ]
     }
@@ -152,7 +152,7 @@ onMounted(() => {
             if (!headerMenuControlsList.value.contains(e.target)){
                 closeMenuItem()
             }
-            
+
             if (!searchButton.value.contains(e.target)) {
                 desktopSearchBarToggled.value = false
             }
