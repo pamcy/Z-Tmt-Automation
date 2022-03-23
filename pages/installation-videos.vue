@@ -16,8 +16,37 @@
                         </li>
                     </ul>
                 </nav>
-
                 <h1 class="h2">Installation Videos</h1>
+            </div>
+
+            <div class="installation-hero">
+                <div class="container-sm">
+                    <h2 class="section-title">Can’t miss it</h2>
+                </div>
+                <div class="container">
+                    <div class="intallation-hero-videos">
+                        <swiper class="installation-slider" :modules="swiperModules" :pagination="{ clickable: true }" :centered-slides="true" loop :breakpoints="swiperOptions.breakpoints">
+                            <swiper-slide>
+                                <div class="embed-responsive">
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/DnKHRezTpwE?rel=0" allowfullscreen></iframe>
+                                </div>
+                                <span class="installation-slider-title">ChowHUB Kit-Smart Home Solution For Garage Doors and Gates</span>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <div class="embed-responsive">
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pl13TRwrDbs?rel=0" allowfullscreen> </iframe>
+                                </div>
+                                <span class="installation-slider-title">AP Mode Connection Instruction (Demo)</span>
+                            </swiper-slide>
+                            <swiper-slide>
+                                <div class="embed-responsive">
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/GGO1IbeRMfQ?rel=0" allowfullscreen></iframe>
+                                </div>
+                                <span class="installation-slider-title">How to connect Chow! x IFTTT (demo video)</span>
+                            </swiper-slide>
+                        </swiper>
+                    </div>
+                </div>
             </div>
 
             <div class="container-sm">
@@ -84,6 +113,23 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
+
+import { Pagination, A11y } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import 'swiper/css'
+import 'swiper/css/pagination'
+
+const swiperModules = [Pagination, A11y]
+const swiperOptions = ref({
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+        },
+        750: {
+            slidesPerView: 3,
+        },
+    },
+})
 
 const youtubeChannel = ref('https://www.youtube.com/channel/UC_nCSH_V3K2o17KUU-3CiMA')
 const gateVideos = ref([
