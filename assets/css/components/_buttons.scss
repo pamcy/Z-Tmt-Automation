@@ -9,7 +9,7 @@
     text-transform: uppercase;
     text-decoration: none;
     transition-property: all;
-    transition-duration: .5s;
+    transition-duration: 0.5s;
 
     &:hover,
     &:focus {
@@ -21,12 +21,14 @@
         }
     }
 
-    &:not(.btn-styless):not(.btn--icon-only) {
+    &:not(.btn-styless):not(.btn--icon-only):not(.btn--no-background) {
         min-width: rem(300);
+    }
 
+    &:not(.btn-styless):not(.btn--icon-only) {
         > svg {
             margin-left: rem(10);
-            transition: transform .3s ease;
+            transition: transform 0.3s ease;
         }
     }
 
@@ -59,23 +61,23 @@
     }
 
     &--fill {
-      border-color: $color-primary;
-      background-color: $color-primary;
-      color: #fff;
-      transition: transform 0.25s ease;
-
-      &:hover,
-      &:focus {
+        border-color: $color-primary;
         background-color: $color-primary;
-        transform: scale(0.9);
-      }
+        color: #fff;
+        transition: transform 0.25s ease;
+
+        &:hover,
+        &:focus {
+            background-color: $color-primary;
+            transform: scale(0.9);
+        }
     }
 
     &--icon-only {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;;
+        justify-content: center;
         width: rem(150);
         height: rem(150);
         padding: 0;
@@ -99,6 +101,17 @@
                 height: rem(80);
                 font-size: rem(18);
             }
+        }
+    }
+
+    &--no-background {
+        padding: 0;
+        border: 0;
+        background-color: transparent;
+
+        &:hover,
+        &:focus {
+            background-color: transparent;
         }
     }
 
@@ -134,10 +147,9 @@
     }
 }
 
-
 button,
 [role='button'],
-btn {
+.btn {
     &:not([disabled]) {
         cursor: pointer;
     }
