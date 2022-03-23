@@ -1,0 +1,15 @@
+.page-header-installation {
+    background-color: $color-primary-lightest;
+    background-image: url('/images/installation-banner-mobile.png');
+
+    @include media-breakpoint-down(lg) {
+        background-position: 75% 100%;
+    }
+
+    @include media-breakpoint-up(lg) {
+        background-image: url('/images/installation-banner-desktop.png');
+    }
+}
+
+.installation {
+}
