@@ -139,14 +139,6 @@
                 &-mobile {
                     padding: $gutter $gutter 0;
                     margin-bottom: rem(20);
-
-                    input[type='search'] {
-                        border-bottom: 2px solid $color-primary;
-        
-                        + .btn {
-                            border-bottom: 2px solid $color-primary;
-                        }
-                    }
                 }
 
                 &-desktop {

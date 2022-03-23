@@ -209,5 +209,13 @@
         }
       }
     }
+
+    .select-dropdown {
+      min-width: rem(150);
+
+      &-menu {
+        padding: rem(12) 0;
+      }
+    }
   }
 }
