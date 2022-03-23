@@ -3,7 +3,7 @@
          <div class="page-header page-header--sm">
             <div class="container-sm">
                 <div class="page-header-text">
-                    <h1>Schedule a Call</h1>
+                    <h1>Product Registration</h1>
                 </div>
             </div>
         </div>
@@ -19,7 +19,7 @@
                             <span></span>
                         </li>
                          <li class="is-active">
-                            <span>Schedule a Call</span>
+                            <span>Product Registration</span>
                         </li>
                     </ul>
                 </nav>
