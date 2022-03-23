@@ -1,0 +1,8 @@
+.page-header-product-registration {
+    background-color: $color-primary-lightest;
+    background-image: url('/images/product-registration-banner-mobile.png');
+
+    @include media-breakpoint-up(md) {
+        background-image: url('/images/product-registration-banner-desktop.png');
+    }
+}

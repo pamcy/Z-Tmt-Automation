@@ -1,6 +1,6 @@
 <template>
-    <div class="support">
-         <div class="page-header page-header--sm">
+    <div class="product-registration">
+         <div class="page-header page-header-product-registration page-header--image-only">
             <div class="container-sm">
                 <div class="page-header-text">
                     <h1>Product Registration</h1>
