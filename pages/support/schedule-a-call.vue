@@ -16,7 +16,7 @@
                         </li>
                     </ul>
                 </nav>
-                <div ref="intro">
+                <div class="intro" ref="intro">
                     <h1 class="h2 fade-in delay-1">Schedule a Call</h1>
                     <p class="fade-in delay-2">You can schedule a technical support call below. This will allow us to help you troubleshoot any problems that you may have. You will be contacted through your selected means at the allotted time. Please allow up to 10 minutes for the previous call to wrap up.</p>
                 </div>
