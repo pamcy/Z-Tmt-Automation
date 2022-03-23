@@ -44,10 +44,10 @@
 
 .page-header-schedule-a-call {
     background-color: $color-primary-lightest;
-    background-image: url('/images/schedul-a-call-banner-mobile.png');
+    background-image: url('/images/schedule-a-call-banner-mobile.png');
 
     @include media-breakpoint-up(md) {
-        background-image: url('/images/schedul-a-call-banner-desktop.png');
+        background-image: url('/images/schedule-a-call-banner-desktop.png');
     }
 }
 
