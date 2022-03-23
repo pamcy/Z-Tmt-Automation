@@ -39,7 +39,7 @@
 
             <div class="panel-sorting">
               <span class="panel-sorting-result">Total Results<b>6</b></span>
-              <SelectDropdown ref="timeZoneSelectDropdown">
+              <SelectDropdown ref="sortingSelectDropdown">
                 <template v-slot:title>{{ currentSorting }}</template>
                 <template v-slot:content>
                    <ul>
@@ -48,7 +48,7 @@
                       </li>
                     </ul>
                 </template>
-            </SelectDropdown>
+              </SelectDropdown>
             </div>
           </div>
         </div>
@@ -180,6 +180,7 @@ const currentCategory = ref('')
 const tabData = ref({})
 const results = ref([])
 
+const sortingSelectDropdown = ref(null)
 const sortingIsOpen = ref(false)
 const sortingMenu = ref(['Most Popular', 'Newest'])
 const currentSorting = ref('')
@@ -230,6 +231,8 @@ function onToggleSorting() {
 function onSelectSorting(menu) {
   currentSorting.value = menu
   sortingIsOpen.value = false
+
+  sortingSelectDropdown.value.closeSelectDropdown()
 }
 
 function fadeInProductCards() {

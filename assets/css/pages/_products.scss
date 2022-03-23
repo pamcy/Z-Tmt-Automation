@@ -211,7 +211,7 @@
     }
 
     .select-dropdown {
-      width: rem(150);
+      min-width: rem(150);
 
       &-menu {
         padding: rem(12) 0;
