@@ -20,7 +20,7 @@
                     <h1 class="h2 fade-in delay-1">Schedule a Call</h1>
                     <p class="fade-in delay-2">You can schedule a technical support call below. This will allow us to help you troubleshoot any problems that you may have. You will be contacted through your selected means at the allotted time. Please allow up to 10 minutes for the previous call to wrap up.</p>
                 </div>
-                <form action="">
+                <form class="form">
                     <fieldset>
                         <legend>Confirm date & time</legend>
                         <SelectDropdown ref="timeZoneSelectDropdown">
@@ -97,7 +97,7 @@
                                 <input type="text" id="full-name" placeholder="Raymond" required>
                             </div>
                             <div class="form-group form-group-half fade-in delay-2">
-                                <label for="phone">Full Name<span class="required">*</span></label>
+                                <label for="phone">Phone<span class="required">*</span></label>
                                 <input type="tel" id="phone" placeholder="(750)555-5555" required>
                             </div>
                         </div>
