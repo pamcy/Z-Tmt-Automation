@@ -34,6 +34,12 @@
                                     <h4>{{ video.title }}</h4>
                                 </li>
                             </ul>
+                            <div class="video-more-btn">
+                                <NuxtLink :to="youtubeChannel" class="btn btn--no-background" target="_blank">
+                                    More
+                                    <svg width="39" height="13" viewBox="0 0 39 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6.552h33.618M31.6 11.375l5.6-4.804-5.6-4.946" stroke="#EE7B45" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                                </NuxtLink>
+                            </div>
                         </div>
                         <div class="video-list-block">
                             <h3>Smart Solutions</h3>
@@ -45,6 +51,12 @@
                                     <h4>{{ video.title }}</h4>
                                 </li>
                             </ul>
+                            <div class="video-more-btn">
+                                <NuxtLink :to="youtubeChannel" class="btn btn--no-background" target="_blank">
+                                    More
+                                    <svg width="39" height="13" viewBox="0 0 39 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6.552h33.618M31.6 11.375l5.6-4.804-5.6-4.946" stroke="#EE7B45" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                                </NuxtLink>
+                            </div>
                         </div>
                     </section>
                     <section>
@@ -57,6 +69,12 @@
                                 <h4>{{ video.title }}</h4>
                             </li>
                         </ul>
+                        <div class="video-more-btn">
+                            <NuxtLink :to="youtubeChannel" class="btn btn--no-background" target="_blank">
+                                More
+                                <svg width="39" height="13" viewBox="0 0 39 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6.552h33.618M31.6 11.375l5.6-4.804-5.6-4.946" stroke="#EE7B45" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                            </NuxtLink>
+                        </div>
                     </section>
                 </div>
             </div>
@@ -67,6 +85,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
+const youtubeChannel = ref('https://www.youtube.com/channel/UC_nCSH_V3K2o17KUU-3CiMA')
 const gateVideos = ref([
     {
         title: 'Connect the gate opener to Chow! App',
