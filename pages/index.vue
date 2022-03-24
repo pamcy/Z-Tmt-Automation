@@ -429,9 +429,11 @@ function autoplayYoutubeVideo() {
 function onAfterScenarioCarouselInit() {
   if (window.matchMedia('(min-width: 1200px)').matches) {
     setTimeout(() => {
-      scenarioCarouselSlideWidth.value = scenarioCarousel.value.$el.swiper.slides[0].swiperSlideSize
+      scenarioCarouselSlideWidth.value = scenarioCarousel.value.$el.swiper.slides[0] ? scenarioCarousel.value.$el.swiper.slides[0].swiperSlideSize : 0
 
-      document.querySelector('.scenario-image-carousel .swiper-button-next').style.transform = 'translate(-' + (scenarioCarouselSlideWidth.value * 1.3333333 / 2) + 'px, -50%)'
+      if (document.querySelector('.scenario-image-carousel .swiper-button-next')) {
+        document.querySelector('.scenario-image-carousel .swiper-button-next').style.transform = 'translate(-' + (scenarioCarouselSlideWidth.value * 1.3333333 / 2) + 'px, -50%)'
+      }
       scenarioCarouselCounter.value.style.right = 'calc(50vw - ' + (scenarioCarouselSlideWidth.value * 1.3333333) + 'px)'
 
       scenarioCarouselTransition.value = scenarioCarousel.value.$el.swiper.translate
