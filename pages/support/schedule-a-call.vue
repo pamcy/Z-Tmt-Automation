@@ -106,7 +106,6 @@
                                 <label for="email">Email Address<span class="required">*</span></label>
                                 <input type="email" id="email" placeholder="mail@example.com" required>
                             </div>
-                            {{ email }}
                             <div class="form-group form-group-half fade-in delay-4">
                                 <label for="product-name">Product Name<span class="required">*</span></label>
                                 <input type="text" id="product-name" placeholder="product name" required>
