@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-import { nextTick, onMounted, ref, watch } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 
 const pageHeaderSection = ref(null)
 const sitemapList = ref(null)
@@ -116,20 +116,16 @@ const list = [
     }
 ]
 
-async function toggleIsLoadedClass(on) {
-    await nextTick();
-
-    if (pageHeaderSection.value) {
-        pageHeaderSection.value.classList[on ? 'add' : 'remove']('is-loaded')
-    }
-
-    if (sitemapList.value) {
-        sitemapList.value.classList[on ? 'add' : 'remove']('is-revealed')
-    }
-}
-
 onMounted(() => {
-    toggleIsLoadedClass(true)
+    setTimeout(() => {
+        if (pageHeaderSection.value) {
+            pageHeaderSection.value.classList.add('is-loaded')
+        }
+
+        if (sitemapList.value) {
+            sitemapList.value.classList.add('is-revealed')
+        }
+    }, 100);
 })
 
 
