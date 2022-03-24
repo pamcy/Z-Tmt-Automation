@@ -54,6 +54,7 @@ legend {
 
     input,
     textarea {
+        padding-top: rem(8);
         padding-bottom: rem(8);
         border-color: $color-secondary;
     }
@@ -107,7 +108,7 @@ textarea {
         input[type='search'] {
             border-bottom: 3px solid $color-primary;
 
-            + .btn {
+            + .btn:not(.btn-styless) {
                 border-bottom: 3px solid $color-primary;
             }
         }
