@@ -46,7 +46,7 @@
                         <div class="form-row">
                             <div class="form-group form-group-half fade-in delay-5">
                                 <label for="email">Email Address<span class="required">*</span></label>
-                                <input type="email" id="email" placeholder="e.g: Paul" required>
+                                <input type="email" id="email" placeholder="mail@example.com" required>
                             </div>
                             <div class="form-group form-group-half fade-in delay-6">
                                 <label for="phone">Phone<span class="required">*</span></label>
