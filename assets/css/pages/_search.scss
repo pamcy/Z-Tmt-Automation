@@ -1,0 +1,21 @@
+.page-header-search {
+    padding-top: rem(20);
+    padding-bottom: rem(20);
+    background-image: url('/images/search-kv-mobile.jpg');
+
+    @include media-breakpoint-down(md) {
+        height: rem(230);
+    }
+
+    @include media-breakpoint-up(md) {
+        padding-top: rem(42);
+        padding-bottom: rem(42);
+        background-image: url('/images/search-kv-tablet.jpg');
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding-top: rem(50);
+        padding-bottom: rem(50);
+        background-image: url('/images/search-kv-desktop.jpg');
+    }
+}
