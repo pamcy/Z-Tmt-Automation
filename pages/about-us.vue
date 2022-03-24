@@ -31,19 +31,19 @@
 
                     <ul class="info-cards">
                         <li class="card card-data">
-                            <em>90% +</em>
+                            <em>{{ countComponent}}% +</em>
                             <span>Key Components<br /> made in-house</span>
                         </li>
                         <li class="card card-data">
-                            <em>2005</em>
+                            <em>{{ countFounded }}</em>
                             <span>Founded in<br /> Taiwan</span>
                         </li>
                         <li class="card card-data">
-                            <em>2,000 +</em>
+                            <em>{{ countEmployees }} +</em>
                             <span>Employees for<br /> manufacture</span>
                         </li>
                         <li class="card card-data">
-                            <em>14 +</em>
+                            <em>{{ countsubsidiary }} +</em>
                             <span>Over 14 Subsidiary<br /> in our Organization</span>
                         </li>
                         <li class="card">
@@ -62,5 +62,30 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
-onMounted(() => {})
+const countComponent = ref(0)
+const countFounded = ref(0)
+const countEmployees = ref(0)
+const countsubsidiary = ref(0)
+
+onMounted(() => {
+    animateCounting(countComponent, 0, 90, 1, 2000)
+    animateCounting(countFounded, 0, 2005, 5, 2000)
+    animateCounting(countEmployees, 0, 2000, 5, 2000)
+    animateCounting(countsubsidiary, 0, 14, 1, 2000)
+})
+
+function animateCounting(el, start, end, increment, duration) {
+    const range = end - start;
+    const stepTime = Math.abs(Math.floor(duration / range));
+    let current = start;
+
+    const timer = setInterval(function() {
+        current += increment;
+        el.value = current
+
+        if (current == end) {
+            clearInterval(timer);
+        }
+    }, stepTime);
+}
 </script>
