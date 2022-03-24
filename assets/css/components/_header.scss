@@ -173,6 +173,15 @@
                             opacity: 0;
                             transform: translateY(-10px);
                         }
+                        
+                        input[type='search'] {
+                            & {
+                                &,
+                                + .btn {
+                                    border-bottom: 0;
+                                }
+                            }
+                        }
                     }
                 }
             }

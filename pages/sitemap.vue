@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref, watch } from 'vue'
+import { onMounted, ref } from 'vue'
 
 const pageHeaderSection = ref(null)
 const sitemapList = ref(null)

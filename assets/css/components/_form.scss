@@ -112,7 +112,7 @@ textarea {
         input[type='search'] {
             border-bottom: 3px solid $color-primary;
 
-            + .btn:not(.btn-styless) {
+            + .btn {
                 border-bottom: 3px solid $color-primary;
             }
         }
