@@ -67,7 +67,10 @@
                             <div class="form-group form-group-half fade-in delay-9">
                                 <label for="state">State<span class="required">*</span></label>
                                 <SelectDropdown ref="stateSelectDropdown">
-                                    <template v-slot:title>{{ currentState ? currentState : 'Select a State' }}</template>
+                                    <template v-slot:title>
+                                        <span v-if="currentState">{{ currentState }}</span>
+                                        <span class="select-dropdown-placeholder" v-else>Select a state</span>
+                                    </template>
                                     <template v-slot:content>
                                     <ul>
                                         <li v-for="state in states" :key="state">
@@ -91,7 +94,8 @@
                             <div class="form-group form-group-half fade-in delay-12">
                                 <SelectDropdown ref="categorySelectDropdown">
                                     <template v-slot:title>
-                                        {{ currentCategory ? currentCategory : 'Select Category' }}
+                                        <span v-if="currentCategory">{{ currentCategory }}</span>
+                                        <span class="select-dropdown-placeholder" v-else>Select Category</span>
                                     </template>
                                     <template v-slot:content>
                                     <ul>
@@ -105,7 +109,8 @@
                             <div class="form-group form-group-half fade-in delay-13">
                                 <SelectDropdown ref="productSelectDropdown" :noData="!currentCategory">
                                     <template v-slot:title>
-                                        {{ currentProduct ? currentProduct : 'Select Your Product' }}
+                                        <span v-if="currentProduct">{{ currentProduct }}</span>
+                                        <span class="select-dropdown-placeholder" v-else>Select Your Product</span>
                                     </template>
                                     <template v-slot:content>
                                         <ul v-for="category in categories" :key="category">
