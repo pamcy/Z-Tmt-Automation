@@ -28,8 +28,8 @@
                     Total Results <b>{{ results.length }}</b>
                 </span>
 
-                <ul class="search-result-list">
-                    <li v-for="(result, index) in results" :key="index">
+                <ul class="search-result-list" ref="searchResultSection">
+                    <li v-for="(result, index) in results" :key="index" class="fade-in" :style="{ transitionDelay: index * 200 + 'ms' }">
                         <h3>
                             <a :href="result.url">{{ result.title }}</a>
                         </h3>
@@ -46,8 +46,8 @@
 import { ref, onMounted } from 'vue'
 import SearchBox from '../components/SearchBox.vue'
 
+const searchResultSection = ref(null)
 const searchValue = ref('swing door')
-
 const results = ref([
     {
         title: 'TA2 Series',
@@ -86,7 +86,21 @@ const results = ref([
     },
 ])
 
-onMounted(() => {})
+onMounted(() => {
+    window.addEventListener('scroll', fadeInResults)
+})
 
-onUnmounted(() => {})
+onUnmounted(() => {
+    window.removeEventListener('scroll', fadeInResults)
+})
+
+function fadeInResults() {
+    const rect = searchResultSection.value.getBoundingClientRect()
+    const elTop = rect.top + rect.top * 0.5
+    const elBottom = rect.bottom
+
+    if (window.innerHeight > elTop && elBottom > 0) {
+        searchResultSection.value.classList.add('is-revealed')
+    }
+}
 </script>
