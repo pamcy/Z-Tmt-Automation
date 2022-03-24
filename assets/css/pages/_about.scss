@@ -17,4 +17,24 @@
             padding-left: $gutter;
         }
     }
+
+    h2 {
+        margin: 0 0 rem(10);
+        color: $color-primary;
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: rem(20);
+        }
+
+        & + strong {
+            display: block;
+            margin-bottom: rem(10);
+            font-size: rem(20);
+            line-height: 1.4;
+
+            @include media-breakpoint-up(lg) {
+                font-size: rem(28);
+            }
+        }
+    }
 }
