@@ -71,6 +71,10 @@ label {
 
 .required {
     color: $color-primary;
+
+    + fieldset {
+        margin-top: rem(10);
+    }
 }
 
 input,
