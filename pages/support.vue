@@ -1,51 +1,55 @@
 <template>
-    <div class="support">
-        <div class="page-header page-header--sm" ref="pageHeaderSection">
-            <div class="container-sm">
-                <div class="page-header-text">
-                    <h1>Support</h1>
-                    <p>Welcome to TMT Support! Custom-made services tailored for you.</p>
+    <div>
+        <div class="support" v-if="$route.name === 'support'">
+            <div class="page-header page-header--sm" ref="pageHeaderSection">
+                <div class="container-sm">
+                    <div class="page-header-text">
+                        <h1>Support</h1>
+                        <p>Welcome to TMT Support! Custom-made services tailored for you.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <main>
-            <div class="container-sm">
-                <nav class="breadcrumb">
-                    <ul>
-                        <li>
-                            <NuxtLink to="/">Home</NuxtLink>
-                        </li>
-                        <li class="is-active">
-                            <span>Support</span>
+            <main>
+                <div class="container-sm">
+                    <nav class="breadcrumb">
+                        <ul>
+                            <li>
+                                <NuxtLink to="/">Home</NuxtLink>
+                            </li>
+                            <li class="is-active">
+                                <span>Support</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="container">
+                    <ul class="cards list-styless" ref="cardsSection">
+                        <li class="card fade-in" :class="'delay-' + (index + 1)" v-for="(item, index) in items" :key="item.title">
+                            <NuxtLink :to="item.url">
+                                <div class="card-icon" v-html="item.icon"></div>
+                                <div class="d-md-flex flex-md-column flex-md-grow-1">
+                                    <h2 class="card-title">{{ item.title }}</h2>
+                                    <p class="card-content">
+                                        {{ item.content }}
+                                        <div class="card-action">
+                                            <svg width="39" height="13" viewBox="0 0 39 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6.552h33.618M31.6 11.375l5.6-4.804-5.6-4.946" stroke="#EE7B45" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </div>
+                                    </p>
+                                </div>
+                            </NuxtLink>
                         </li>
                     </ul>
-                </nav>
-            </div>
-            <div class="container">
-                <ul class="cards list-styless" ref="cardsSection">
-                    <li class="card fade-in" :class="'delay-' + (index + 1)" v-for="(item, index) in items" :key="item.title">
-                        <NuxtLink :to="item.url">
-                            <div class="card-icon" v-html="item.icon"></div>
-                            <div class="d-md-flex flex-md-column flex-md-grow-1">
-                                <h2 class="card-title">{{ item.title }}</h2>
-                                <p class="card-content">
-                                    {{ item.content }}
-                                    <div class="card-action">
-                                        <svg width="39" height="13" viewBox="0 0 39 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6.552h33.618M31.6 11.375l5.6-4.804-5.6-4.946" stroke="#EE7B45" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                    </div>
-                                </p>
-                            </div>
-                        </NuxtLink>
-                    </li>
-                </ul>
-            </div>
-        </main>
+                </div>
+            </main>
+        </div>
+        <NuxtPage v-else />
     </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { nextTick, onMounted, ref, watch } from 'vue'
 
+const route = useRoute()
 const pageHeaderSection = ref(null)
 const cardsSection = ref(null)
 const items = [
@@ -87,9 +91,24 @@ const items = [
     }
 ]
 
+async function toggleIsLoadedClass(on) {
+    await nextTick();
+
+    if (pageHeaderSection.value) {
+        pageHeaderSection.value.classList[on ? 'add' : 'remove']('is-loaded')
+    }
+
+    if (cardsSection.value) {
+        cardsSection.value.classList[on ? 'add' : 'remove']('is-revealed')
+    }
+}
+
 onMounted(() => {
-    pageHeaderSection.value.classList.add('is-loaded')
-    cardsSection.value.classList.add('is-revealed')
+    toggleIsLoadedClass(true)
+})
+
+watch(route, (to) => {
+    toggleIsLoadedClass(to.name === 'support')
 })
 
 </script>

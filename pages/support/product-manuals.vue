@@ -19,20 +19,19 @@
 
                 <h1 class="h2">Product Manuals</h1>
 
-                <div :class="['select-dropdown', sortingIsOpen ? 'is-active' : '']">
-                    <button class="btn-styless" @click="onToggleSorting">
+                <SelectDropdown>
+                    <template v-slot:title>
                         <span v-if="currentSorting">{{ currentSorting }}</span>
                         <span class="select-dropdown-placeholder" v-else>Type</span>
-                        <svg width="18" height="12" viewBox="0 0 18 12" fill="none">
-                            <path d="m2 2 6.899 8L16 2" stroke="#EE7B45" stroke-width="2.7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </button>
-                    <ul class="select-dropdown-menu">
-                        <li v-for="menu in sortingMenu" :key="menu">
-                            <a href="#" @click.prevent="onSelectSorting(menu)">{{ menu }}</a>
-                        </li>
-                    </ul>
-                </div>
+                    </template>
+                    <template v-slot:content>
+                        <ul>
+                            <li v-for="menu in sortingMenu" :key="menu">
+                                <a href="#" @click.prevent="onSelectSorting(menu)">{{ menu }}</a>
+                            </li>
+                        </ul>
+                    </template>
+                </SelectDropdown>
             </div>
 
             <div class="container">
@@ -58,6 +57,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import SelectDropdown from "../../components/SelectDropdown"
 
 const cardsSection = ref(null)
 

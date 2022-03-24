@@ -1,0 +1,101 @@
+.page-header-sitemap {
+    background-image: url('/images/sitemap-banner-mobile.png');
+  
+    @include media-breakpoint-up(md) {
+      background-image: url('/images/sitemap-banner-desktop.png');
+    }
+}
+
+.sitemap {
+    background: no-repeat url('/images/sitemap-bg.jpg') center;
+    background-size: cover;
+
+    main {
+        padding: rem(40) 0 rem(180);
+        background-color: transparent;
+
+        @include media-breakpoint-up(md) {
+            padding: rem(30) $gutter rem(120);
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding: rem(60) 0 rem(100);
+        }
+    }
+
+    &-list {
+        display: flex;
+        flex-direction: column;
+        padding: $gutter $gutter * 1.5 !important;
+        background-color: transparentize(#fff, .2);
+
+        @include media-breakpoint-up(md) {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding: rem(50) !important;
+        }
+
+        &-wrapper {
+            position: relative;
+        }
+
+        > li {
+            margin-bottom: rem(30);
+
+            @include media-breakpoint-up(md) {
+                flex-basis: calc(33.3333333% - 20px);
+                padding-right: calc((33.33333% - 225px) / 2);
+                padding-left: calc((33.3333333% - 225px) / 2);
+                margin: 0 rem(10);
+            }
+        }
+
+        .h3 {
+            padding-bottom: rem(6);
+            border-bottom: 3px solid $color-primary;
+            margin-bottom: rem(10);
+
+            @include media-breakpoint-up(lg) {
+                font-size: rem(28)
+            }
+        }
+
+        ul {
+            li {
+                a {
+                    display: block;
+                    padding: .5em 0;
+                    color: inherit !important;
+
+                    &:hover,
+                    &:focus {
+                        color: $color-primary !important;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+
+    &-deco {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 80%);
+    
+        @include media-breakpoint-up(md) {
+            bottom: 0;
+            right: $gutter * 1.5;
+            left: auto;
+            transform: translate(0, 20%);
+        }
+    
+        @include media-breakpoint-up(lg) {
+            right: 0;
+            transform: translate(30%, 30%);
+        }
+    }
+}

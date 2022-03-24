@@ -1,0 +1,24 @@
+.page-header-product-registration {
+    background-color: $color-primary-lightest;
+    background-image: url('/images/product-registration-banner-mobile.png');
+
+    @include media-breakpoint-up(md) {
+        background-image: url('/images/product-registration-banner-desktop.png');
+    }
+}
+
+.product-registration {
+    main {
+        padding-right: $gutter-sm;
+        padding-left: $gutter-sm;
+        background-image: url('/images/product-registration-bg.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% auto;
+
+        @include media-breakpoint-up(md) {
+            padding-right: $gutter;
+            padding-left: $gutter;
+        }
+    }
+}
