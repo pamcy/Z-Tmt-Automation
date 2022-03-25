@@ -1,0 +1,38 @@
+.page-header-comparison {
+    background-image: url('/images/comparison-kv-mobile.jpg');
+
+    @include media-breakpoint-down(md) {
+        height: rem(240);
+    }
+
+    @include media-breakpoint-up(lg) {
+        background-image: url('/images/comparison-kv-desktop.jpg');
+    }
+
+    .page-header-text {
+        max-width: 100%;
+    }
+}
+
+.comparison {
+    main {
+        padding-right: $gutter-sm;
+        padding-left: $gutter-sm;
+
+        @include media-breakpoint-up(md) {
+            padding-right: $gutter;
+            padding-left: $gutter;
+        }
+    }
+
+    h2 {
+        margin: 0 0 rem(20);
+        color: $color-primary;
+    }
+
+    img {
+        @include media-breakpoint-up(lg) {
+            margin-top: rem(20);
+        }
+    }
+}
