@@ -48,9 +48,9 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import SearchBox from '../components/SearchBox.vue'
-import OneOpenAccordion from '../components/OneOpenAccordion.vue'
-import needHelp from '../components/NeedHelp.vue'
+import SearchBox from '../../components/SearchBox.vue'
+import OneOpenAccordion from '../../components/OneOpenAccordion.vue'
+import needHelp from '../../components/NeedHelp.vue'
 
 const searchValue = ref('gate')
 
