@@ -27,7 +27,7 @@
                             <nav role="navigation" class="header-menu-controls__list" ref="headerMenuControlsList">
                                 <ul class="list-styless">
                                     <li class="dropdown" :class="{ 'is-toggled': item.visible }" v-for="item in menu" :key="item.title">
-                                        <button type="button" class="dropdown-title btn btn-block btn-styless" :title="item.title" @click="toggleMenuItem(item)">{{ item.title }}</button>
+                                        <button type="button" class="dropdown-title btn btn-block btn-styless" :title="item.title" @mouseover="toggleMenuItem(item)" >{{ item.title }}</button>
                                         <Transition @before-enter="onBeforeEnter"
                                                     @enter="onEnter"
                                                     @before-leave="onBeforeLeave"
@@ -73,7 +73,11 @@ const menu = ref([
         subItems: [
             {
                 title: 'Gate Openers',
-                url: '/product-detail'
+                url: '/products'
+            },
+            {
+                title: 'Home Automation',
+                url: '/products'
             }
         ]
     },
