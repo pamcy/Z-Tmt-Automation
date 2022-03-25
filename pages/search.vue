@@ -37,6 +37,8 @@
                         <p>{{ result.description }}</p>
                     </li>
                 </ul>
+
+                <Pagination />
             </div>
         </main>
     </div>
@@ -45,6 +47,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import SearchBox from '../components/SearchBox.vue'
+import Pagination from '../components/Pagination.vue'
 
 const searchResultSection = ref(null)
 const searchValue = ref('swing door')
