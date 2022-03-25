@@ -71,6 +71,10 @@ label {
 
 .required {
     color: $color-primary;
+
+    + fieldset {
+        margin-top: rem(10);
+    }
 }
 
 input,
@@ -108,7 +112,7 @@ textarea {
         input[type='search'] {
             border-bottom: 3px solid $color-primary;
 
-            + .btn:not(.btn-styless) {
+            + .btn {
                 border-bottom: 3px solid $color-primary;
             }
         }

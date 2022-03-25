@@ -94,7 +94,7 @@
                         <div class="form-row">
                             <div class="form-group form-group-half fade-in delay-1">
                                 <label for="full-name">Full Name<span class="required">*</span></label>
-                                <input type="text" id="full-name" placeholder="Raymond" required>
+                                <input type="text" id="full-name" placeholder="Paul Smith" required>
                             </div>
                             <div class="form-group form-group-half fade-in delay-2">
                                 <label for="phone">Phone<span class="required">*</span></label>
@@ -104,11 +104,11 @@
                         <div class="form-row">
                             <div class="form-group form-group-half fade-in delay-3">
                                 <label for="email">Email Address<span class="required">*</span></label>
-                                <input type="tel" id="email" placeholder="mail@example.com" required>
+                                <input type="email" id="email" placeholder="mail@example.com" required>
                             </div>
                             <div class="form-group form-group-half fade-in delay-4">
                                 <label for="product-name">Product Name<span class="required">*</span></label>
-                                <input type="tel" id="product-name" placeholder="product name" required>
+                                <input type="text" id="product-name" placeholder="product name" required>
                             </div>
                         </div>
                         <div class="form-row">
