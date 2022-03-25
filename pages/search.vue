@@ -28,6 +28,8 @@
                     Total Results <b>{{ results.length }}</b>
                 </span>
 
+                <p class="search-result-null" v-if="results.length === 0">Sorry, your search did not match any results. Please try entering another phrase or contact customer support for further assistance.</p>
+
                 <ul class="search-result-list" ref="searchResultSection">
                     <li v-for="(result, index) in results" :key="index" class="fade-in" :style="{ transitionDelay: index * 200 + 'ms' }">
                         <h3>
@@ -38,7 +40,7 @@
                     </li>
                 </ul>
 
-                <Pagination />
+                <Pagination v-if="results.length > 0" />
             </div>
         </main>
     </div>
