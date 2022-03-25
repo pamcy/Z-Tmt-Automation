@@ -19,7 +19,7 @@
             </div>
             <div class="product-meta">
                 <div class="product-meta__images">
-                    <swiper class="product-slider" ref="productSlider" :modules="swiperModules" :rewind="true" effect="fade" navigation @slideChange="onProductSliderChange">
+                    <swiper class="product-slider" ref="productSlider" :modules="swiperModules" effect="fade" navigation @slideChange="onProductSliderChange">
                         <swiper-slide>
                             <picture>
                                 <source srcset="/images/product-detail-1-mobile.jpg" media="(max-width: 989px)" />
