@@ -15,5 +15,9 @@
 
     button[type='submit'] {
         padding-left: rem(10);
+
+        &.btn {
+            border-bottom: 0;
+        }
     }
 }
