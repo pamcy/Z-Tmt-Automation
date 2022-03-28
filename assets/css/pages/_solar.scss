@@ -21,8 +21,13 @@
         }
     }
 
-    h2 {
+    h2:not(.h3) {
         color: $color-primary;
+    }
+
+    .h3 {
+        margin-bottom: rem(20);
+        font-size: rem(20);
     }
 
     &-benefits {
@@ -62,6 +67,84 @@
                 @include media-breakpoint-up(md) {
                     margin-bottom: rem(10);
                     text-align: center;
+                }
+            }
+        }
+    }
+
+    &-map {
+        position: relative;
+        padding: rem(20);
+        margin: 0 (-$gutter-sm);
+        background: url('/images/map-bg.png') no-repeat center center;
+        text-align: center;
+
+        @include media-breakpoint-up(lg) {
+            margin: 0;
+        }
+
+        > svg {
+            max-width: 100%;
+        }
+
+        &__zone {
+            &:hover,
+            &:focus {
+                fill: $color-primary;
+            }
+        }
+
+        &__cities,
+        &__borders {
+            pointer-events: none;
+        }
+
+        &__legend {
+            position: absolute;
+            right: rem(16);
+            bottom: rem(13);
+            font-weight: 700;
+
+            @include media-breakpoint-up(md) {
+                right: rem(40);
+                bottom: rem(20);
+            }
+
+            @include media-breakpoint-up(lg) {
+                right: rem(26);
+            }
+
+            li {
+                &:before {
+                    display: inline-block;
+                    width: rem(14);
+                    height: rem(14);
+                    border: 2px solid $color-primary;
+                    border-radius: 50%;
+                    margin-right: rem(10);
+                    content: '';
+                }
+
+                &:first-child {
+                    &:before {
+                        background-color: $color-primary-lighter;
+                    }
+                }
+
+                &:nth-child(2) {
+                    &:before {
+                        background-color: $color-primary-light;
+                    }
+                }
+
+                &:last-child {
+                    &:before {
+                        background-color: #F5BCA2;
+                    }
+                }
+
+                + li {
+                    margin-top: rem(6);
                 }
             }
         }
