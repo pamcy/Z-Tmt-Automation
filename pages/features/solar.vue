@@ -114,7 +114,96 @@
                             <circle cx="517" cy="137" r="2" fill="#000"/>
                         </g>
                     </svg>
-                    <ul class="solar-map__legend">
+                    <ul class="solar-map__panel-group" :style="[ isMobile ? null : { left: cursorX + 'px', top: cursorY + 'px' } ]">
+                        <li class="solar-map__panel is-active" id="panel-1">
+                            <h3 class="solar-map__panel-title">ZONE 1</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Panel</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>PW 640 Single</th>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <th>PW 640 Dual</th>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <th>A8</th>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <th>A8L</th>
+                                        <td>2</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                        <li class="solar-map__panel" id="panel-2">
+                            <h3 class="solar-map__panel-title">ZONE 2</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Panel</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>PW 640 Single</th>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <th>PW 640 Dual</th>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <th>A8</th>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <th>A8L</th>
+                                        <td>3</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                        <li class="solar-map__panel" id="panel-3">
+                            <h3 class="solar-map__panel-title">ZONE 3</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Panel</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>PW 640 Single</th>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <th>PW 640 Dual</th>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <th>A8</th>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <th>A8L</th>
+                                        <td>3</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                    </ul>
+                    <ul class="solar-map__legend" aria-hidden="true">
                         <li>ZONE 1</li>
                         <li>ZONE 2</li>
                         <li>ZONE 3</li>
