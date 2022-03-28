@@ -120,6 +120,45 @@
                         <li>ZONE 3</li>
                     </ul>
                 </div>
+                <div class="solar-map__table-wrapper">
+                    <div class="solar-map__table-legend">Unit: Panel</div>
+                    <table class="solar-map__table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th scope="col">Zone 1</th>
+                                <th scope="col">Zone 2</th>
+                                <th scope="col">Zone 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">PW 640 Single</th>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">PW 640 Dual</th>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">A8</th>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">A8L</th>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </main>
     </div>
