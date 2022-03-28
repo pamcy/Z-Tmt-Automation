@@ -74,7 +74,7 @@
 
     &-map {
         position: relative;
-        padding: rem(20);
+        padding: rem(20) rem(20) rem(36);
         margin: 0 (-$gutter-sm);
         background: url('/images/map-bg.png') no-repeat center center;
         text-align: center;
@@ -88,8 +88,11 @@
         }
 
         &__zone {
+            transition: fill .5s ease;
+
             &:hover,
-            &:focus {
+            &:focus,
+            &.is-active {
                 fill: $color-primary;
             }
         }
