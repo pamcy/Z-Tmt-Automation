@@ -6,10 +6,10 @@
                 <nav class="breadcrumb">
                     <ul>
                         <li>
-                            <NuxtLink to="/">Home</NuxtLink>
+                            <NuxtLink to="/" title="Home">Home</NuxtLink>
                         </li>
                         <li>
-                            <NuxtLink to="/support">Support</NuxtLink>
+                            <NuxtLink to="/support" title="Support">Support</NuxtLink>
                         </li>
                         <li class="is-active">
                             <span>Schedule a Call</span>

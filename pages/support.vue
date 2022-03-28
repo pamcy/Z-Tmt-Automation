@@ -14,7 +14,7 @@
                     <nav class="breadcrumb">
                         <ul>
                             <li>
-                                <NuxtLink to="/">Home</NuxtLink>
+                                <NuxtLink to="/" title="Home">Home</NuxtLink>
                             </li>
                             <li class="is-active">
                                 <span>Support</span>
