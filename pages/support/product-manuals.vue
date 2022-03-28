@@ -125,7 +125,9 @@ const sortingMenu = ref(['Type 1', 'Type 2'])
 const currentSorting = ref('')
 
 onMounted(() => {
-    cardsSection.value.classList.add('is-revealed')
+    setTimeout(() => {
+        cardsSection.value.classList.add('is-revealed')
+    }, 400)
 })
 
 function onToggleSorting() {
