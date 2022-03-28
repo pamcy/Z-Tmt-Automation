@@ -152,7 +152,7 @@ const searchValue = ref(null)
 
 onMounted(() => {
     if (window.matchMedia('(min-width: 990px)').matches) {
-        window.addEventListener('click', (e) => {
+        window.addEventListener('mouseover', (e) => {
             if (!headerMenuControlsList.value.contains(e.target)){
                 closeMenuItem()
             }
