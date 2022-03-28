@@ -19,7 +19,7 @@
 }
 
 .hero {
-    height: calc(var(--vh, 1vh) * 100 - $header-height-mobile);
+    // height: calc(var(--vh, 1vh) * 100 - $header-height-mobile);
     padding: var(--gutter);
     background: $color-primary no-repeat url('/images/mainpage-kv-mobile.jpg') left top;
     background-size: cover;
@@ -44,9 +44,13 @@
     &-text {
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        // justify-content: flex-end;
         align-items: flex-start;
         height: 100%;
+
+        @include media-breakpoint-down(md) {
+            margin-top: calc(77.4285vw - 30px - 40px);
+        }
 
         @include media-breakpoint-up(md) {
             justify-content: center;
@@ -91,7 +95,7 @@
                 font-size: rem(24 * .8);
             }
         }
-    
+
         .btn {
             transition: opacity 1s ease .9s, transform 1s ease .9s, background-color .5s;
 
@@ -138,7 +142,7 @@
 
                 &:before {
                     padding-top: 77.125604%;
-            
+
                     @include media-breakpoint-up(md) {
                         padding-top: 51.145833%;
                     }
@@ -225,7 +229,7 @@
             transform: perspective(600px) rotateY(90deg);
         }
     }
-    
+
     @keyframes door-right-mobile {
         0% {
             transform: perspective(600px) rotateY(0);
@@ -234,7 +238,7 @@
             transform: perspective(600px) rotateY(-90deg);
         }
     }
-    
+
     @keyframes door-left-desktop {
         0% {
             transform: perspective(600px) rotateY(0);
@@ -243,7 +247,7 @@
             transform: perspective(600px) rotateY(90deg);
         }
     }
-    
+
     @keyframes door-right-desktop {
         0% {
             transform: perspective(600px) rotateY(0);
@@ -305,7 +309,7 @@
                 .scenario-item-image {
                     position: relative;
                     font-size: 0;
-            
+
                     &:before {
                         position: absolute;
                         top: 0;
@@ -457,7 +461,7 @@
             height: 107% !important;
             margin-top: 0 !important;
             margin-bottom: 0 !important;
-            
+
             .swiper-wrapper,
             .swiper-slide {
                 height: 100% !important;
