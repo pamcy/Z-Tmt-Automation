@@ -87,7 +87,7 @@ const menu = ref([
         subItems: [
             {
                 title: 'Solar',
-                url: '/solar'
+                url: '/features/solar'
             },
             {
                 title: 'App Integration',
@@ -95,7 +95,7 @@ const menu = ref([
             },
             {
                 title: 'Comparison with Other Brands',
-                url: '/comparison-with-other-brands'
+                url: '/features/comparison'
             }
         ]
     },
