@@ -21,6 +21,12 @@
                     font-weight: normal;
                 }
             }
+
+            &-menu {
+                &__inner {
+                    padding: 0;
+                }
+            }
         }
     }
 }

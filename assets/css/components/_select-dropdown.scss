@@ -1,76 +1,84 @@
 .select-dropdown {
-  position: relative;
-  display: inline-block;
-  white-space: nowrap;
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
 
-  > button {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding-bottom: rem(10);
-    border-bottom: 3px solid $color-primary;
-    cursor: pointer;
+    > button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding-bottom: rem(10);
+        border-bottom: 3px solid $color-primary;
+        cursor: pointer;
 
-    span {
-      @include media-breakpoint-up(lg) {
-        font-size: rem(20);
-      }
+        span {
+            @include media-breakpoint-up(lg) {
+                font-size: rem(20);
+            }
+        }
+
+        > svg {
+            &:first-child {
+                margin-right: rem(10);
+            }
+
+            &:last-child {
+                margin-left: rem(60);
+            }
+        }
     }
 
-    > svg {
-      &:first-child {
-        margin-right: rem(10);
-      }
+    &-placeholder {
+        font-size: rem(16);
+        color: $color-secondary;
 
-      &:last-child {
-        margin-left: rem(60);
-      }
-    }
-  }
-
-  &-placeholder {
-    font-size: rem(16);
-    color: $color-secondary;
-
-    @include media-breakpoint-up(lg) {
-      font-size: rem(20);
-    }
-  }
-
-  &-menu {
-    display: none;
-    position: absolute;
-    top: calc(100% + 12px);
-    min-width: 100%;
-    max-height: rem(320);
-    border: 2px solid $color-primary-light;
-    border-radius: rem(10);
-    overflow-y: auto;
-    background: #fff;
-    z-index: 2;
-
-    &__top {
-      position: sticky;
-      top: 0;
-      padding: rem(12) rem(20);
-      background-color: #fff;
+        @include media-breakpoint-up(lg) {
+            font-size: rem(20);
+        }
     }
 
-    a {
-      display: block;
-      padding: rem(5) rem(20);
-      color: inherit !important;
+    &-menu {
+        position: absolute;
+        top: calc(100% + 12px);
+        min-width: 100%;
+        max-height: 0;
+        border-radius: rem(10);
+        overflow-y: auto;
+        background: #fff;
+        z-index: 2;
+        transition: max-height 0.35s ease-out;
 
-      &:hover {
-        font-weight: 700;
-        background: $color-primary-lighter;
-        color: $color-primary !important;
-      }
-    }
+        &__inner {
+            max-height: rem(320);
+            padding: rem(12) 0;
+            border: 2px solid $color-primary-light;
+            border-radius: rem(10);
+            overflow-y: auto;
+        }
 
-    .select-dropdown.is-active & {
-      display: block;
+        &__top {
+            position: sticky;
+            top: 0;
+            padding: rem(12) rem(20);
+            background-color: #fff;
+        }
+
+        a {
+            display: block;
+            padding: rem(5) rem(20);
+            color: inherit !important;
+
+            &:hover {
+                font-weight: 700;
+                background: $color-primary-lighter;
+                color: $color-primary !important;
+            }
+        }
+
+        .select-dropdown.is-active & {
+            max-height: rem(320);
+            transition: all 0.45s ease-in;
+        }
     }
-  }
 }

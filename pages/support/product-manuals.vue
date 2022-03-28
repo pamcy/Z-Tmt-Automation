@@ -19,7 +19,7 @@
 
                 <h1 class="h2">Product Manuals</h1>
 
-                <SelectDropdown>
+                <SelectDropdown ref="typeSelectDropdown">
                     <template v-slot:title>
                         <span v-if="currentSorting">{{ currentSorting }}</span>
                         <span class="select-dropdown-placeholder" v-else>Type</span>
@@ -120,7 +120,7 @@ const items = ref([
     },
 ])
 
-const sortingIsOpen = ref(false)
+const typeSelectDropdown = ref(null)
 const sortingMenu = ref(['Type 1', 'Type 2'])
 const currentSorting = ref('')
 
@@ -130,12 +130,8 @@ onMounted(() => {
     }, 400)
 })
 
-function onToggleSorting() {
-    sortingIsOpen.value = !sortingIsOpen.value
-}
-
 function onSelectSorting(menu) {
     currentSorting.value = menu
-    sortingIsOpen.value = false
+    typeSelectDropdown.value.closeSelectDropdown()
 }
 </script>
