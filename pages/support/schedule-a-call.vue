@@ -20,8 +20,8 @@
                     <h1 class="h2 fade-in delay-1">Schedule a Call</h1>
                     <p class="fade-in delay-2">You can schedule a technical support call below. This will allow us to help you troubleshoot any problems that you may have. You will be contacted through your selected means at the allotted time. Please allow up to 10 minutes for the previous call to wrap up.</p>
                 </div>
-                <form class="form">
-                    <fieldset>
+                <form class="form fade-in" :class="{ 'is-revealed': formDetailsRevealed }" ref="formDetails">
+                    <fieldset class="fade-in delay-1">
                         <legend>Confirm date & time</legend>
                         <SelectDropdown ref="timeZoneSelectDropdown">
                             <template v-slot:icon>
@@ -89,7 +89,7 @@
                             </div>
                         </div>
                     </fieldset>
-                    <fieldset ref="formDetails" :class="{ 'is-revealed': formDetailsRevealed }">
+                    <fieldset class="fade-in delay-2">
                         <legend>Enter Details</legend>
                         <div class="form-row">
                             <div class="form-group form-group-half fade-in delay-1">
@@ -888,7 +888,11 @@ onUnmounted(() => {
 });
 
 function handleScroll(e) {
-    if (window.innerHeight - formDetails.value.getBoundingClientRect().top >= formDetails.value.offsetHeight / 2) {
+    const rect = formDetails.value.getBoundingClientRect()
+    const elTop = rect.top + rect.top * 0.7
+    const elBottom = rect.bottom
+
+    if (window.innerHeight > elTop && elBottom > 0) {
         formDetailsRevealed.value = true
     }
 }
