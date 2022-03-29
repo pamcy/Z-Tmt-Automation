@@ -25,7 +25,16 @@
                 </div>
                 <div class="container">
                     <div class="installation-hero-videos">
-                        <swiper class="installation-slider" :modules="swiperModules" :pagination="{ clickable: true }" :centered-slides="true" loop :autoplay="{ delay: 3000 }" :speed="600" :breakpoints="swiperOptions.breakpoints">
+                        <swiper
+                            class="installation-slider"
+                            :modules="swiperModules"
+                            :pagination="{ clickable: true }"
+                            :centered-slides="true"
+                            loop
+                            :autoplay="{ delay: 3000, pauseOnMouseEnter: true }"
+                            :speed="600"
+                            :breakpoints="swiperOptions.breakpoints"
+                        >
                             <swiper-slide>
                                 <div class="embed-responsive">
                                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/DnKHRezTpwE?rel=0" allowfullscreen></iframe>

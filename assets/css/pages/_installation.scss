@@ -81,6 +81,7 @@
         .embed-responsive {
             &::before {
                 padding-top: 56.25%;
+                padding-bottom: rem(20);
             }
         }
 
@@ -137,6 +138,10 @@
                     &:after {
                         background-color: transparentize(#000, 1);
                     }
+                }
+
+                .embed-responsive-item {
+                    z-index: 1;
                 }
 
                 > .installation-slider-title {
