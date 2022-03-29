@@ -27,7 +27,7 @@
                         <li class="card fade-in" :class="'delay-' + (index + 1)" v-for="(item, index) in items" :key="item.title">
                             <NuxtLink :to="item.url">
                                 <div class="card-icon" v-html="item.icon"></div>
-                                <div class="d-md-flex flex-md-column flex-md-grow-1">
+                                <div class="d-md-flex flex-md-column flex-grow-1">
                                     <h2 class="card-title">{{ item.title }}</h2>
                                     <p class="card-content">
                                         {{ item.content }}
@@ -99,7 +99,9 @@ async function toggleIsLoadedClass(on) {
     }
 
     if (cardsSection.value) {
-        cardsSection.value.classList[on ? 'add' : 'remove']('is-revealed')
+        setTimeout(() => {
+            cardsSection.value.classList[on ? 'add' : 'remove']('is-revealed')
+        }, on ? 300 : 0)
     }
 }
 
