@@ -25,8 +25,8 @@
                         <li>
                             <span class="footer-menu__title">Contact</span>
                             <ul class="footer-menu__submenu list-styless">
-                                <li><NuxtLink to="/contact-us" title="Contact Us">Contact Us</NuxtLink></li>
-                                <li><NuxtLink to="/about-us" title="About Us">About Us</NuxtLink></li>
+                                <li><NuxtLink to="/contact/contact-us" title="Contact Us">Contact Us</NuxtLink></li>
+                                <li><NuxtLink to="/contact/about-us" title="About Us">About Us</NuxtLink></li>
                             </ul>
                         </li>
                         <li>

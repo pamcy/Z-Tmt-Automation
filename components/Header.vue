@@ -135,11 +135,11 @@ const menu = ref([
         subItems: [
             {
                 title: 'About Us',
-                url: '/about-us'
+                url: '/contact/about-us'
             },
             {
                 title: 'Contact Us',
-                url: '/contact-us'
+                url: '/contact/contact-us'
             }
         ]
     }
