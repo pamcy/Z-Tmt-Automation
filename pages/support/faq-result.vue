@@ -12,7 +12,7 @@
                             <NuxtLink to="/support" title="Support">Support</NuxtLink>
                         </li>
                         <li>
-                            <NuxtLink to="/faq">FAQ</NuxtLink>
+                            <NuxtLink to="/support/faq">FAQ</NuxtLink>
                         </li>
                         <li class="is-active">
                             <span>Result</span>
@@ -22,11 +22,11 @@
 
                 <h1 class="h2">Frequently Asked Question</h1>
 
-                <SearchBox :searchValue="searchValue" />
+                <SearchBox />
 
                 <div class="faq-content" ref="faqContentSection">
                     <span class="faq-content-result">
-                        <b>{{ questions.length }}</b> results for "{{ searchValue }}”
+                        <b>{{ questions.length }}</b> results for "{{ searchTerm }}”
                     </span>
                     <div class="faq-list">
                         <OneOpenAccordion v-for="(question, index) in questions" :key="index" :index="index" :isExpanded="currentExpandedQuestion === index" @click="currentExpandedQuestion = index" :fadeInEnabled="fadeInEnabled">
@@ -52,7 +52,8 @@ import SearchBox from '../../components/SearchBox.vue'
 import OneOpenAccordion from '../../components/OneOpenAccordion.vue'
 import needHelp from '../../components/NeedHelp.vue'
 
-const searchValue = ref('gate')
+const route = useRoute()
+const searchTerm = ref(route.query.search)
 
 const faqContentSection = ref(null)
 const fadeInEnabled = ref(true)
