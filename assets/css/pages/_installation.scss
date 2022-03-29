@@ -55,13 +55,13 @@
             @include media-breakpoint-up(lg) {
                 padding-top: calc(60px * 1.5);
             }
+        }
 
-            .video-more-btn {
-                text-align: right;
+        .video-more-btn {
+            text-align: right;
 
-                @include media-breakpoint-down(lg) {
-                    margin-right: $gutter;
-                }
+            @include media-breakpoint-down(lg) {
+                margin-right: $gutter;
             }
         }
     }
