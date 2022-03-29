@@ -12,7 +12,7 @@
                             <NuxtLink to="/support" title="Support">Support</NuxtLink>
                         </li>
                         <li>
-                            <NuxtLink to="/support/faq">FAQ</NuxtLink>
+                            <NuxtLink to="/support/faq" title="FAQ">FAQ</NuxtLink>
                         </li>
                         <li class="is-active">
                             <span>Result</span>
@@ -29,7 +29,14 @@
                         <b>{{ questions.length }}</b> results for "{{ searchTerm }}”
                     </span>
                     <div class="faq-list">
-                        <OneOpenAccordion v-for="(question, index) in questions" :key="index" :index="index" :isExpanded="currentExpandedQuestion === index" @click="currentExpandedQuestion = index" :fadeInEnabled="fadeInEnabled">
+                        <OneOpenAccordion
+                            v-for="(question, index) in questions"
+                            :key="index"
+                            :index="index"
+                            :isExpanded="currentExpandedQuestion === index"
+                            @click="setExpandedQuestion(index)"
+                            :fadeInEnabled="fadeInEnabled"
+                        >
                             <template v-slot:title>{{ question.title }}</template>
                             <template v-slot:content>{{ question.answer }}</template>
                         </OneOpenAccordion>
@@ -109,5 +116,13 @@ function fadeInQuestions() {
     if (window.innerHeight > elTop && elBottom > 0) {
         faqContentSection.value.classList.add('is-revealed')
     }
+}
+
+function setExpandedQuestion(index)  {
+  if (currentExpandedQuestion.value === index) {
+    currentExpandedQuestion.value = null
+  } else {
+    currentExpandedQuestion.value = index
+  }
 }
 </script>
