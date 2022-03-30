@@ -26,13 +26,20 @@
                             </form>
                             <nav role="navigation" class="header-menu-controls__list" ref="headerMenuControlsList">
                                 <ul class="list-styless">
-                                    <li class="dropdown" :class="{ 'is-toggled': item.visible, 'is-active' : menuIsActive(item.title) }" v-for="item in menu" :key="item.title">
-                                        <button type="button" class="dropdown-title btn btn-block btn-styless" :title="item.title" @mouseover="toggleMenuItem(item)" >{{ item.title }}</button>
+                                    <li class="dropdown" :class="{ 'is-toggled': currentExpandedMenu === item.title, 'is-active' : menuIsActive(item.title) }" v-for="item in menu" :key="item.title">
+                                        <button
+                                            type="button"
+                                            class="dropdown-title btn btn-block btn-styless"
+                                            :title="item.title"
+                                            @click="toggleMenuItem(item)"
+                                        >
+                                            {{ item.title }}
+                                        </button>
                                         <Transition @before-enter="onBeforeEnter"
                                                     @enter="onEnter"
                                                     @before-leave="onBeforeLeave"
                                                     @leave="onLeave">
-                                            <ul class="list-styless" v-show="item.visible">
+                                            <ul class="list-styless" v-show="currentExpandedMenu === item.title">
                                                 <li v-for="subItem in item.subItems" :key="subItem.title">
                                                     <NuxtLink :to="subItem.url" :title="subItem.title" @click="closeMenuItem(); hamburgerToggled = false">{{ subItem.title }}</NuxtLink>
                                                 </li>
@@ -71,7 +78,6 @@ const hamburgerToggled = ref(false)
 const menu = ref([
     {
         title: 'Products',
-        visible: false,
         subItems: [
             {
                 title: 'Gate Openers',
@@ -85,7 +91,6 @@ const menu = ref([
     },
     {
         title: 'Features',
-        visible: false,
         subItems: [
             {
                 title: 'Solar',
@@ -103,7 +108,6 @@ const menu = ref([
     },
     {
         title: 'Support',
-        visible: false,
         subItems: [
             {
                 title: 'Product Manuals',
@@ -133,7 +137,6 @@ const menu = ref([
     },
     {
         title: 'Contact',
-        visible: false,
         subItems: [
             {
                 title: 'About Us',
@@ -149,6 +152,7 @@ const menu = ref([
 const menuIsActive = computed((title) => {
     return title => route.path.includes(title.toLowerCase())
 })
+const currentExpandedMenu = ref(null)
 const desktopSearchBarToggled = ref(false)
 const headerMenuControlsList = ref(null)
 const searchButton = ref(null)
@@ -170,14 +174,15 @@ onMounted(() => {
 })
 
 function toggleMenuItem(item) {
-    closeMenuItem()
-    item.visible = !item.visible
+    if (currentExpandedMenu.value === item.title) {
+        currentExpandedMenu.value = null
+    } else {
+        currentExpandedMenu.value = item.title
+    }
 }
 
 function closeMenuItem() {
-    menu.value.forEach(item => {
-        item.visible = false
-    })
+    currentExpandedMenu.value = null
 }
 
 function toggleDesktopSearchBar() {
