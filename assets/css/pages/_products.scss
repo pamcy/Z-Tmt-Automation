@@ -165,7 +165,19 @@
             }
 
             > a {
+                display: inline-flex;
+                flex-direction: column;
+                justify-content: center;
                 color: inherit !important;
+
+                &::before {
+                    content: attr(title);
+                    height: 0;
+                    visibility: hidden;
+                    overflow: hidden;
+                    color: transparent;
+                    font-weight: 700;
+                }
 
                 &:hover {
                     font-weight: bold;

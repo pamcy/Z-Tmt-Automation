@@ -33,7 +33,7 @@
 
             <ul class="panel-filter">
               <li v-for="category in categories" :key="category" :class="{ 'is-active': currentCategory === category }">
-                <a href="#" @click.prevent="onGetProducts(category)">{{ category }}</a>
+                <a href="#" :title="category" @click.prevent="onGetProducts(category)">{{ category }}</a>
               </li>
             </ul>
 
