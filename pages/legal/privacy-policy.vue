@@ -19,10 +19,10 @@
                         </li>
                     </ul>
                 </nav>
-                <div ref="intro" class="intro">
-                    <h2 class="fade-in delay-1">Disclosures Regarding Unsolicited Calls <small>(Telemarketing)</small></h2>
-                    <h3 class="fade-in delay-2">TMT Automation frowns upon the practice of telemarketing and respects the rights of consumers. TMT Automation does not make any marketing</h3>
-                    <p class="fade-in delay-3">
+                <div class="intro">
+                    <h2>Disclosures Regarding Unsolicited Calls <small>(Telemarketing)</small></h2>
+                    <h3>TMT Automation frowns upon the practice of telemarketing and respects the rights of consumers. TMT Automation does not make any marketing</h3>
+                    <p>
                         TMT Automation frowns upon the practice of telemarketing and respects the rights of consumers. TMT Automation does not make any marketing calls to individual consumers; we will not contact individual consumers unless given explicit permission to do so.
                     </p>
                     <p>
@@ -218,31 +218,16 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
 const pageHeaderSection = ref(null)
-const intro = ref(null)
 
 onMounted(() => {
-    window.addEventListener('scroll', handleScroll)
-
     setTimeout(() => {
         if (pageHeaderSection.value) {
             pageHeaderSection.value.classList.add('is-loaded')
         }
     }, 100);
-
-    setTimeout(() => {
-        intro.value.classList.add('is-revealed')
-    }, 400);
 })
-
-onUnmounted(() => {
-    window.removeEventListener('scroll', handleScroll)
-})
-
-function handleScroll() {
-
-}
 
 </script>
