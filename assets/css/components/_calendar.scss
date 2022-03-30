@@ -18,6 +18,10 @@
 
         .vc-arrow {
             color: var(--orange-600);
+
+            &:hover {
+                background: transparent;
+            }
         }
 
         .vc-title {
@@ -45,6 +49,10 @@
         .vc-day-content {
             &:hover {
                 background-color: $color-primary-light;
+            }
+
+            &:focus {
+                background-color: var(--orange-600);
             }
         }
 
