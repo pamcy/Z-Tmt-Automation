@@ -8,8 +8,8 @@
                         <li>
                             <span class="footer-menu__title">Legal</span>
                             <ul class="footer-menu__submenu list-styless">
-                                <li><NuxtLink to="/privacy-policy" title="Privacy Policy">Privacy Policy</NuxtLink></li>
-                                <li><NuxtLink to="/terms" title="Terms and Conditions">Terms and Conditions</NuxtLink></li>
+                                <li><NuxtLink to="/legal/privacy-policy" title="Privacy Policy">Privacy Policy</NuxtLink></li>
+                                <li><NuxtLink to="/legal/terms" title="Terms and Conditions">Terms and Conditions</NuxtLink></li>
                                 <li><NuxtLink to="/warranty" title="Warranty">Warranty</NuxtLink></li>
                             </ul>
                         </li>

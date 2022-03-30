@@ -34,7 +34,7 @@
                                     <div class="contact-us-location-meta__addr">
                                         14F, No.14, Ln.15, Sec. 6, Xinyi Dist.,Taipei City 11086, Taiwan (R.O.C.)<br>
                                         TEL: +886 2-2219-0785<br>
-                                        <NuxtLink to="mailto=sales@tmt-automation.com" target="_blank">sales@tmt-automation.com</NuxtLink>
+                                        <NuxtLink to="mailto:sales@tmt-automation.com" target="_blank">sales@tmt-automation.com</NuxtLink>
                                     </div>
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
                                     <div class="contact-us-location-meta__addr">
                                         15 Berry Street, Clyde, NSW, 2142<br>
                                         TEL:0423-225-069<br>
-                                        <NuxtLink to="mailto=sale@tmt-automation.com" target="_blank">sale@tmt-automation.com</NuxtLink>
+                                        <NuxtLink to="mailto:sale@tmt-automation.com" target="_blank">sale@tmt-automation.com</NuxtLink>
                                     </div>
                                 </div>
                             </div>
