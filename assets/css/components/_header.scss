@@ -342,7 +342,9 @@
 
                 &.is-active {
                     .dropdown-title {
-                        font-weight: 700;
+                        @include media-breakpoint-up(lg) {
+                            font-weight: 700;
+                        }
                     }
                 }
             }

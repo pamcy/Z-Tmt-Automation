@@ -880,7 +880,13 @@ onMounted(() => {
         intro.value.classList.add('is-revealed')
     }, 400);
 
-    window.addEventListener('scroll', handleScroll)
+    if (window.matchMedia('(min-width: 990px)').matches) {
+        window.addEventListener('scroll', handleScroll)
+    } else {
+        setTimeout(() => {
+            formDetailsRevealed.value = true
+        }, 900)
+    }
 })
 
 onUnmounted(() => {
