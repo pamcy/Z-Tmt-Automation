@@ -19,7 +19,7 @@
 
                 <h1 class="h2">Warranty Info</h1>
 
-                <div class="warranty-content">
+                <div class="warranty-content" ref="warrantyContent">
                     <div class="warranty-content-intro">
                         <b>TMT Automations will honor the obligations set in the warranty, with terms and conditions set forth below:</b>
                         <p>TMT Automations wicll cover charges resulting from defects in workmanship and material. TMT will, at its discretion, provide repairs and direct replacement for all needed parts.</p>
@@ -129,23 +129,13 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
+
+const warrantyContent = ref(null)
 
 onMounted(() => {
-    window.addEventListener('scroll', fadeInWarrantyList)
+     setTimeout(() => {
+        warrantyContent.value.classList.add('is-revealed')
+    }, 400)
 })
-
-onUnmounted(() => {
-    window.removeEventListener('scroll', fadeInWarrantyList)
-})
-
-function fadeInWarrantyList() {
-    var items = document.querySelectorAll('.warranty-list li')
-
-    for (var i = 0; i < items.length; i++) {
-        if (window.innerHeight - items[i].getBoundingClientRect().top >= items[i].offsetHeight / 3) {
-            items[i].classList.add('is-revealed')
-        }
-    }
-}
 </script>
