@@ -12,7 +12,7 @@
                 <nav class="breadcrumb">
                     <ul>
                         <li>
-                            <NuxtLink to="/">Home</NuxtLink>
+                            <NuxtLink to="/" title="Home">Home</NuxtLink>
                         </li>
                         <li class="is-active">
                             <span>TMT Privacy Policy</span>
@@ -29,7 +29,7 @@
                         You can visit the Federal Trade Commission (FTC) to place your number on the National Do Not Call Registry by calling <NuxtLink to="tel:+18883821222" target="_blank">1-888-382-1222</NuxtLink> or visit <NuxtLink to="https://www.donotcall.gov" target="_blank">www.donotcall.gov</NuxtLink>.
                     </p>
                     <p>
-                        You can also visit <NuxtLink to="https://www.donotcall.gov/report.html" target="_blank">https://www.donotcall.gov/report.html</NuxtLink> to file a complaint regarding a telemarketing call if your number is already registered with the National Do Not Call Registry. 
+                        You can also visit <NuxtLink to="https://www.donotcall.gov/report.html" target="_blank">https://www.donotcall.gov/report.html</NuxtLink> to file a complaint regarding a telemarketing call if your number is already registered with the National Do Not Call Registry.
                     </p>
                     <p>
                         For more ways to prevent yourself from being disturbed, you can visit <NuxtLink to="https://www.consumer.ftc.gov/articles/national-do-not-call-registry-faqs" target="_blank">https://www.consumer.ftc.gov/articles/national-do-not-call-registry-faqs</NuxtLink> for more information.
