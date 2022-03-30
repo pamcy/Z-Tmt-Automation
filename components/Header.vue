@@ -31,7 +31,8 @@
                                             type="button"
                                             class="dropdown-title btn btn-block btn-styless"
                                             :title="item.title"
-                                            @click="toggleMenuItem(item)"
+                                            @click="!isDesktop() && toggleMenuItem(item)"
+                                            @mouseover="isDesktop() && toggleMenuItem(item)"
                                         >
                                             {{ item.title }}
                                         </button>
@@ -173,9 +174,15 @@ onMounted(() => {
     }
 })
 
+function isDesktop() {
+    return window.matchMedia('(min-width: 990px)').matches
+}
+
 function toggleMenuItem(item) {
     if (currentExpandedMenu.value === item.title) {
-        currentExpandedMenu.value = null
+        if (!isDesktop()) {
+            currentExpandedMenu.value = null
+        }
     } else {
         currentExpandedMenu.value = item.title
     }
