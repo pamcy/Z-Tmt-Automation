@@ -16,7 +16,7 @@
           <nav class="breadcrumb">
             <ul>
               <li>
-                <a href="/">Home</a>
+                <a href="/" title="Home">Home</a>
               </li>
               <li class="is-active">
                 <a href="/products">Products</a>

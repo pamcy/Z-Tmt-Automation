@@ -19,7 +19,7 @@ onMounted(() => {
     window.addEventListener('scroll', function() {
         var st = window.pageYOffset || document.documentElement.scrollTop;
 
-        if (st > lastScrollTop){
+        if (st > lastScrollTop || st <= 0){
             upscroll.value = false
         } else {
             upscroll.value = true

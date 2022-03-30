@@ -26,7 +26,7 @@
                             </form>
                             <nav role="navigation" class="header-menu-controls__list" ref="headerMenuControlsList">
                                 <ul class="list-styless">
-                                    <li class="dropdown" :class="{ 'is-toggled': item.visible }" v-for="item in menu" :key="item.title">
+                                    <li class="dropdown" :class="{ 'is-toggled': item.visible, 'is-active' : menuIsActive(item.title) }" v-for="item in menu" :key="item.title">
                                         <button type="button" class="dropdown-title btn btn-block btn-styless" :title="item.title" @mouseover="toggleMenuItem(item)" >{{ item.title }}</button>
                                         <Transition @before-enter="onBeforeEnter"
                                                     @enter="onEnter"
@@ -63,7 +63,9 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
+
+const route = useRoute()
 
 const hamburgerToggled = ref(false)
 const menu = ref([
@@ -87,7 +89,7 @@ const menu = ref([
         subItems: [
             {
                 title: 'Solar',
-                url: '/solar'
+                url: '/features/solar'
             },
             {
                 title: 'App Integration',
@@ -95,7 +97,7 @@ const menu = ref([
             },
             {
                 title: 'Comparison with Other Brands',
-                url: '/comparison-with-other-brands'
+                url: '/features/comparison'
             }
         ]
     },
@@ -135,15 +137,18 @@ const menu = ref([
         subItems: [
             {
                 title: 'About Us',
-                url: '/about-us'
+                url: '/contact/about-us'
             },
             {
                 title: 'Contact Us',
-                url: '/contact-us'
+                url: '/contact/contact-us'
             }
         ]
     }
 ])
+const menuIsActive = computed((title) => {
+    return title => route.path.includes(title.toLowerCase())
+})
 const desktopSearchBarToggled = ref(false)
 const headerMenuControlsList = ref(null)
 const searchButton = ref(null)
@@ -152,7 +157,7 @@ const searchValue = ref(null)
 
 onMounted(() => {
     if (window.matchMedia('(min-width: 990px)').matches) {
-        window.addEventListener('click', (e) => {
+        window.addEventListener('mouseover', (e) => {
             if (!headerMenuControlsList.value.contains(e.target)){
                 closeMenuItem()
             }

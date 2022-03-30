@@ -6,10 +6,10 @@
                 <nav class="breadcrumb">
                     <ul>
                         <li>
-                            <NuxtLink to="/">Home</NuxtLink>
+                            <NuxtLink to="/" title="Home">Home</NuxtLink>
                         </li>
                         <li>
-                            <NuxtLink to="/support">Support</NuxtLink>
+                            <NuxtLink to="/support" title="Support">Support</NuxtLink>
                         </li>
                         <li class="is-active">
                             <span>Product Manuals</span>
@@ -19,7 +19,7 @@
 
                 <h1 class="h2">Product Manuals</h1>
 
-                <SelectDropdown>
+                <SelectDropdown ref="typeSelectDropdown">
                     <template v-slot:title>
                         <span v-if="currentSorting">{{ currentSorting }}</span>
                         <span class="select-dropdown-placeholder" v-else>Type</span>
@@ -120,20 +120,18 @@ const items = ref([
     },
 ])
 
-const sortingIsOpen = ref(false)
+const typeSelectDropdown = ref(null)
 const sortingMenu = ref(['Type 1', 'Type 2'])
 const currentSorting = ref('')
 
 onMounted(() => {
-    cardsSection.value.classList.add('is-revealed')
+    setTimeout(() => {
+        cardsSection.value.classList.add('is-revealed')
+    }, 400)
 })
-
-function onToggleSorting() {
-    sortingIsOpen.value = !sortingIsOpen.value
-}
 
 function onSelectSorting(menu) {
     currentSorting.value = menu
-    sortingIsOpen.value = false
+    typeSelectDropdown.value.closeSelectDropdown()
 }
 </script>

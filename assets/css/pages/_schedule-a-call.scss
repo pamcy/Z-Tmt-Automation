@@ -21,6 +21,16 @@
                     font-weight: normal;
                 }
             }
+
+            &-menu {
+                @include media-breakpoint-down(md) {
+                    width: calc(100vw - $gutter-sm * 2);
+                }
+
+                &__inner {
+                    padding: 0;
+                }
+            }
         }
     }
 }

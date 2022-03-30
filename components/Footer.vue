@@ -8,8 +8,8 @@
                         <li>
                             <span class="footer-menu__title">Legal</span>
                             <ul class="footer-menu__submenu list-styless">
-                                <li><NuxtLink to="/privacy-policy" title="Privacy Policy">Privacy Policy</NuxtLink></li>
-                                <li><NuxtLink to="/terms" title="Terms and Conditions">Terms and Conditions</NuxtLink></li>
+                                <li><NuxtLink to="/legal/privacy-policy" title="Privacy Policy">Privacy Policy</NuxtLink></li>
+                                <li><NuxtLink to="/legal/terms" title="Terms and Conditions">Terms and Conditions</NuxtLink></li>
                                 <li><NuxtLink to="/warranty" title="Warranty">Warranty</NuxtLink></li>
                             </ul>
                         </li>
@@ -25,8 +25,8 @@
                         <li>
                             <span class="footer-menu__title">Contact</span>
                             <ul class="footer-menu__submenu list-styless">
-                                <li><NuxtLink to="/contact-us" title="Contact Us">Contact Us</NuxtLink></li>
-                                <li><NuxtLink to="/about-us" title="About Us">About Us</NuxtLink></li>
+                                <li><NuxtLink to="/contact/contact-us" title="Contact Us">Contact Us</NuxtLink></li>
+                                <li><NuxtLink to="/contact/about-us" title="About Us">About Us</NuxtLink></li>
                             </ul>
                         </li>
                         <li>
