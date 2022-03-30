@@ -101,7 +101,13 @@ const questions = ref([
 const currentExpandedQuestion = ref(null)
 
 onMounted(() => {
-    window.addEventListener('scroll', fadeInQuestions)
+     if (window.matchMedia('(min-width: 990px)').matches) {
+        window.addEventListener('scroll', fadeInQuestions)
+    } else {
+        setTimeout(() => {
+            faqContentSection.value.classList.add('is-revealed')
+        }, 400)
+    }
 })
 
 onUnmounted(() => {
