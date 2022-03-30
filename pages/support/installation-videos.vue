@@ -31,9 +31,10 @@
                             :pagination="{ clickable: true }"
                             :centered-slides="true"
                             loop
-                            :autoplay="{ delay: 3000, pauseOnMouseEnter: true }"
+                            :autoplay="{ delay: 3000 }"
                             :speed="600"
                             :breakpoints="swiperOptions.breakpoints"
+                            @click="onPlayVideo"
                         >
                             <swiper-slide>
                                 <div class="embed-responsive">
@@ -200,6 +201,15 @@ onMounted(() => {
 onUnmounted(() => {
     window.removeEventListener('scroll', fadeInVideoLists)
 })
+
+function onPlayVideo(swiper, e) {
+    swiper.autoplay.stop()
+
+    const iframeEl = e.target.querySelector('.embed-responsive-item')
+
+    iframeEl.style.zIndex = 1
+    iframeEl.src += '&autoplay=1'
+}
 
 function fadeInVideoLists() {
     var lists = document.querySelectorAll('.video-list')
