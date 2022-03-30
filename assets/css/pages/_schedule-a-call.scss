@@ -114,7 +114,14 @@
             &:hover,
             &:focus {
                 > label {
-                    background-color: $color-primary-light;
+                    @include media-breakpoint-down(md) {
+                        background-color: $color-primary;
+                        color: #fff;
+                    }
+
+                    @include media-breakpoint-up(md) {
+                        background-color: $color-primary-light;
+                    }
                 }
             }
 
