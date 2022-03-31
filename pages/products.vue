@@ -192,7 +192,7 @@ const currentSorting = ref('')
 onMounted(() => {
     pageHeaderSection.value.classList.add('is-loaded')
 
-    onSelectTab(currentTab.value)
+    checkUrlPath()
 
     currentSorting.value = sortingMenu.value[1]
 
@@ -206,15 +206,19 @@ onUnmounted(() => {
 watch(
     () => route.hash,
     () => {
-        if (route.hash && route.hash === '#home-automation') {
-            currentTab.value = 'Home Automation'
-        } else {
-            currentTab.value = 'Gate Openers'
-        }
-
-        onSelectTab(currentTab.value)
+        checkUrlPath()
     }
 )
+
+function checkUrlPath() {
+    if (route.hash && route.hash === '#home-automation') {
+        currentTab.value = 'Home Automation'
+    } else {
+        currentTab.value = 'Gate Openers'
+    }
+
+    onSelectTab(currentTab.value)
+}
 
 function onSelectTab(tabName) {
     currentTab.value = tabName
