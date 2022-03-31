@@ -43,7 +43,7 @@
                 width: 100%;
                 height: rem(4);
                 border-radius: 5px;
-                transition: all .5s ease;
+                transition: all 0.5s ease;
 
                 &:last-child {
                     width: 50%;
@@ -108,7 +108,7 @@
 
             &.v-enter-active,
             &.v-leave-active {
-                transition: max-height .3s ease;
+                transition: max-height 0.3s ease;
             }
 
             &.v-enter-from,
@@ -122,11 +122,11 @@
                 right: 0;
                 bottom: 0;
                 left: 0;
-                background-color: transparentize(#000, .3);
+                background-color: transparentize(#000, 0.3);
 
                 &.v-enter-active,
                 &.v-leave-active {
-                    transition: opacity .3s ease;
+                    transition: opacity 0.3s ease;
                 }
 
                 &.v-enter-from,
@@ -139,6 +139,16 @@
                 &-mobile {
                     padding: $gutter $gutter 0;
                     margin-bottom: rem(20);
+
+                    input[type='search'] {
+                        padding: rem(1) rem(2);
+                        border-radius: 0;
+                        border-bottom-width: rem(2) !important;
+                    }
+
+                    button[type='submit'] {
+                        border-bottom-width: rem(2) !important;
+                    }
                 }
 
                 &-desktop {
@@ -165,7 +175,7 @@
 
                         &.v-enter-active,
                         &.v-leave-active {
-                            transition: all .3s ease;
+                            transition: all 0.3s ease;
                         }
 
                         &.v-enter-from,
@@ -277,7 +287,7 @@
                     &.v-enter-active,
                     &.v-leave-active {
                         overflow: hidden;
-                        transition: max-height .3s;
+                        transition: max-height 0.3s;
                     }
 
                     > li {

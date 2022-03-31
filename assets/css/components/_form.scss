@@ -92,6 +92,9 @@ textarea {
     }
 
     &[type='search'] {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+
         &::-webkit-search-decoration,
         &::-webkit-search-cancel-button,
         &::-webkit-search-results-button,
