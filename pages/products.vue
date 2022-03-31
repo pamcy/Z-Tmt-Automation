@@ -33,12 +33,14 @@
 
                         <ul class="panel-filter">
                             <li v-for="category in categories" :key="category" :class="{ 'is-active': currentCategory === category }">
-                                <a href="#" :title="category" @click.prevent="onGetProducts(category)">{{ category }}</a>
+                                <a href="#" :title="category" @click.prevent="setCurrentCategory(category)">{{ category }}</a>
                             </li>
                         </ul>
 
                         <div class="panel-sorting">
-                            <span class="panel-sorting-result">Total Results<b>6</b></span>
+                            <span class="panel-sorting-result"
+                                >Total Results<b>{{ results.length }}</b></span
+                            >
                             <SelectDropdown ref="sortingSelectDropdown">
                                 <template v-slot:title>{{ currentSorting }}</template>
                                 <template v-slot:content>
@@ -189,7 +191,6 @@ onMounted(() => {
     pageHeaderSection.value.classList.add('is-loaded')
 
     onSelectTab(currentTab.value)
-    onGetProducts('View all')
 
     currentSorting.value = sortingMenu.value[1]
 
@@ -200,27 +201,32 @@ onUnmounted(() => {
     window.removeEventListener('scroll', fadeInProductCards)
 })
 
-function onSelectTab(name) {
-    currentTab.value = name
+function onSelectTab(tabName) {
+    currentTab.value = tabName
     currentCategory.value = 'View all'
-    tabData.value = products.value.find((product) => product.title === name)
-
-    getCategories()
-
-    results.value = tabData.value.items
+    tabData.value = getTabData()
+    getCategoryListNames()
+    getResults()
 }
 
-function getCategories() {
+function getTabData() {
+    return products.value.find((product) => product.title === currentTab.value)
+}
+
+function getCategoryListNames() {
     categories.value = ['View all', ...new Set(tabData.value.items.map((item) => item.category))]
 }
 
-function onGetProducts(category) {
-    currentCategory.value = category
+function setCurrentCategory(categoryName) {
+    currentCategory.value = categoryName
+    getResults()
+}
 
-    if (category == 'View all') {
-        results.value = tabData.value.items.filter((item) => item.category !== category)
+function getResults() {
+    if (currentCategory.value == 'View all') {
+        results.value = tabData.value.items
     } else {
-        results.value = tabData.value.items.filter((item) => item.category === category)
+        results.value = tabData.value.items.filter((item) => item.category === currentCategory.value)
     }
 }
 
