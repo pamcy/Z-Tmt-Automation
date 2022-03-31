@@ -86,7 +86,7 @@ const menu = ref([
             },
             {
                 title: 'Home Automation',
-                url: '/products'
+                url: '/products#home-automation'
             }
         ]
     },

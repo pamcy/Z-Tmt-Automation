@@ -83,6 +83,8 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import SelectDropdown from '../components/SelectDropdown'
 
+const route = useRoute()
+
 const pageHeaderSection = ref(null)
 const productsSection = ref(null)
 
@@ -200,6 +202,19 @@ onMounted(() => {
 onUnmounted(() => {
     window.removeEventListener('scroll', fadeInProductCards)
 })
+
+watch(
+    () => route.hash,
+    () => {
+        if (route.hash && route.hash === '#home-automation') {
+            currentTab.value = 'Home Automation'
+        } else {
+            currentTab.value = 'Gate Openers'
+        }
+
+        onSelectTab(currentTab.value)
+    }
+)
 
 function onSelectTab(tabName) {
     currentTab.value = tabName
