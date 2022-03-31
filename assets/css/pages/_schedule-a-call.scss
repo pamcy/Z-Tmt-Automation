@@ -30,6 +30,13 @@
                 &__inner {
                     padding: 0;
                 }
+
+                &__top {
+                    input[type='search'] {
+                        padding: rem(1) rem(2);
+                        border-radius: 0;
+                    }
+                }
             }
         }
     }
