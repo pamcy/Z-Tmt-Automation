@@ -205,32 +205,40 @@
                     <h3 class="product-related__title">Inspired by your browsing history</h3>
                     <ul class="product-related__list list-styless">
                         <li>
-                            <div class="product-related__list__image">
-                                <img src="/images/product-1-desktop.jpg" alt="">
-                            </div>
-                            <h4 class="product-related__list__title">TERRIER</h4>
-                            <span class="product-related__list__model">50/200</span>
+                            <a href="#">
+                                <div class="product-related__list__image">
+                                    <img src="/images/product-1-desktop.jpg" alt="" />
+                                </div>
+                                <h4 class="product-related__list__title">TERRIER</h4>
+                                <span class="product-related__list__model">50/200</span>
+                            </a>
                         </li>
                         <li>
-                            <div class="product-related__list__image">
-                                <img src="/images/product-2-desktop.jpg" alt="">
-                            </div>
-                            <h4 class="product-related__list__title">MASTIFF</h4>
-                            <span class="product-related__list__model">300/400/400L</span>
+                            <a href="#">
+                                <div class="product-related__list__image">
+                                    <img src="/images/product-2-desktop.jpg" alt="" />
+                                </div>
+                                <h4 class="product-related__list__title">MASTIFF</h4>
+                                <span class="product-related__list__model">300/400/400L</span>
+                            </a>
                         </li>
                         <li>
-                            <div class="product-related__list__image">
-                                <img src="/images/product-3-desktop.jpg" alt="">
-                            </div>
-                            <h4 class="product-related__list__title">MASTIFF</h4>
-                            <span class="product-related__list__model">300LS/400LS/400LLS</span>
+                            <a href="#">
+                                <div class="product-related__list__image">
+                                    <img src="/images/product-3-desktop.jpg" alt="" />
+                                </div>
+                                <h4 class="product-related__list__title">MASTIFF</h4>
+                                <span class="product-related__list__model">300LS/400LS/400LLS</span>
+                            </a>
                         </li>
                         <li>
-                            <div class="product-related__list__image">
-                                <img src="/images/product-1-desktop.jpg" alt="">
-                            </div>
-                            <h4 class="product-related__list__title">PAPILLON</h4>
-                            <span class="product-related__list__model">50/200</span>
+                            <a href="#">
+                                <div class="product-related__list__image">
+                                    <img src="/images/product-1-desktop.jpg" alt="" />
+                                </div>
+                                <h4 class="product-related__list__title">PAPILLON</h4>
+                                <span class="product-related__list__model">50/200</span>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -238,18 +246,22 @@
                     <h3 class="product-related__title">Related Items</h3>
                     <ul class="product-related__list list-styless">
                         <li>
-                            <div class="product-related__list__image">
-                                <img src="/images/product-1-desktop.jpg" alt="">
-                            </div>
-                            <h4 class="product-related__list__title">TERRIER</h4>
-                            <span class="product-related__list__model">50/200</span>
+                            <a href="#">
+                                <div class="product-related__list__image">
+                                    <img src="/images/product-1-desktop.jpg" alt="" />
+                                </div>
+                                <h4 class="product-related__list__title">TERRIER</h4>
+                                <span class="product-related__list__model">50/200</span>
+                            </a>
                         </li>
                         <li>
-                            <div class="product-related__list__image">
-                                <img src="/images/product-2-desktop.jpg" alt="">
-                            </div>
-                            <h4 class="product-related__list__title">MASTIFF</h4>
-                            <span class="product-related__list__model">300/400/400L</span>
+                            <a href="#">
+                                <div class="product-related__list__image">
+                                    <img src="/images/product-2-desktop.jpg" alt="" />
+                                </div>
+                                <h4 class="product-related__list__title">MASTIFF</h4>
+                                <span class="product-related__list__model">300/400/400L</span>
+                            </a>
                         </li>
                     </ul>
                 </div>

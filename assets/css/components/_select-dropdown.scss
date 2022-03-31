@@ -47,7 +47,7 @@
         overflow-y: auto;
         background: #fff;
         z-index: 2;
-        transition: max-height 0.45s ease-out;
+        transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
 
         &__inner {
             max-height: rem(320);
@@ -78,7 +78,7 @@
 
         .select-dropdown.is-active & {
             max-height: rem(320);
-            transition: all 0.45s ease-in;
+            transition: max-height 0.4s ease-in;
         }
     }
 }

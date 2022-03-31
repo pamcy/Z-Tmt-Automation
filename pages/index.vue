@@ -109,7 +109,7 @@
     <div class="showcase">
       <div class="showcase-situation d-none d-md-block"></div>
       <div class="showcase-product">
-        <swiper :modules="swiperModules" :pagination="{ clickable: true }" effect="fade" :autoplay="{ delay: 1500 }" loop >
+        <swiper :modules="swiperModules" :pagination="{ clickable: true }" effect="fade" :speed="2000" :autoplay="{ delay: 2000 }" loop >
           <swiper-slide>
             <div class="showcase-product-meta">
               <h3 class="showcase-product-meta__title">Terrier</h3>
@@ -289,6 +289,7 @@ import { Navigation, Pagination, Autoplay, A11y } from 'swiper'
 import { Controller, EffectFade } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
+import 'swiper/css/effect-fade'
 import 'swiper/css/pagination'
 import { Vue3Marquee } from 'vue3-marquee'
 import 'vue3-marquee/dist/style.css'
