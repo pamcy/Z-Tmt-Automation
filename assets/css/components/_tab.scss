@@ -1,77 +1,83 @@
 .tab {
-  display: flex;
-  flex-wrap: nowrap;
-  margin-right: rem(-18);
-  padding: 0 rem(18) rem(10) 0;
-  overflow-x: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-right: rem(-18);
+    padding: 0 rem(18) rem(10) 0;
+    overflow-x: auto;
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  > li {
-    flex: 0 0 auto;
-
-    &:not(:first-child) {
-      margin-left: rem(18);
-
-      @include media-breakpoint-up(lg) {
-        margin-left: rem(36);
-      }
+    &::-webkit-scrollbar {
+        display: none;
     }
 
-    > a {
-      position: relative;
-      padding-bottom: 0.325em;
-      font-size: rem(20);
-      color: inherit !important;
+    > li {
+        flex: 0 0 auto;
 
-      @include media-breakpoint-up(lg) {
-        font-size: rem(28);
-      }
+        &:not(:first-child) {
+            margin-left: rem(18);
 
-      &::before,
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-      }
-
-
-      &::before {
-        height: rem(1);
-        background: $color-secondary;
-      }
-
-      &::after {
-        height: rem(3);
-        background: $color-primary;
-        visibility: hidden;
-        transform: scaleX(0);
-        transform-origin:  0% 50%;
-      }
-
-      &:hover {
-        &::after {
-          visibility: visible;
-          transform: scaleX(1);
-          transition: all 0.3s ease;
+            @include media-breakpoint-up(lg) {
+                margin-left: rem(36);
+            }
         }
-      }
-    }
 
-    &.is-active {
-      > a {
-        font-weight: 700;
-        color: $color-primary !important;
+        > a {
+            position: relative;
+            display: inline-flex;
+            flex-direction: column;
+            padding-bottom: 0.325em;
+            border-bottom: 1px solid $color-secondary;
+            font-size: rem(20);
+            line-height: 1;
+            color: inherit !important;
 
-        &::after {
-          visibility: visible;
-          transform: scaleX(1);
+            @include media-breakpoint-up(lg) {
+                font-size: rem(28);
+            }
+
+            &::before {
+                content: attr(title);
+                height: 0;
+                visibility: hidden;
+                overflow: hidden;
+                color: transparent;
+                font-weight: 700;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: rem(-1);
+                left: 0;
+                width: 100%;
+                height: rem(3);
+                background: $color-primary;
+                visibility: hidden;
+                transform: scaleX(0);
+                transform-origin: 0% 50%;
+            }
+
+            &:hover {
+                border-color: transparent;
+
+                &::after {
+                    visibility: visible;
+                    transform: scaleX(1);
+                    transition: all 0.3s ease;
+                }
+            }
         }
-      }
+
+        &.is-active {
+            > a {
+                border-color: transparent;
+                font-weight: 700;
+                color: $color-primary !important;
+
+                &::after {
+                    visibility: visible;
+                    transform: scaleX(1);
+                }
+            }
+        }
     }
-  }
 }

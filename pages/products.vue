@@ -27,7 +27,7 @@
                     <div class="panel">
                         <ul class="tab">
                             <li v-for="product in products" :key="product.title" :class="{ 'is-active': currentTab === product.title }">
-                                <a href="#" @click.prevent="onSelectTab(product.title)">{{ product.title }}</a>
+                                <a href="#" :title="product.title" @click.prevent="onSelectTab(product.title)">{{ product.title }}</a>
                             </li>
                         </ul>
 
