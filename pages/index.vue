@@ -73,7 +73,7 @@
           <em>{{ scenarioSlide.activeIndex }}</em> /4
         </div>
         <div class="scenario-sliders__text">
-          <swiper class="scenario-text-carousel" :modules="swiperModules" effect="fade" :allow-touch-move="false" :space-between="10" @swiper="setControlledSwiper">
+          <swiper class="scenario-text-carousel" :modules="swiperModules" effect="fade" :allow-touch-move="false" :space-between="10" @swiper="setControlledSwiper" :breakpoints="scenarioTextSliderBreakpoints" >
             <swiper-slide>
               <div class="scenario-item-text">
                 <svg width="60" height="60" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M137.75 70c0 37.417-30.333 67.75-67.75 67.75S2.25 107.417 2.25 70 32.583 2.25 70 2.25 137.75 32.583 137.75 70z" fill="#FFECE3" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10"/><path d="M60.09 46.385c-28.28 22.26-25.48 40.88-25.48 40.88 0 14.14 11.48 25.48 25.48 25.48 14.14 0 25.48-11.48 25.48-25.48 0 0 2.94-18.62-25.48-40.88z" fill="#fff" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M61.35 60.248s10.64 9.1 11.9 15.96" stroke="#EE7B45" stroke-width="2.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M92.15 27.066c-14.14 11.2-12.74 20.44-12.74 20.44 0 7 5.74 12.74 12.74 12.74s12.74-5.74 12.74-12.74c0 0 1.4-9.24-12.74-20.44z" fill="#fff" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M92.15 35.748s5.32 4.48 5.88 7.98" stroke="#EE7B45" stroke-width="2.25" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -276,7 +276,7 @@
           <p class="fade-in delay-1">We are happy to help you make life more convenient and safer.</p>
           <p class="fade-in delay-2">Contact us to get more information.</p>
         </div>
-        <NuxtLink to="/" class="btn btn--with-border fade-in delay-3">Contact Us</NuxtLink>
+        <NuxtLink to="/contact/contact-us" class="btn btn--with-border fade-in delay-3">Contact Us</NuxtLink>
       </div>
     </div>
   </main>
@@ -358,6 +358,15 @@ const scenarioImageSliderBreakpoints = {
     slidesPerView: 3,
     spaceBetween: '6%',
     centeredSlides: true
+  }
+}
+
+const scenarioTextSliderBreakpoints = {
+  320: {
+    autoHeight: true,
+  },
+  750: {
+    autoHeight: false,
   }
 }
 
