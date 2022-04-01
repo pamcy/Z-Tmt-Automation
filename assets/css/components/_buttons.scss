@@ -91,14 +91,12 @@
         }
 
         &.btn--small {
-            width: rem(60);
-            height: rem(60);
+            width: rem(70);
+            height: rem(70);
             border-width: 3px;
-            font-size: rem(12);
+            font-size: rem(14);
 
             @include media-breakpoint-up(lg) {
-                width: rem(70);
-                height: rem(70);
                 font-size: rem(18);
             }
         }
