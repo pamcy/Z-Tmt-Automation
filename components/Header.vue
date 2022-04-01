@@ -99,10 +99,6 @@ const menu = ref([
                 url: '/features/solar'
             },
             {
-                title: 'App Integration',
-                url: '/app-integration'
-            },
-            {
                 title: 'Comparison with Other Brands',
                 url: '/features/comparison'
             }

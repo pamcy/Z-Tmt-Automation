@@ -276,7 +276,7 @@
           <p class="fade-in delay-1">We are happy to help you make life more convenient and safer.</p>
           <p class="fade-in delay-2">Contact us to get more information.</p>
         </div>
-        <NuxtLink to="/" class="btn btn--with-border fade-in delay-3">Contact Us</NuxtLink>
+        <NuxtLink to="/contact/contact-us" class="btn btn--with-border fade-in delay-3">Contact Us</NuxtLink>
       </div>
     </div>
   </main>

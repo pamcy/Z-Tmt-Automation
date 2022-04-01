@@ -56,13 +56,13 @@
                     </div>
                     <ul class="product-meta__detail__links list-styless">
                         <li>
-                            <a href="#">
+                            <a href="/support/product-manuals">
                                 <svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20.469" r="19" fill="#FBD9CA" stroke="#EE7B45" stroke-width="2"/><path d="M20 13.158v18.31s-6.412-2.384-10-1.769V11.696s6.718-1.077 10 1.462zm0 0v18.31s6.412-2.384 10-1.769V11.696s-6.718-1.077-10 1.462z" fill="#fff" stroke="#EE7B45" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                 <span title="Manual">Manual</span>
                             </a>
                         </li>
                         <li>
-                            <a href="" title="INvstallation Videos">
+                            <a href="/support/installation-videos" title="INvstallation Videos">
                                 <svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M39 20.469c0 10.493-8.507 19-19 19s-19-8.507-19-19c0-10.494 8.507-19 19-19s19 8.506 19 19z" fill="#FBD9CA" stroke="#EE7B45" stroke-width="2"/><path d="M27.707 27.814H12.453c-.8 0-1.453-.653-1.453-1.452V15.175c0-.799.654-1.452 1.453-1.452h15.181c.8 0 1.453.653 1.453 1.452v11.187c.073.799-.581 1.452-1.38 1.452z" fill="#fff" stroke="#EE7B45" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="m23.202 20.769-4.358-2.542v5.012l4.358-2.47z" fill="#EE7B45" stroke="#EE7B45" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                 <span title="Installation Videos">Installation<br aria-hidden="true" class="d-lg-none"> Videos</span>
                             </a>

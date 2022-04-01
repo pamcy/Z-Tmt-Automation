@@ -10,7 +10,7 @@
                             <ul class="footer-menu__submenu list-styless">
                                 <li><NuxtLink to="/legal/privacy-policy" title="Privacy Policy">Privacy Policy</NuxtLink></li>
                                 <li><NuxtLink to="/legal/terms" title="Terms and Conditions">Terms and Conditions</NuxtLink></li>
-                                <li><NuxtLink to="/warranty" title="Warranty">Warranty</NuxtLink></li>
+                                <li><NuxtLink to="/support/warranty-info" title="Warranty">Warranty</NuxtLink></li>
                             </ul>
                         </li>
                         <li>
