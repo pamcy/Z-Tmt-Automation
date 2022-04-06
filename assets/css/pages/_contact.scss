@@ -1,6 +1,6 @@
 .page-header-contact-us {
     background-image: url('/images/contact-us-banner-mobile.png');
-  
+
     @include media-breakpoint-up(md) {
       background-image: url('/images/contact-us-banner-desktop.png');
     }
@@ -51,6 +51,21 @@
           color: inherit !important;
         }
       }
+    }
+  }
+
+  .form-group {
+    &-varification {
+        @include media-breakpoint-up(md) {
+            display: flex;
+            gap: rem(10);
+        }
+
+        input[type="text"] {
+            @include media-breakpoint-up(md) {
+                width: rem(320);
+            }
+        }
     }
   }
 }

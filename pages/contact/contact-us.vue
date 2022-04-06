@@ -22,12 +22,12 @@
                         </li>
                     </ul>
                 </nav>
-                <form ref="contactUsForm" class="form contact-us-form" :class="{ 'is-revealed': contactUsFormRevealed }">
+                <form ref="contactUsForm" class="form contact-us-form fade-in" :class="{ 'is-revealed': contactUsFormRevealed }">
                     <b class="required fade-in delay-1">Required *</b>
                     <fieldset>
                         <legend class="fade-in delay-2">Send Us a Message</legend>
-                        <div class="form-row">
-                            <div class="form-group form-group-half contact-us-location fade-in delay-3">
+                        <div class="form-row fade-in delay-3">
+                            <div class="form-group form-group-half contact-us-location">
                                 <img src="/images/flag-taiwan.jpg" width="60" height="45" alt="" aria-hidden="true">
                                 <div class="contact-us-location-meta">
                                     <div class="contact-us-location-meta__title">Taiwan</div>
@@ -38,7 +38,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group form-group-half contact-us-location fade-in delay-4">
+                            <div class="form-group form-group-half contact-us-location">
                                 <img src="/images/flag-australia.jpg" width="60" height="45" alt="" aria-hidden="true">
                                 <div class="contact-us-location-meta">
                                     <div class="contact-us-location-meta__title">Australia</div>
@@ -50,41 +50,45 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group form-group-half fade-in delay-5">
+                        <div class="form-row fade-in delay-4">
+                            <div class="form-group form-group-half">
                                 <label for="name">Name<span class="required">*</span></label>
                                 <input type="text" id="name" placeholder="Paul Smith" required>
                             </div>
-                            <div class="form-group form-group-half fade-in delay-6">
+                            <div class="form-group form-group-half">
                                 <label for="email">Email<span class="required">*</span></label>
                                 <input type="email" id="email" placeholder="mail@example.com" required>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group form-group-half fade-in delay-7">
+                            <div class="form-group form-group-half fade-in delay-5">
                                 <label for="country">Country<span class="required">*</span></label>
                                 <input type="text" id="country" placeholder="Enter your country" required>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group fade-in delay-8">
+                            <div class="form-group fade-in delay-6">
                                 <label for="subject">Subject<span class="required">*</span></label>
                                 <input type="text" id="subject" placeholder="Enter your subject" required>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group fade-in delay-9">
+                            <div class="form-group fade-in delay-7">
                                 <label for="message">Message<span class="required">*</span></label>
                                 <textarea id="message" placeholder="Enter your message"></textarea>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group fade-in delay-10">
-                                <label for="message">Verification Code<span class="required">*</span></label>
+                            <div class="form-group fade-in delay-8">
+                                <label for="verification">Verification Code<span class="required">*</span></label>
+                                <div class="form-group-varification">
+                                    <img src="http://placehold.jp/150x50.png">
+                                    <input type="text" id="verification" placeholder="Code" required>
+                                </div>
                             </div>
                         </div>
                     </fieldset>
-                    <div class="text-center fade-in delay-11">
+                    <div class="text-center fade-in delay-9">
                         <button type="submit" class="btn btn--fill">Submit</button>
                     </div>
                 </form>
@@ -107,11 +111,21 @@ onMounted(() => {
         }
     }, 100);
 
-    window.addEventListener('scroll', handleScroll)
+     if (window.matchMedia('(min-width: 990px)').matches) {
+        window.addEventListener('scroll', handleScroll)
+    } else {
+        setTimeout(() => {
+            contactUsFormRevealed.value = true
+        }, 300)
+    }
 })
 
 function handleScroll(e) {
-    if (window.innerHeight - contactUsForm.value.getBoundingClientRect().top >= contactUsForm.value.offsetHeight / 2) {
+    const rect = contactUsForm.value.getBoundingClientRect()
+    const elTop = rect.top + rect.top * 0.7
+    const elBottom = rect.bottom
+
+    if (window.innerHeight > elTop && elBottom > 0) {
         contactUsFormRevealed.value = true
     }
 }
