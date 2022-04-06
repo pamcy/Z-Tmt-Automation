@@ -2,7 +2,8 @@
   <div>
     <Header />
     <NuxtLayout>
-      <NuxtPage/>
+      <NuxtPage />
+      <Loader />
     </NuxtLayout>
     <BackToTop />
     <Footer />
