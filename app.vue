@@ -3,7 +3,6 @@
     <Header />
     <NuxtLayout>
       <NuxtPage />
-      <Loader />
     </NuxtLayout>
     <BackToTop />
     <Footer />

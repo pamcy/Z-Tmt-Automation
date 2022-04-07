@@ -296,7 +296,9 @@ onMounted(() => {
     } else {
         window.addEventListener('mousemove', trackCursorPosition)
 
-        removeActivePanelAndZone()
+        setTimeout(() => {
+            removeActivePanelAndZone()
+        }, 100);
     }
 })
 

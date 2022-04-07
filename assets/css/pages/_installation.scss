@@ -71,7 +71,7 @@
         overflow: visible !important;
 
         @include media-breakpoint-up(md) {
-            padding-bottom: rem(40 * 1.16666667) !important;
+            padding-bottom: rem(40 * 2) !important;
         }
 
         @include media-breakpoint-up(lg) {
@@ -91,8 +91,12 @@
             opacity: 0;
             transition: all .6s ease;
 
+            @include media-breakpoint-down(lg) {
+                padding-top: rem(20);
+            }
+
             @include media-breakpoint-down(md) {
-                padding: 0 $gutter;
+                padding: rem(10) $gutter 0;
             }
         }
 

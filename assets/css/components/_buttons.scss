@@ -127,11 +127,13 @@
     &-styless {
         padding: 0;
         border: 0;
+        border-radius: 0;
         background-color: transparent;
         color: inherit;
         font-weight: normal;
         line-height: 1;
         text-transform: none;
+        -webkit-appearance: none;
 
         &:hover,
         &:focus {
