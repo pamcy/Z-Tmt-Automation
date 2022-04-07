@@ -55,10 +55,14 @@
   }
 
   .form-group {
-    &-varification {
+    &-verification {
         @include media-breakpoint-up(md) {
             display: flex;
             gap: rem(10);
+        }
+
+        img {
+            width: rem(150);
         }
 
         input[type="text"] {

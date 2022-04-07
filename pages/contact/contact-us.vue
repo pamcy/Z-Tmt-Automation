@@ -81,8 +81,8 @@
                         <div class="form-row">
                             <div class="form-group fade-in delay-8">
                                 <label for="verification">Verification Code<span class="required">*</span></label>
-                                <div class="form-group-varification">
-                                    <img src="http://placehold.jp/150x50.png">
+                                <div class="form-group-verification">
+                                    <img src="/images/verification-placeholder.png">
                                     <input type="text" id="verification" placeholder="Code" required>
                                 </div>
                             </div>
