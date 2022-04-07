@@ -4,7 +4,7 @@
             <h3>Need More Help?</h3>
             <ul class="need-help-list">
                 <li>
-                    <a href="/support/schedule-a-call">
+                    <NuxtLink to="/support/schedule-a-call">
                         <svg width="150" height="150" viewBox="0 0 150 150" fill="none">
                             <path d="M147.75 75c0 40.179-32.571 72.75-72.75 72.75S2.25 115.179 2.25 75 34.821 2.25 75 2.25 147.75 34.821 147.75 75z" fill="#FFECE3" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" />
                             <path d="M111.9 109.4H37.2c-3.9 0-7.2-3.2-7.2-7.2v-55c0-3.9 3.2-7.2 7.2-7.2h74.7c3.9 0 7.2 3.2 7.2 7.2v55c-.1 4-3.3 7.2-7.2 7.2z" fill="#fff" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
@@ -20,10 +20,10 @@
                             <path d="M48.7 62.2h-8.2v8.2h8.2v-8.2zm0 14.2h-8.2v8.2h8.2v-8.2zm0 14h-8.2v8.2h8.2v-8.2zm15-28.2h-8.2v8.2h8.2v-8.2zm0 14.2h-8.2v8.2h8.2v-8.2zm0 14h-8.2v8.2h8.2v-8.2zm15.1-28.2h-8.2v8.2h8.2v-8.2zm0 14.2h-8.2v8.2h8.2v-8.2zm0 14h-8.2v8.2h8.2v-8.2zm15-28.2h-8.2v8.2h8.2v-8.2zm0 14.2h-8.2v8.2h8.2v-8.2zm0 14h-8.2v8.2h8.2v-8.2zm15-28.2h-8.2v8.2h8.2v-8.2zm0 14.2h-8.2v8.2h8.2v-8.2zm0 14h-8.2v8.2h8.2v-8.2z" fill="#FBD9CA" stroke="#EE7B45" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <span>Schedule a call</span>
-                    </a>
+                    </NuxtLink>
                 </li>
                 <li>
-                    <a href="/contact/contact-us">
+                    <NuxtLink to="/contact/contact-us">
                         <svg width="150" height="150" viewBox="0 0 150 150" fill="none">
                             <path d="M147.75 75c0 40.179-32.571 72.75-72.75 72.75S2.25 115.179 2.25 75 34.821 2.25 75 2.25 147.75 34.821 147.75 75z" fill="#FFECE3" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" />
                             <path d="M97 119.6H52.7c-3.6 0-6.5-2.9-6.5-6.5V37.7c0-3.6 2.9-6.5 6.5-6.5H97c3.6 0 6.5 2.9 6.5 6.5v75.4c0 3.6-2.9 6.5-6.5 6.5z" fill="#fff" stroke="#EE7B45" stroke-width="4.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
@@ -35,7 +35,7 @@
                             <path d="M97 39.9H52.4v66.3H97V39.9zm-22.3 75.7a2.7 2.7 0 1 0 0-5.4 2.7 2.7 0 0 0 0 5.4zM61.9 71.2l15.7 12M59.3 58.5l31.1 24" stroke="#EE7B45" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <span>Contact us</span>
-                    </a>
+                    </NuxtLink>
                 </li>
                 <li>
                     <a href="#">
