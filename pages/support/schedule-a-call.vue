@@ -57,7 +57,9 @@
                             </template>
                         </SelectDropdown>
                         <div class="datetime-picker">
-                            <DatePicker v-model="date" :locale="{ id: 'en', firstDayOfWeek: 2, masks: { weekdays: 'WWW' } }" :min-date="now" :timezone="timezone" color="orange" />
+                            <client-only>
+                                <DatePicker v-model="date" :locale="{ id: 'en', firstDayOfWeek: 2, masks: { weekdays: 'WWW' } }" :min-date="now" :timezone="currentTimezone.is" color="orange" />
+                            </client-only>
                             <div class="time-picker">
                                 <div class="time-picker-header">
                                     <button type="button" class="btn btn-styless" @click="amPmSwitch('AM')" :disabled="amPm == 'AM'">
@@ -272,6 +274,7 @@ const PMs = [
 ]
 
 const now = new Date();
+const date = ref(now)
 const hourClock24 = ref(true)
 const timezones = [
     'Etc/GMT+12',
