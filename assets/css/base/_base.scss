@@ -270,3 +270,8 @@ main {
     }
 }
 
+.page-enter-active {
+    + .loader {
+        display: flex;
+    }
+}
