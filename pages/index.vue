@@ -7,7 +7,7 @@
             <span class="text-uppercase">Professional<br aria-hidden="true"> grade quality</span><br aria-hidden="true">
             <small>at a DIY-grade price</small>
           </h1>
-          <p>With over seven million actuators produced annually, TMT Automation is a global leader in the field of linear actuators.We vows to bring to the market quality at an affordable price.</p>
+          <p>With over seven million actuators produced annually, TMT Automation is a global leader in the field of linear actuators.We vow to bring to the market quality at an affordable price.</p>
           <NuxtLink to="/products" class="btn btn-lg">
             Start Automating
             <svg width="39" height="13" viewBox="0 0 39 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6.552h33.618M31.6 11.375l5.6-4.804-5.6-4.946" stroke="#EE7B45" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -206,7 +206,7 @@
               <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M78.8 40c0 21.429-17.371 38.8-38.8 38.8S1.2 61.429 1.2 40 18.571 1.2 40 1.2 78.8 18.571 78.8 40z" stroke="#fff" stroke-width="2.4" stroke-miterlimit="10"/><path d="M57.12 20.907H23.147l-7.573 38.506h49.12L57.12 20.907z" stroke="#fff" stroke-width="2.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.814 24.96H57.92M16.48 54.933h47.307" stroke="#fff" stroke-width="2.4" stroke-miterlimit="10"/><path d="M19.414 40.16h41.44m-39.681-7.627H59.36M17.92 47.52h43.947M40.16 24.96v30.4m8.48-30.4 3.627 29.973M31.627 24.96 28 54.934" stroke="#fff" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <h3>Cleaner</h3>
             </div>
-            <p class="friendly-list__desc">Eliminate the use of Styrofoam product packaging.</p>
+            <p class="friendly-list__desc">Eliminate the use of Styrofoam product packaging</p>
           </swiper-slide>
           <swiper-slide class="fade-in delay-4">
             <div class="friendly-list__title">
@@ -227,7 +227,7 @@
               <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M77.933 40C77.933 19.07 60.931 2.067 40 2.067 19.07 2.067 2.067 19.069 2.067 40c0 20.93 17.002 37.933 37.933 37.933 20.93 0 37.933-17.002 37.933-37.933zm-77.6 0C.333 18.104 18.104.333 40 .333S79.667 18.104 79.667 40 61.896 79.667 40 79.667.333 61.896.333 40z" fill="#fff" stroke="#fff" stroke-width=".667"/><path d="M48.587 14.667H31.413L27.626 34.08h24.747l-3.786-19.413z" stroke="#fff" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M28.693 28.64H51.04" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M34.56 38.72H17.44L13.6 58.08h24.746L34.56 38.72z" stroke="#fff" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.667 52.693h22.346" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M45.44 38.72h17.12l3.84 19.36H41.653l3.787-19.36z" stroke="#fff" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M65.333 52.693H42.987" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <h3>Sustainable</h3>
             </div>
-            <p class="friendly-list__desc">Can be fully recycled at the end of its lifecycle.</p>
+            <p class="friendly-list__desc">Can be fully recycled at the end of its lifecycle</p>
           </swiper-slide>
           <swiper-slide></swiper-slide>
           <swiper-slide></swiper-slide>

@@ -40,7 +40,7 @@
                         </li>
                         <li class="card card-data">
                             <em>{{ countEmployees }} +</em>
-                            <span>Employees for<br /> manufacture</span>
+                            <span>Employees working Together</span>
                         </li>
                         <li class="card card-data">
                             <em>{{ countsubsidiary }} +</em>
