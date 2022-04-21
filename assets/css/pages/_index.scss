@@ -19,7 +19,6 @@
 }
 
 .hero {
-    // height: calc(var(--vh, 1vh) * 100 - $header-height-mobile);
     padding: var(--gutter);
     background: $color-primary no-repeat url('/images/mainpage-kv-mobile.jpg') left top;
     background-size: cover;
@@ -44,7 +43,6 @@
     &-text {
         display: flex;
         flex-direction: column;
-        // justify-content: flex-end;
         align-items: flex-start;
         height: 100%;
 

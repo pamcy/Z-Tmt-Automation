@@ -26,13 +26,13 @@
                     <ul class="cards list-styless" ref="cardsSection">
                         <li class="card fade-in" :class="'delay-' + (index + 1)" v-for="(item, index) in items" :key="item.title">
                             <NuxtLink :to="item.url">
-                                <div class="card-icon" v-html="item.icon"></div>
+                                <div class="card-icon" v-html="item.icon" aria-hidden="true"></div>
                                 <div class="d-md-flex flex-md-column flex-grow-1">
                                     <h2 class="card-title">{{ item.title }}</h2>
                                     <p class="card-content">
                                         {{ item.content }}
                                         <div class="card-action">
-                                            <svg width="39" height="13" viewBox="0 0 39 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6.552h33.618M31.6 11.375l5.6-4.804-5.6-4.946" stroke="#EE7B45" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            <svg width="39" height="13" viewBox="0 0 39 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2 6.552h33.618M31.6 11.375l5.6-4.804-5.6-4.946" stroke="#EE7B45" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                         </div>
                                     </p>
                                 </div>
