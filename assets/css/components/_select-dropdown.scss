@@ -46,7 +46,7 @@
         border: 2px solid transparent;
         border-radius: rem(10);
         overflow-y: hidden;
-        background: #fff;
+        background: transparent;
         z-index: 2;
         transition: all .4s ease;
 
@@ -81,6 +81,7 @@
         .select-dropdown.is-active & {
             max-height: rem(320);
             border-color: $color-primary-light;
+            background: #fff;
             transition: all .4s ease;
         }
     }
