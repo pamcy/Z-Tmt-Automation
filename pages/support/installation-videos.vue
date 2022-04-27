@@ -30,29 +30,16 @@
                             :modules="swiperModules"
                             :pagination="{ clickable: true }"
                             :centered-slides="true"
-                            loop
+                            :rewind="true"
                             :autoplay="{ delay: 3000 }"
                             :speed="600"
                             :breakpoints="swiperOptions.breakpoints"
                             @click="onPlayVideo"
                         >
-                            <swiper-slide>
+                            <swiper-slide v-for="(video, index) in featuredVideos" :key="video.youtubeId">
                                 <div class="embed-responsive">
-                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/DnKHRezTpwE?rel=0" allowfullscreen></iframe>
+                                    <iframe class="embed-responsive-item" :src="`https://www.youtube.com/embed/${video.youtubeId}?playsinline=1&rel=0`" :id="`video-${index + 1}`" allowfullscreen></iframe>
                                 </div>
-                                <span class="installation-slider-title">ChowHUB Kit-Smart Home Solution For Garage Doors and Gates</span>
-                            </swiper-slide>
-                            <swiper-slide>
-                                <div class="embed-responsive">
-                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pl13TRwrDbs?rel=0" allowfullscreen> </iframe>
-                                </div>
-                                <span class="installation-slider-title">AP Mode Connection Instruction (Demo)</span>
-                            </swiper-slide>
-                            <swiper-slide>
-                                <div class="embed-responsive">
-                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/GGO1IbeRMfQ?rel=0" allowfullscreen></iframe>
-                                </div>
-                                <span class="installation-slider-title">How to connect Chow! x IFTTT (demo video)</span>
                             </swiper-slide>
                         </swiper>
                     </div>
@@ -151,6 +138,17 @@ const swiperOptions = ref({
 })
 
 const youtubeChannel = ref('https://www.youtube.com/channel/UC_nCSH_V3K2o17KUU-3CiMA')
+const featuredVideos = ref([
+    {
+        youtubeId: 'DnKHRezTpwE',
+    },
+    {
+        youtubeId: 'pl13TRwrDbs',
+    },
+    {
+        youtubeId: 'GGO1IbeRMfQ',
+    },
+])
 const gateVideos = ref([
     {
         title: 'Connect the gate opener to Chow! App',
@@ -203,12 +201,14 @@ onUnmounted(() => {
 })
 
 function onPlayVideo(swiper, e) {
-    swiper.autoplay.stop()
+    if (e.target.closest('.swiper-slide-active') != null) {
+        swiper.autoplay.stop()
 
-    const iframeEl = e.target.querySelector('.embed-responsive-item')
+        const iframeEl = e.target.querySelector('.embed-responsive-item')
 
-    iframeEl.style.zIndex = 1
-    iframeEl.src += '&autoplay=1'
+        iframeEl.style.zIndex = 1
+        iframeEl.src += '&autoplay=1'
+    }
 }
 
 function fadeInVideoLists() {

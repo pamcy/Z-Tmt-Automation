@@ -50,10 +50,6 @@ const list = [
                 url: '/',
             },
             {
-                name: 'App Integration',
-                url: '/',
-            },
-            {
                 name: 'Comparison with Other Brands',
                 url: '/',
             },
