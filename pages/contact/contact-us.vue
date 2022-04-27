@@ -57,7 +57,7 @@
                             </div>
                             <div class="form-group form-group-half">
                                 <label for="email">Email<span class="required">*</span></label>
-                                <input type="email" id="email" placeholder="mail@example.com" required>
+                                <input type="email" id="email" placeholder="mail@example.com" oninvalid="this.setCustomValidity('Please enter a valid email address.')" oninput="this.setCustomValidity('')" required>
                             </div>
                         </div>
                         <div class="form-row">
@@ -75,7 +75,7 @@
                         <div class="form-row">
                             <div class="form-group fade-in delay-7">
                                 <label for="message">Message<span class="required">*</span></label>
-                                <textarea id="message" placeholder="Enter your message"></textarea>
+                                <textarea id="message" placeholder="Enter your message" required></textarea>
                             </div>
                         </div>
                         <div class="form-row">
