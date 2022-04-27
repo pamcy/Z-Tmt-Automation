@@ -30,7 +30,7 @@
                             :modules="swiperModules"
                             :pagination="{ clickable: true }"
                             :centered-slides="true"
-                            loop
+                            :rewind="true"
                             :autoplay="{ delay: 3000 }"
                             :speed="600"
                             :breakpoints="swiperOptions.breakpoints"
@@ -38,7 +38,7 @@
                         >
                             <swiper-slide v-for="(video, index) in featuredVideos" :key="video.youtubeId">
                                 <div class="embed-responsive">
-                                    <iframe class="embed-responsive-item" :src="`https://www.youtube.com/embed/${video.youtubeId}?playsinline=1&mute=1&rel=0&enablejsapi=1`" :id="`video-${index + 1}`" allowfullscreen></iframe>
+                                    <iframe class="embed-responsive-item" :src="`https://www.youtube.com/embed/${video.youtubeId}?playsinline=1&rel=0`" :id="`video-${index + 1}`" allowfullscreen></iframe>
                                 </div>
                             </swiper-slide>
                         </swiper>
@@ -201,12 +201,14 @@ onUnmounted(() => {
 })
 
 function onPlayVideo(swiper, e) {
-    swiper.autoplay.stop()
+    if (e.target.closest('.swiper-slide-active') != null) {
+        swiper.autoplay.stop()
 
-    const iframeEl = e.target.querySelector('.embed-responsive-item')
+        const iframeEl = e.target.querySelector('.embed-responsive-item')
 
-    iframeEl.style.zIndex = 1
-    iframeEl.src += '&autoplay=1'
+        iframeEl.style.zIndex = 1
+        iframeEl.src += '&autoplay=1'
+    }
 }
 
 function fadeInVideoLists() {
