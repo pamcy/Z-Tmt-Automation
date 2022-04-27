@@ -47,11 +47,11 @@ const list = [
         items: [
             {
                 name: 'Solar',
-                url: '/',
+                url: '/features/solar',
             },
             {
                 name: 'Comparison with Other Brands',
-                url: '/',
+                url: '/features/comparison',
             },
         ]
     },
@@ -75,6 +75,10 @@ const list = [
                 url: '/support/product-registration',
             },
             {
+                name: 'Warranty Info',
+                url: '/support/warranty-info',
+            },
+            {
                 name: 'FAQ',
                 url: '/support/faq',
             },
@@ -88,7 +92,7 @@ const list = [
                 url: '/contact/about-us',
             },
             {
-                name: 'Installation videos',
+                name: 'Contact Us',
                 url: '/contact/contact-us',
             }
         ]
@@ -98,11 +102,11 @@ const list = [
         items: [
             {
                 name: 'Privacy Policy',
-                url: '/',
+                url: '/legal/privacy-policy',
             },
             {
                 name: 'Terms of Use',
-                url: '/',
+                url: '/legal/terms',
             },
             {
                 name: 'Refund Policy',
