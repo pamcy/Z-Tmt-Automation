@@ -37,6 +37,7 @@
                             ref="installationSlider"
                             @click="onPlayVideo"
                             @slideChange="onSlideChange"
+                            @afterInit="onAfterSwiperInit"
                         >
                             <swiper-slide v-for="(video, index) in featuredVideos" :key="video.youtubeId">
                                 <div class="embed-responsive">
@@ -204,31 +205,29 @@ const tmtWorldVideos = ref([
 
 onMounted(() => {
     window.addEventListener('scroll', fadeInVideoLists)
-
-    nextTick(() => {
-        onYouTubeIframeAPIReady()
-    })
 })
 
 onUnmounted(() => {
     window.removeEventListener('scroll', fadeInVideoLists)
 })
 
-function onYouTubeIframeAPIReady() {
-    for (let i = 0; i < featuredVideos.value.length; i++) {
-        const player = new YT.Player('video-' + (i + 1), {
-            events: {
-                'onReady': onPlayerReady,
-                'onStateChange': onPlayerStateChange
-            }
-        })
-        players.value.push(player)
-    }
+function onAfterSwiperInit() {
+    setTimeout(() => {
+        for (let i = 0; i < featuredVideos.value.length; i++) {
+            const player = new YT.Player('video-' + (i + 1), {
+                playerVars: { 'autoplay': 1 },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            })
+            players.value.push(player)
+        }
+    }, 500)
 }
 
 function onPlayerReady(event) {
     var playerStatus = event.target.getPlayerState()
-
     if (playerStatus == 5) {
         installationSlider.value.$el.swiper.autoplay.start()
     }
