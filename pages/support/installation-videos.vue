@@ -118,7 +118,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, nextTick } from 'vue'
+import { ref, onMounted } from 'vue'
 
 import { Pagination, Autoplay, A11y } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'
