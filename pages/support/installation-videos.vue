@@ -31,14 +31,17 @@
                             :pagination="{ clickable: true }"
                             :centered-slides="true"
                             :rewind="true"
-                            :autoplay="{ delay: 3000 }"
+                            :initialSlide="1"
                             :speed="600"
                             :breakpoints="swiperOptions.breakpoints"
+                            ref="installationSlider"
                             @click="onPlayVideo"
+                            @slideChange="onSlideChange"
+                            @afterInit="onAfterSwiperInit"
                         >
                             <swiper-slide v-for="(video, index) in featuredVideos" :key="video.youtubeId">
                                 <div class="embed-responsive">
-                                    <iframe class="embed-responsive-item" :src="`https://www.youtube.com/embed/${video.youtubeId}?playsinline=1&rel=0`" :id="`video-${index + 1}`" allowfullscreen></iframe>
+                                    <iframe class="embed-responsive-item" :src="`https://www.youtube.com/embed/${video.youtubeId}?playsinline=1&rel=0&enablejsapi=1`" :id="`video-${index + 1}`" allowfullscreen></iframe>
                                 </div>
                             </swiper-slide>
                         </swiper>
@@ -122,6 +125,13 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
+useMeta({
+  script: [
+    { src: 'https://www.youtube.com/iframe_api' }
+  ]
+})
+
+const installationSlider = ref(null)
 const swiperModules = [Pagination, Autoplay, A11y]
 const swiperOptions = ref({
     breakpoints: {
@@ -136,6 +146,7 @@ const swiperOptions = ref({
         }
     },
 })
+const players = ref([])
 
 const youtubeChannel = ref('https://www.youtube.com/channel/UC_nCSH_V3K2o17KUU-3CiMA')
 const featuredVideos = ref([
@@ -200,14 +211,50 @@ onUnmounted(() => {
     window.removeEventListener('scroll', fadeInVideoLists)
 })
 
+function onAfterSwiperInit() {
+    setTimeout(() => {
+        for (let i = 0; i < featuredVideos.value.length; i++) {
+            const player = new YT.Player('video-' + (i + 1), {
+                playerVars: { 'autoplay': 1 },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            })
+            players.value.push(player)
+        }
+    }, 500)
+}
+
+function onPlayerReady(event) {
+    var playerStatus = event.target.getPlayerState()
+    if (playerStatus == 5) {
+        installationSlider.value.$el.swiper.autoplay.start()
+    }
+}
+
+function onPlayerStateChange(event) {
+    if (event.data != 5) {
+      installationSlider.value.$el.swiper.autoplay.stop()
+    }
+}
+
 function onPlayVideo(swiper, e) {
     if (e.target.closest('.swiper-slide-active') != null) {
-        swiper.autoplay.stop()
-
         const iframeEl = e.target.querySelector('.embed-responsive-item')
 
         iframeEl.style.zIndex = 1
         iframeEl.src += '&autoplay=1'
+
+        swiper.autoplay.stop()
+    }
+}
+
+function onSlideChange(swiper) {
+    for (let i = 0; i < players.value.length; i++) {
+        if (players.value[i].getPlayerState() == 1) {
+            players.value[i].pauseVideo()
+        }
     }
 }
 
