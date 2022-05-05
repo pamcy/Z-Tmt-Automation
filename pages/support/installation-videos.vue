@@ -262,6 +262,7 @@ function onSlideChange(swiper) {
     for (let i = 0; i < players.value.length; i++) {
         if (players.value[i].getPlayerState() == 1) {
             players.value[i].pauseVideo()
+            players.value[i].getIframe().style.zIndex = 0
         }
     }
 }
