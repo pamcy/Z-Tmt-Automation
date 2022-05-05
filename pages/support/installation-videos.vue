@@ -152,12 +152,15 @@ const youtubeChannel = ref('https://www.youtube.com/channel/UC_nCSH_V3K2o17KUU-3
 const featuredVideos = ref([
     {
         youtubeId: 'DnKHRezTpwE',
+        ready: false
     },
     {
         youtubeId: 'pl13TRwrDbs',
+        ready: false
     },
     {
         youtubeId: 'GGO1IbeRMfQ',
+        ready: false
     },
 ])
 const gateVideos = ref([
@@ -215,10 +218,8 @@ function onAfterSwiperInit() {
     setTimeout(() => {
         for (let i = 0; i < featuredVideos.value.length; i++) {
             const player = new YT.Player('video-' + (i + 1), {
-                playerVars: { 'autoplay': 1 },
                 events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
+                    'onReady': bindOnPlayerReady(i)
                 }
             })
             players.value.push(player)
@@ -226,16 +227,23 @@ function onAfterSwiperInit() {
     }, 500)
 }
 
-function onPlayerReady(event) {
-    var playerStatus = event.target.getPlayerState()
-    if (playerStatus == 5) {
-        installationSlider.value.$el.swiper.autoplay.start()
-    }
-}
+let swiperStarted = false
+function bindOnPlayerReady(i) {
+    return function(event) {
+        const playerStatus = event.target.getPlayerState()
+        if (playerStatus !== 5) {
+            return
+        }
 
-function onPlayerStateChange(event) {
-    if (event.data != 5) {
-      installationSlider.value.$el.swiper.autoplay.stop()
+        featuredVideos.value[i].ready = true
+        const allVideosReady = featuredVideos.value.every((video) => {
+            return video.ready
+        })
+
+        if (allVideosReady && !swiperStarted) {
+            swiperStarted = true
+            installationSlider.value.$el.swiper.autoplay.start()
+        }
     }
 }
 
